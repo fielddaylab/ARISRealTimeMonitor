@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ARISRealtimeMonitorMasterViewController.h"
 
 @interface LoginViewController ()
 
@@ -36,6 +37,10 @@
 }
 
 - (IBAction)goToGameScreen:(id)sender {
-    
+    ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
+    NSLog(@"goToGameScreenExecuted");
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
+    
 @end
