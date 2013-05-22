@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B99A57C174D4ED300950E08 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57B174D4ED300950E08 /* AppModel.m */; };
+		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
+		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
+		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -25,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B99A57A174D4ED300950E08 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
+		5B99A57B174D4ED300950E08 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
+		5B99A57D174D4F1000950E08 /* AppServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServices.h; sourceTree = "<group>"; };
+		5B99A57E174D4F1000950E08 /* AppServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServices.m; sourceTree = "<group>"; };
+		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +105,9 @@
 			children = (
 				719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */,
 				719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */,
+				5B99A580174D501600950E08 /* LoginViewController.h */,
+				5B99A581174D501600950E08 /* LoginViewController.m */,
+				5B99A582174D501600950E08 /* LoginViewController.xib */,
 				719941E2174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.h */,
 				719941E3174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.m */,
 				719941E5174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.h */,
@@ -101,6 +115,10 @@
 				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
 				719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */,
 				719941EE174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib */,
+				5B99A57A174D4ED300950E08 /* AppModel.h */,
+				5B99A57B174D4ED300950E08 /* AppModel.m */,
+				5B99A57D174D4F1000950E08 /* AppServices.h */,
+				5B99A57E174D4F1000950E08 /* AppServices.m */,
 				719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */,
 				719941D1174D3F9200B7E42D /* Supporting Files */,
 			);
@@ -181,6 +199,7 @@
 				719941ED174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib in Resources */,
 				719941F0174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib in Resources */,
 				719941F3174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib in Resources */,
+				5B99A584174D501600950E08 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +214,9 @@
 				719941DB174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m in Sources */,
 				719941E4174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.m in Sources */,
 				719941E7174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m in Sources */,
+				5B99A57C174D4ED300950E08 /* AppModel.m in Sources */,
+				5B99A57F174D4F1000950E08 /* AppServices.m in Sources */,
+				5B99A583174D501600950E08 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +365,7 @@
 				719941F8174D3F9200B7E42D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
