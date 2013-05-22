@@ -20,29 +20,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        
-        ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
-        
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        
-        self.window.rootViewController = loginController;
-    } else {
-        ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPad" bundle:nil];
-        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        
-        ARISRealtimeMonitorDetailViewController *detailViewController = [[ARISRealtimeMonitorDetailViewController alloc] initWithNibName:@"ARISRealtimeMonitorDetailViewController_iPad" bundle:nil];
-        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-    	
-    	masterViewController.detailViewController = detailViewController;
-    	
-        self.splitViewController = [[UISplitViewController alloc] init];
-        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
-        
-        self.window.rootViewController = self.splitViewController;
-    }
+    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    self.window.rootViewController = loginController;
     [self.window makeKeyAndVisible];
     return YES;
 }
