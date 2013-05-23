@@ -10,4 +10,12 @@
 
 @interface AppModel : NSObject
 
+@property (nonatomic, strong) NSArray *gamesList;
+
+@property (nonatomic, strong) NSArray *playersList;
+
++ (AppModel*) instance;
+
++ (id) allocWithZone:(NSZone *)zone;
+
 @end

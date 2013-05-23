@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
-- (IBAction)goToGameScreen:(id)sender;
 
 @end
