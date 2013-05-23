@@ -11,6 +11,7 @@
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
+		71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71225CA3174E989B004E499F /* ARISContainerViewController.m */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -42,6 +43,8 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		71225CA2174E989B004E499F /* ARISContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISContainerViewController.h; sourceTree = "<group>"; };
+		71225CA3174E989B004E499F /* ARISContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISContainerViewController.m; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				71225CA2174E989B004E499F /* ARISContainerViewController.h */,
+				71225CA3174E989B004E499F /* ARISContainerViewController.m */,
 				719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */,
 				719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */,
 				5B99A580174D501600950E08 /* LoginViewController.h */,
@@ -247,6 +252,7 @@
 				71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */,
 				71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */,
 				71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */,
+				71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
