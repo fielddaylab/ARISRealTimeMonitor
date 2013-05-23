@@ -38,6 +38,8 @@
 {
     [super viewDidLoad];
     
+    //[self displayContentController:self.gameMapViewController];
+
     
     
     // Do any additional setup after loading the view from its nib.
