@@ -14,6 +14,6 @@
 
 #import "GameTableViewController.h"
 
-@interface GameViewController : UIViewController//ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
+@interface GameViewController : ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
 
 @end
