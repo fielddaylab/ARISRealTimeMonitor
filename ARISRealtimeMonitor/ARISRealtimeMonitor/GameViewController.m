@@ -8,17 +8,8 @@
 
 #import "GameViewController.h"
 
-@interface GameViewController ()
-
-@property GameMapViewController *gameMapViewController;
-
-@property GameTableViewController *gameTableViewController;
-
-@end
 
 @implementation GameViewController
-
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,18 +21,44 @@
     return self;
 }
 
+-(IBAction)flipView{
+    NSLog(@"Switch Activated");
+    
+    UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
+    UIViewController *toVC;
+    if([fromVC isKindOfClass:[GameMapViewController class]]){
+        NSLog(@"You are in map view");
+        toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+    }
+    else{
+        NSLog(@"You are in table view");
+        toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+    }
+    
+    
+    
+    [self addChildViewController:toVC];
+    [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished){
+        [fromVC removeFromParentViewController];
+        [toVC didMoveToParentViewController:self];
+    }];
+    
+}
+
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //[self displayContentController:self.gameMapViewController];
+    UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithTitle:@"Switch" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
+    self.navigationItem.rightBarButtonItem = switchButton;
+    
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
-    GameTableViewController *gameTableViewController = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+
     [self addChildViewController:gameMapViewController];
-    [self addChildViewController:gameTableViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
+    
     
 
     
