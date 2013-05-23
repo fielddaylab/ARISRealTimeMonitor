@@ -10,13 +10,13 @@
 
 @interface GameViewController ()
 
+@property GameMapViewController *gameMapViewController;
+
+@property GameTableViewController *gameTableViewController;
+
 @end
 
 @implementation GameViewController
-
-
-
-
 
 
 
@@ -37,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 

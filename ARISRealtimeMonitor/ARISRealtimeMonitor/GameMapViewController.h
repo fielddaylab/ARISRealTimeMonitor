@@ -10,6 +10,6 @@
 
 #import "GameViewController.h"
 
-@interface GameMapViewController : GameViewController
+@interface GameMapViewController : UIViewController//GameViewController
 
 @end

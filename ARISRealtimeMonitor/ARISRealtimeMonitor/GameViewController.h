@@ -10,6 +10,10 @@
 
 #import "ARISContainerViewController.h"
 
-@interface GameViewController : ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
+#import "GameMapViewController.h"
+
+#import "GameTableViewController.h"
+
+@interface GameViewController : UIViewController//ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
 
 @end
