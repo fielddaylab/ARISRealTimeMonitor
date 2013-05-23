@@ -27,11 +27,11 @@
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
-        NSLog(@"You are in map view");
+        NSLog(@"You are in table view");
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
     }
     else{
-        NSLog(@"You are in table view");
+        NSLog(@"You are in map view");
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
     }
     
@@ -50,7 +50,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //- (id)initWithImage:(UIImage *)image style:UIBarButtonItemStylePlain target:self action:@selector(flipView)
+
     UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithTitle:@"Switch" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
     self.navigationItem.rightBarButtonItem = switchButton;
     
