@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameMapViewController : UIViewController
+#import "GameViewController.h"
+
+@interface GameMapViewController : GameViewController
 
 @end

@@ -18,6 +18,8 @@
 
 #import "GameTableViewController.h"
 
+#import "GameViewController.h"
+
 
 @class GameMapViewController, GameTableViewController;
 
@@ -27,8 +29,9 @@
 
 @property (strong, nonatomic) GameTableViewController *gameTableViewController;
 
+@property (strong, nonatomic) GameViewController *gameViewController;
 
-
+- (IBAction)goToGVC:(id)sender;
 
 
 @property (strong, nonatomic) id detailItem;
