@@ -146,4 +146,7 @@
     return YES;
 }
     
+- (IBAction)dismissKeyboard:(id)sender {
+    //resign first responder of the text field.
+}
 @end
