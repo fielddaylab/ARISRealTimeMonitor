@@ -78,4 +78,13 @@
     self.masterPopoverController = nil;
 }
 
+- (IBAction)goToGVC:(id)sender {
+    self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
+    NSLog(@"goToGameScreenExecutedNick");
+    [self.navigationController pushViewController:self.gameViewController animated:YES];
+    
+    
+    //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:gameViewController];
+    //[self presentViewController:navigationController animated:YES completion:nil];
+}
 @end

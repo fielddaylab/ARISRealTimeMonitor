@@ -15,6 +15,7 @@
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
+		71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71225CA3174E989B004E499F /* ARISContainerViewController.m */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -30,6 +31,12 @@
 		719941ED174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */; };
 		719941F0174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941EE174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib */; };
 		719941F3174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */; };
+		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
+		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
+		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
+		71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */; };
+		71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C6174E6F0E008C0C14 /* GameViewController.m */; };
+		71CFF3C9174E6F0F008C0C14 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,8 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		71225CA2174E989B004E499F /* ARISContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISContainerViewController.h; sourceTree = "<group>"; };
+		71225CA3174E989B004E499F /* ARISContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISContainerViewController.m; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +76,15 @@
 		719941EC174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorMasterViewController_iPad.xib; sourceTree = "<group>"; };
 		719941EF174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		719941F2174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorDetailViewController_iPad.xib; sourceTree = "<group>"; };
+		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
+		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
+		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
+		71CFF3C0174D62BF008C0C14 /* GameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewController.h; sourceTree = "<group>"; };
+		71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewController.m; sourceTree = "<group>"; };
+		71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewController.xib; sourceTree = "<group>"; };
+		71CFF3C5174E6F0E008C0C14 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		71CFF3C6174E6F0E008C0C14 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +148,23 @@
 				719941E6174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m */,
 				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
 				719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */,
+				719941E5174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.h */,
+				719941E6174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m */,
 				719941EE174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib */,
+				719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */,
 				5B99A57A174D4ED300950E08 /* AppModel.h */,
 				5B99A57B174D4ED300950E08 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
-				719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */,
+				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
+				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
+				71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */,
+				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
+				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
+				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
+				71CFF3C0174D62BF008C0C14 /* GameTableViewController.h */,
+				71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */,
+				71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */,
 				719941D1174D3F9200B7E42D /* Supporting Files */,
 			);
 			path = ARISRealtimeMonitor;
