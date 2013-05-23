@@ -134,6 +134,8 @@
 				5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */,
 				5B67E1D0174E693B00DDBC2A /* SimpleTableCell.h */,
 				5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */,
+				71225CA2174E989B004E499F /* ARISContainerViewController.h */,
+				71225CA3174E989B004E499F /* ARISContainerViewController.m */,
 				719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */,
 				719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */,
 				5B99A580174D501600950E08 /* LoginViewController.h */,
@@ -144,12 +146,12 @@
 				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
 				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
 				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
-				719941E5174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.h */,
-				719941E6174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m */,
 				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
 				719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */,
 				719941E5174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.h */,
 				719941E6174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m */,
+				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
+				719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */,
 				719941EE174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib */,
 				719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */,
 				5B99A57A174D4ED300950E08 /* AppModel.h */,
@@ -247,6 +249,9 @@
 				5B99A584174D501600950E08 /* LoginViewController.xib in Resources */,
 				5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */,
 				5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */,
+				71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */,
+				71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */,
+				71CFF3C9174E6F0F008C0C14 /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +271,10 @@
 				5B99A583174D501600950E08 /* LoginViewController.m in Sources */,
 				5B67E1D2174E693B00DDBC2A /* SimpleTableCell.m in Sources */,
 				5B67E1D7174E7CE200DDBC2A /* LoginTableCell.m in Sources */,
+				71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */,
+				71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */,
+				71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */,
+				71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
