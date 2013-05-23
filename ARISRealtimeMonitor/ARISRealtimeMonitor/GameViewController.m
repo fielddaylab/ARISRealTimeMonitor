@@ -37,6 +37,12 @@
     [super viewDidLoad];
     
     //[self displayContentController:self.gameMapViewController];
+    GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+    GameTableViewController *gameTableViewController = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+    [self addChildViewController:gameMapViewController];
+    [self addChildViewController:gameTableViewController];
+    [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
+    
 
     
     
