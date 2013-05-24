@@ -12,7 +12,7 @@
 
 @interface GameTableViewController : UIViewController//GameViewController
 
-@property (nonatomic) NSInteger gameNum;
+@property (nonatomic) NSInteger gameAccessNum;
 
 - (IBAction)addEntry:(id)sender;
 

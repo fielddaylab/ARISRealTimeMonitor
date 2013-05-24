@@ -154,10 +154,29 @@
         
         self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
         self.gameViewController.game = game;
-        self.gameViewController.gameNum = indexPath.row;
+        
         
         //Set the 'GAMES' back button for Map/TableViews here.
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        
+        
+        if([[[AppModel instance] gameEvents] count] <= indexPath.row){
+            self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
+            [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
+        }
+        else{
+            NSMutableArray *eventsToInsert = [[[AppModel instance] gameEvents] objectAtIndex:indexPath.row];
+            if(![[[AppModel instance] gameEvents] containsObject:eventsToInsert]){
+                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
+                [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
+            }
+            else{
+                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] indexOfObject:eventsToInsert];
+            }
+        }
+
+        
+        
         
         [self.navigationController pushViewController:self.gameViewController animated:YES];
         
