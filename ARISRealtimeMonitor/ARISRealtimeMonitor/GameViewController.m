@@ -44,12 +44,21 @@
     
     
     [self addChildViewController:toVC];
-    [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished){
-        [fromVC removeFromParentViewController];
-        [toVC didMoveToParentViewController:self];
-        //reactivate button
-    }];
-    
+    if([fromVC isKindOfClass:[GameMapViewController class]]){
+        [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
+            [fromVC removeFromParentViewController];
+            [toVC didMoveToParentViewController:self];
+            //reactivate button
+        }];
+    }
+    else{
+        [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
+            [fromVC removeFromParentViewController];
+            [toVC didMoveToParentViewController:self];
+            //reactivate button
+        }];
+    }
+
 }
 
 
@@ -75,6 +84,10 @@
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
 
+    
+    
+    
+    //[self.navigationItem setLeftBarButtonItem:@"Games"];
     
     
     // Do any additional setup after loading the view from its nib.
