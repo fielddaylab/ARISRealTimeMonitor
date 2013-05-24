@@ -26,6 +26,8 @@
 
 -(IBAction)flipView{
     
+    [self.barButton setEnabled:NO];
+    
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
@@ -47,12 +49,14 @@
         [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC didMoveToParentViewController:self];
+            [self.barButton setEnabled:YES];
         }];
     }
     else{
         [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC didMoveToParentViewController:self];
+            [self.barButton setEnabled:YES];
         }];
     }
 
