@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "ARISRealtimeMonitorMasterViewController.h"
 #import "LoginTableCell.h"
+#import "AppModel.h"
+#import "AppServices.h"
 
 @interface LoginViewController ()
 
@@ -28,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //load the events. THIS WILL NEED TO BE MOVED OR DELETED
+    [[AppModel instance] setGameEvents:[[AppServices instance] getGameEvents]];
     // Do any additional setup after loading the view from its nib.
 }
 

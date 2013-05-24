@@ -7,6 +7,7 @@
 //
 
 #import "AppServices.h"
+#import "AppModel.h"
 
 @implementation AppServices
 
@@ -31,6 +32,31 @@
 
 - (NSArray *) getPlayersList{
     return [[NSArray alloc] initWithObjects:@"4 Players", @"0 Players", @"0 Players", nil];
+}
+
+- (NSMutableArray *) getGameEvents{
+    
+     [[AppModel instance] setGameEvents:[[NSMutableArray alloc]init]];
+    
+    for(int i = 0; i < 3; i++){
+        switch (i) {
+            case 0:
+                [[[AppModel instance] gameEvents] addObject:[[NSMutableArray alloc] initWithObjects:@"Jack Wilshere", @"Theo Walcott", @"Lucas Poldoski", nil]];
+                break;
+            case 1:
+                [[[AppModel instance] gameEvents] addObject:[[NSMutableArray alloc] initWithObjects:@"Gervinho", @"Laurent Kochienly", @"Per Metersacker", nil]];
+                break;
+            case 2:
+                [[[AppModel instance] gameEvents] addObject:[[NSMutableArray alloc] initWithObjects:@"Alex Oxalde-Chamberlain", @"Olivier Giroud", @"Mikel Arteta", nil]];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    
+    return [[AppModel instance] gameEvents];
 }
 
 @end
