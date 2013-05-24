@@ -155,6 +155,10 @@
         self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
         self.gameViewController.game = game;
         self.gameViewController.gameNum = indexPath.row;
+        
+        //Set the 'GAMES' back button for Map/TableViews here.
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        
         [self.navigationController pushViewController:self.gameViewController animated:YES];
         
     }

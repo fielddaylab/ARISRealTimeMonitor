@@ -18,6 +18,8 @@
 
 @implementation LoginViewController
 
+@synthesize lostPassword;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,6 +35,12 @@
     
     //load the events. THIS WILL NEED TO BE MOVED OR DELETED
     [[AppModel instance] setGameEvents:[[AppServices instance] getGameEvents]];
+    
+    
+    NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
+    lostPassword.attributedText = [[NSAttributedString alloc] initWithString:@"Lost Password" attributes:underlineAttribute];
+    //myLabel.attributedText = [[NSAttributedString alloc] initWithString:@"Test string"
+    //                                                         attributes:underlineAttribute];
     // Do any additional setup after loading the view from its nib.
 }
 
