@@ -10,5 +10,6 @@
 
 @interface LoginViewController : UIViewController
 - (IBAction)dismissKeyboard:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lostPassword;
 
 @end

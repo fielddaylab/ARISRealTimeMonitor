@@ -10,7 +10,7 @@
 
 @implementation AppModel
 
-@synthesize gamesList, playersList;
+@synthesize gamesList, playersList, gameEvents;
 
 + (AppModel*) instance {
     static dispatch_once_t _singletonPredicate;

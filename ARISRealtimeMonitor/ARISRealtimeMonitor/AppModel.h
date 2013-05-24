@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSArray *playersList;
 
+@property (nonatomic, strong) NSMutableArray *gameEvents;
+
 + (AppModel*) instance;
 
 + (id) allocWithZone:(NSZone *)zone;
