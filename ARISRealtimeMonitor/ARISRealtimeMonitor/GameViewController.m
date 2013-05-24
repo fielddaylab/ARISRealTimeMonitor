@@ -25,7 +25,8 @@
 }
 
 -(IBAction)flipView{
-    
+    NSLog(@"Switch Activated");
+    //deactivate button to prevent multiple views being created.
     [self.barButton setEnabled:NO];
     
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
@@ -33,13 +34,13 @@
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
         
-        [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
+        [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     else{
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
         
-        [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+        [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     
@@ -58,6 +59,7 @@
         [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC didMoveToParentViewController:self];
+            //reactivate button
             [self.barButton setEnabled:YES];
         }];
     }
@@ -72,6 +74,7 @@
     
     self.title = self.game;
     
+    
     //Attempts at only having an image, not overlayed on a button.
     //UIImage * mapImage = [[UIImage alloc]initWithContentsOfFile:@"73-radar.png"];    
     //- (id)initWithImage:(UIImage *)image style:UIBarButtonItemStylePlain target:self action:@selector(flipView)
@@ -79,7 +82,7 @@
     
     //This button will have to change depending on user action. Keep World there for now to test button styles.
     self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
-    [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+    [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     [self.navigationItem setRightBarButtonItem:self.barButton];
     
     
@@ -88,6 +91,12 @@
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
+
+
+
+    
+    //[self.navigationItem setBackBarButtonItem//Can this be used instead?
+    //[self.navigationItem setLeftBarButtonItem:@"Games"];
     
     
     // Do any additional setup after loading the view from its nib.

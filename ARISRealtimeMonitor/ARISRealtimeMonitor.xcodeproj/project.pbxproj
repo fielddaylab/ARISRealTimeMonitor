@@ -33,6 +33,8 @@
 		719941ED174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */; };
 		719941F0174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941EE174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPhone.xib */; };
 		719941F3174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */; };
+		719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719F9AFD174FD412004C6DF4 /* MapKit.framework */; };
+		719F9B01174FE425004C6DF4 /* AnnotationGameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */; };
 		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
 		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
@@ -80,6 +82,9 @@
 		719941EC174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorMasterViewController_iPad.xib; sourceTree = "<group>"; };
 		719941EF174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		719941F2174D3F9200B7E42D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARISRealtimeMonitorDetailViewController_iPad.xib; sourceTree = "<group>"; };
+		719F9AFD174FD412004C6DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationGameLocation.h; sourceTree = "<group>"; };
+		719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationGameLocation.m; sourceTree = "<group>"; };
 		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
 		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
 		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */,
 				719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */,
 				719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */,
 				719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */,
@@ -125,6 +131,7 @@
 		719941C9174D3F9200B7E42D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				719F9AFD174FD412004C6DF4 /* MapKit.framework */,
 				719941CA174D3F9200B7E42D /* UIKit.framework */,
 				719941CC174D3F9200B7E42D /* Foundation.framework */,
 				719941CE174D3F9200B7E42D /* CoreGraphics.framework */,
@@ -283,6 +290,7 @@
 				71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */,
 				71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */,
 				71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */,
+				719F9B01174FE425004C6DF4 /* AnnotationGameLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
