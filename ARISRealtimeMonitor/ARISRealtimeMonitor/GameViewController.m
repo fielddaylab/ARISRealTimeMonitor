@@ -30,9 +30,15 @@
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        
+        [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
+        [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     else{
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        
+        [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+        [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     
     
@@ -58,8 +64,17 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithTitle:@"Switch" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
-    self.navigationItem.rightBarButtonItem = switchButton;
+    //Attempts at only having an image, not overlayed on a button.
+    //UIImage * mapImage = [[UIImage alloc]initWithContentsOfFile:@"73-radar.png"];    
+    //- (id)initWithImage:(UIImage *)image style:UIBarButtonItemStylePlain target:self action:@selector(flipView)
+    //UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithImage:mapImage style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
+    
+    //This button will have to change depending on user action. Keep World there for now to test button styles.
+    self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
+    [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+    [self.navigationItem setRightBarButtonItem:self.barButton];
+    
+    
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
 
