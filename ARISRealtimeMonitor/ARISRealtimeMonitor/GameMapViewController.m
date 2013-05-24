@@ -8,11 +8,12 @@
 
 #import "GameMapViewController.h"
 #import <MapKit/MapKit.h>
+#import "AnnotationGameLocation.h"
 
 #define MLI_LATITUDE 43.074789;
 #define MLI_LONGITUDE -89.408197;
 
-#define SPAN_VALUE .001f;
+#define SPAN_VALUE .05f;//Lowest you can go seems to be 0.001f; in code.
 
 
 @interface GameMapViewController ()
@@ -52,7 +53,7 @@
     center.latitude = MLI_LATITUDE;
     center.longitude = MLI_LONGITUDE;
     
-    MKCoordinateSpan span;
+    MKCoordinateSpan span;//Zoom
     span.latitudeDelta = SPAN_VALUE;
     span.longitudeDelta = SPAN_VALUE;
     
@@ -61,6 +62,16 @@
     
     [mapView setRegion:region animated:YES];
     
+    
+    CLLocationCoordinate2D location;
+    location.latitude = MLI_LATITUDE;
+    location.longitude = MLI_LONGITUDE;
+    
+    AnnotationGameLocation *annotation = [[AnnotationGameLocation alloc] initWithPosition:location];
+    annotation.title = @"QUEST1";
+    annotation.subtitle = @"GOAL1";
+    
+    [mapView addAnnotation:annotation];
     
     
     
