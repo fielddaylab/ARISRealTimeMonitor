@@ -156,9 +156,6 @@
         self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
         self.gameViewController.game = game;
         self.gameViewController.gameNum = indexPath.row;
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Games" style: UIBarButtonItemStyleBordered target: nil action: nil];
-        
-        [[self navigationItem] setBackBarButtonItem: newBackButton];
         [self.navigationController pushViewController:self.gameViewController animated:YES];
         
     }
