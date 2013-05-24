@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B45209E174FC4EE0038599C /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209D174FC4EE0038599C /* 73-radar.png */; };
+		5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209F174FC4FF0038599C /* 179-notepad.png */; };
 		5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */; };
 		5B67E1D2174E693B00DDBC2A /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */; };
 		5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */; };
@@ -16,8 +18,6 @@
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
 		71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71225CA3174E989B004E499F /* ARISContainerViewController.m */; };
-		716C814E174ECD1800A2CF9C /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 716C814C174ECD1800A2CF9C /* 73-radar.png */; };
-		716C814F174ECD1800A2CF9C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 716C814D174ECD1800A2CF9C /* 179-notepad.png */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -42,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B45209D174FC4EE0038599C /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		5B45209F174FC4FF0038599C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D0174E693B00DDBC2A /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
 		5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		71225CA2174E989B004E499F /* ARISContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISContainerViewController.h; sourceTree = "<group>"; };
 		71225CA3174E989B004E499F /* ARISContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISContainerViewController.m; sourceTree = "<group>"; };
-		716C814C174ECD1800A2CF9C /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../../../73-radar.png"; sourceTree = "<group>"; };
-		716C814D174ECD1800A2CF9C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "../../../179-notepad.png"; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -179,8 +179,8 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				716C814C174ECD1800A2CF9C /* 73-radar.png */,
-				716C814D174ECD1800A2CF9C /* 179-notepad.png */,
+				5B45209F174FC4FF0038599C /* 179-notepad.png */,
+				5B45209D174FC4EE0038599C /* 73-radar.png */,
 				719941D2174D3F9200B7E42D /* ARISRealtimeMonitor-Info.plist */,
 				719941D3174D3F9200B7E42D /* InfoPlist.strings */,
 				719941D6174D3F9200B7E42D /* main.m */,
@@ -258,8 +258,8 @@
 				71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */,
 				71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */,
 				71CFF3C9174E6F0F008C0C14 /* GameViewController.xib in Resources */,
-				716C814E174ECD1800A2CF9C /* 73-radar.png in Resources */,
-				716C814F174ECD1800A2CF9C /* 179-notepad.png in Resources */,
+				5B45209E174FC4EE0038599C /* 73-radar.png in Resources */,
+				5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
