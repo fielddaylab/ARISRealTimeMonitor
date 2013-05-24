@@ -38,8 +38,6 @@
 {
     [super viewDidLoad];
     
-    
-    
     //get the games list from the server
     [[AppModel instance] setGamesList:[[AppServices instance] getGamesList]];
     [[AppModel instance] setPlayersList:[[AppServices instance] getPlayersList]];
@@ -146,7 +144,6 @@
     return YES;
 }
 */
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

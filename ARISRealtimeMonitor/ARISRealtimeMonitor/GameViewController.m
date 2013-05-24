@@ -71,7 +71,7 @@
 {
     [super viewDidLoad];
     
-
+    self.title = self.game;
     
     
     //Attempts at only having an image, not overlayed on a button.
