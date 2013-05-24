@@ -11,12 +11,15 @@
 
 @implementation GameViewController
 
+@synthesize game;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"Game";
     }
     return self;
 }
@@ -27,20 +30,17 @@
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
-        NSLog(@"You are in table view");
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
         
         [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     else{
-        NSLog(@"You are in map view");
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
         
         [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
-    
     
     
     [self addChildViewController:toVC];
@@ -74,8 +74,6 @@
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-    
-    
 
     
     

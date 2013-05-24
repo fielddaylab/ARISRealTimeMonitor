@@ -39,9 +39,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 
-//- (void) displayContentController: (UIViewController*) content;
-
-//- (void) cycleFromViewController: (UIViewController*) oldC toViewController: (UIViewController*) newC;
-
-
 @end

@@ -16,6 +16,7 @@
 
 @interface GameViewController : ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
 
+@property (strong, nonatomic) NSString  *game;
 @property (strong, nonatomic) UIBarButtonItem* barButton;
 
 @end
