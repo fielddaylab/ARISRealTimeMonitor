@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GameMapViewController.h"
+
 @class ARISRealtimeMonitorDetailViewController;
 
 @interface ARISRealtimeMonitorMasterViewController : UITableViewController
 
-@property (strong, nonatomic) ARISRealtimeMonitorDetailViewController *detailViewController;
+//@property (strong, nonatomic) ARISRealtimeMonitorDetailViewController *detailViewController;
+
+@property (nonatomic, strong) GameViewController *gameViewController;
 
 @end

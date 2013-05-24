@@ -19,6 +19,8 @@
 
 @implementation ARISRealtimeMonitorMasterViewController
 
+@synthesize gameViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,10 +43,6 @@
     [[AppModel instance] setPlayersList:[[AppServices instance] getPlayersList]];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -151,11 +149,13 @@
 {
     if([indexPath section] == 0){
         NSString *game = [[[AppModel instance] gamesList] objectAtIndex:indexPath.row];
-        if (!self.detailViewController) {
-            self.detailViewController = [[ARISRealtimeMonitorDetailViewController alloc] initWithNibName:@"ARISRealtimeMonitorDetailViewController_iPhone" bundle:nil];
-        }
-        self.detailViewController.detailItem = game;
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
+        //NSString *game = [[[AppServices instance] getGamesList] objectAtIndex:indexPath.row];
+        
+        
+        self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
+        self.gameViewController.game = game;
+        [self.navigationController pushViewController:self.gameViewController animated:YES];
+        
     }
     else{
         //do some clean up, then quit the app

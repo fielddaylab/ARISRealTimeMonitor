@@ -11,38 +11,45 @@
 
 @implementation GameViewController
 
+@synthesize game;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"Game";
     }
     return self;
 }
 
 -(IBAction)flipView{
-    NSLog(@"Switch Activated");
     
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
-        NSLog(@"You are in map view");
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
     }
     else{
-        NSLog(@"You are in table view");
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
     }
     
     
-    
     [self addChildViewController:toVC];
-    [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished){
-        [fromVC removeFromParentViewController];
-        [toVC didMoveToParentViewController:self];
-    }];
-    
+    if([fromVC isKindOfClass:[GameMapViewController class]]){
+        [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
+            [fromVC removeFromParentViewController];
+            [toVC didMoveToParentViewController:self];
+        }];
+    }
+    else{
+        [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
+            [fromVC removeFromParentViewController];
+            [toVC didMoveToParentViewController:self];
+        }];
+    }
+
 }
 
 
@@ -58,8 +65,6 @@
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-    
-    
 
     
     
