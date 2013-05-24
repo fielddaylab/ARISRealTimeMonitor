@@ -23,7 +23,7 @@
 
 -(IBAction)flipView{
     NSLog(@"Switch Activated");
-    
+    //deactivate button
     UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
@@ -47,6 +47,7 @@
     [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished){
         [fromVC removeFromParentViewController];
         [toVC didMoveToParentViewController:self];
+        //reactivate button
     }];
     
 }
