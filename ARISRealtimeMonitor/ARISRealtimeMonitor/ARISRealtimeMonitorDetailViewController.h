@@ -6,12 +6,6 @@
 //  Copyright (c) 2013 Nick Heindl. All rights reserved.
 //
 
-
-//HOW DO I MAKE A CONTAINER CONTROLLER?!#E@#@$QRESDG
-//Copying/Editing code from https://github.com/toolmanGitHub/stackedViewControllers
-
-
-
 #import <UIKit/UIKit.h>
 
 #import "GameMapViewController.h"

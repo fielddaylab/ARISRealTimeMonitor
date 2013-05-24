@@ -7,6 +7,7 @@
 //
 
 #import "GameMapViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface GameMapViewController ()
 
@@ -27,6 +28,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //Set up a map in code rather than nib
+    MKMapView *mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 416)];//416 - compensate for status & navbar
+    [mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
+    [mapView setZoomEnabled:YES];
+    [mapView setScrollEnabled:YES];
+    [mapView setShowsUserLocation:YES];
+    
+    [self.view addSubview:mapView];
+    
+    
 }
 
 
