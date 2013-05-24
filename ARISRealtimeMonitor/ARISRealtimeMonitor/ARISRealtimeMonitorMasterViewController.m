@@ -38,6 +38,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     //get the games list from the server
     [[AppModel instance] setGamesList:[[AppServices instance] getGamesList]];
     [[AppModel instance] setPlayersList:[[AppServices instance] getPlayersList]];
@@ -154,6 +156,9 @@
         
         self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
         self.gameViewController.game = game;
+        
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Turtles" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        
         [self.navigationController pushViewController:self.gameViewController animated:YES];
         
     }
