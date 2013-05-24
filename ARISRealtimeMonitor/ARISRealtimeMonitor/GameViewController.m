@@ -11,7 +11,7 @@
 
 @implementation GameViewController
 
-@synthesize game, gameNum;
+@synthesize game, gameAccessNum;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,7 +48,7 @@
     [self addChildViewController:toVC];
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         GameTableViewController *toVC2 = (GameTableViewController *)toVC;
-        toVC2.gameNum = self.gameNum;
+        toVC2.gameAccessNum = self.gameAccessNum;
         [self transitionFromViewController:fromVC toViewController:toVC2 duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC2 didMoveToParentViewController:self];

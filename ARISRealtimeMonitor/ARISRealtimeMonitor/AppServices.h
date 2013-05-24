@@ -19,6 +19,6 @@
 //this is a placeholder for retrieving the players list from the server
 - (NSArray *) getPlayersList;
 //this is a placeholder for retrieving the events list from the server
-- (NSMutableArray *) getGameEvents;
+- (NSMutableArray *) getGameEventsForGame:(NSInteger)game;
 
 @end

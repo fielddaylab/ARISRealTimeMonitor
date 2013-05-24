@@ -34,7 +34,7 @@
     [super viewDidLoad];
     
     //load the events. THIS WILL NEED TO BE MOVED OR DELETED
-    [[AppModel instance] setGameEvents:[[AppServices instance] getGameEvents]];
+    //[[AppModel instance] setGameEvents:[[AppServices instance] getGameEvents]];
     
     
     NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
@@ -90,6 +90,7 @@
         }
         else{
             cell.textField.placeholder = @"Password";
+            cell.textField.secureTextEntry = YES;
         }
         
         return cell;
@@ -149,6 +150,8 @@
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
         [cell.textLabel resignFirstResponder];
+        
+        [[AppModel instance] setGameEvents:[[NSMutableArray alloc]init]];
         
         [self presentViewController:navigationController animated:YES completion:nil];
     }

@@ -19,7 +19,7 @@
 
 @implementation GameTableViewController
 
-@synthesize gameNum, table;
+@synthesize gameAccessNum, table;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[[AppModel instance] gameEvents] objectAtIndex:self.gameNum] count];
+    return [[[[AppModel instance] gameEvents] objectAtIndex:self.gameAccessNum] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,7 +73,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[[[AppModel instance] gameEvents] objectAtIndex:self.gameNum] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[[[AppModel instance] gameEvents] objectAtIndex:self.gameAccessNum] objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = @"Arsenal Player";
     return cell;
 }
@@ -120,7 +120,7 @@
 
 - (IBAction)addEntry:(id)sender {
     
-    [[[[AppModel instance] gameEvents] objectAtIndex:self.gameNum] insertObject:@"Thierry Henry" atIndex:0];
+    [[[[AppModel instance] gameEvents] objectAtIndex:self.gameAccessNum] insertObject:@"Thierry Henry" atIndex:0];
     [self.table reloadData];
 }
 @end
