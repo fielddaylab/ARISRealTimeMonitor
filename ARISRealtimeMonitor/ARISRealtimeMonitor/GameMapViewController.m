@@ -9,6 +9,12 @@
 #import "GameMapViewController.h"
 #import <MapKit/MapKit.h>
 
+#define MLI_LATITUDE 43.074789;
+#define MLI_LONGITUDE -89.408197;
+
+#define SPAN_VALUE .001f;
+
+
 @interface GameMapViewController ()
 
 @end
@@ -37,6 +43,25 @@
     [mapView setShowsUserLocation:YES];
     
     [self.view addSubview:mapView];
+    
+    
+    //Set up to start at specific location
+    MKCoordinateRegion region;
+    
+    CLLocationCoordinate2D center;
+    center.latitude = MLI_LATITUDE;
+    center.longitude = MLI_LONGITUDE;
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta = SPAN_VALUE;
+    span.longitudeDelta = SPAN_VALUE;
+    
+    region.center = center;
+    region.span = span;
+    
+    [mapView setRegion:region animated:YES];
+    
+    
     
     
 }
