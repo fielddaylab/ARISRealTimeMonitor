@@ -20,4 +20,5 @@
 @property (nonatomic) NSInteger gameNum;
 @property (strong, nonatomic) UIBarButtonItem* barButton;
 
+
 @end

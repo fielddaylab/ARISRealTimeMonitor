@@ -43,6 +43,15 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
+    [self.mapView setShowsUserLocation:YES];
+}
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,7 +64,6 @@
     [self.mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
     [self.mapView setZoomEnabled:YES];
     [self.mapView setScrollEnabled:YES];
-    [self.mapView setShowsUserLocation:YES];
     
     [self.view addSubview:self.mapView];
     

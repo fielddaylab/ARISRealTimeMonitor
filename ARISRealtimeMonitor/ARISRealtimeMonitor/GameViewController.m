@@ -33,7 +33,7 @@
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
-        
+
         [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
