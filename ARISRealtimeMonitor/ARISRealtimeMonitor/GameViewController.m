@@ -68,6 +68,8 @@
 {
     [super viewDidLoad];
     
+    self.title = self.game;
+    
     //Attempts at only having an image, not overlayed on a button.
     //UIImage * mapImage = [[UIImage alloc]initWithContentsOfFile:@"73-radar.png"];    
     //- (id)initWithImage:(UIImage *)image style:UIBarButtonItemStylePlain target:self action:@selector(flipView)
@@ -84,7 +86,6 @@
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-
     
     
     // Do any additional setup after loading the view from its nib.
