@@ -160,14 +160,21 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
         
         
-        NSMutableArray *eventsToInsert = [[AppServices instance] getGameEventsForGame:indexPath.row];
-        if(![[[AppModel instance] gameEvents] containsObject:eventsToInsert]){
+        if([[[AppModel instance] gameEvents] count] <= indexPath.row){
             self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
             [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
         }
         else{
-            self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] indexOfObject:eventsToInsert];
+            NSMutableArray *eventsToInsert = [[[AppModel instance] gameEvents] objectAtIndex:indexPath.row];
+            if(![[[AppModel instance] gameEvents] containsObject:eventsToInsert]){
+                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
+                [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
+            }
+            else{
+                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] indexOfObject:eventsToInsert];
+            }
         }
+
         
         
         
