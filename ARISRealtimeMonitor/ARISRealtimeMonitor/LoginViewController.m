@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "LostPasswordViewController.h"
 #import "ARISRealtimeMonitorMasterViewController.h"
 #import "LoginTableCell.h"
 #import "AppModel.h"
@@ -29,18 +30,26 @@
     return self;
 }
 
+-(void)userTappedOnLostPassword:(UIGestureRecognizer*)gestureRecognizer
+{
+    LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:lostPasswordView animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //load the events. THIS WILL NEED TO BE MOVED OR DELETED
-    //[[AppModel instance] setGameEvents:[[AppServices instance] getGameEvents]];
-    
     
     NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
     lostPassword.attributedText = [[NSAttributedString alloc] initWithString:@"Lost Password" attributes:underlineAttribute];
-    //myLabel.attributedText = [[NSAttributedString alloc] initWithString:@"Test string"
-    //                                                         attributes:underlineAttribute];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLostPassword:)];
+    [lostPassword setUserInteractionEnabled:YES];
+    [lostPassword addGestureRecognizer:gesture];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -146,11 +155,18 @@
         
         //grab the username and password from the textfields, verify that they are correct
         
+        LoginTableCell *loginUsernameCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        LoginTableCell *loginPasswordCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        
+        NSString *username = [[loginUsernameCell textField] text];
+        NSString *password = [[loginPasswordCell textField] text];
+        
         ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
         [cell.textLabel resignFirstResponder];
         
+        //this will need to be moved
         [[AppModel instance] setGameEvents:[[NSMutableArray alloc]init]];
         
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -160,9 +176,5 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
-}
-    
-- (IBAction)dismissKeyboard:(id)sender {
-    //resign first responder of the text field.
 }
 @end
