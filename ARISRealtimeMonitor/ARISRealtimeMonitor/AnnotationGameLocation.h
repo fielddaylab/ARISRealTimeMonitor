@@ -16,6 +16,9 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
+@property (nonatomic, copy) NSString *leftIcon; //could potentially store user avatars.
+@property (nonatomic, copy) NSString *icon; // Is this a player or an objective?
+
 
 -initWithPosition:(CLLocationCoordinate2D)coords;
 

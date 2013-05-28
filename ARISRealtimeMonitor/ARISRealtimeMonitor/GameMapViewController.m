@@ -92,6 +92,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST1 MLI";
     annotation.subtitle = @"GOAL1 MLI";
+    annotation.leftIcon = @"leftIcon";
+    annotation.icon = @"player";
     [annotations addObject:annotation];
     
     location.latitude = HOME_LATITUDE;
@@ -100,6 +102,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST2 HOME";
     annotation.subtitle = @"GOAL2 HOME";
+    annotation.leftIcon = @"leftIcon";
+    annotation.icon = @"player";
     [annotations addObject:annotation];
     
     location.latitude = CS_LATITUDE;
@@ -108,6 +112,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST3 CS";
     annotation.subtitle = @"GOAL3 CS";
+    annotation.leftIcon = @"leftIcon";
+    annotation.icon = @"player";
     [annotations addObject:annotation];
     
     location.latitude = TERRACE_LATITUDE;
@@ -116,6 +122,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST4 TERRACE";
     annotation.subtitle = @"GOAL4 TERRACE";
+    annotation.leftIcon = @"leftIcon";
+    annotation.icon = @"player";
     [annotations addObject:annotation];
     
     location.latitude = USOUTH_LATITUDE;
@@ -124,6 +132,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST5 USOUTH";
     annotation.subtitle = @"GOAL5 USOUTH";
+    annotation.leftIcon = @"leftIcon";
+    annotation.icon = @"player";
     [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
