@@ -18,6 +18,9 @@
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
 		71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71225CA3174E989B004E499F /* ARISContainerViewController.m */; };
+		71242B9417554F38006CF0F3 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9217554F38006CF0F3 /* 74-location.png */; };
+		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
+		71242B9717555074006CF0F3 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9617555074006CF0F3 /* 196-radiation.png */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -35,6 +38,10 @@
 		719941F3174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719941F1174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController_iPad.xib */; };
 		719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719F9AFD174FD412004C6DF4 /* MapKit.framework */; };
 		719F9B01174FE425004C6DF4 /* AnnotationGameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */; };
+		719F9B04175506D7004C6DF4 /* AnnotationViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 719F9B03175506D7004C6DF4 /* AnnotationViews.m */; };
+		719F9B081755098C004C6DF4 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B051755098C004C6DF4 /* cactus.png */; };
+		719F9B091755098C004C6DF4 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B061755098C004C6DF4 /* palmTree.png */; };
+		719F9B0A1755098C004C6DF4 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B071755098C004C6DF4 /* sun.png */; };
 		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
 		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
@@ -61,6 +68,9 @@
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		71225CA2174E989B004E499F /* ARISContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISContainerViewController.h; sourceTree = "<group>"; };
 		71225CA3174E989B004E499F /* ARISContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISContainerViewController.m; sourceTree = "<group>"; };
+		71242B9217554F38006CF0F3 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		71242B9317554F38006CF0F3 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
+		71242B9617555074006CF0F3 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +95,11 @@
 		719F9AFD174FD412004C6DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationGameLocation.h; sourceTree = "<group>"; };
 		719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationGameLocation.m; sourceTree = "<group>"; };
+		719F9B02175506D7004C6DF4 /* AnnotationViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViews.h; sourceTree = "<group>"; };
+		719F9B03175506D7004C6DF4 /* AnnotationViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViews.m; sourceTree = "<group>"; };
+		719F9B051755098C004C6DF4 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
+		719F9B061755098C004C6DF4 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
+		719F9B071755098C004C6DF4 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
 		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
 		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +185,8 @@
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
 				71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */,
+				719F9B02175506D7004C6DF4 /* AnnotationViews.h */,
+				719F9B03175506D7004C6DF4 /* AnnotationViews.m */,
 				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
 				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
 				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
@@ -188,6 +205,12 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71242B9617555074006CF0F3 /* 196-radiation.png */,
+				71242B9217554F38006CF0F3 /* 74-location.png */,
+				71242B9317554F38006CF0F3 /* 145-persondot.png */,
+				719F9B051755098C004C6DF4 /* cactus.png */,
+				719F9B061755098C004C6DF4 /* palmTree.png */,
+				719F9B071755098C004C6DF4 /* sun.png */,
 				5B45209F174FC4FF0038599C /* 179-notepad.png */,
 				5B45209D174FC4EE0038599C /* 73-radar.png */,
 				719941D2174D3F9200B7E42D /* ARISRealtimeMonitor-Info.plist */,
@@ -269,6 +292,12 @@
 				71CFF3C9174E6F0F008C0C14 /* GameViewController.xib in Resources */,
 				5B45209E174FC4EE0038599C /* 73-radar.png in Resources */,
 				5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */,
+				719F9B081755098C004C6DF4 /* cactus.png in Resources */,
+				719F9B091755098C004C6DF4 /* palmTree.png in Resources */,
+				719F9B0A1755098C004C6DF4 /* sun.png in Resources */,
+				71242B9417554F38006CF0F3 /* 74-location.png in Resources */,
+				71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */,
+				71242B9717555074006CF0F3 /* 196-radiation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +322,7 @@
 				71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */,
 				71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */,
 				719F9B01174FE425004C6DF4 /* AnnotationGameLocation.m in Sources */,
+				719F9B04175506D7004C6DF4 /* AnnotationViews.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

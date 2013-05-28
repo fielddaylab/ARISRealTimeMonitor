@@ -9,6 +9,7 @@
 #import "GameMapViewController.h"
 #import <MapKit/MapKit.h>
 #import "AnnotationGameLocation.h"
+#import "AnnotationViews.h"
 
 #define MLI_LATITUDE 43.074789;
 #define MLI_LONGITUDE -89.408197;
@@ -58,6 +59,8 @@
     // Do any additional setup after loading the view from its nib.
     
 
+
+    
     
     //Set up a map in code rather than nib
     self.mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 416)];//416 - compensate for status & navbar
@@ -92,7 +95,7 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST1 MLI";
     annotation.subtitle = @"GOAL1 MLI";
-    annotation.leftIcon = @"leftIcon";
+    annotation.leftIcon = @"test1";
     annotation.icon = @"player";
     [annotations addObject:annotation];
     
@@ -102,8 +105,8 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST2 HOME";
     annotation.subtitle = @"GOAL2 HOME";
-    annotation.leftIcon = @"leftIcon";
-    annotation.icon = @"player";
+    annotation.leftIcon = @"test1";
+    annotation.icon = @"gameLocation";
     [annotations addObject:annotation];
     
     location.latitude = CS_LATITUDE;
@@ -112,7 +115,7 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST3 CS";
     annotation.subtitle = @"GOAL3 CS";
-    annotation.leftIcon = @"leftIcon";
+    annotation.leftIcon = @"test1";
     annotation.icon = @"player";
     [annotations addObject:annotation];
     
@@ -122,7 +125,7 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST4 TERRACE";
     annotation.subtitle = @"GOAL4 TERRACE";
-    annotation.leftIcon = @"leftIcon";
+    annotation.leftIcon = @"test2";
     annotation.icon = @"player";
     [annotations addObject:annotation];
     
@@ -132,25 +135,27 @@
     [annotation setCoordinate:location];
     annotation.title = @"QUEST5 USOUTH";
     annotation.subtitle = @"GOAL5 USOUTH";
-    annotation.leftIcon = @"leftIcon";
-    annotation.icon = @"player";
+    annotation.leftIcon = @"test2";
+    annotation.icon = @"notplayer";
     [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
     
+
     //used to get the actual location
     self.mapView.delegate = self;
-    
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    
     //Used for efficiency. If we have a lot of pins, reuse them.
-    MKAnnotationView *view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+    AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     if(view == nil){
-        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     }
     
-    //Add right/left images/buttons here if we so choose.
+    //Add right/left images/buttons in AnnotationViews
     
     
     return view;
