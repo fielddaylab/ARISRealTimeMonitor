@@ -46,43 +46,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear");
+
     [self.mapView setShowsUserLocation:YES];
-}
-
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-
-
-    
-    
-    //Set up a map in code rather than nib
-    self.mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 416)];//416 - compensate for status & navbar
-    [self.mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
-    [self.mapView setZoomEnabled:YES];
-    [self.mapView setScrollEnabled:YES];
-    
-    [self.view addSubview:self.mapView];
-    
-    /*//Used if we want to have a predefined region.
-    //Set up to start at specific location
-    MKCoordinateRegion region;
-    CLLocationCoordinate2D center;
-    center.latitude = MLI_LATITUDE;
-    center.longitude = MLI_LONGITUDE;
-    MKCoordinateSpan span;//Zoom
-    span.latitudeDelta = SPAN_VALUE;
-    span.longitudeDelta = SPAN_VALUE;
-    region.center = center;
-    region.span = span;
-    [mapView setRegion:region animated:YES];
-    */
     
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
@@ -141,6 +106,38 @@
     
     [self.mapView addAnnotations:annotations];
     
+}
+
+
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+
+    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
+        
+    self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    
+    [self.mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
+    [self.mapView setZoomEnabled:YES];
+    [self.mapView setScrollEnabled:YES];
+    
+    [self.view addSubview:self.mapView];
+    
+    /*//Used if we want to have a predefined region.
+    MKCoordinateRegion region;
+    CLLocationCoordinate2D center;
+    center.latitude = MLI_LATITUDE;
+    center.longitude = MLI_LONGITUDE;
+    MKCoordinateSpan span;//Zoom
+    span.latitudeDelta = SPAN_VALUE;
+    span.longitudeDelta = SPAN_VALUE;
+    region.center = center;
+    region.span = span;
+    [mapView setRegion:region animated:YES];
+    */
 
     //used to get the actual location
     self.mapView.delegate = self;
@@ -149,6 +146,7 @@
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
     /*Does not work with multiple pin icons, since it tries to replace them :'[
+    //Will have to give different identifiers for the different image styles zB 'pin'
     //Used for efficiency. If we have a lot of pins, reuse them.
     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     if(view == nil){
@@ -176,7 +174,11 @@
 }
 
 
-
+/*
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+*/
 
 
 - (void)didReceiveMemoryWarning
