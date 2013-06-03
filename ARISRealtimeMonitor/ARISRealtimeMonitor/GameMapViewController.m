@@ -148,12 +148,15 @@
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    
+    /*Does not work with multiple pin icons, since it tries to replace them :'[
     //Used for efficiency. If we have a lot of pins, reuse them.
     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     if(view == nil){
         view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     }
+    */
+    
+    AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
     //Add right/left images/buttons in AnnotationViews
     
