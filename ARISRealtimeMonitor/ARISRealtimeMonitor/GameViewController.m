@@ -85,8 +85,7 @@
     self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
     [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     [self.navigationItem setRightBarButtonItem:self.barButton];
-    
-    
+
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
 
