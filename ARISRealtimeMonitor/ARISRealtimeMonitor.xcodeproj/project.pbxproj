@@ -17,6 +17,12 @@
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
+		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
+		5BE41117175D135E00A09986 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41111175D135E00A09986 /* 145-persondot.png */; };
+		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
+		5BE41119175D135E00A09986 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41113175D135E00A09986 /* cactus.png */; };
+		5BE4111A175D135E00A09986 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41114175D135E00A09986 /* palmTree.png */; };
+		5BE4111B175D135E00A09986 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41115175D135E00A09986 /* sun.png */; };
 		71225CA4174E989B004E499F /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71225CA3174E989B004E499F /* ARISContainerViewController.m */; };
 		71242B9417554F38006CF0F3 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9217554F38006CF0F3 /* 74-location.png */; };
 		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
@@ -68,6 +74,12 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
+		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
+		5BE41113175D135E00A09986 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
+		5BE41114175D135E00A09986 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
+		5BE41115175D135E00A09986 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		71225CA2174E989B004E499F /* ARISContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISContainerViewController.h; sourceTree = "<group>"; };
 		71225CA3174E989B004E499F /* ARISContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISContainerViewController.m; sourceTree = "<group>"; };
 		71242B9217554F38006CF0F3 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
@@ -199,6 +211,7 @@
 				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
 				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
 				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
+				71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */,
 				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
 				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
 				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
@@ -213,6 +226,12 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5BE41110175D135E00A09986 /* 74-location.png */,
+				5BE41111175D135E00A09986 /* 145-persondot.png */,
+				5BE41112175D135E00A09986 /* 196-radiation.png */,
+				5BE41113175D135E00A09986 /* cactus.png */,
+				5BE41114175D135E00A09986 /* palmTree.png */,
+				5BE41115175D135E00A09986 /* sun.png */,
 				71242B9617555074006CF0F3 /* 196-radiation.png */,
 				71242B9217554F38006CF0F3 /* 74-location.png */,
 				71242B9317554F38006CF0F3 /* 145-persondot.png */,
@@ -268,6 +287,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				fr,
 			);
 			mainGroup = 719941BE174D3F9200B7E42D;
 			productRefGroup = 719941C8174D3F9200B7E42D /* Products */;
@@ -307,6 +328,12 @@
 				71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */,
 				71242B9717555074006CF0F3 /* 196-radiation.png in Resources */,
 				7147AD2E175D235000B7535F /* LostPasswordViewController.xib in Resources */,
+				5BE41116175D135E00A09986 /* 74-location.png in Resources */,
+				5BE41117175D135E00A09986 /* 145-persondot.png in Resources */,
+				5BE41118175D135E00A09986 /* 196-radiation.png in Resources */,
+				5BE41119175D135E00A09986 /* cactus.png in Resources */,
+				5BE4111A175D135E00A09986 /* palmTree.png in Resources */,
+				5BE4111B175D135E00A09986 /* sun.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +479,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARISRealtimeMonitor/ARISRealtimeMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ARISRealtimeMonitor/ARISRealtimeMonitor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/bump\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/pusher\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +496,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARISRealtimeMonitor/ARISRealtimeMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ARISRealtimeMonitor/ARISRealtimeMonitor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/bump\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/pusher\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

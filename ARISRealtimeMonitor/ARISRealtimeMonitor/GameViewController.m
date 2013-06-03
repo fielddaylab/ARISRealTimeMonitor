@@ -33,6 +33,7 @@
     UIViewController *toVC;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        
 
         // only used if want a border around the button.
         // [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
@@ -69,6 +70,7 @@
             [self.barButton setEnabled:YES];
         }];
     }
+    
 
 }
 
@@ -106,6 +108,10 @@
     
     
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    NSLog(@"didRotateFromInterfaceOrienation");
 }
 
 - (void)didReceiveMemoryWarning

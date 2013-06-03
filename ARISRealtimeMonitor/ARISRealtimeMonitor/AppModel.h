@@ -16,8 +16,8 @@
 
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 
-+ (AppModel*) instance;
+@property(nonatomic, strong) NSURL *serverURL;
 
-+ (id) allocWithZone:(NSZone *)zone;
++ (AppModel *)sharedAppModel;
 
 @end
