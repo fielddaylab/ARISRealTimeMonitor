@@ -95,13 +95,13 @@
     [self.navigationItem setRightBarButtonItem:self.barButton];
     */
     
+    
+    
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
-
+    
     [self addChildViewController:gameMapViewController];
+    
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-
-
-
     
     //[self.navigationItem setBackBarButtonItem//Can this be used instead?
     //[self.navigationItem setLeftBarButtonItem:@"Games"];
