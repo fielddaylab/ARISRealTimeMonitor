@@ -39,8 +39,11 @@
     [super viewDidLoad];
     
     //get the games list from the server
-    [[AppModel instance] setGamesList:[[AppServices instance] getGamesList]];
-    [[AppModel instance] setPlayersList:[[AppServices instance] getPlayersList]];
+    [[AppModel sharedAppModel] setGamesList:[[AppServices sharedAppServices] getGamesList]];
+    [[AppModel sharedAppModel] setPlayersList:[[AppServices sharedAppServices] getPlayersList]];
+    
+    //this will need to be moved
+    [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -71,7 +74,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0){
-        return [[[AppModel instance] gamesList] count];
+        return [[[AppModel sharedAppModel] gamesList] count];
     }
     else{
         return 1;
@@ -97,8 +100,8 @@
             cell = [nib objectAtIndex:0];
             
         }
-        cell.gameLabel.text = [[[AppModel instance] gamesList] objectAtIndex:indexPath.row];
-        cell.playersLabel.text = [[[AppServices instance] getPlayersList] objectAtIndex:indexPath.row];
+        cell.gameLabel.text = [[[AppModel sharedAppModel] gamesList] objectAtIndex:indexPath.row];
+        cell.playersLabel.text = [[[AppServices sharedAppServices] getPlayersList] objectAtIndex:indexPath.row];
         return cell;
     }
     else{
@@ -148,7 +151,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if([indexPath section] == 0){
-        NSString *game = [[[AppModel instance] gamesList] objectAtIndex:indexPath.row];
+        NSString *game = [[[AppModel sharedAppModel] gamesList] objectAtIndex:indexPath.row];
         //NSString *game = [[[AppServices instance] getGamesList] objectAtIndex:indexPath.row];
         
         
@@ -160,18 +163,18 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
         
         
-        if([[[AppModel instance] gameEvents] count] <= indexPath.row){
-            self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
-            [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
+        if([[[AppModel sharedAppModel] gameEvents] count] <= indexPath.row){
+            self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] count];
+            [[[AppModel sharedAppModel] gameEvents] addObject:[[AppServices sharedAppServices] getGameEventsForGame:indexPath.row]];
         }
         else{
-            NSMutableArray *eventsToInsert = [[[AppModel instance] gameEvents] objectAtIndex:indexPath.row];
-            if(![[[AppModel instance] gameEvents] containsObject:eventsToInsert]){
-                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];
-                [[[AppModel instance] gameEvents] addObject:[[AppServices instance] getGameEventsForGame:indexPath.row]];
+            NSMutableArray *eventsToInsert = [[[AppModel sharedAppModel] gameEvents] objectAtIndex:indexPath.row];
+            if(![[[AppModel sharedAppModel] gameEvents] containsObject:eventsToInsert]){
+                self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] count];
+                [[[AppModel sharedAppModel] gameEvents] addObject:[[AppServices sharedAppServices] getGameEventsForGame:indexPath.row]];
             }
             else{
-                self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] indexOfObject:eventsToInsert];
+                self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] indexOfObject:eventsToInsert];
             }
         }
 

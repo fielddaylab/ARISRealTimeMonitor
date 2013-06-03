@@ -177,11 +177,11 @@
 				5B99A57B174D4ED300950E08 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
-				71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */,
 				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
 				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
 				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
 				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
+				71CFF3C7174E6F0E008C0C14 /* GameViewController.xib */,
 				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
 				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
 				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
@@ -245,6 +245,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				fr,
 			);
 			mainGroup = 719941BE174D3F9200B7E42D;
 			productRefGroup = 719941C8174D3F9200B7E42D /* Products */;
@@ -422,6 +424,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARISRealtimeMonitor/ARISRealtimeMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ARISRealtimeMonitor/ARISRealtimeMonitor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/bump\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/pusher\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -433,6 +441,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARISRealtimeMonitor/ARISRealtimeMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ARISRealtimeMonitor/ARISRealtimeMonitor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/bump\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/ARISiOSClient/src/third_party/pusher\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

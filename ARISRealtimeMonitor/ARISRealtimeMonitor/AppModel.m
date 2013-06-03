@@ -12,19 +12,16 @@
 
 @synthesize gamesList, playersList, gameEvents;
 
-+ (AppModel*) instance {
-    static dispatch_once_t _singletonPredicate;
-    static AppModel *_singleton = nil;
-    
-    dispatch_once(&_singletonPredicate, ^{
-        _singleton = [[super allocWithZone:nil] init];
-    });
-    
-    return _singleton;
-}
+@synthesize serverURL;
 
-+ (id) allocWithZone:(NSZone *)zone {
-    return [self instance];
++ (id)sharedAppModel
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // or some other init method
+    });
+    return _sharedObject;
 }
 
 

@@ -102,6 +102,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    NSLog(@"didRotateFromInterfaceOrienation");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

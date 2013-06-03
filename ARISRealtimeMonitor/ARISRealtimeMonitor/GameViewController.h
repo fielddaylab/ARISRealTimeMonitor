@@ -14,7 +14,7 @@
 
 #import "GameTableViewController.h"
 
-@interface GameViewController : ARISContainerViewController //If ARISContainerVC is a UIVC, is still valid?
+@interface GameViewController : ARISContainerViewController
 
 @property (strong, nonatomic) NSString  *game;
 @property (nonatomic) NSInteger gameAccessNum;

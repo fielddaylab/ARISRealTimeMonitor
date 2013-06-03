@@ -11,19 +11,16 @@
 
 @implementation AppServices
 
-+ (AppServices*) instance {
-    static dispatch_once_t _singletonPredicate;
-    static AppServices *_singleton = nil;
-    
-    dispatch_once(&_singletonPredicate, ^{
-        _singleton = [[super allocWithZone:nil] init];
-    });
-    
-    return _singleton;
-}
+NSString *const kARISServerServicePackage = @"v1";
 
-+ (id) allocWithZone:(NSZone *)zone {
-    return [self instance];
++ (AppServices*) sharedAppServices {
+    
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // or some other init method
+    });
+    return _sharedObject;
 }
 
 - (NSArray *) getGamesList{

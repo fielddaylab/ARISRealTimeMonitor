@@ -10,9 +10,7 @@
 
 @interface AppServices : NSObject
 
-+ (AppServices*) instance;
-
-+ (id) allocWithZone:(NSZone *)zone;
++ (AppServices *) sharedAppServices;
 
 //this is a placeholder for retrieving the games list from the server
 - (NSArray *) getGamesList;

@@ -10,7 +10,6 @@
 #import "LostPasswordViewController.h"
 #import "ARISRealtimeMonitorMasterViewController.h"
 #import "LoginTableCell.h"
-#import "AppModel.h"
 #import "AppServices.h"
 
 @interface LoginViewController ()
@@ -32,6 +31,9 @@
 
 -(void)userTappedOnLostPassword:(UIGestureRecognizer*)gestureRecognizer
 {
+    
+    [lostPassword setTextColor:[UIColor redColor]];
+    
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
     
     [self.navigationController pushViewController:lostPasswordView animated:YES];
@@ -160,18 +162,23 @@
         
         NSString *username = [[loginUsernameCell textField] text];
         NSString *password = [[loginPasswordCell textField] text];
+
+        
         
         ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
         [cell.textLabel resignFirstResponder];
         
-        //this will need to be moved
-        [[AppModel instance] setGameEvents:[[NSMutableArray alloc]init]];
+
         
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }
+
+
+
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
