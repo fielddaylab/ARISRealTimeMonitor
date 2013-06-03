@@ -168,7 +168,12 @@
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    
+    //find the orientation of the screen
+//    NSLog(@)
+//    CGSize size = [UIScreen mainScreen].bounds.size;
+//    if(!UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)){
+//        size = CGSizeMake(size.height, size.width);
+//    }
 }
 
 
