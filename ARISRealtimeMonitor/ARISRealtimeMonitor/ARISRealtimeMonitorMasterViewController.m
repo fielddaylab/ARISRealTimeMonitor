@@ -158,7 +158,7 @@
         
         //Set the 'GAMES' back button for Map/TableViews here.
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
-        
+
         
         if([[[AppModel instance] gameEvents] count] <= indexPath.row){
             self.gameViewController.gameAccessNum = [[[AppModel instance] gameEvents] count];

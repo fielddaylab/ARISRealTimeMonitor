@@ -53,12 +53,6 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,6 +94,7 @@
         else{
             cell.textField.placeholder = @"Password";
             cell.textField.secureTextEntry = YES;
+            [cell.textField setReturnKeyType:UIReturnKeyGo];
         }
         
         return cell;

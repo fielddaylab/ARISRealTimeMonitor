@@ -34,13 +34,19 @@
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
 
-        [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+        // only used if want a border around the button.
+        // [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
+        
+        [self.button setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     else{
         toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
         
-        [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
+        // only used if want a border around the button.
+        //[self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
+        
+        [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
         [self.navigationItem setRightBarButtonItem:self.barButton];
     }
     
@@ -74,17 +80,18 @@
     
     self.title = self.game;
     
+    //If no border around table/map buttons
+    self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
+    [self.button addTarget:self action:@selector(flipView) forControlEvents:UIControlEventTouchUpInside];
+    self.barButton = [[UIBarButtonItem alloc] initWithCustomView:self.button];
+    self.navigationItem.rightBarButtonItem = self.barButton;
     
-    //Attempts at only having an image, not overlayed on a button.
-    //UIImage * mapImage = [[UIImage alloc]initWithContentsOfFile:@"73-radar.png"];    
-    //- (id)initWithImage:(UIImage *)image style:UIBarButtonItemStylePlain target:self action:@selector(flipView)
-    //UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithImage:mapImage style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
-    
-    //This button will have to change depending on user action. Keep World there for now to test button styles.
+    /*//If border around table/map buttons
     self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
     [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     [self.navigationItem setRightBarButtonItem:self.barButton];
-
+    */
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
 
