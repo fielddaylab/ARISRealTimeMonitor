@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    
+    self.table.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     // Do any additional setup after loading the view from its nib.
 }
 
