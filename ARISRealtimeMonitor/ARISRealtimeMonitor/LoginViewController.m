@@ -157,15 +157,15 @@
 //    }
 //}
 
-        //[self attemptLoginWithUsername:username andPassword:password];
-        
-        //ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
-        SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
-        UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-        [cell.textLabel resignFirstResponder];
-        [self presentViewController:navigationController animated:YES completion:nil];
-    }
+
+- (void)loginSucceed{
+    //ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
+    SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
+    
+    NSLog(@"GOGOGOGO");
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
     
 - (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
