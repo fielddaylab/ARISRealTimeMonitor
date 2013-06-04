@@ -20,4 +20,6 @@
 
 + (AppModel *)sharedAppModel;
 
+- (void) loadUserDefaults;
+
 @end

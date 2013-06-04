@@ -53,6 +53,7 @@
         [self transitionFromViewController:fromVC toViewController:toVC2 duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC2 didMoveToParentViewController:self];
+            
             [self.barButton setEnabled:YES];
         }];
     }
@@ -60,14 +61,49 @@
         [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
             [fromVC removeFromParentViewController];
             [toVC didMoveToParentViewController:self];
+            
             //reactivate button
             [self.barButton setEnabled:YES];
         }];
     }
-    
 
 }
 
+-(IBAction)flipViewTrans{
+    
+    UIViewController *fromVC = [self currentChildViewController];
+    UIViewController *toVC = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+    
+    
+    CGRect rect = toVC.view.bounds;
+    
+//    if(UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)){
+//        rect = [UIScreen mainScreen].applicationFrame;
+//    }
+//    else{
+//        rect.origin.y += 215;
+//    }
+//
+    toVC.view.frame = rect;
+
+    [self addChildViewController:toVC];
+    [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
+        //hide old view
+        [fromVC willMoveToParentViewController:nil];
+        [fromVC.view removeFromSuperview];
+        [fromVC removeFromParentViewController];
+        
+        //show new view
+        [self.view addSubview:toVC.view];
+        [toVC didMoveToParentViewController:self];
+        
+        currentChildViewController = toVC;
+    }];
+    
+
+    //NSLog(@"Origin X: %f Origin Y: %f Width: %f Height: %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    
+}
 
 
 - (void)viewDidLoad
@@ -83,7 +119,7 @@
     //UIBarButtonItem *switchButton = [[UIBarButtonItem alloc] initWithImage:mapImage style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
     
     //This button will have to change depending on user action. Keep World there for now to test button styles.
-    self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
+    self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipViewTrans)];
     [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     [self.navigationItem setRightBarButtonItem:self.barButton];
 
@@ -91,17 +127,10 @@
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
 
     [self addChildViewController:gameMapViewController];
+    //this displays the incorrect frame
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-
-
-
-    
-    //[self.navigationItem setBackBarButtonItem//Can this be used instead?
-    //[self.navigationItem setLeftBarButtonItem:@"Games"];
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
+
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     NSLog(@"didRotateFromInterfaceOrienation");

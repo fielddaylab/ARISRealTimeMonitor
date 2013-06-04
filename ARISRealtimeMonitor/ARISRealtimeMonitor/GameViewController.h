@@ -16,6 +16,7 @@
 
 @interface GameViewController : ARISContainerViewController
 
+
 @property (strong, nonatomic) NSString  *game;
 @property (nonatomic) NSInteger gameAccessNum;
 @property (strong, nonatomic) UIBarButtonItem* barButton;

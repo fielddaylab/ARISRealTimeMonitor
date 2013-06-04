@@ -118,37 +118,7 @@
     }
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return NO;
-}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //    if (editingStyle == UITableViewCellEditingStyleDelete) {
-    //        [_objects removeObjectAtIndex:indexPath.row];
-    //        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-    //        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    //    }
-}
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -163,7 +133,7 @@
         NSString *username = [[loginUsernameCell textField] text];
         NSString *password = [[loginPasswordCell textField] text];
 
-        
+        //[self attemptLoginWithUsername:username andPassword:password];
         
         ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
@@ -176,8 +146,26 @@
     }
 }
 
+- (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
+    [[AppServices sharedAppServices] loginUserName:username password:password userInfo:nil];
+}
 
-
+- (void) loginResponseReady:(NSNotification *)n
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginResponseReady" object:nil];
+    NSLog(@"Login Response YES");
+//    ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
+//    if(!r.data || r.data == [NSNull null])
+//        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
+//    else
+//    {
+//        Player *p = [[Player alloc] initWithDictionary:(NSMutableDictionary *)r.data];
+//        if(location) p.location = location;
+//        [delegate loginCredentialsApprovedForPlayer:p toGame:gameId newPlayer:newPlayer disableLeaveGame:disableLeaveGame];
+//    }
+}
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
