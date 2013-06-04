@@ -13,7 +13,10 @@
 #import "AppServices.h"
 #import "SelectGameViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController (){
+    UITextField *usernameField;
+    UITextField *passwordField;
+}
 
 @end
 
@@ -45,6 +48,14 @@
     [super viewDidLoad];
     
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:dismissKB];
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    
     NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
     lostPassword.attributedText = [[NSAttributedString alloc] initWithString:@"Lost Password" attributes:underlineAttribute];
     
@@ -56,10 +67,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+
+
+
+
+
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     return 2;
 }
 
@@ -82,7 +100,8 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    tableView.scrollEnabled = NO;
+
     if([indexPath section] == 0){
         static NSString *CellIdentifier = @"TextFieldCell";
         LoginTableCell *cell = (LoginTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -92,12 +111,14 @@
         }
         
         if(indexPath.row == 0){
+            usernameField = cell.textField;
             cell.textField.placeholder = @"Username";
         }
         else{
+            passwordField = cell.textField;
             cell.textField.placeholder = @"Password";
             cell.textField.secureTextEntry = YES;
-            [cell.textField setReturnKeyType:UIReturnKeyGo];
+            [cell.textField setReturnKeyType:UIReturnKeyDone];
         }
         
         return cell;
@@ -116,18 +137,25 @@
 
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if([indexPath section] != 0){
-        
-        //grab the username and password from the textfields, verify that they are correct
-        
-        LoginTableCell *loginUsernameCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        LoginTableCell *loginPasswordCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-        
-        NSString *username = [[loginUsernameCell textField] text];
-        NSString *password = [[loginPasswordCell textField] text];
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //This means it'll be the login button
+//    if([indexPath section] != 0){
+//        
+//        //grab the username and password from the textfields, verify that they are correct
+//        
+//        LoginTableCell *loginUsernameCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//        LoginTableCell *loginPasswordCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+//        
+//        NSString *username = [[loginUsernameCell textField] text];
+//        NSString *password = [[loginPasswordCell textField] text];
+//        
+//        //[self attemptLoginWithUsername:username andPassword:password];
+//        //comparison check between entered info and server check or whatever
+//        
+//        [self loginSucceed];
+//    }
+//}
 
         //[self attemptLoginWithUsername:username andPassword:password];
         
@@ -139,11 +167,20 @@
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }
-
+    
 - (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
 {
+
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
-    [[AppServices sharedAppServices] loginUserName:username password:password userInfo:nil];
+    [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
+        
+    //Throw up a message if incorrect.
+    //Else, login succeed
+    //Have for now, it go to loginSucceed.
+    [self loginSucceed];
+
 }
 
 - (void) loginResponseReady:(NSNotification *)n
@@ -162,8 +199,26 @@
 }
 
 
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
+    
+    //[textField resignFirstResponder];
+    
+    
+    NSLog([usernameField text]);
+    NSLog([passwordField text]);
+    
+    //copied and hacked from ARIS
+    if(textField == usernameField) { [passwordField becomeFirstResponder]; }
+    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]]; }
+
     return YES;
+
 }
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
+}
+- (IBAction)gotogamesel:(id)sender {
+    [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];}
 @end
