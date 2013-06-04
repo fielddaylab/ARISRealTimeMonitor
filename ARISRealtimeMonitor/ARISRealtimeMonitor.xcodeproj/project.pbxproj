@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B35AC07175E5B8400B0D9D2 /* LostPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */; };
+		5B35AC0C175E636800B0D9D2 /* SelectGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */; };
+		5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */; };
 		5B45209E174FC4EE0038599C /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209D174FC4EE0038599C /* 73-radar.png */; };
 		5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209F174FC4FF0038599C /* 179-notepad.png */; };
 		5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */; };
@@ -61,6 +63,9 @@
 
 /* Begin PBXFileReference section */
 		5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostPasswordViewController.xib; sourceTree = "<group>"; };
+		5B35AC09175E636800B0D9D2 /* SelectGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectGameViewController.h; sourceTree = "<group>"; };
+		5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectGameViewController.m; sourceTree = "<group>"; };
+		5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectGameViewController.xib; sourceTree = "<group>"; };
 		5B45209D174FC4EE0038599C /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
 		5B45209F174FC4FF0038599C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
@@ -194,12 +199,15 @@
 				5B99A580174D501600950E08 /* LoginViewController.h */,
 				5B99A581174D501600950E08 /* LoginViewController.m */,
 				5B99A582174D501600950E08 /* LoginViewController.xib */,
+				5B35AC09175E636800B0D9D2 /* SelectGameViewController.h */,
+				5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */,
+				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
 				719941E2174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.h */,
 				719941E3174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.m */,
+				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
 				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
 				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
 				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
-				719941E8174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPhone.xib */,
 				719941EB174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController_iPad.xib */,
 				719941E5174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.h */,
 				719941E6174D3F9200B7E42D /* ARISRealtimeMonitorDetailViewController.m */,
@@ -343,6 +351,7 @@
 				5BE4111A175D135E00A09986 /* palmTree.png in Resources */,
 				5BE4111B175D135E00A09986 /* sun.png in Resources */,
 				5B35AC07175E5B8400B0D9D2 /* LostPasswordViewController.xib in Resources */,
+				5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +379,7 @@
 				719F9B04175506D7004C6DF4 /* AnnotationViews.m in Sources */,
 				71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */,
 				5BE4111F175D30C600A09986 /* JSONConnection.m in Sources */,
+				5B35AC0C175E636800B0D9D2 /* SelectGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

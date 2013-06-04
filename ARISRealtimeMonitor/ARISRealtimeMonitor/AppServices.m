@@ -25,6 +25,7 @@ NSString *const kARISServerServicePackage = @"v1";
 }
 
 - (NSArray *) getGamesList{
+    //return [[NSArray alloc] initWithObjects:@"Game 1", @"Game 2", @"Game 3", @"Game 4", @"Game 5", @"Game 6", @"Game 7", @"Game 8", @"Game 9", @"Game 10", @"Game 11", nil];
     return [[NSArray alloc] initWithObjects:@"Game 1", @"Game 2", @"Game 3", nil];
 }
 

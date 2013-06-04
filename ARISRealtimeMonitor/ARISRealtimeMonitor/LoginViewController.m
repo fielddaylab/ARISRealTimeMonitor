@@ -11,6 +11,7 @@
 #import "ARISRealtimeMonitorMasterViewController.h"
 #import "LoginTableCell.h"
 #import "AppServices.h"
+#import "SelectGameViewController.h"
 
 @interface LoginViewController ()
 
@@ -130,13 +131,11 @@
 
         //[self attemptLoginWithUsername:username andPassword:password];
         
-        ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        //ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
+        SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
         UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
         [cell.textLabel resignFirstResponder];
-        
-
-        
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }

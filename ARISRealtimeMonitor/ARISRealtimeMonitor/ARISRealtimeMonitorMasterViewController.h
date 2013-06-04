@@ -14,8 +14,6 @@
 
 @interface ARISRealtimeMonitorMasterViewController : UITableViewController
 
-//@property (strong, nonatomic) ARISRealtimeMonitorDetailViewController *detailViewController;
-
 @property (nonatomic, strong) GameViewController *gameViewController;
 
 @end
