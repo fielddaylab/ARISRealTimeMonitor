@@ -29,6 +29,7 @@
 		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
 		71242B9717555074006CF0F3 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9617555074006CF0F3 /* 196-radiation.png */; };
 		71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71242BFF17555678006CF0F3 /* LostPasswordViewController.m */; };
+		7147AD2E175D235000B7535F /* LostPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7147AD2D175D235000B7535F /* LostPasswordViewController.xib */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
 		719941CF174D3F9200B7E42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CE174D3F9200B7E42D /* CoreGraphics.framework */; };
@@ -67,7 +68,6 @@
 		5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableCell.h; sourceTree = "<group>"; };
 		5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableCell.m; sourceTree = "<group>"; };
-		5B757EE317552A1B00CFC49A /* LostPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostPasswordViewController.xib; sourceTree = "<group>"; };
 		5B99A57A174D4ED300950E08 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		5B99A57B174D4ED300950E08 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		5B99A57D174D4F1000950E08 /* AppServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServices.h; sourceTree = "<group>"; };
@@ -92,6 +92,7 @@
 		71242B9617555074006CF0F3 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
 		71242BFE17555678006CF0F3 /* LostPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPasswordViewController.h; sourceTree = "<group>"; };
 		71242BFF17555678006CF0F3 /* LostPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPasswordViewController.m; sourceTree = "<group>"; };
+		7147AD2D175D235000B7535F /* LostPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostPasswordViewController.xib; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,7 +193,6 @@
 				5B99A580174D501600950E08 /* LoginViewController.h */,
 				5B99A581174D501600950E08 /* LoginViewController.m */,
 				5B99A582174D501600950E08 /* LoginViewController.xib */,
-				5B757EE317552A1B00CFC49A /* LostPasswordViewController.xib */,
 				719941E2174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.h */,
 				719941E3174D3F9200B7E42D /* ARISRealtimeMonitorMasterViewController.m */,
 				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
@@ -335,6 +335,7 @@
 				71242B9417554F38006CF0F3 /* 74-location.png in Resources */,
 				71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */,
 				71242B9717555074006CF0F3 /* 196-radiation.png in Resources */,
+				7147AD2E175D235000B7535F /* LostPasswordViewController.xib in Resources */,
 				5BE41116175D135E00A09986 /* 74-location.png in Resources */,
 				5BE41117175D135E00A09986 /* 145-persondot.png in Resources */,
 				5BE41118175D135E00A09986 /* 196-radiation.png in Resources */,

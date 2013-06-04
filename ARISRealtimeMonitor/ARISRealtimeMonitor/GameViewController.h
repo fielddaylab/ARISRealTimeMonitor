@@ -19,7 +19,9 @@
 
 @property (strong, nonatomic) NSString  *game;
 @property (nonatomic) NSInteger gameAccessNum;
-@property (strong, nonatomic) UIBarButtonItem* barButton;
+
+@property (strong, nonatomic) UIButton *button;
+@property (strong, nonatomic) UIBarButtonItem *barButton;
 
 
 @end

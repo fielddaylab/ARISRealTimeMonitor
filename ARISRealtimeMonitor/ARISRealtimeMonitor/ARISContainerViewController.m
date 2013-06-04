@@ -49,7 +49,7 @@
     if(currentChildViewController) [self hideContentController:currentChildViewController];
     
     [self addChildViewController:content];
-    content.view.frame = [self screenRect];
+    content.view.frame = CGRectMake(0, 88, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88);//[self screenRect];
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
     

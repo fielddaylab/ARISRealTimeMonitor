@@ -168,7 +168,7 @@
     NSLog(@"didUpdateUserLocation was called");
 
     CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
     [self.mapView setRegion:region animated:YES];
      
 }
