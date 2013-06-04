@@ -44,6 +44,14 @@
     [super viewDidLoad];
     
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    //[self.view addGestureRecognizer:dismissKB];
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    
     NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
     lostPassword.attributedText = [[NSAttributedString alloc] initWithString:@"Lost Password" attributes:underlineAttribute];
     
@@ -55,10 +63,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+
+
+
+
+
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     return 2;
 }
 
@@ -81,7 +96,8 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    tableView.scrollEnabled = NO;
+
     if([indexPath section] == 0){
         static NSString *CellIdentifier = @"TextFieldCell";
         LoginTableCell *cell = (LoginTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -96,7 +112,7 @@
         else{
             cell.textField.placeholder = @"Password";
             cell.textField.secureTextEntry = YES;
-            [cell.textField setReturnKeyType:UIReturnKeyGo];
+            [cell.textField setReturnKeyType:UIReturnKeyDone];
         }
         
         return cell;
@@ -147,7 +163,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    //This means it'll be the login button
     if([indexPath section] != 0){
         
         //grab the username and password from the textfields, verify that they are correct
@@ -158,17 +174,22 @@
         NSString *username = [[loginUsernameCell textField] text];
         NSString *password = [[loginPasswordCell textField] text];
 
+        //comparison check between entered info and server check or whatever
         
+        [self loginSucceed];
         
-        ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-        [cell.textLabel resignFirstResponder];
-        
-
-        
-        [self presentViewController:navigationController animated:YES completion:nil];
     }
+}
+
+- (void)loginSucceed{
+    ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    // UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    //[cell.textLabel resignFirstResponder];
+    
+    NSLog(@"GOGOGOGO");
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 
@@ -178,5 +199,8 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 @end
