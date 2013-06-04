@@ -13,6 +13,10 @@
     UIViewController *currentChildViewController;
 }
 
+@property (strong, nonatomic) UIViewController* currentChildViewController;
+
 - (void) displayContentController:(UIViewController*)content;
+
+- (void) cycleFromViewController:(UIViewController*)oldC toViewController:(UIViewController*)newC;
 
 @end

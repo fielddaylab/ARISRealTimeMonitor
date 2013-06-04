@@ -10,6 +10,8 @@
 
 @implementation ARISContainerViewController
 
+@synthesize currentChildViewController;
+
 - (id)init
 {
     if(self = [super init])

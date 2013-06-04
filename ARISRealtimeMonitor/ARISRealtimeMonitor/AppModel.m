@@ -24,5 +24,21 @@
     return _sharedObject;
 }
 
+#pragma mark User Defaults
+
+-(void)loadUserDefaults
+{
+	NSLog(@"Model: Loading User Defaults");
+    
+    NSURL *currServ = [NSURL URLWithString:@""];
+    
+    if([[currServ absoluteString] isEqual:@""])
+    {
+        NSString *updatedURL = @"http://arisgames.org/server";
+        currServ = [NSURL URLWithString:updatedURL];
+    }
+    self.serverURL = currServ;
+}
+
 
 @end

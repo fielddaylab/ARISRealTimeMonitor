@@ -10,6 +10,8 @@
 
 @interface AppServices : NSObject
 
+extern NSString *const kARISServerServicePackage;
+
 + (AppServices *) sharedAppServices;
 
 //this is a placeholder for retrieving the games list from the server
@@ -18,5 +20,7 @@
 - (NSArray *) getPlayersList;
 //this is a placeholder for retrieving the events list from the server
 - (NSMutableArray *) getGameEventsForGame:(NSInteger)game;
+
+- (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict;
 
 @end

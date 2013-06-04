@@ -24,56 +24,46 @@
     return self;
 }
 
+
 -(IBAction)flipView{
-    NSLog(@"Switch Activated");
-    //deactivate button to prevent multiple views being created.
+    
+    //figure out which view to flip to
     [self.barButton setEnabled:NO];
-    
-    UIViewController *fromVC = [[self childViewControllers]objectAtIndex:0];
+    UIViewController *fromVC = [self currentChildViewController];
     UIViewController *toVC;
+    NSUInteger animation;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
-        toVC = (UIViewController *)[[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
-        
-
-        // only used if want a border around the button.
-        // [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
-        
-        [self.button setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
-        [self.navigationItem setRightBarButtonItem:self.barButton];
+        toVC = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        animation = UIViewAnimationOptionTransitionFlipFromRight;
+        [self.barButton setImage:[UIImage imageNamed:@"73-radar.png"]];
     }
     else{
-        toVC = (UIViewController *)[[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
-        
-        // only used if want a border around the button.
-        //[self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
-        
-        [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
-        [self.navigationItem setRightBarButtonItem:self.barButton];
+        toVC = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        animation = UIViewAnimationOptionTransitionFlipFromLeft;
+        [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     }
     
-    
+    CGRect rect = fromVC.view.bounds;
+    toVC.view.frame = rect;
+
+    //transition between views
     [self addChildViewController:toVC];
-    if([fromVC isKindOfClass:[GameMapViewController class]]){
-        GameTableViewController *toVC2 = (GameTableViewController *)toVC;
-        toVC2.gameAccessNum = self.gameAccessNum;
-        [self transitionFromViewController:fromVC toViewController:toVC2 duration: .5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{} completion:^(BOOL finished){
-            [fromVC removeFromParentViewController];
-            [toVC2 didMoveToParentViewController:self];
-            [self.barButton setEnabled:YES];
-        }];
-    }
-    else{
-        [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{} completion:^(BOOL finished){
-            [fromVC removeFromParentViewController];
-            [toVC didMoveToParentViewController:self];
-            //reactivate button
-            [self.barButton setEnabled:YES];
-        }];
-    }
+    [self transitionFromViewController:fromVC toViewController:toVC duration: .5 options:animation animations:^{} completion:^(BOOL finished){
+        //hide old view
+        [fromVC willMoveToParentViewController:nil];
+        [fromVC.view removeFromSuperview];
+        [fromVC removeFromParentViewController];
+        
+        //show new view
+        [self.view addSubview:toVC.view];
+        [toVC didMoveToParentViewController:self];
+        
+        currentChildViewController = toVC;
+        [self.barButton setEnabled:YES];
+    }];
     
-
+    
 }
-
 
 
 - (void)viewDidLoad
@@ -82,36 +72,16 @@
     
     self.title = self.game;
     
-    //If no border around table/map buttons
-    self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-    [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(flipView) forControlEvents:UIControlEventTouchUpInside];
-    self.barButton = [[UIBarButtonItem alloc] initWithCustomView:self.button];
-    self.navigationItem.rightBarButtonItem = self.barButton;
-    
-    /*//If border around table/map buttons
+    //setup bar button
     self.barButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(flipView)];
     [self.barButton setImage:[UIImage imageNamed:@"179-notepad.png"]];
     [self.navigationItem setRightBarButtonItem:self.barButton];
-    */
-    
-    
+
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
-    
-    [self addChildViewController:gameMapViewController];
-    
-    [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
-    
-    //[self.navigationItem setBackBarButtonItem//Can this be used instead?
-    //[self.navigationItem setLeftBarButtonItem:@"Games"];
-    
-    
-    // Do any additional setup after loading the view from its nib.
-}
 
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-    NSLog(@"didRotateFromInterfaceOrienation");
+    [self addChildViewController:gameMapViewController];
+    [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
 }
 
 - (void)didReceiveMemoryWarning
