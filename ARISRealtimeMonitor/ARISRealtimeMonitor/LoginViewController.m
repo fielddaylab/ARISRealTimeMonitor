@@ -144,10 +144,10 @@
         NSString *username = [[loginUsernameCell textField] text];
         NSString *password = [[loginPasswordCell textField] text];
 
+        //[self attemptLoginWithUsername:username andPassword:password];
         //comparison check between entered info and server check or whatever
         
         [self loginSucceed];
-        
     }
 }
 
@@ -161,7 +161,12 @@
     
     [self presentViewController:navigationController animated:YES completion:nil];
 }
-
+    
+- (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
+    [[AppServices sharedAppServices] loginUserName:username password:password userInfo:nil];
+}
 
 - (void) loginResponseReady:(NSNotification *)n
 {
@@ -179,11 +184,16 @@
 }
 
 
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
+}
+- (IBAction)gotogamesel:(id)sender {
+    [self loginSucceed];
 }
 @end
