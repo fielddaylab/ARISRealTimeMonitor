@@ -168,7 +168,7 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
     
-- (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+- (void) attemptLogin
 {
 
     
@@ -211,7 +211,7 @@
     
     //copied and hacked from ARIS
     if(textField == usernameField) { [passwordField becomeFirstResponder]; }
-    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]]; }
+    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
 
     return YES;
 
@@ -220,5 +220,5 @@
     [self.view endEditing:YES];
 }
 - (IBAction)gotogamesel:(id)sender {
-    [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];}
+    [self attemptLogin];}
 @end

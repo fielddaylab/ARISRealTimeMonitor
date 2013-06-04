@@ -44,6 +44,8 @@
 
 // Container VC Functions pulled from Apple Docs 5/6/13
 // http://developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/CreatingCustomContainerViewControllers/CreatingCustomContainerViewControllers.html
+
+//stolen and will need to be made more general again
 - (void) displayContentController:(UIViewController*)content
 {
     if(currentChildViewController) [self hideContentController:currentChildViewController];

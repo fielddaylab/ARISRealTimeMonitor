@@ -63,6 +63,29 @@ NSString *const kARISServerServicePackage = @"v1";
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
 }
 
+-(void)resetAndEmailNewPassword:(NSString *)email
+{
+    NSArray *arguments = [NSArray arrayWithObjects:
+                          email,
+						  nil];
+	JSONConnection *jsonConnection = [[JSONConnection alloc]
+                                      initWithServer:[AppModel sharedAppModel].serverURL
+                                      andServiceName:@"players"
+                                      andMethodName:@"resetAndEmailNewPassword"
+                                      andArguments:arguments
+                                      andUserInfo:nil];
+	[jsonConnection performAsynchronousRequestWithHandler:
+     @selector(parseResetAndEmailNewPassword:)];
+}
+
+//-(void)parseResetAndEmailNewPassword:(ServiceResult *)jsonResult
+//{
+//    if(jsonResult == nil)
+//        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"ForgotPasswordTitleKey", nil) message:NSLocalizedString(@"ForgotPasswordMessageKey", nil)];
+//    else
+//        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"ForgotEmailSentTitleKey", @"") message:NSLocalizedString(@"ForgotMessageKey", @"")];
+//}
+
 
 //NOT BEING CALLED
 -(void)parseLoginResponseFromJSON:(ServiceResult *)result

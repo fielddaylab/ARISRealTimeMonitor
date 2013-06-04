@@ -21,6 +21,11 @@ extern NSString *const kARISServerServicePackage;
 //this is a placeholder for retrieving the events list from the server
 - (NSMutableArray *) getGameEventsForGame:(NSInteger)game;
 
+
+- (void)resetAndEmailNewPassword:(NSString *)email;
+
+
+
 - (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict;
 
 @end
