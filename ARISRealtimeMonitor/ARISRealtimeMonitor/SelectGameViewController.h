@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GameViewController.h"
 
+#import "LoginViewController.h"
+
 @interface SelectGameViewController : UIViewController
 
 @property (nonatomic, strong) GameViewController *gameViewController;
+@property (nonatomic, strong) LoginViewController *loginViewController;
 
 @end

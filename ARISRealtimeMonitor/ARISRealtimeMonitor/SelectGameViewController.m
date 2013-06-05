@@ -17,7 +17,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController;//, toolbar;
+@synthesize gameViewController, loginViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,8 +47,11 @@
 }
 
 - (void)logoutAction
-{
-    exit(0);
+{ 
+    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [self presentViewController:self.loginViewController animated:YES completion:nil];
+
+    //exit(0);
 }
 
 - (void)didReceiveMemoryWarning
