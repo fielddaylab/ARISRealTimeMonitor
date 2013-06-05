@@ -11,6 +11,8 @@
 #import "LoginTableCell.h"
 #import "AppServices.h"
 #import "SelectGameViewController.h"
+#import "ServiceResult.h"
+#import "ARISAlertHandler.h"
 
 @interface LoginViewController (){
     UITextField *usernameField;
@@ -142,16 +144,18 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginResponseReady" object:nil];
     NSLog(@"Login Response YES");
-    [self loginSucceed];
-//    ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
-//    if(!r.data || r.data == [NSNull null])
-//        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
-//    else
-//    {
+    
+    ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
+    if(!r.data || r.data == [NSNull null])
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
+    else
+    {
+        [self loginSucceed];
 //        Player *p = [[Player alloc] initWithDictionary:(NSMutableDictionary *)r.data];
 //        if(location) p.location = location;
 //        [delegate loginCredentialsApprovedForPlayer:p toGame:gameId newPlayer:newPlayer disableLeaveGame:disableLeaveGame];
-//    }
+    }
+    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
