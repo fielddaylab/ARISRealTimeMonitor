@@ -10,9 +10,7 @@
 #import "GameViewController.h"
 
 @interface SelectGameViewController : UIViewController
-- (IBAction)logoutAction:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, strong) GameViewController *gameViewController;
 
 @end

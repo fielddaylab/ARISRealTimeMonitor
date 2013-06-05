@@ -17,7 +17,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController, toolbar;
+@synthesize gameViewController;//, toolbar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,23 +34,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
+    
     [[AppModel sharedAppModel] setGamesList:[[AppServices sharedAppServices] getGamesList]];
     [[AppModel sharedAppModel] setPlayersList:[[AppServices sharedAppServices] getPlayersList]];
     
     //this will need to be moved
     [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
     
-    toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+   // toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+}
+
+- (void)logoutAction
+{
+    exit(0);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)logoutAction:(id)sender {
-    exit(0);
 }
 
 #pragma mark - Table View
@@ -117,9 +121,6 @@
             self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] indexOfObject:eventsToInsert];
         }
     }
-    
-    
-    
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     

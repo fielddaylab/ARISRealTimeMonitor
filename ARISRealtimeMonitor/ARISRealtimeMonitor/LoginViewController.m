@@ -117,26 +117,22 @@
 
 - (void)loginSucceed
 {
+      
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
     
     NSLog(@"GOGOGOGO");
     
     [self presentViewController:navigationController animated:YES completion:nil];
+  
 }
-    
+
 - (void) attemptLogin
 {
-
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
     [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
-    
-    //Throw up a message if incorrect.
-    //Else, login succeed
-    //Have for now, it go to loginSucceed.
-    
 
 }
 
