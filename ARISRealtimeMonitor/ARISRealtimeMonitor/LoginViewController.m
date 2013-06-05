@@ -167,7 +167,7 @@
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
 }
-- (IBAction)gotogamesel:(id)sender {
+- (IBAction)goToGameSelect:(id)sender {
     //[self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];
     [self loginSucceed];
 }

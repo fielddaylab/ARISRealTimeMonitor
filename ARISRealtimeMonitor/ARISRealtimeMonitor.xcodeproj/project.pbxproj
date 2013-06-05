@@ -75,6 +75,12 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5BC15733175F993F003B5819 /* JSONConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
+		5BC15734175F993F003B5819 /* JSONConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
+		5BC15735175F993F003B5819 /* ServiceResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
+		5BC15736175F993F003B5819 /* ServiceResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceResult.m; sourceTree = "<group>"; };
+		5BC15737175F993F003B5819 /* ARISAlertHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARISAlertHandler.h; sourceTree = "<group>"; };
+		5BC15738175F993F003B5819 /* ARISAlertHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARISAlertHandler.m; sourceTree = "<group>"; };
 		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -165,6 +171,12 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				5BC15733175F993F003B5819 /* JSONConnection.h */,
+				5BC15734175F993F003B5819 /* JSONConnection.m */,
+				5BC15735175F993F003B5819 /* ServiceResult.h */,
+				5BC15736175F993F003B5819 /* ServiceResult.m */,
+				5BC15737175F993F003B5819 /* ARISAlertHandler.h */,
+				5BC15738175F993F003B5819 /* ARISAlertHandler.m */,
 				71242BFE17555678006CF0F3 /* LostPasswordViewController.h */,
 				71242BFF17555678006CF0F3 /* LostPasswordViewController.m */,
 				5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */,

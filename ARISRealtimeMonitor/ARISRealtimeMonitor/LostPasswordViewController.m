@@ -44,7 +44,7 @@
     NSLog([textField text]);
     
     [textField resignFirstResponder];
-    [[AppServices sharedAppServices] resetAndEmailNewPassword:textField.text];
+    //[[AppServices sharedAppServices] resetAndEmailNewPassword:textField.text];
     return YES;
     
 }
