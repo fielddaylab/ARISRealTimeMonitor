@@ -113,7 +113,8 @@
 //}
 
 
-- (void)loginSucceed{
+- (void)loginSucceed
+{
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
     
