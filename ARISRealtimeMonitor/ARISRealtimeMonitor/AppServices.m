@@ -9,6 +9,7 @@
 #import "AppServices.h"
 #import "AppModel.h"
 #import "JSONConnection.h"
+#import "ARISAlertHandler.h"
 
 @implementation AppServices
 
@@ -64,7 +65,6 @@ NSString *const kARISServerServicePackage = @"v1";
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
 }
 
-//NOT BEING CALLED
 -(void)parseLoginResponseFromJSON:(ServiceResult *)result
 {
     NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] initWithCapacity:2];
@@ -73,21 +73,29 @@ NSString *const kARISServerServicePackage = @"v1";
 	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LoginResponseReady" object:nil userInfo:responseDict]];
 }
 
-//
-//-(void)resetAndEmailNewPassword:(NSString *)email
-//{
-//    NSArray *arguments = [NSArray arrayWithObjects:
-//                          email,
-//						  nil];
-//	JSONConnection *jsonConnection = [[JSONConnection alloc]
-//                                      initWithServer:[AppModel sharedAppModel].serverURL
-//                                      andServiceName:@"players"
-//                                      andMethodName:@"resetAndEmailNewPassword"
-//                                      andArguments:arguments
-//                                      andUserInfo:nil];
-//	[jsonConnection performAsynchronousRequestWithHandler:
-//     @selector(parseResetAndEmailNewPassword:)];
-//}
+
+-(void)resetAndEmailNewPassword:(NSString *)email
+{
+    NSArray *arguments = [NSArray arrayWithObjects:
+                          email,
+						  nil];
+	JSONConnection *jsonConnection = [[JSONConnection alloc]
+                                      initWithServer:[AppModel sharedAppModel].serverURL
+                                      andServiceName:@"players"
+                                      andMethodName:@"resetAndEmailNewPassword"
+                                      andArguments:arguments
+                                      andUserInfo:nil];
+	[jsonConnection performAsynchronousRequestWithHandler:
+     @selector(parseResetAndEmailNewPassword:)];
+}
+
+-(void)parseResetAndEmailNewPassword:(ServiceResult *)jsonResult
+{
+    if(jsonResult == nil)
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"Invalid Email Address", nil) message:NSLocalizedString(@"Please enter the email address associated with your game account in order to recover your password.", nil)];
+    else
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"Email Sent", @"") message:NSLocalizedString(@"An email has been sent to you with instructions for changing your password", @"")];
+}
 
 
 @end
