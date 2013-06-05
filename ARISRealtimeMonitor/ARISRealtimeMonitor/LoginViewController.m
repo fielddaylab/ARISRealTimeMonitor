@@ -21,8 +21,6 @@
 
 @implementation LoginViewController
 
-@synthesize lostPassword;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,11 +30,7 @@
     return self;
 }
 
--(void)userTappedOnLostPassword:(UIGestureRecognizer*)gestureRecognizer
-{
-    
-    [lostPassword setTextColor:[UIColor redColor]];
-    
+- (IBAction)goToLostPassword:(id)sender {
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
     
     [self.navigationController pushViewController:lostPasswordView animated:YES];
@@ -45,50 +39,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////////
 
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:dismissKB];
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @1};
-    lostPassword.attributedText = [[NSAttributedString alloc] initWithString:@"Lost Password" attributes:underlineAttribute];
-    
-    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLostPassword:)];
-    [lostPassword setUserInteractionEnabled:YES];
-    [lostPassword addGestureRecognizer:gesture];
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
-
-
-
-
-
-
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section == 0){
         return 2;
-    }
-    else{
-        return 1;
-    }
-    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,9 +67,8 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    tableView.scrollEnabled = NO;
+        tableView.scrollEnabled = NO;
 
-    if([indexPath section] == 0){
         static NSString *CellIdentifier = @"TextFieldCell";
         LoginTableCell *cell = (LoginTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil){
@@ -121,17 +88,6 @@
         }
         
         return cell;
-    }
-    else{
-        static NSString *CellIdentifier = @"Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if(cell == nil){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-        cell.textLabel.text = @"Login";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        return cell;
-    }
 }
 
 
@@ -166,7 +122,7 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
     
-- (void) attemptLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+- (void) attemptLogin
 {
 
     
@@ -196,16 +152,13 @@
 //    }
 }
 
-
-
-
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     //[textField resignFirstResponder];
     
     //copied and hacked from ARIS
     if(textField == usernameField) { [passwordField becomeFirstResponder]; }
-    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]]; }
+    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
 
     return YES;
 

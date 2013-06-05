@@ -7,12 +7,15 @@
 //
 
 #import "LostPasswordViewController.h"
+#import "AppServices.h"
+
 
 @interface LostPasswordViewController ()
 
 @end
 
 @implementation LostPasswordViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +30,40 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    
+    UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:dismissKB];
+    
 }
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    NSLog([textField text]);
+    
+    [textField resignFirstResponder];
+    [[AppServices sharedAppServices] resetAndEmailNewPassword:textField.text];
+    return YES;
+    
+}
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

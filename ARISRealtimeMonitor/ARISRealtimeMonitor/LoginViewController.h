@@ -10,8 +10,8 @@
 
 @interface LoginViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *lostPassword;
-- (IBAction)gotogamesel:(id)sender;
+- (IBAction)goToGameSelect:(id)sender;
+- (IBAction)goToLostPassword:(id)sender;
 
 
 @end
