@@ -17,7 +17,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController;
+@synthesize gameViewController, toolbar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +39,8 @@
     
     //this will need to be moved
     [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
+    
+    toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
 }
 
 - (void)didReceiveMemoryWarning

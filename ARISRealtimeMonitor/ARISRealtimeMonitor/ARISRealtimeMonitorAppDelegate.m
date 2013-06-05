@@ -8,10 +8,6 @@
 
 #import "ARISRealtimeMonitorAppDelegate.h"
 
-#import "ARISRealtimeMonitorMasterViewController.h"
-
-#import "ARISRealtimeMonitorDetailViewController.h"
-
 #import "LoginViewController.h"
 
 #import "AppModel.h"

@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "LostPasswordViewController.h"
-#import "ARISRealtimeMonitorMasterViewController.h"
 #import "LoginTableCell.h"
 #import "AppServices.h"
 #import "SelectGameViewController.h"
@@ -159,7 +158,6 @@
 
 
 - (void)loginSucceed{
-    //ARISRealtimeMonitorMasterViewController *masterViewController = [[ARISRealtimeMonitorMasterViewController alloc] initWithNibName:@"ARISRealtimeMonitorMasterViewController_iPhone" bundle:nil];
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
     
@@ -173,13 +171,13 @@
 
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
-    [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
-        
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
+//    [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
+    
     //Throw up a message if incorrect.
     //Else, login succeed
     //Have for now, it go to loginSucceed.
-    [self loginSucceed];
+    //[self loginSucceed];
 
 }
 
@@ -205,10 +203,6 @@
     
     //[textField resignFirstResponder];
     
-    
-    NSLog([usernameField text]);
-    NSLog([passwordField text]);
-    
     //copied and hacked from ARIS
     if(textField == usernameField) { [passwordField becomeFirstResponder]; }
     if(textField == passwordField) { [self resignFirstResponder]; [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]]; }
@@ -220,5 +214,7 @@
     [self.view endEditing:YES];
 }
 - (IBAction)gotogamesel:(id)sender {
-    [self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];}
+    //[self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];
+    [self loginSucceed];
+}
 @end
