@@ -8,8 +8,8 @@
 
 #import "ServiceResult.h"
 #import "JSON.h"
-#import "ARISAppDelegate.h"
 #import "ARISAlertHandler.h"
+#import "AppModel.h"
 
 @implementation ServiceResult
 
@@ -41,7 +41,7 @@
 	}
 	else if (self.returnCode == 1)
     {
-		NSLog(@"JSONResult: The return code was 1, we have a bad game id: id = %d",[AppModel sharedAppModel].currentGame.gameId);
+		//NSLog(@"JSONResult: The return code was 1, we have a bad game id: id = %d",[AppModel sharedAppModel].currentGame.gameId);
         NSLog(@"NSNotification: LogoutRequested");
 		[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LogoutRequested" object:self userInfo:nil]];
 	}

@@ -21,6 +21,17 @@
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
+		5BAFEB4F175FA22200FB90E1 /* JSONConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */; };
+		5BAFEB52175FA29100FB90E1 /* ServiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB51175FA29100FB90E1 /* ServiceResult.m */; };
+		5BAFEB64175FA34700FB90E1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB57175FA34700FB90E1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5BAFEB65175FA34700FB90E1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB59175FA34700FB90E1 /* NSObject+SBJSON.m */; };
+		5BAFEB66175FA34700FB90E1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB5B175FA34700FB90E1 /* NSString+SBJSON.m */; };
+		5BAFEB67175FA34700FB90E1 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB5D175FA34700FB90E1 /* SBJSON.m */; };
+		5BAFEB68175FA34700FB90E1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB5F175FA34700FB90E1 /* SBJsonBase.m */; };
+		5BAFEB69175FA34700FB90E1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB61175FA34700FB90E1 /* SBJsonParser.m */; };
+		5BAFEB6A175FA34700FB90E1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB63175FA34700FB90E1 /* SBJsonWriter.m */; };
+		5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */; };
+		5BAFEB72175FA8AC00FB90E1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */; };
 		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
 		5BE41117175D135E00A09986 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41111175D135E00A09986 /* 145-persondot.png */; };
 		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
@@ -75,12 +86,28 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		5BC15733175F993F003B5819 /* JSONConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
-		5BC15734175F993F003B5819 /* JSONConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
-		5BC15735175F993F003B5819 /* ServiceResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
-		5BC15736175F993F003B5819 /* ServiceResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceResult.m; sourceTree = "<group>"; };
-		5BC15737175F993F003B5819 /* ARISAlertHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARISAlertHandler.h; sourceTree = "<group>"; };
-		5BC15738175F993F003B5819 /* ARISAlertHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARISAlertHandler.m; sourceTree = "<group>"; };
+		5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
+		5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
+		5BAFEB50175FA29100FB90E1 /* ServiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
+		5BAFEB51175FA29100FB90E1 /* ServiceResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceResult.m; sourceTree = "<group>"; };
+		5BAFEB55175FA34700FB90E1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		5BAFEB56175FA34700FB90E1 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		5BAFEB57175FA34700FB90E1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		5BAFEB58175FA34700FB90E1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		5BAFEB59175FA34700FB90E1 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		5BAFEB5A175FA34700FB90E1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		5BAFEB5B175FA34700FB90E1 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		5BAFEB5C175FA34700FB90E1 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		5BAFEB5D175FA34700FB90E1 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		5BAFEB5E175FA34700FB90E1 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		5BAFEB5F175FA34700FB90E1 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		5BAFEB60175FA34700FB90E1 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		5BAFEB61175FA34700FB90E1 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		5BAFEB62175FA34700FB90E1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		5BAFEB63175FA34700FB90E1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISAlertHandler.h; sourceTree = "<group>"; };
+		5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISAlertHandler.m; sourceTree = "<group>"; };
+		5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -130,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAFEB72175FA8AC00FB90E1 /* MessageUI.framework in Frameworks */,
 				719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */,
 				719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */,
 				719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */,
@@ -140,6 +168,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BAFEB54175FA34700FB90E1 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				5BAFEB55175FA34700FB90E1 /* JSON.h */,
+				5BAFEB56175FA34700FB90E1 /* JSONKit.h */,
+				5BAFEB57175FA34700FB90E1 /* JSONKit.m */,
+				5BAFEB58175FA34700FB90E1 /* NSObject+SBJSON.h */,
+				5BAFEB59175FA34700FB90E1 /* NSObject+SBJSON.m */,
+				5BAFEB5A175FA34700FB90E1 /* NSString+SBJSON.h */,
+				5BAFEB5B175FA34700FB90E1 /* NSString+SBJSON.m */,
+				5BAFEB5C175FA34700FB90E1 /* SBJSON.h */,
+				5BAFEB5D175FA34700FB90E1 /* SBJSON.m */,
+				5BAFEB5E175FA34700FB90E1 /* SBJsonBase.h */,
+				5BAFEB5F175FA34700FB90E1 /* SBJsonBase.m */,
+				5BAFEB60175FA34700FB90E1 /* SBJsonParser.h */,
+				5BAFEB61175FA34700FB90E1 /* SBJsonParser.m */,
+				5BAFEB62175FA34700FB90E1 /* SBJsonWriter.h */,
+				5BAFEB63175FA34700FB90E1 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		719941BE174D3F9200B7E42D = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +210,7 @@
 		719941C9174D3F9200B7E42D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */,
 				719F9AFD174FD412004C6DF4 /* MapKit.framework */,
 				719941CA174D3F9200B7E42D /* UIKit.framework */,
 				719941CC174D3F9200B7E42D /* Foundation.framework */,
@@ -171,12 +222,13 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				5BC15733175F993F003B5819 /* JSONConnection.h */,
-				5BC15734175F993F003B5819 /* JSONConnection.m */,
-				5BC15735175F993F003B5819 /* ServiceResult.h */,
-				5BC15736175F993F003B5819 /* ServiceResult.m */,
-				5BC15737175F993F003B5819 /* ARISAlertHandler.h */,
-				5BC15738175F993F003B5819 /* ARISAlertHandler.m */,
+				5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */,
+				5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */,
+				5BAFEB54175FA34700FB90E1 /* JSON */,
+				5BAFEB50175FA29100FB90E1 /* ServiceResult.h */,
+				5BAFEB51175FA29100FB90E1 /* ServiceResult.m */,
+				5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */,
+				5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */,
 				71242BFE17555678006CF0F3 /* LostPasswordViewController.h */,
 				71242BFF17555678006CF0F3 /* LostPasswordViewController.m */,
 				5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */,
@@ -351,6 +403,16 @@
 				71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */,
 				5B35AC0C175E636800B0D9D2 /* SelectGameViewController.m in Sources */,
 				5B35AC15175E8BC000B0D9D2 /* AppModel.m in Sources */,
+				5BAFEB4F175FA22200FB90E1 /* JSONConnection.m in Sources */,
+				5BAFEB52175FA29100FB90E1 /* ServiceResult.m in Sources */,
+				5BAFEB64175FA34700FB90E1 /* JSONKit.m in Sources */,
+				5BAFEB65175FA34700FB90E1 /* NSObject+SBJSON.m in Sources */,
+				5BAFEB66175FA34700FB90E1 /* NSString+SBJSON.m in Sources */,
+				5BAFEB67175FA34700FB90E1 /* SBJSON.m in Sources */,
+				5BAFEB68175FA34700FB90E1 /* SBJsonBase.m in Sources */,
+				5BAFEB69175FA34700FB90E1 /* SBJsonParser.m in Sources */,
+				5BAFEB6A175FA34700FB90E1 /* SBJsonWriter.m in Sources */,
+				5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

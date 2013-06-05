@@ -7,11 +7,8 @@
 //
 
 #import "JSONConnection.h"
-#import "AppModel.h"
-#import "ARISAppDelegate.h"
 #import "AppServices.h"
 #import "ServiceResult.h"
-#import "ARISURLConnection.h"
 #import "ARISAlertHandler.h"
 
 @implementation JSONConnection
@@ -160,7 +157,7 @@
     NSLog(@"*** JSONConnection: requestFailed: %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-	[[AppServices sharedAppServices]  resetCurrentlyFetchingVars];
+	//[[AppServices sharedAppServices]  resetCurrentlyFetchingVars];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [[ARISAlertHandler sharedAlertHandler] removeWaitingIndicator];
     [[ARISAlertHandler sharedAlertHandler] showNetworkAlert];

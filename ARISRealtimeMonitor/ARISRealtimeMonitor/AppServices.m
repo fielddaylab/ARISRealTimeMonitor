@@ -8,6 +8,7 @@
 
 #import "AppServices.h"
 #import "AppModel.h"
+#import "JSONConnection.h"
 
 @implementation AppServices
 
@@ -51,24 +52,27 @@ NSString *const kARISServerServicePackage = @"v1";
 }
 
 #pragma mark Communication with Server
-//- (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict
-//{
-//	NSArray *arguments = [NSArray arrayWithObjects:username, password, nil];
-//	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-//                                                             andServiceName:@"players"
-//                                                              andMethodName:@"getLoginPlayerObject"
-//                                                               andArguments:arguments
-//                                                                andUserInfo:dict];
-//	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
-//}
-//
-//-(void)parseLoginResponseFromJSON:(ServiceResult *)result
-//{
-//    NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] initWithCapacity:2];
-//    [responseDict setObject:result forKey:@"result"];
-//    NSLog(@"NSNotification: LoginResponseReady");
-//	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LoginResponseReady" object:nil userInfo:responseDict]];
-//}
+- (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict
+{
+	NSArray *arguments = [NSArray arrayWithObjects:username, password, nil];
+
+	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
+                                                             andServiceName:@"players"
+                                                              andMethodName:@"getLoginPlayerObject"
+                                                               andArguments:arguments
+                                                                andUserInfo:dict];
+	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
+}
+
+//NOT BEING CALLED
+-(void)parseLoginResponseFromJSON:(ServiceResult *)result
+{
+    NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] initWithCapacity:2];
+    [responseDict setObject:result forKey:@"result"];
+    NSLog(@"NSNotification: LoginResponseReady");
+	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LoginResponseReady" object:nil userInfo:responseDict]];
+}
+
 //
 //-(void)resetAndEmailNewPassword:(NSString *)email
 //{

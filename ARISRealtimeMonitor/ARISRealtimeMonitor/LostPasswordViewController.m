@@ -41,7 +41,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    NSLog([textField text]);
+    NSLog(@"%@", [textField text]);
     
     [textField resignFirstResponder];
     //[[AppServices sharedAppServices] resetAndEmailNewPassword:textField.text];

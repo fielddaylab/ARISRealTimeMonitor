@@ -8,7 +8,6 @@
 
 #import "ARISAlertHandler.h"
 #import <MessageUI/MFMailComposeViewController.h>
-#import "RootViewController.h"
 
 @interface ARISAlertHandler () <MFMailComposeViewControllerDelegate>
 {
@@ -101,7 +100,7 @@
 		[self.mailComposeViewController setToRecipients:[NSMutableArray arrayWithObjects:@"arisgames-dev@googlegroups.com",nil]];
 		[self.mailComposeViewController setSubject:@"ARIS Error Report"];
 		[self.mailComposeViewController setMessageBody:[NSString stringWithFormat:@"%@\n\nDetails:\n%@", errorMessage, errorDetail] isHTML:NO];
-        [[RootViewController sharedRootViewController] presentViewController:self.mailComposeViewController animated:NO completion:nil];
+        //[[RootViewController sharedRootViewController] presentViewController:self.mailComposeViewController animated:NO completion:nil];
 	}
 }
 

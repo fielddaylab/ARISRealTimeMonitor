@@ -128,13 +128,13 @@
 
     
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
-//    [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
+    [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
     
     //Throw up a message if incorrect.
     //Else, login succeed
     //Have for now, it go to loginSucceed.
-    //[self loginSucceed];
+    
 
 }
 
@@ -142,6 +142,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginResponseReady" object:nil];
     NSLog(@"Login Response YES");
+    [self loginSucceed];
 //    ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
 //    if(!r.data || r.data == [NSNull null])
 //        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
@@ -168,7 +169,6 @@
     [self.view endEditing:YES];
 }
 - (IBAction)goToGameSelect:(id)sender {
-    //[self attemptLoginWithUsername: [usernameField text] andPassword: [passwordField text]];
-    [self loginSucceed];
+    [self attemptLogin];
 }
 @end
