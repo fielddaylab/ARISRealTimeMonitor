@@ -32,6 +32,9 @@
 		5BAFEB6A175FA34700FB90E1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB63175FA34700FB90E1 /* SBJsonWriter.m */; };
 		5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */; };
 		5BAFEB72175FA8AC00FB90E1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */; };
+		5BBDCF6C176100DD004CDA15 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF6B176100DD004CDA15 /* Game.m */; };
+		5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */; };
+		5BBDCF71176102A2004CDA15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBDCF70176102A2004CDA15 /* CoreLocation.framework */; };
 		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
 		5BE41117175D135E00A09986 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41111175D135E00A09986 /* 145-persondot.png */; };
 		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
@@ -108,6 +111,11 @@
 		5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISAlertHandler.h; sourceTree = "<group>"; };
 		5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARISAlertHandler.m; sourceTree = "<group>"; };
 		5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5BBDCF6A176100DD004CDA15 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		5BBDCF6B176100DD004CDA15 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ValidParsers.h"; sourceTree = "<group>"; };
+		5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ValidParsers.m"; sourceTree = "<group>"; };
+		5BBDCF70176102A2004CDA15 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBDCF71176102A2004CDA15 /* CoreLocation.framework in Frameworks */,
 				5BAFEB72175FA8AC00FB90E1 /* MessageUI.framework in Frameworks */,
 				719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */,
 				719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */,
@@ -210,6 +219,7 @@
 		719941C9174D3F9200B7E42D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BBDCF70176102A2004CDA15 /* CoreLocation.framework */,
 				5BAFEB71175FA8AB00FB90E1 /* MessageUI.framework */,
 				719F9AFD174FD412004C6DF4 /* MapKit.framework */,
 				719941CA174D3F9200B7E42D /* UIKit.framework */,
@@ -222,6 +232,10 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */,
+				5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */,
+				5BBDCF6A176100DD004CDA15 /* Game.h */,
+				5BBDCF6B176100DD004CDA15 /* Game.m */,
 				5BAFEB54175FA34700FB90E1 /* JSON */,
 				5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */,
 				5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */,
@@ -413,6 +427,8 @@
 				5BAFEB69175FA34700FB90E1 /* SBJsonParser.m in Sources */,
 				5BAFEB6A175FA34700FB90E1 /* SBJsonWriter.m in Sources */,
 				5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */,
+				5BBDCF6C176100DD004CDA15 /* Game.m in Sources */,
+				5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
