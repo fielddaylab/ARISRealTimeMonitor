@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GameViewController.h"
 
-@interface SelectGameViewController : UIViewController
-- (IBAction)logoutAction:(id)sender;
+#import "LoginViewController.h"
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@interface SelectGameViewController : UIViewController
+
 @property (nonatomic, strong) GameViewController *gameViewController;
+@property (nonatomic, strong) LoginViewController *loginViewController;
 
 @end

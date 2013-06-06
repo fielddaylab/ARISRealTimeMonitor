@@ -17,7 +17,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController, toolbar;
+@synthesize gameViewController, loginViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,7 +48,15 @@
     //this will need to be moved
     [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
     
-    toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+   // toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+}
+
+- (void)logoutAction
+{ 
+    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [self presentViewController:self.loginViewController animated:YES completion:nil];
+
+    //exit(0);
 }
 
 - (void) gamesListReady:(NSNotification *)n{
@@ -59,10 +67,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)logoutAction:(id)sender {
-    exit(0);
 }
 
 #pragma mark - Table View
@@ -129,9 +133,6 @@
             self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] indexOfObject:eventsToInsert];
         }
     }
-    
-    
-    
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     
