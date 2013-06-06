@@ -40,6 +40,7 @@
 //    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
 //    [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
     
     
     [[AppModel sharedAppModel] setGamesList:[[AppServices sharedAppServices] getGamesList]];
@@ -51,16 +52,17 @@
    // toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
 }
 
+- (void) gamesListReady:(NSNotification *)n{
+    NSLog(@"gamesListReady");
+}
+
+    
 - (void)logoutAction
 { 
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self presentViewController:self.loginViewController animated:YES completion:nil];
 
     //exit(0);
-}
-
-- (void) gamesListReady:(NSNotification *)n{
-    NSLog(@"gamesListReady");
 }
 
 - (void)didReceiveMemoryWarning
