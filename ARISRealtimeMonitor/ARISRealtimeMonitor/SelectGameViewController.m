@@ -58,9 +58,7 @@
     
 - (void)logoutAction
 { 
-    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self presentViewController:self.loginViewController animated:YES completion:nil];
-
+    [self.navigationController popViewControllerAnimated:YES];    
     //exit(0);
 }
 

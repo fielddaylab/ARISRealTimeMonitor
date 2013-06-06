@@ -21,7 +21,6 @@
     // Override point for customization after application launch.
     LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
-    [loginController setTitle:@"Aris Realtime Monitor"];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
