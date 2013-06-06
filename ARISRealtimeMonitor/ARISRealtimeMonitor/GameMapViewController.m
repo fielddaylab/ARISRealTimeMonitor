@@ -126,6 +126,13 @@
     
     [self.view addSubview:self.mapView];
     
+    
+    //Will have to do something like:
+    //find highest/lowest lats, find the middle.
+    //find rightmost/leftmost longs, find the middle.
+    //have the center be those longs/lats.
+    //have the span be deltas of those? ->will have to look this up. //can have huge one to debug.
+    
     /*//Used if we want to have a predefined region.
     MKCoordinateRegion region;
     CLLocationCoordinate2D center;
@@ -147,7 +154,6 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-    NSLog(@"DID RORTATEATA");
     [self setUpButtonsInMap];
 }
 
@@ -175,17 +181,28 @@
 
 - (void) setUpButtonsInMap{
     
-     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-     [button addTarget:self
-     action:nil//@selector(aMethod:)
-     forControlEvents:UIControlEventTouchUpInside];
-     [button setTitle:@"Swap" forState:UIControlStateNormal];
+    CGRect rec = [self getScreenFrameForCurrentOrientation];
 
-     CGRect rec = [self getScreenFrameForCurrentOrientation];
-     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
-     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
+    //Set up the centerizer using a custom image.
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -112, 44, 44)];
+    [button setImage:[UIImage imageNamed:@"246-route.png"] forState:UIControlStateNormal];
+    [button addTarget:self
+               action:nil//@selector(flipView)
+     forControlEvents:UIControlEventTouchUpInside];
     
-     [self.view addSubview:button];
+    [self.view addSubview:button];
+
+//     If want to use a default button for the cneterizer
+//     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//     [button addTarget:self
+//     action:nil//@selector(aMethod:)
+//     forControlEvents:UIControlEventTouchUpInside];
+//     [button setTitle:@"Swap" forState:UIControlStateNormal];
+//
+//     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
+//     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
+//    
+//     [self.view addSubview:button];
     
 }
 
