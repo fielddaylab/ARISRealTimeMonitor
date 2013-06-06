@@ -10,6 +10,7 @@
 #import "SimpleTableCell.h"
 #import "AppModel.h"
 #import "AppServices.h"
+#import "Game.h"
 
 @interface SelectGameViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController;
+@synthesize gameViewController, selectGameTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,23 +37,21 @@
     [super viewDidLoad];
     
 //    //attempt to get games list
-//    NSString *editorId = @"2140";
-//    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
-//    [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
+    NSString *editorId = @"2140";
+    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
+    [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
     
-    
-    [[AppModel sharedAppModel] setGamesList:[[AppServices sharedAppServices] getGamesList]];
-    [[AppModel sharedAppModel] setPlayersList:[[AppServices sharedAppServices] getPlayersList]];
-    
     //this will need to be moved
-    [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
+    [[AppModel sharedAppModel] setGameEvents:[[AppServices sharedAppServices] getGameEvents]];
     
-   // toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+    
 }
 
 - (void) gamesListReady:(NSNotification *)n{
+    [selectGameTableView reloadData];
     NSLog(@"gamesListReady");
 }
 
@@ -78,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[AppModel sharedAppModel] gamesList] count];
+    return [[[AppModel sharedAppModel] listOfPlayersGames] count];
     
 }
 
@@ -99,16 +98,16 @@
         cell = [nib objectAtIndex:0];
         
     }
-    cell.gameLabel.text = [[[AppModel sharedAppModel] gamesList] objectAtIndex:indexPath.row];
-    cell.playersLabel.text = [[[AppServices sharedAppServices] getPlayersList] objectAtIndex:0];
+    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
+    cell.gameLabel.text = game.name;
+    cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
  
-    NSString *game = [[[AppModel sharedAppModel] gamesList] objectAtIndex:indexPath.row];
-    //NSString *game = [[[AppServices instance] getGamesList] objectAtIndex:indexPath.row];
+    NSString *game = [NSString stringWithFormat:@"Game %i", indexPath.row];
     
     
     self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
@@ -118,21 +117,7 @@
     //Set the 'GAMES' back button for Map/TableViews here.
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
     
-    
-    if([[[AppModel sharedAppModel] gameEvents] count] <= indexPath.row){
-        self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] count];
-        [[[AppModel sharedAppModel] gameEvents] addObject:[[AppServices sharedAppServices] getGameEventsForGame:indexPath.row]];
-    }
-    else{
-        NSMutableArray *eventsToInsert = [[[AppModel sharedAppModel] gameEvents] objectAtIndex:indexPath.row];
-        if(![[[AppModel sharedAppModel] gameEvents] containsObject:eventsToInsert]){
-            self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] count];
-            [[[AppModel sharedAppModel] gameEvents] addObject:[[AppServices sharedAppServices] getGameEventsForGame:indexPath.row]];
-        }
-        else{
-            self.gameViewController.gameAccessNum = [[[AppModel sharedAppModel] gameEvents] indexOfObject:eventsToInsert];
-        }
-    }
+    //Get the game events here
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     

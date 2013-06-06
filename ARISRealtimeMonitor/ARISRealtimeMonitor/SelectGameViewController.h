@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) GameViewController *gameViewController;
 
+@property (weak, nonatomic) IBOutlet UITableView *selectGameTableView;
+
 @end

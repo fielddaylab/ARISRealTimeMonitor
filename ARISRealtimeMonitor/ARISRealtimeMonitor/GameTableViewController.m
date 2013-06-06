@@ -56,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[[AppModel sharedAppModel] gameEvents] objectAtIndex:self.gameAccessNum] count];
+    return [[[AppModel sharedAppModel] gameEvents] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +75,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[[[AppModel sharedAppModel] gameEvents] objectAtIndex:self.gameAccessNum] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[[AppModel sharedAppModel] gameEvents] objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = @"Arsenal Player";
     return cell;
 }

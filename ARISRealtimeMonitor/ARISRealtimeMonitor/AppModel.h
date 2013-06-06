@@ -12,10 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *listOfPlayersGames;
 
-@property (nonatomic, strong) NSMutableArray *gamesList;
-
-@property (nonatomic, strong) NSMutableArray *playersList;
-
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 
 @property(nonatomic, strong) NSURL *serverURL;
