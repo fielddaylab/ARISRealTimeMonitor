@@ -29,7 +29,6 @@
     if (self) {
         // Custom initialization
         //[loginController setTitle:@"Aris Realtime Monitor"];
-        self.title = @"Aris Realtime Monitor";
     }
     return self;
 }
@@ -42,6 +41,7 @@
     
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
     
+    
     [self.navigationController pushViewController:lostPasswordView animated:YES];
 }
 
@@ -49,6 +49,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Aris Realtime Monitor";
+    
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:dismissKB];
@@ -124,22 +126,13 @@
 
 - (void)loginSucceed
 {
-    
-    
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
-    
-    NSLog(@"GOGOGOGO");
-    
-    [self presentViewController:navigationController animated:YES completion:nil];
-
-    
+    [self.navigationController pushViewController:selectGameViewController animated:YES];
 }
 
 - (void) attemptLogin
 {
-    
+    [self dismissKeyboard];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginResponseReady" object:nil];
     [[AppServices sharedAppServices] loginUserName:usernameField.text password:passwordField.text userInfo:nil];
 

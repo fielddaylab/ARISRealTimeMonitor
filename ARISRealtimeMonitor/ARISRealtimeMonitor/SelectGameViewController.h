@@ -14,6 +14,5 @@
 @interface SelectGameViewController : UIViewController
 
 @property (nonatomic, strong) GameViewController *gameViewController;
-@property (nonatomic, strong) LoginViewController *loginViewController;
 
 @end
