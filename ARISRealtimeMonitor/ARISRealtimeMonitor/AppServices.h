@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppModel.h"
 
 @interface AppServices : NSObject
 
@@ -24,5 +25,7 @@ extern NSString *const kARISServerServicePackage;
 - (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict;
 
 - (void)resetAndEmailNewPassword:(NSString *)email;
+
+- (void)getGamesForEditor:(NSString *)editorId editorToken:(NSString *)editorToken;
 
 @end

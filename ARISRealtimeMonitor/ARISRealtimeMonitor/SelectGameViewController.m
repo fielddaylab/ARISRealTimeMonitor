@@ -34,6 +34,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    //attempt to get games list
+//    NSString *editorId = @"2140";
+//    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
+//    [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
+    
+    
     [[AppModel sharedAppModel] setGamesList:[[AppServices sharedAppServices] getGamesList]];
     [[AppModel sharedAppModel] setPlayersList:[[AppServices sharedAppServices] getPlayersList]];
     
@@ -41,6 +49,10 @@
     [[AppModel sharedAppModel] setGameEvents:[[NSMutableArray alloc]init]];
     
     toolbar.autoresizingMask |= UIViewAutoresizingFlexibleWidth;
+}
+
+- (void) gamesListReady:(NSNotification *)n{
+    NSLog(@"gamesListReady");
 }
 
 - (void)didReceiveMemoryWarning

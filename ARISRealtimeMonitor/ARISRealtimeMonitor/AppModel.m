@@ -10,7 +10,7 @@
 
 @implementation AppModel
 
-@synthesize gamesList, playersList, gameEvents;
+@synthesize gamesList, playersList, gameEvents, listOfPlayersGames;
 
 @synthesize serverURL;
 
@@ -34,7 +34,7 @@
     
     if([[currServ absoluteString] isEqual:@""])
     {
-        NSString *updatedURL = @"http://arisgames.org/server";
+        NSString *updatedURL = @"http://dev.arisgames.org/server";
         currServ = [NSURL URLWithString:updatedURL];
     }
     self.serverURL = currServ;

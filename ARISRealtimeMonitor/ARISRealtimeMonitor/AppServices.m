@@ -7,9 +7,10 @@
 //
 
 #import "AppServices.h"
-#import "AppModel.h"
 #import "JSONConnection.h"
 #import "ARISAlertHandler.h"
+#import "ServiceResult.h"
+//#import "Game.h"
 
 @implementation AppServices
 
@@ -96,6 +97,119 @@ NSString *const kARISServerServicePackage = @"v1";
     else
         [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"Email Sent", @"") message:NSLocalizedString(@"An email has been sent to you with instructions for changing your password", @"")];
 }
+
+//- (void)getGamesForEditor:(NSString *)editorId editorToken:(NSString *)editorToken{
+//    NSArray *arguments = [NSArray arrayWithObjects:editorId, editorToken, nil];
+//    
+//	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
+//                                                             andServiceName:@"games"
+//                                                              andMethodName:@"getGamesForEditor"
+//                                                               andArguments:arguments
+//                                                                andUserInfo:nil];
+//	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseGetGamesForEditor:)];
+//}
+//
+//-(void)parseGetGamesForEditor:(ServiceResult *)jsonResult
+//{
+//    NSLog(@"parseGetGamesForEditor");
+//    
+//    [AppModel sharedAppModel].listOfPlayersGames = [self parseGameListFromJSON:jsonResult];
+//    NSLog(@"NSNotification: GamesListReady");
+//    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"GamesListReady" object:nil]];
+//}
+//
+//-(NSMutableArray *)parseGameListFromJSON:(ServiceResult *)jsonResult
+//{
+//    NSArray *gameListArray = (NSArray *)jsonResult.data;
+//    
+//    NSMutableArray *tempGameList = [[NSMutableArray alloc] init];
+//    
+//    NSEnumerator *gameListEnumerator = [gameListArray objectEnumerator];
+//    NSDictionary *gameDictionary;
+//    while ((gameDictionary = [gameListEnumerator nextObject])) {
+//        [tempGameList addObject:[self parseGame:(gameDictionary)]];
+//    }
+//    
+//    NSError *error;
+//    if (![[AppModel sharedAppModel].mediaCache.context save:&error])
+//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//    
+//    return tempGameList;
+//}
+//
+//- (Game *)parseGame:(NSDictionary *)gameSource
+//{
+//    Game *game = [[Game alloc] init];
+//    
+//    game.gameId                   = [gameSource validIntForKey:@"game_id"];
+//    game.hasBeenPlayed            = [gameSource validBoolForKey:@"has_been_played"];
+//    game.isLocational             = [gameSource validBoolForKey:@"is_locational"];
+//    game.showPlayerLocation       = [gameSource validBoolForKey:@"show_player_location"];
+//    //game.inventoryModel.weightCap = [gameSource validIntForKey:@"inventory_weight_cap"];
+//    game.rating                   = [gameSource validIntForKey:@"rating"];
+//    game.pcMediaId                = [gameSource validIntForKey:@"pc_media_id"];
+//    game.numPlayers               = [gameSource validIntForKey:@"numPlayers"];
+//    game.playerCount              = [gameSource validIntForKey:@"count"];
+//    game.gdescription             = [gameSource validStringForKey:@"description"];
+//    game.name                     = [gameSource validStringForKey:@"name"];
+//    game.authors                  = [gameSource validStringForKey:@"editors"];
+//    game.mapType                  = [gameSource validObjectForKey:@"map_type"];
+//    if (!game.mapType || (![game.mapType isEqualToString:@"STREET"] && ![game.mapType isEqualToString:@"SATELLITE"] && ![game.mapType isEqualToString:@"HYBRID"])) game.mapType = @"STREET";
+//    
+//    NSString *distance = [gameSource validObjectForKey:@"distance"];
+//    if (distance) game.distanceFromPlayer = [distance doubleValue];
+//    else game.distanceFromPlayer = 999999999;
+//    
+//    NSString *latitude  = [gameSource validObjectForKey:@"latitude"];
+//    NSString *longitude = [gameSource validObjectForKey:@"longitude"];
+//    if (latitude && longitude)
+//        game.location = [[CLLocation alloc] initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+//    else
+//        game.location = [[CLLocation alloc] init];
+//    
+//    int iconMediaId;
+//    if((iconMediaId = [gameSource validIntForKey:@"icon_media_id"]) > 0)
+//    {
+//        game.iconMedia = [[AppModel sharedAppModel] mediaForMediaId:iconMediaId];
+//        game.iconMedia.type = @"PHOTO"; //Phil doesn't like this...
+//    }
+//    
+//    
+//    int mediaId;
+//    if((mediaId = [gameSource validIntForKey:@"media_id"]) > 0)
+//    {
+//        game.splashMedia = [[AppModel sharedAppModel] mediaForMediaId:mediaId];
+//        game.splashMedia.type = @"PHOTO"; //Phil doesn't like this...
+//    }
+//    
+//    
+//    game.questsModel.totalQuestsInGame = [gameSource validIntForKey:@"totalQuests"];
+//    game.launchNodeId                  = [gameSource validIntForKey:@"on_launch_node_id"];
+//    game.completeNodeId                = [gameSource validIntForKey:@"game_complete_node_id"];
+//    game.calculatedScore               = [gameSource validIntForKey:@"calculatedScore"];
+//    game.numReviews                    = [gameSource validIntForKey:@"numComments"];
+//    game.allowsPlayerTags              = [gameSource validBoolForKey:@"allow_player_tags"];
+//    game.allowShareNoteToMap           = [gameSource validBoolForKey:@"allow_share_note_to_map"];
+//    game.allowShareNoteToList          = [gameSource validBoolForKey:@"allow_share_note_to_book"];
+//    game.allowNoteComments             = [gameSource validBoolForKey:@"allow_note_comments"];
+//    game.allowNoteLikes                = [gameSource validBoolForKey:@"allow_note_likes"];
+//    game.allowTrading                  = [gameSource validBoolForKey:@"allow_trading"];
+//    
+//    NSArray *comments = [gameSource validObjectForKey:@"comments"];
+//    for (NSDictionary *comment in comments)
+//    {
+//        //This is returning an object with playerId,tex, and rating. Right now, we just want the text
+//        Comment *c = [[Comment alloc] init];
+//        c.text = [comment validObjectForKey:@"text"];
+//        c.playerName = [comment validObjectForKey:@"username"];
+//        NSString *cRating = [comment validObjectForKey:@"rating"];
+//        if (cRating) c.rating = [cRating intValue];
+//        [game.comments addObject:c];
+//    }
+//    
+//    return game;
+//}
+
 
 
 @end

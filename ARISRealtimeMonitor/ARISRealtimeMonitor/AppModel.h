@@ -10,9 +10,11 @@
 
 @interface AppModel : NSObject
 
-@property (nonatomic, strong) NSArray *gamesList;
+@property (nonatomic, strong) NSMutableArray *listOfPlayersGames;
 
-@property (nonatomic, strong) NSArray *playersList;
+@property (nonatomic, strong) NSMutableArray *gamesList;
+
+@property (nonatomic, strong) NSMutableArray *playersList;
 
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 
