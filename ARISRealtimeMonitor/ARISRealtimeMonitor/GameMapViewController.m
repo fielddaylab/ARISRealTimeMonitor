@@ -146,33 +146,47 @@
     
 }
 
-- (void) setUpButtonsInMap{
-    //This is for not using a toolbar
-    int h = self.view.frame.size.height;
-    int w = self.view.frame.size.width;
-     
-     /*//NSLog(@"Height %i, Width %i", h, w);
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    NSLog(@"DID RORTATEATA");
+    [self setUpButtonsInMap];
+}
 
+- (CGRect)getScreenFrameForCurrentOrientation {
+    return [self getScreenFrameForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+}
+
+- (CGRect)getScreenFrameForOrientation:(UIInterfaceOrientation)orientation {
+    
+    UIScreen *screen = [UIScreen mainScreen];
+    CGRect fullScreenRect = screen.bounds;
+    
+    //implicitly in Portrait orientation.
+    if(orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft){
+        CGRect temp = CGRectZero;
+        temp.size.width = fullScreenRect.size.height;
+        temp.size.height = fullScreenRect.size.width;
+        temp.size.height += 12; // Offset by 12 because status/navbar change when in landscape.
+        fullScreenRect = temp;
+    }
+    
+    return fullScreenRect;
+}
+
+
+- (void) setUpButtonsInMap{
+    
      UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
      [button addTarget:self
      action:nil//@selector(aMethod:)
      forControlEvents:UIControlEventTouchUpInside];
      [button setTitle:@"Swap" forState:UIControlStateNormal];
-     button.frame = CGRectMake(w - 44, h - (44 + 44 + 43), 44.0, 44.0); //44 h, 44navbar, 43(?) statusbar
-     //502 height, 320 width in portrait
-     //504 height, 320 width in landscape
+
+     CGRect rec = [self getScreenFrameForCurrentOrientation];
+     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
+     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
+    
      [self.view addSubview:button];
-     */
-    /*//if we want toolbar //not finished
-    UIToolbar *toolbar = [[UIToolbar alloc] init];
-    toolbar.frame = CGRectMake(0, 0, self.view.frame.size.height, 44);
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    //[items addObject:[[[UIBarButtonItem alloc] initWith....] autorelease]];
-    [toolbar setItems:items animated:NO];
-    //[items release];
-    [self.view addSubview:toolbar];
-    //[toolbar release];
-     */
+    
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -204,23 +218,6 @@
     [self.mapView setRegion:region animated:NO];
      
 }
-
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    //find the orientation of the screen
-//    NSLog(@)
-//    CGSize size = [UIScreen mainScreen].bounds.size;
-//    if(!UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)){
-//        size = CGSizeMake(size.height, size.width);
-//    }
-}
-
-
-/*
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-}
-*/
-
 
 - (void)didReceiveMemoryWarning
 {
