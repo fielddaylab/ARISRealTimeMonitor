@@ -28,11 +28,18 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //[loginController setTitle:@"Aris Realtime Monitor"];
+        self.title = @"Aris Realtime Monitor";
     }
     return self;
 }
 
 - (IBAction)goToLostPassword:(id)sender {
+    
+    //Set up the back button for the LostPasswordVC
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Login" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+    
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
     
     [self.navigationController pushViewController:lostPasswordView animated:YES];
@@ -117,7 +124,8 @@
 
 - (void)loginSucceed
 {
-      
+    
+    
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectGameViewController];
@@ -125,7 +133,8 @@
     NSLog(@"GOGOGOGO");
     
     [self presentViewController:navigationController animated:YES completion:nil];
-  
+
+    
 }
 
 - (void) attemptLogin
