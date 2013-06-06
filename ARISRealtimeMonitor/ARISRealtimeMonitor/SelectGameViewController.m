@@ -18,7 +18,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController, loginViewController, selectGameTableView;
+@synthesize gameViewController, selectGameTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
