@@ -141,6 +141,38 @@
 
     //used to get the actual location
     self.mapView.delegate = self;
+    
+    [self setUpButtonsInMap];
+    
+}
+
+- (void) setUpButtonsInMap{
+    //This is for not using a toolbar
+    int h = self.view.frame.size.height;
+    int w = self.view.frame.size.width;
+     
+     /*//NSLog(@"Height %i, Width %i", h, w);
+
+     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     [button addTarget:self
+     action:nil//@selector(aMethod:)
+     forControlEvents:UIControlEventTouchUpInside];
+     [button setTitle:@"Swap" forState:UIControlStateNormal];
+     button.frame = CGRectMake(w - 44, h - (44 + 44 + 43), 44.0, 44.0); //44 h, 44navbar, 43(?) statusbar
+     //502 height, 320 width in portrait
+     //504 height, 320 width in landscape
+     [self.view addSubview:button];
+     */
+    /*//if we want toolbar //not finished
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.frame = CGRectMake(0, 0, self.view.frame.size.height, 44);
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    //[items addObject:[[[UIBarButtonItem alloc] initWith....] autorelease]];
+    [toolbar setItems:items animated:NO];
+    //[items release];
+    [self.view addSubview:toolbar];
+    //[toolbar release];
+     */
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
