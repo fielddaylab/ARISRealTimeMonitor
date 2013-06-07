@@ -158,6 +158,13 @@
     
     [self.view addSubview:self.mapView];
     
+    
+    //Will have to do something like:
+    //find highest/lowest lats, find the middle.
+    //find rightmost/leftmost longs, find the middle.
+    //have the center be those longs/lats.
+    //have the span be deltas of those? ->will have to look this up. //can have huge one to debug.
+    
     /*//Used if we want to have a predefined region.
     MKCoordinateRegion region;
     CLLocationCoordinate2D center;
@@ -173,6 +180,62 @@
 
     //used to get the actual location
     self.mapView.delegate = self;
+    
+    [self setUpButtonsInMap];
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    [self setUpButtonsInMap];
+}
+
+- (CGRect)getScreenFrameForCurrentOrientation {
+    return [self getScreenFrameForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+}
+
+- (CGRect)getScreenFrameForOrientation:(UIInterfaceOrientation)orientation {
+    
+    UIScreen *screen = [UIScreen mainScreen];
+    CGRect fullScreenRect = screen.bounds;
+    
+    //implicitly in Portrait orientation.
+    if(orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft){
+        CGRect temp = CGRectZero;
+        temp.size.width = fullScreenRect.size.height;
+        temp.size.height = fullScreenRect.size.width;
+        temp.size.height += 12; // Offset by 12 because status/navbar change when in landscape.
+        fullScreenRect = temp;
+    }
+    
+    return fullScreenRect;
+}
+
+
+- (void) setUpButtonsInMap{
+    
+    CGRect rec = [self getScreenFrameForCurrentOrientation];
+
+    //Set up the centerizer using a custom image.
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -112, 44, 44)];
+    [button setImage:[UIImage imageNamed:@"246-route.png"] forState:UIControlStateNormal];
+    [button addTarget:self
+               action:nil//@selector(flipView)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
+
+//     If want to use a default button for the cneterizer
+//     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//     [button addTarget:self
+//     action:nil//@selector(aMethod:)
+//     forControlEvents:UIControlEventTouchUpInside];
+//     [button setTitle:@"Swap" forState:UIControlStateNormal];
+//
+//     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
+//     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
+//    
+//     [self.view addSubview:button];
+    
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -204,23 +267,6 @@
     [self.mapView setRegion:region animated:NO];
      
 }
-
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    //find the orientation of the screen
-//    NSLog(@)
-//    CGSize size = [UIScreen mainScreen].bounds.size;
-//    if(!UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)){
-//        size = CGSizeMake(size.height, size.width);
-//    }
-}
-
-
-/*
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-}
-*/
-
 
 - (void)didReceiveMemoryWarning
 {
