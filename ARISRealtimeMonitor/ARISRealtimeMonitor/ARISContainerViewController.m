@@ -51,7 +51,13 @@
     if(currentChildViewController) [self hideContentController:currentChildViewController];
     
     [self addChildViewController:content];
-    content.view.frame = CGRectMake(0, 88, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88);//[self screenRect];
+    
+    //Make a new rectangle with 88 as offset so that the Map is formated in the correct spot
+    content.view.frame = CGRectMake(0, 88, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88);
+    
+    //Used to use this, but doesn't work well with nav/status bars and maps.
+    //[self screenRect];
+    
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
     

@@ -13,6 +13,8 @@
 
 @synthesize game, gameAccessNum;
 
+@synthesize currentChildViewController;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -87,13 +89,40 @@
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
 }
 
+//stolen and will need to be made more general again
+- (void) displayContentController:(UIViewController*)content
+{
+    if(currentChildViewController) [self hideContentController:currentChildViewController];
+    
+    [self addChildViewController:content];
+    
+    //Make a new rectangle with 88 as offset so that the Map is formated in the correct spot
+    //content.view.frame = CGRectMake(0, 88, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88);
+    
+    content.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)+88);
+    
+    //Used to use this, but doesn't work well with nav/status bars and maps.
+    //[self screenRect];
+    
+    [self.view addSubview:content.view];
+    [content didMoveToParentViewController:self];
+    
+    currentChildViewController = content;
+}
+
+- (void) hideContentController:(UIViewController*)content
+{
+    [content willMoveToParentViewController:nil];
+    [content.view removeFromSuperview];
+    [content removeFromParentViewController];
+    
+    currentChildViewController = nil;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 @end
