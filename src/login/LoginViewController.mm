@@ -9,9 +9,7 @@
 #import "LoginViewController.h"
 
 using namespace std; //math.h undef's "isinf", which is used in mapkit...
-#import <ZXingWidgetController.h>
 #import <CoreLocation/CLLocation.h>
-#import "QRCodeReader.h"
 
 #import "AppServices.h"
 
@@ -26,7 +24,7 @@ using namespace std; //math.h undef's "isinf", which is used in mapkit...
 #import "ARISAlertHandler.h"
 
 
-@interface LoginViewController() <ZXingDelegate, SelfRegistrationViewControllerDelegate>
+@interface LoginViewController() <SelfRegistrationViewControllerDelegate>
 {
     IBOutlet UITextField *usernameField;
 	IBOutlet UITextField *passwordField;
@@ -147,14 +145,6 @@ using namespace std; //math.h undef's "isinf", which is used in mapkit...
     [self attemptLogin];
 }
 
--(IBAction)QRButtonTouched
-{
-    [self resignKeyboard];
-    ZXingWidgetController *widController = [[ZXingWidgetController alloc] initWithDelegate:self showCancel:YES OneDMode:NO];
-    widController.readers = [[NSMutableSet alloc ] initWithObjects:[[QRCodeReader alloc] init], nil];
-    [self presentViewController:widController animated:NO completion:nil];
-}
-
 -(void)changePassTouch
 {
     [self resignKeyboard];
@@ -177,48 +167,4 @@ using namespace std; //math.h undef's "isinf", which is used in mapkit...
     newPlayer = YES;
     [self attemptLogin];
 }
-
-- (void)zxingController:(ZXingWidgetController*)controller didScanResult:(NSString *)result
-{
-    [self dismissViewControllerAnimated:NO completion:nil];
-    if([result isEqualToString:@"TEST_BUMP"])
-    {
-        BumpTestViewController *b = [[BumpTestViewController alloc] initWithNibName:@"BumpTestViewController" bundle:nil];
-        [self presentViewController:b animated:NO completion:nil];
-    }
-    else
-    {
-        /*
-        Create: 1,groupName,gameId,disableLeaveGame
-        Login:  0,userName,password,gameId,disableLeaveGame
-         */
-        NSArray *terms  = [result componentsSeparatedByString:@","];
-        if([terms count] > 1)
-        {
-            gameId = 0;
-            disableLeaveGame = NO;
-            if([terms count] > 0 && [[terms objectAtIndex:0] boolValue]) //create = 1
-            {
-                if([terms count] > 1) groupName        = [terms objectAtIndex:1];
-                if([terms count] > 2) gameId           = [[terms objectAtIndex:2] intValue];
-                if([terms count] > 3) disableLeaveGame = [[terms objectAtIndex:3] boolValue];
-                [self attemptAutomatedUserCreation];
-            }
-            else if([terms count] > 0) //create = 0
-            {
-                if([terms count] > 1) usernameField.text = [terms objectAtIndex:1];
-                if([terms count] > 2) passwordField.text = [terms objectAtIndex:2];
-                if([terms count] > 3) gameId             = [[terms objectAtIndex:3] intValue];
-                if([terms count] > 4) disableLeaveGame   = [[terms objectAtIndex:4] boolValue];
-                [self attemptLogin];
-            }
-        }
-    }
-}
-
-- (void)zxingControllerDidCancel:(ZXingWidgetController*)controller
-{
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
-
 @end

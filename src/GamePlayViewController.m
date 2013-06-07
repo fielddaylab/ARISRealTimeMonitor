@@ -27,7 +27,6 @@
 #import "MapViewController.h"
 #import "AttributesViewController.h"
 #import "NotebookViewController.h"
-#import "DecoderViewController.h"
 #import "BogusSelectGameViewController.h"
 #import "NearbyObjectsViewController.h"
 
@@ -35,7 +34,7 @@
 
 #import "ARISNavigationController.h"
 
-@interface GamePlayViewController() <UITabBarControllerDelegate, UINavigationControllerDelegate, StateControllerProtocol, LoadingViewControllerDelegate, GameObjectViewControllerDelegate, GamePlayTabBarViewControllerDelegate, NearbyObjectsViewControllerDelegate, QuestsViewControllerDelegate, MapViewControllerDelegate, InventoryViewControllerDelegate, AttributesViewControllerDelegate, NotebookViewControllerDelegate, DecoderViewControllerDelegate, BogusSelectGameViewControllerDelegate>
+@interface GamePlayViewController() <UITabBarControllerDelegate, UINavigationControllerDelegate, StateControllerProtocol, LoadingViewControllerDelegate, GameObjectViewControllerDelegate, GamePlayTabBarViewControllerDelegate, NearbyObjectsViewControllerDelegate, QuestsViewControllerDelegate, MapViewControllerDelegate, InventoryViewControllerDelegate, AttributesViewControllerDelegate, NotebookViewControllerDelegate, BogusSelectGameViewControllerDelegate>
 {
     Game *game;
 
@@ -52,7 +51,6 @@
     ARISNavigationController *inventoryNavigationController;
     ARISNavigationController *attributesNavigationController;
     ARISNavigationController *notesNavigationController;
-    ARISNavigationController *decoderNavigationController;
     BogusSelectGameViewController *bogusSelectGameViewController;
 
     id<GamePlayViewControllerDelegate> __unsafe_unretained delegate;
@@ -70,7 +68,6 @@
 @property (nonatomic, strong) ARISNavigationController *inventoryNavigationController;
 @property (nonatomic, strong) ARISNavigationController *attributesNavigationController;
 @property (nonatomic, strong) ARISNavigationController *notesNavigationController;
-@property (nonatomic, strong) ARISNavigationController *decoderNavigationController;
 @property (nonatomic, strong) BogusSelectGameViewController *bogusSelectGameViewController;
 
 @end
@@ -89,7 +86,6 @@
 @synthesize inventoryNavigationController;
 @synthesize attributesNavigationController;
 @synthesize notesNavigationController;
-@synthesize decoderNavigationController;
 @synthesize bogusSelectGameViewController;
 
 - (id) initWithGame:(Game *)g delegate:(id<GamePlayViewControllerDelegate>)d
@@ -270,13 +266,6 @@
             self.inventoryNavigationController = [[ARISNavigationController alloc] initWithRootViewController:inventoryListViewController];
             self.inventoryNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
             [gamePlayTabVCs addObject:self.inventoryNavigationController];
-        }
-        else if([tmpTab.tabName isEqualToString:@"QR"])
-        {
-            DecoderViewController *decoderViewController = [[DecoderViewController alloc] initWithDelegate:self];
-            self.decoderNavigationController = [[ARISNavigationController alloc] initWithRootViewController:decoderViewController];
-            self.decoderNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-            [gamePlayTabVCs addObject:self.decoderNavigationController];
         }
         else if([tmpTab.tabName isEqualToString:@"PLAYER"])
         {

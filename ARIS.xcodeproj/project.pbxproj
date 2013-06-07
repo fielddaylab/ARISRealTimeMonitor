@@ -305,7 +305,6 @@
 		AABC73E0172739D80074CC21 /* AttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7143172739D60074CC21 /* AttributesViewController.m */; };
 		AABC73E1172739D80074CC21 /* AttributesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC7144172739D60074CC21 /* AttributesViewController.xib */; };
 		AABC73E2172739D80074CC21 /* BogusSelectGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7147172739D60074CC21 /* BogusSelectGameViewController.m */; };
-		AABC73E4172739D80074CC21 /* DecoderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AABC714B172739D60074CC21 /* DecoderViewController.mm */; };
 		AABC73E7172739D80074CC21 /* InventoryTradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7152172739D60074CC21 /* InventoryTradeViewController.m */; };
 		AABC73E8172739D80074CC21 /* InventoryTradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC7153172739D60074CC21 /* InventoryTradeViewController.xib */; };
 		AABC73EB172739D80074CC21 /* RoundedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7159172739D60074CC21 /* RoundedTableViewCell.m */; };
@@ -413,7 +412,6 @@
 		AABC74E0172739D80074CC21 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC736F172739D80074CC21 /* UIImage+Resize.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AABC74E1172739D80074CC21 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7371172739D80074CC21 /* UIImage+RoundedCorner.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AABC74E2172739D80074CC21 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7373172739D80074CC21 /* UIImage+Scale.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AABC74F517285FBE0074CC21 /* DecoderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC74F417285FBE0074CC21 /* DecoderViewController.xib */; };
 		AABC74F917285FE00074CC21 /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC74F717285FE00074CC21 /* InventoryViewController.m */; };
 		AABC74FA17285FE00074CC21 /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC74F817285FE00074CC21 /* InventoryViewController.xib */; };
 		AABC74FC17285FF70074CC21 /* QuestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC74FB17285FF70074CC21 /* QuestsViewController.xib */; };
@@ -428,7 +426,6 @@
 		AABC7512172860860074CC21 /* ItemActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC7510172860860074CC21 /* ItemActionViewController.xib */; };
 		AABC7518172873510074CC21 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC7515172873510074CC21 /* ItemViewController.xib */; };
 		AABC7519172873510074CC21 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7517172873510074CC21 /* ItemViewController.m */; };
-		AAF81FA3174BCD640003D848 /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF81FA0174BC73C0003D848 /* libZXingWidget.a */; };
 		AB0A5BA5120365420065CE68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB0A5BA3120365420065CE68 /* Localizable.strings */; };
 		AB0DE80911559D0500A6EC3E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DE80811559D0500A6EC3E /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AB0DE80D11559D1200A6EC3E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DE80C11559D1200A6EC3E /* CoreAudio.framework */; };
@@ -446,13 +443,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AAF6FE32174FBCBC00C3E687 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AAF81F9A174BC73C0003D848 /* ZXingWidget.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = ZXingWidget;
-		};
 		AAF81F9F174BC73C0003D848 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAF81F9A174BC73C0003D848 /* ZXingWidget.xcodeproj */;
@@ -871,8 +861,6 @@
 		AABC7144172739D60074CC21 /* AttributesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributesViewController.xib; sourceTree = "<group>"; };
 		AABC7146172739D60074CC21 /* BogusSelectGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BogusSelectGameViewController.h; sourceTree = "<group>"; };
 		AABC7147172739D60074CC21 /* BogusSelectGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BogusSelectGameViewController.m; sourceTree = "<group>"; };
-		AABC714A172739D60074CC21 /* DecoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderViewController.h; sourceTree = "<group>"; };
-		AABC714B172739D60074CC21 /* DecoderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DecoderViewController.mm; sourceTree = "<group>"; };
 		AABC7151172739D60074CC21 /* InventoryTradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryTradeViewController.h; sourceTree = "<group>"; };
 		AABC7152172739D60074CC21 /* InventoryTradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryTradeViewController.m; sourceTree = "<group>"; };
 		AABC7153172739D60074CC21 /* InventoryTradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryTradeViewController.xib; sourceTree = "<group>"; };
@@ -1091,7 +1079,6 @@
 		AABC7372172739D80074CC21 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
 		AABC7373172739D80074CC21 /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		AABC74E317273A0F0074CC21 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AABC74F417285FBE0074CC21 /* DecoderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecoderViewController.xib; sourceTree = "<group>"; };
 		AABC74F617285FE00074CC21 /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
 		AABC74F717285FE00074CC21 /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		AABC74F817285FE00074CC21 /* InventoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
@@ -1137,7 +1124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF81FA3174BCD640003D848 /* libZXingWidget.a in Frameworks */,
 				ABB2CDC613C7498A00F051E4 /* AddressBook.framework in Frameworks */,
 				AB7D277813C7556100F10AD5 /* AddressBookUI.framework in Frameworks */,
 				113F56DE14E4435300525BE6 /* AssetsLibrary.framework in Frameworks */,
@@ -1835,7 +1821,6 @@
 				AABC71A5172739D70074CC21 /* quests */,
 				AABC7141172739D60074CC21 /* attributes */,
 				AABC7145172739D60074CC21 /* bogus */,
-				AABC7148172739D60074CC21 /* decoder */,
 				AABC714D172739D60074CC21 /* inventory */,
 				AABC715A172739D60074CC21 /* map */,
 				AABC7168172739D60074CC21 /* nearby */,
@@ -1882,16 +1867,6 @@
 				AABC7147172739D60074CC21 /* BogusSelectGameViewController.m */,
 			);
 			path = bogus;
-			sourceTree = "<group>";
-		};
-		AABC7148172739D60074CC21 /* decoder */ = {
-			isa = PBXGroup;
-			children = (
-				AABC74F417285FBE0074CC21 /* DecoderViewController.xib */,
-				AABC714A172739D60074CC21 /* DecoderViewController.h */,
-				AABC714B172739D60074CC21 /* DecoderViewController.mm */,
-			);
-			path = decoder;
 			sourceTree = "<group>";
 		};
 		AABC714D172739D60074CC21 /* inventory */ = {
@@ -2293,7 +2268,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AAF6FE33174FBCBC00C3E687 /* PBXTargetDependency */,
 			);
 			name = ARIS;
 			productName = ARIS;
@@ -2551,7 +2525,6 @@
 				AABC7423172739D80074CC21 /* README_ABOUT_LINK_ERRORS in Resources */,
 				AABC7430172739D80074CC21 /* alg-outline in Resources */,
 				AABC7438172739D80074CC21 /* README in Resources */,
-				AABC74F517285FBE0074CC21 /* DecoderViewController.xib in Resources */,
 				AABC74FA17285FE00074CC21 /* InventoryViewController.xib in Resources */,
 				AABC74FC17285FF70074CC21 /* QuestsViewController.xib in Resources */,
 				AABC75011728600B0074CC21 /* MapViewController.xib in Resources */,
@@ -2684,7 +2657,6 @@
 				AABC73DF172739D80074CC21 /* NearbyObjectARCoordinate.m in Sources */,
 				AABC73E0172739D80074CC21 /* AttributesViewController.m in Sources */,
 				AABC73E2172739D80074CC21 /* BogusSelectGameViewController.m in Sources */,
-				AABC73E4172739D80074CC21 /* DecoderViewController.mm in Sources */,
 				AABC73E7172739D80074CC21 /* InventoryTradeViewController.m in Sources */,
 				AABC73EB172739D80074CC21 /* RoundedTableViewCell.m in Sources */,
 				AABC73ED172739D80074CC21 /* AnnotationView.m in Sources */,
@@ -2794,14 +2766,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		AAF6FE33174FBCBC00C3E687 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ZXingWidget;
-			targetProxy = AAF6FE32174FBCBC00C3E687 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		AB0A5BA3120365420065CE68 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -2837,10 +2801,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"src/third_party/zxing/iphone/ZXingWidget/Classes/**",
-					src/third_party/zxing/cpp/core/src,
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -2907,10 +2868,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"src/third_party/zxing/iphone/ZXingWidget/Classes/**",
-					src/third_party/zxing/cpp/core/src,
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
