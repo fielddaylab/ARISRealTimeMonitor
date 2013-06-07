@@ -2139,11 +2139,14 @@ BOOL currentlyUpdatingServerWithInventoryViewed;
     NSLog(@"parseLocationListEditorFromJSON");
     
 	//Build the location list
-	NSMutableArray *tempLocationsList = [[NSMutableArray alloc] init];
+	NSMutableDictionary *tempLocationsList = [[NSMutableDictionary alloc] init];
 	NSEnumerator *locationsEnumerator = [locationsArray objectEnumerator];
 	NSDictionary *locationDictionary;
-	while ((locationDictionary = [locationsEnumerator nextObject]))
-        [tempLocationsList addObject:[[Location alloc] initWithDictionary:locationDictionary]];
+	while ((locationDictionary = [locationsEnumerator nextObject])){
+        Location *tempLocation = [[Location alloc] initWithDictionary:locationDictionary];
+        NSString *key = [NSString stringWithFormat:@"%i", tempLocation.locationId];
+        [tempLocationsList setObject:tempLocation forKey:key];
+    }
     
     [AppModel sharedAppModel].locations = tempLocationsList;
     
@@ -2151,11 +2154,11 @@ BOOL currentlyUpdatingServerWithInventoryViewed;
 }
 
 -(void)getLocationsOfGamePlayers:(NSString *)gameId{
-    NSArray *arguments = [NSArray arrayWithObjects:gameId, nil];
+    NSArray *arguments = [NSArray arrayWithObjects:gameId, @"0", nil];
     
 	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-                                                             andServiceName:@"locations"
-                                                              andMethodName:@"getLocationsOfGamePlayers"
+                                                             andServiceName:@"players"
+                                                              andMethodName:@"getOtherPlayersForGame"
                                                                andArguments:arguments
                                                                 andUserInfo:nil];
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLocationsOfGamePlayersFromJSON:)];
@@ -2163,12 +2166,14 @@ BOOL currentlyUpdatingServerWithInventoryViewed;
 
 -(void)parseLocationsOfGamePlayersFromJSON:(ServiceResult *)jsonResult{
     NSArray *playersArray = (NSArray *)jsonResult.data;
-    NSMutableArray *tempPlayersList = [[NSMutableArray alloc] init];
+    NSMutableDictionary *tempPlayersList = [[NSMutableDictionary alloc] init];
     NSEnumerator *playersEnumerator = [playersArray objectEnumerator];
     NSDictionary *playersDictionary;
     while((playersDictionary = [playersEnumerator nextObject])){
         //this isnt going to construct a complete Player object because only the id and location are returned from the server. we can grab the rest later
-        [tempPlayersList addObject:[[Player alloc] initWithDictionary:playersDictionary]];
+        Player *tempPlayer = [[Player alloc] initWithDictionary:playersDictionary];
+        NSString *key = [NSString stringWithFormat:@"%i", tempPlayer.playerId];
+        [tempPlayersList setObject: tempPlayer forKey:key];
     }
     
     [AppModel sharedAppModel].playersInGame = tempPlayersList;

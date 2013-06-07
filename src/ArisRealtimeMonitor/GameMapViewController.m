@@ -61,9 +61,8 @@
     
     //location has type associated with it. Can be everything except player (maybe)
     
-    NSMutableArray *locations = [[AppModel sharedAppModel] locations];
-    for(int i = 0; i < [locations count]; i++){
-        Location *tempLocation = [locations objectAtIndex:i];
+    for(id key in [AppModel sharedAppModel].locations){
+        Location *tempLocation = [[AppModel sharedAppModel].locations objectForKey:key];
         location.latitude = tempLocation.latlon.coordinate.latitude;
         location.longitude = tempLocation.latlon.coordinate.longitude;
         annotation = [[AnnotationGameLocation alloc] init];
@@ -129,7 +128,6 @@
 //    [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
-    [self.mapView reloadInputViews];
 }
 
 - (void) createPlayerLocations:(NSNotification *)n{
@@ -137,9 +135,8 @@
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
     AnnotationGameLocation *annotation;
-    NSMutableArray *players = [AppModel sharedAppModel].playersInGame;
-    for(int i = 0; i < [players count]; i++){
-        Player *tempPlayer = [players objectAtIndex:i];
+    for(id key in [AppModel sharedAppModel].playersInGame){
+        Player *tempPlayer = [[AppModel sharedAppModel].playersInGame objectForKey:key];
         location.latitude = tempPlayer.location.coordinate.latitude;
         location.longitude = tempPlayer.location.coordinate.longitude;
         annotation = [[AnnotationGameLocation alloc] init];
@@ -153,7 +150,6 @@
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];
-    [self.mapView reloadInputViews];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
