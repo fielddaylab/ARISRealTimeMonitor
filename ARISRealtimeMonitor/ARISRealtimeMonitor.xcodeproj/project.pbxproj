@@ -35,6 +35,8 @@
 		5BBDCF6C176100DD004CDA15 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF6B176100DD004CDA15 /* Game.m */; };
 		5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */; };
 		5BBDCF71176102A2004CDA15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBDCF70176102A2004CDA15 /* CoreLocation.framework */; };
+		5BBDCF74176133AE004CDA15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF73176133AD004CDA15 /* Location.m */; };
+		5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF771761343B004CDA15 /* GameObjectViewController.m */; };
 		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
 		5BE41117175D135E00A09986 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41111175D135E00A09986 /* 145-persondot.png */; };
 		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
@@ -116,6 +118,11 @@
 		5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ValidParsers.h"; sourceTree = "<group>"; };
 		5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ValidParsers.m"; sourceTree = "<group>"; };
 		5BBDCF70176102A2004CDA15 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5BBDCF72176133AD004CDA15 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		5BBDCF73176133AD004CDA15 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		5BBDCF751761343B004CDA15 /* GameObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectProtocol.h; sourceTree = "<group>"; };
+		5BBDCF761761343B004CDA15 /* GameObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectViewController.h; sourceTree = "<group>"; };
+		5BBDCF771761343B004CDA15 /* GameObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjectViewController.m; sourceTree = "<group>"; };
 		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -232,10 +239,15 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				5BBDCF751761343B004CDA15 /* GameObjectProtocol.h */,
+				5BBDCF761761343B004CDA15 /* GameObjectViewController.h */,
+				5BBDCF771761343B004CDA15 /* GameObjectViewController.m */,
 				5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */,
 				5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */,
 				5BBDCF6A176100DD004CDA15 /* Game.h */,
 				5BBDCF6B176100DD004CDA15 /* Game.m */,
+				5BBDCF72176133AD004CDA15 /* Location.h */,
+				5BBDCF73176133AD004CDA15 /* Location.m */,
 				5BAFEB54175FA34700FB90E1 /* JSON */,
 				5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */,
 				5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */,
@@ -429,6 +441,8 @@
 				5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */,
 				5BBDCF6C176100DD004CDA15 /* Game.m in Sources */,
 				5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */,
+				5BBDCF74176133AE004CDA15 /* Location.m in Sources */,
+				5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

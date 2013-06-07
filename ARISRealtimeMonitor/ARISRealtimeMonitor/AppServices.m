@@ -12,6 +12,7 @@
 #import "ServiceResult.h"
 #import "Game.h"
 #import "NSDictionary+ValidParsers.h"
+#import "Location.h"
 
 @implementation AppServices
 
@@ -188,6 +189,40 @@ NSString *const kARISServerServicePackage = @"v1";
 //    }
     
     return game;
+}
+
+- (void)getLocationsForGame:(NSString *)gameId{
+    NSArray *arguments = [NSArray arrayWithObjects:gameId, nil];
+    
+	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
+                                                             andServiceName:@"locations"
+                                                              andMethodName:@"getLocations"
+                                                               andArguments:arguments
+                                                                andUserInfo:nil];
+	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLocationListFromJSON:)];
+}
+
+- (void)parseLocationListFromJSON:(ServiceResult *)jsonResult
+{    
+    NSLog(@"NSNotification: ReceivedLocationList");
+//	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"ReceivedLocationList" object:nil]];
+	
+	NSArray *locationsArray = (NSArray *)jsonResult.data;
+    NSLog(@"parseLocationListFromJSON");
+    
+	//Build the location list
+	NSMutableArray *tempLocationsList = [[NSMutableArray alloc] init];
+	NSEnumerator *locationsEnumerator = [locationsArray objectEnumerator];
+	NSDictionary *locationDictionary;
+	while ((locationDictionary = [locationsEnumerator nextObject]))
+        [tempLocationsList addObject:[[Location alloc] initWithDictionary:locationDictionary]];
+    
+    [AppModel sharedAppModel].locations = tempLocationsList;
+    
+	//Tell everyone
+//    NSDictionary *locations  = [[NSDictionary alloc] initWithObjectsAndKeys:tempLocationsList,@"locations", nil];
+//    NSLog(@"NSNotification: LatestPlayerLocationsReceived");
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"CreateAnnotations" object:nil userInfo:nil]];
 }
 
 

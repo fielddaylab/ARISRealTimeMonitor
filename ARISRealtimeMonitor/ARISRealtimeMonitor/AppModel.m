@@ -10,7 +10,7 @@
 
 @implementation AppModel
 
-@synthesize gameEvents, listOfPlayersGames;
+@synthesize gameEvents, listOfPlayersGames, locations;
 
 @synthesize serverURL;
 

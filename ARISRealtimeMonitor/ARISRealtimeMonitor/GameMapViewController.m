@@ -10,6 +10,10 @@
 #import <MapKit/MapKit.h>
 #import "AnnotationGameLocation.h"
 #import "AnnotationViews.h"
+#import "AppServices.h"
+#import "AppModel.h"
+#import "Game.h"
+#import "Location.h"
 
 #define MLI_LATITUDE 43.074789;
 #define MLI_LONGITUDE -89.408197;
@@ -44,67 +48,95 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-
-    [self.mapView setShowsUserLocation:YES];
-    
+- (void) createAnnotations:(NSNotification *)n{
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
     AnnotationGameLocation *annotation;
     
+    //create locations
+    //reads in locations correctly, the title and subtitle of the annotation need to be updated
+    NSMutableArray *locations = [[AppModel sharedAppModel] locations];
+    for(int i = 0; i < [locations count]; i++){
+        Location *l = [locations objectAtIndex:i];
+        location.latitude = l.latlon.coordinate.latitude;
+        location.longitude = l.latlon.coordinate.longitude;
+        annotation = [[AnnotationGameLocation alloc] init];
+        [annotation setCoordinate:location];
+        annotation.title = l.name;
+        annotation.subtitle = l.subtitle; //i dont think this does anything currently
+        //add left icon later
+        annotation.leftIcon = @"Left Icon Here";
+        //add icon later
+        annotation.icon = @"Icon Here";
+        [annotations addObject:annotation];
+    }
+    
     //more efficient to add all at once
-    location.latitude = MLI_LATITUDE;
-    location.longitude = MLI_LONGITUDE;
-    annotation = [[AnnotationGameLocation alloc] init];
-    [annotation setCoordinate:location];
-    annotation.title = @"QUEST1 MLI";
-    annotation.subtitle = @"GOAL1 MLI";
-    annotation.leftIcon = @"test1";
-    annotation.icon = @"player";
-    [annotations addObject:annotation];
-    
-    location.latitude = HOME_LATITUDE;
-    location.longitude = HOME_LONGITUDE;
-    annotation = [[AnnotationGameLocation alloc] init];
-    [annotation setCoordinate:location];
-    annotation.title = @"QUEST2 HOME";
-    annotation.subtitle = @"GOAL2 HOME";
-    annotation.leftIcon = @"test1";
-    annotation.icon = @"gameLocation";
-    [annotations addObject:annotation];
-    
-    location.latitude = CS_LATITUDE;
-    location.longitude = CS_LONGITUDE;
-    annotation = [[AnnotationGameLocation alloc] init];
-    [annotation setCoordinate:location];
-    annotation.title = @"QUEST3 CS";
-    annotation.subtitle = @"GOAL3 CS";
-    annotation.leftIcon = @"test1";
-    annotation.icon = @"player";
-    [annotations addObject:annotation];
-    
-    location.latitude = TERRACE_LATITUDE;
-    location.longitude = TERRACE_LONGITUDE;
-    annotation = [[AnnotationGameLocation alloc] init];
-    [annotation setCoordinate:location];
-    annotation.title = @"QUEST4 TERRACE";
-    annotation.subtitle = @"GOAL4 TERRACE";
-    annotation.leftIcon = @"test2";
-    annotation.icon = @"player";
-    [annotations addObject:annotation];
-    
-    location.latitude = USOUTH_LATITUDE;
-    location.longitude = USOUTH_LONGITUDE;
-    annotation = [[AnnotationGameLocation alloc] init];
-    [annotation setCoordinate:location];
-    annotation.title = @"QUEST5 USOUTH";
-    annotation.subtitle = @"GOAL5 USOUTH";
-    annotation.leftIcon = @"test2";
-    annotation.icon = @"notplayer";
-    [annotations addObject:annotation];
+//    location.latitude = MLI_LATITUDE;
+//    location.longitude = MLI_LONGITUDE;
+//    annotation = [[AnnotationGameLocation alloc] init];
+//    [annotation setCoordinate:location];
+//    annotation.title = @"QUEST1 MLI";
+//    annotation.subtitle = @"GOAL1 MLI";
+//    annotation.leftIcon = @"test1";
+//    annotation.icon = @"player";
+//    [annotations addObject:annotation];
+//    
+//    location.latitude = HOME_LATITUDE;
+//    location.longitude = HOME_LONGITUDE;
+//    annotation = [[AnnotationGameLocation alloc] init];
+//    [annotation setCoordinate:location];
+//    annotation.title = @"QUEST2 HOME";
+//    annotation.subtitle = @"GOAL2 HOME";
+//    annotation.leftIcon = @"test1";
+//    annotation.icon = @"gameLocation";
+//    [annotations addObject:annotation];
+//    
+//    location.latitude = CS_LATITUDE;
+//    location.longitude = CS_LONGITUDE;
+//    annotation = [[AnnotationGameLocation alloc] init];
+//    [annotation setCoordinate:location];
+//    annotation.title = @"QUEST3 CS";
+//    annotation.subtitle = @"GOAL3 CS";
+//    annotation.leftIcon = @"test1";
+//    annotation.icon = @"player";
+//    [annotations addObject:annotation];
+//    
+//    location.latitude = TERRACE_LATITUDE;
+//    location.longitude = TERRACE_LONGITUDE;
+//    annotation = [[AnnotationGameLocation alloc] init];
+//    [annotation setCoordinate:location];
+//    annotation.title = @"QUEST4 TERRACE";
+//    annotation.subtitle = @"GOAL4 TERRACE";
+//    annotation.leftIcon = @"test2";
+//    annotation.icon = @"player";
+//    [annotations addObject:annotation];
+//    
+//    location.latitude = USOUTH_LATITUDE;
+//    location.longitude = USOUTH_LONGITUDE;
+//    annotation = [[AnnotationGameLocation alloc] init];
+//    [annotation setCoordinate:location];
+//    annotation.title = @"QUEST5 USOUTH";
+//    annotation.subtitle = @"GOAL5 USOUTH";
+//    annotation.leftIcon = @"test2";
+//    annotation.icon = @"notplayer";
+//    [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    //go grab the location data from the server
+    //assume first game is click on always
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:0];
+    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", game.gameId]];
+
+    [self.mapView setShowsUserLocation:YES];
+    
+
     
 }
 

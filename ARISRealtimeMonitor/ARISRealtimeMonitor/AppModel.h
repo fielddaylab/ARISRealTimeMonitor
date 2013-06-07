@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) NSMutableArray *listOfPlayersGames;
 
+@property (nonatomic, strong) NSMutableArray *locations;
+
+//this is a placeholder for the game events
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 
 @property(nonatomic, strong) NSURL *serverURL;
