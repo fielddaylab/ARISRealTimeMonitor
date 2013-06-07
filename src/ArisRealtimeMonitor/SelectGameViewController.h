@@ -17,4 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *selectGameTableView;
 
+@property (strong, nonatomic) NSString *editorId;
+
+@property (strong, nonatomic) NSString *editorToken;
+
 @end

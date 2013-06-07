@@ -128,6 +128,7 @@
 //    [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
+    [self.mapView reloadInputViews];
 }
 
 - (void) createPlayerLocations:(NSNotification *)n{
@@ -151,6 +152,7 @@
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];
+    [self.mapView reloadInputViews];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
