@@ -40,6 +40,8 @@
 @implementation GameMapViewController
 @synthesize mapView = _mapView;
 
+@synthesize didIFlip;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -158,6 +160,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    
+    self.didIFlip = NO;
+    
     //Make the Map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
     
@@ -191,7 +196,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{

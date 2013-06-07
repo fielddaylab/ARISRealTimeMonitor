@@ -17,4 +17,6 @@
 
 @property (retain, nonatomic) MKMapView *mapView;
 
+@property BOOL didIFlip;
+
 @end
