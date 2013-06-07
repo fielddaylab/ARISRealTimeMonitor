@@ -58,6 +58,9 @@
     
     //create locations
     //reads in locations correctly, the title and subtitle of the annotation need to be updated
+    
+    //location has type associated with it. Can be everything except player (maybe)
+    
     NSMutableArray *locations = [[AppModel sharedAppModel] locations];
     for(int i = 0; i < [locations count]; i++){
         Location *tempLocation = [locations objectAtIndex:i];
@@ -146,7 +149,7 @@
         //add left icon later
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
-        annotation.icon = @"Icon Here";
+        annotation.icon = @"player";
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];
