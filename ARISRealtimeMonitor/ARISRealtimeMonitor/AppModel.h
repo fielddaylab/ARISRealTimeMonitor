@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray *locations;
 
+@property (nonatomic, strong) NSMutableArray *playersInGame;
+
 //this is a placeholder for the game events
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 

@@ -14,6 +14,7 @@
 #import "AppModel.h"
 #import "Game.h"
 #import "Location.h"
+#import "Player.h"
 
 #define MLI_LATITUDE 43.074789;
 #define MLI_LONGITUDE -89.408197;
@@ -58,13 +59,13 @@
     //reads in locations correctly, the title and subtitle of the annotation need to be updated
     NSMutableArray *locations = [[AppModel sharedAppModel] locations];
     for(int i = 0; i < [locations count]; i++){
-        Location *l = [locations objectAtIndex:i];
-        location.latitude = l.latlon.coordinate.latitude;
-        location.longitude = l.latlon.coordinate.longitude;
+        Location *tempLocation = [locations objectAtIndex:i];
+        location.latitude = tempLocation.latlon.coordinate.latitude;
+        location.longitude = tempLocation.latlon.coordinate.longitude;
         annotation = [[AnnotationGameLocation alloc] init];
         [annotation setCoordinate:location];
-        annotation.title = l.name;
-        annotation.subtitle = l.subtitle; //i dont think this does anything currently
+        annotation.title = tempLocation.name;
+        annotation.subtitle = tempLocation.subtitle; //i dont think this does anything currently
         //add left icon later
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
@@ -126,14 +127,40 @@
     [self.mapView addAnnotations:annotations];
 }
 
+- (void) createPlayerLocations:(NSNotification *)n{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
+    NSMutableArray *annotations = [[NSMutableArray alloc] init];
+    CLLocationCoordinate2D location;
+    AnnotationGameLocation *annotation;
+    NSMutableArray *players = [AppModel sharedAppModel].playersInGame;
+    for(int i = 0; i < [players count]; i++){
+        Player *tempPlayer = [players objectAtIndex:i];
+        location.latitude = tempPlayer.location.coordinate.latitude;
+        location.longitude = tempPlayer.location.coordinate.longitude;
+        annotation = [[AnnotationGameLocation alloc] init];
+        [annotation setCoordinate:location];
+        annotation.title = [NSString stringWithFormat:@"%i", tempPlayer.playerId];
+        //annotation.subtitle = tempLocation.subtitle;
+        //add left icon later
+        annotation.leftIcon = @"Left Icon Here";
+        //add icon later
+        annotation.icon = @"Icon Here";
+        [annotations addObject:annotation];
+    }
+    [self.mapView addAnnotations:annotations];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     //go grab the location data from the server
     //assume first game is click on always
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
+    
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:0];
     [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", game.gameId]];
+    [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId]];
 
     [self.mapView setShowsUserLocation:YES];
     
