@@ -49,6 +49,7 @@
 }
 
 - (void) createAnnotations:(NSNotification *)n{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
     AnnotationGameLocation *annotation;

@@ -48,7 +48,9 @@ NSString *const kARISServerServicePackage = @"v1";
 -(void)parseLoginResponseFromJSON:(ServiceResult *)result
 {
     NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] initWithCapacity:2];
-    [responseDict setObject:result forKey:@"result"];
+    if(result != nil){
+        [responseDict setObject:result forKey:@"result"];
+    }
     NSLog(@"NSNotification: LoginResponseReady");
 	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LoginResponseReady" object:nil userInfo:responseDict]];
 }
