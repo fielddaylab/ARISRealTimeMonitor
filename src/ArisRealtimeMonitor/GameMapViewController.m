@@ -200,7 +200,10 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    
     [self setUpButtonsInMap];
+    
+    self.didIFlip = YES;
 }
 
 - (CGRect)getScreenFrameForCurrentOrientation {
@@ -265,6 +268,7 @@
 
 - (void) setUpButtonsInMap{
     
+    if (self.didIFlip == NO){
     CGRect rec = [self getScreenFrameForCurrentOrientation];
     
     //Set up the centerizer using a custom image.
@@ -275,7 +279,7 @@
      forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-    
+    }
     //Don't zoom on rotate, because that could cause confusion to the user.
     //[self zoomToFitAnnotations];
 
