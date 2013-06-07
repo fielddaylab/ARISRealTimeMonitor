@@ -35,11 +35,11 @@ NSString *const kARISServerServicePackage = @"v1";
 #pragma mark Communication with Server
 - (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict
 {
-	NSArray *arguments = [NSArray arrayWithObjects:username, password, nil];
+	NSArray *arguments = [NSArray arrayWithObjects:username, password, @"read_write", nil];
 
 	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-                                                             andServiceName:@"players"
-                                                              andMethodName:@"getLoginPlayerObject"
+                                                             andServiceName:@"editors"
+                                                              andMethodName:@"getToken"
                                                                andArguments:arguments
                                                                 andUserInfo:dict];
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
