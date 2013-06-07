@@ -18,7 +18,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController, selectGameTableView;
+@synthesize gameViewController, selectGameTableView, editorId, editorToken;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,8 +37,6 @@
     [super viewDidLoad];
     
 //    //attempt to get games list
-    NSString *editorId = @"2140";
-    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
     [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
     

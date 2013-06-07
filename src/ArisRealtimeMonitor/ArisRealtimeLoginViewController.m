@@ -124,9 +124,11 @@
 //}
 
 
-- (void)loginSucceed
+- (void)loginSucceed:(ServiceResult *)r
 {
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
+    selectGameViewController.editorId = [r.data valueForKey:@"editor_id"];
+    selectGameViewController.editorToken = [r.data valueForKey:@"read_write_token"];
     [self.navigationController pushViewController:selectGameViewController animated:YES];
 }
 
@@ -148,7 +150,7 @@
         [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
     else
     {
-        [self loginSucceed];
+        [self loginSucceed:r];
 //        Player *p = [[Player alloc] initWithDictionary:(NSMutableDictionary *)r.data];
 //        if(location) p.location = location;
 //        [delegate loginCredentialsApprovedForPlayer:p toGame:gameId newPlayer:newPlayer disableLeaveGame:disableLeaveGame];

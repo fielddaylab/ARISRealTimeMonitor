@@ -2130,7 +2130,7 @@ BOOL currentlyUpdatingServerWithInventoryViewed;
                                                               andMethodName:@"getLocations"
                                                                andArguments:arguments
                                                                 andUserInfo:nil];
-	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLocationListFromJSON:)];
+	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLocationListEditorFromJSON:)];
 }
 
 - (void)parseLocationListEditorFromJSON:(ServiceResult *)jsonResult
