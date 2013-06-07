@@ -12,9 +12,12 @@
 
 #import <MapKit/MapKit.h>
 
+#import "Game.h"
+
 //Have MKMAPVIEWDLEEGATE so that we can get messages passed to us
 @interface GameMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (retain, nonatomic) MKMapView *mapView;
+@property (strong, nonatomic) Game *game;
 
 @end
