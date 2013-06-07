@@ -7,11 +7,13 @@
 //
 
 #import "GameViewController.h"
+#import "GameMapViewController.h"
+#import "GameTableViewController.h"
 
 
 @implementation GameViewController
 
-@synthesize game, gameAccessNum;
+@synthesize game;
 
 @synthesize currentChildViewController;
 
@@ -32,19 +34,24 @@
     //figure out which view to flip to
     [self.barButton setEnabled:NO];
     UIViewController *fromVC = [self currentChildViewController];
+    GameMapViewController *toVCMap;
+    GameTableViewController *toVCTable;
     UIViewController *toVC;
     NSUInteger animation;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
         
-        toVC = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        toVCTable = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
         animation = UIViewAnimationOptionTransitionFlipFromRight;
         [self.button setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
+        toVC = toVCTable;
     }
     else{
         
-        toVC = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        toVCMap = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        toVCMap.game = self.game;
         animation = UIViewAnimationOptionTransitionFlipFromLeft;
         [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
+        toVC = toVCMap;
     }
     
     CGRect rect = fromVC.view.bounds;
@@ -74,7 +81,7 @@
 {
     [super viewDidLoad];
     
-    self.title = self.game;
+    self.title = self.game.name;
 
     //Set up the right navbar buttons without a border.
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
@@ -84,6 +91,7 @@
     self.navigationItem.rightBarButtonItem = self.barButton;
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+    gameMapViewController.game = self.game;
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];

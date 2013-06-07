@@ -8,16 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GameMapViewController.h"
-
-#import "GameTableViewController.h"
+#import "Game.h"
 
 @interface GameViewController : UIViewController
 
 @property (strong, nonatomic) UIViewController* currentChildViewController;
 
-@property (strong, nonatomic) NSString  *game;
-@property (nonatomic) NSInteger gameAccessNum;
+//@property (strong, nonatomic) NSString *game;
+
+@property (strong, nonatomic) Game *game;
 
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) UIBarButtonItem *barButton;

@@ -39,6 +39,7 @@
 
 @implementation GameMapViewController
 @synthesize mapView = _mapView;
+@synthesize game;
 
 @synthesize didIFlip;
 
@@ -183,9 +184,8 @@
     //assume first game is click on always
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
-    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:0];
-    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", game.gameId]];
-    [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId]];
+    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
+    [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", self.game.gameId]];
 
     
     //Set up the Switch Button
