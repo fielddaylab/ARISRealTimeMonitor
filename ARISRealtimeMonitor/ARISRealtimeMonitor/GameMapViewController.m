@@ -128,28 +128,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    //go grab the location data from the server
-    //assume first game is click on always
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
-    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:0];
-    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", game.gameId]];
-
-    [self.mapView setShowsUserLocation:YES];
-    
-
-    
-}
-
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-
+    //Make the Map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
-        
+    
     self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
     [self.mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
@@ -158,25 +139,27 @@
     
     [self.view addSubview:self.mapView];
     
-    
-    /*//Used if we want to have a predefined region.
-    MKCoordinateRegion region;
-    CLLocationCoordinate2D center;
-    center.latitude = MLI_LATITUDE;
-    center.longitude = MLI_LONGITUDE;
-    MKCoordinateSpan span;//Zoom
-    span.latitudeDelta = SPAN_VALUE;
-    span.longitudeDelta = SPAN_VALUE;
-    region.center = center;
-    region.span = span;
-    [mapView setRegion:region animated:YES];
-    */
-
     //used to get the actual location
     self.mapView.delegate = self;
     
-    [self setUpButtonsInMap];
+   
+    //Grab the Annotations
+    //go grab the location data from the server
+    //assume first game is click on always
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:0];
+    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", game.gameId]];
+
     
+    //Set up the Switch Button
+     [self setUpButtonsInMap];
+
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];    
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
@@ -206,102 +189,60 @@
 
 
 //Hey look, somebody coded the algorithm I spent an hour or so developing...
-//-(void)zoomToFitMapAnnotations:(MKMapView*)mapView
-//{
-//    if([mapView.annotations count] == 0)
-//        return;
-//    
-//    CLLocationCoordinate2D topLeftCoord;
-//    topLeftCoord.latitude = -90;
-//    topLeftCoord.longitude = 180;
-//    
-//    CLLocationCoordinate2D bottomRightCoord;
-//    bottomRightCoord.latitude = 90;
-//    bottomRightCoord.longitude = -180;
-//    
-//    for(MapAnnotation* annotation in mapView.annotations)
-//    {
-//        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
-//        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
-//        
-//        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
-//        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
-//    }
-//    
-//    MKCoordinateRegion region;
-//    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
-//    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
-//    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
-//    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
-//    
-//    region = [mapView regionThatFits:region];
-//    [mapView setRegion:region animated:YES];
-//}
-
-
-
-
-
-
-- (void) centerPlayer{
+-(void)zoomToFitMapAnnotations
+{
+    if([self.mapView.annotations count] == 0){
+        NSLog(@"ZERO");
+        return;
+    }
     
-
-    //Will have to find the largest difference between two points, because long/lat go pos&neg.
-    //so doubleloop through all points.
-    //once the that highest difference and the original point is known, divide by 2 and add that to NEWLAT
-    //repeat for LONG
-    //then plug those coords into below method.
+    NSLog(@"NOT ZERO");
     
-    //May want to do region.spans too... but don't know yet.
+    CLLocationCoordinate2D topLeftCoord;
+    topLeftCoord.latitude = -90;
+    topLeftCoord.longitude = 180;
     
-    float latitudeDifference = 0;
-    float longitudeDifference = 0;
-
+    CLLocationCoordinate2D bottomRightCoord;
+    bottomRightCoord.latitude = 90;
+    bottomRightCoord.longitude = -180;
     
-    //Loop through
-        //find difference of points A & B, then take abs of that.
-        //save those differences in lat/long
-        //save those points
-
-    latitudeDifference *= 0.5f;
-    longitudeDifference *= 0.5;
+    for(AnnotationGameLocation* annotation in self.mapView.annotations)
+    {
+        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
+        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
+        
+        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
+        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
+    }
     
+    MKCoordinateRegion region;
+    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude);// * 1.1; // Add a little extra space on the sides
+    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude);// * 1.1; // Add a little extra space on the sides
     
-    //      MAY HAVE TO DOUBLE CHECK THIS FOR SIGNS.
-    //    point1.latitude += latitudeDifference;
-    //    point1.longitude += longitudeDifference
-
-    
-    //CLLocationCoordinate2D center = CLLocationCoordinate2DMake(point1.latitude, point1.longitude);
-    
-    //Make sure delete didUpdateUser when this is all done.
-
-    //This coords will have to be the average lat and long from farthest points.
-
-    
-    //This region will have loc, and the last two params will be figured out from alg. above.
-    //MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, latitudeDifference, longitudeDifference);
-    //[self.mapView setRegion:region animated:NO];
-    
-    
-    
+    region = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:region animated:YES];
 }
 
 
 - (void) setUpButtonsInMap{
     
     CGRect rec = [self getScreenFrameForCurrentOrientation];
-
+    
     //Set up the centerizer using a custom image.
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -112, 44, 44)];
     [button setImage:[UIImage imageNamed:@"246-route.png"] forState:UIControlStateNormal];
     [button addTarget:self
-               action:nil//@selector(flipView)
+               action:@selector(zoomToFitMapAnnotations) 
      forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+    
+    //Don't zoom on rotate, because that could cause confusion to the user.
+    //[self zoomToFitAnnotations];
 
-//     If want to use a default button for the cneterizer
+//     If want to use a default button for the centerizer
 //     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //     [button addTarget:self
 //     action:nil//@selector(aMethod:)
@@ -328,8 +269,10 @@
     
     AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
-    //Add right/left images/buttons in AnnotationViews
-    
+    //This could be bad, having zoomToFitMapAnnotations called more than once. However, I'm not sure how
+        //to do it otherwise
+    //nice thing is is auto goes to it though.....
+    //[self zoomToFitMapAnnotations];
     
     return view;
 }
@@ -339,10 +282,13 @@
 
     NSLog(@"didUpdateUserLocation was called");
 
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
-    [self.mapView setRegion:region animated:NO];
-     
+    
+    //Used for centering on device, but this isn't useful yet because you're an editor.
+//    CLLocationCoordinate2D loc = [userLocation coordinate];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
+//    [self.mapView setRegion:region animated:NO];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

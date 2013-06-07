@@ -64,6 +64,17 @@
 		719F9B081755098C004C6DF4 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B051755098C004C6DF4 /* cactus.png */; };
 		719F9B091755098C004C6DF4 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B061755098C004C6DF4 /* palmTree.png */; };
 		719F9B0A1755098C004C6DF4 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B071755098C004C6DF4 /* sun.png */; };
+		71B031B517623C1900D2BF81 /* Bascom Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AA17623C1900D2BF81 /* Bascom Hall.gpx */; };
+		71B031B617623C1900D2BF81 /* Bascom Hill.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AB17623C1900D2BF81 /* Bascom Hill.gpx */; };
+		71B031B717623C1900D2BF81 /* Central Park New York.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AC17623C1900D2BF81 /* Central Park New York.gpx */; };
+		71B031B817623C1900D2BF81 /* Chemistry.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AD17623C1900D2BF81 /* Chemistry.gpx */; };
+		71B031B917623C1900D2BF81 /* Engage Offices.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AE17623C1900D2BF81 /* Engage Offices.gpx */; };
+		71B031BA17623C1900D2BF81 /* Engineering Fountain.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031AF17623C1900D2BF81 /* Engineering Fountain.gpx */; };
+		71B031BB17623C1900D2BF81 /* Grainger.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031B017623C1900D2BF81 /* Grainger.gpx */; };
+		71B031BC17623C1900D2BF81 /* Institutes for Discovery.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031B117623C1900D2BF81 /* Institutes for Discovery.gpx */; };
+		71B031BD17623C1900D2BF81 /* North Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031B217623C1900D2BF81 /* North Hall.gpx */; };
+		71B031BE17623C1900D2BF81 /* Science Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031B317623C1900D2BF81 /* Science Hall.gpx */; };
+		71B031BF17623C1900D2BF81 /* Van Hise.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 71B031B417623C1900D2BF81 /* Van Hise.gpx */; };
 		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
 		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
@@ -159,6 +170,17 @@
 		719F9B051755098C004C6DF4 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
 		719F9B061755098C004C6DF4 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
 		719F9B071755098C004C6DF4 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		71B031AA17623C1900D2BF81 /* Bascom Hall.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Bascom Hall.gpx"; path = "../gpx_locations/Bascom Hall.gpx"; sourceTree = "<group>"; };
+		71B031AB17623C1900D2BF81 /* Bascom Hill.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Bascom Hill.gpx"; path = "../gpx_locations/Bascom Hill.gpx"; sourceTree = "<group>"; };
+		71B031AC17623C1900D2BF81 /* Central Park New York.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Central Park New York.gpx"; path = "../gpx_locations/Central Park New York.gpx"; sourceTree = "<group>"; };
+		71B031AD17623C1900D2BF81 /* Chemistry.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Chemistry.gpx; path = ../gpx_locations/Chemistry.gpx; sourceTree = "<group>"; };
+		71B031AE17623C1900D2BF81 /* Engage Offices.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Engage Offices.gpx"; path = "../gpx_locations/Engage Offices.gpx"; sourceTree = "<group>"; };
+		71B031AF17623C1900D2BF81 /* Engineering Fountain.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Engineering Fountain.gpx"; path = "../gpx_locations/Engineering Fountain.gpx"; sourceTree = "<group>"; };
+		71B031B017623C1900D2BF81 /* Grainger.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Grainger.gpx; path = ../gpx_locations/Grainger.gpx; sourceTree = "<group>"; };
+		71B031B117623C1900D2BF81 /* Institutes for Discovery.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Institutes for Discovery.gpx"; path = "../gpx_locations/Institutes for Discovery.gpx"; sourceTree = "<group>"; };
+		71B031B217623C1900D2BF81 /* North Hall.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "North Hall.gpx"; path = "../gpx_locations/North Hall.gpx"; sourceTree = "<group>"; };
+		71B031B317623C1900D2BF81 /* Science Hall.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Science Hall.gpx"; path = "../gpx_locations/Science Hall.gpx"; sourceTree = "<group>"; };
+		71B031B417623C1900D2BF81 /* Van Hise.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Van Hise.gpx"; path = "../gpx_locations/Van Hise.gpx"; sourceTree = "<group>"; };
 		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
 		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
 		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
@@ -301,6 +323,17 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71B031AA17623C1900D2BF81 /* Bascom Hall.gpx */,
+				71B031AB17623C1900D2BF81 /* Bascom Hill.gpx */,
+				71B031AC17623C1900D2BF81 /* Central Park New York.gpx */,
+				71B031AD17623C1900D2BF81 /* Chemistry.gpx */,
+				71B031AE17623C1900D2BF81 /* Engage Offices.gpx */,
+				71B031AF17623C1900D2BF81 /* Engineering Fountain.gpx */,
+				71B031B017623C1900D2BF81 /* Grainger.gpx */,
+				71B031B117623C1900D2BF81 /* Institutes for Discovery.gpx */,
+				71B031B217623C1900D2BF81 /* North Hall.gpx */,
+				71B031B317623C1900D2BF81 /* Science Hall.gpx */,
+				71B031B417623C1900D2BF81 /* Van Hise.gpx */,
 				718A5D0F1761428B009DA4F1 /* 246-route.png */,
 				5BE41110175D135E00A09986 /* 74-location.png */,
 				5BE41111175D135E00A09986 /* 145-persondot.png */,
@@ -408,6 +441,17 @@
 				5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */,
 				5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */,
 				718A5D101761428B009DA4F1 /* 246-route.png in Resources */,
+				71B031B517623C1900D2BF81 /* Bascom Hall.gpx in Resources */,
+				71B031B617623C1900D2BF81 /* Bascom Hill.gpx in Resources */,
+				71B031B717623C1900D2BF81 /* Central Park New York.gpx in Resources */,
+				71B031B817623C1900D2BF81 /* Chemistry.gpx in Resources */,
+				71B031B917623C1900D2BF81 /* Engage Offices.gpx in Resources */,
+				71B031BA17623C1900D2BF81 /* Engineering Fountain.gpx in Resources */,
+				71B031BB17623C1900D2BF81 /* Grainger.gpx in Resources */,
+				71B031BC17623C1900D2BF81 /* Institutes for Discovery.gpx in Resources */,
+				71B031BD17623C1900D2BF81 /* North Hall.gpx in Resources */,
+				71B031BE17623C1900D2BF81 /* Science Hall.gpx in Resources */,
+				71B031BF17623C1900D2BF81 /* Van Hise.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
