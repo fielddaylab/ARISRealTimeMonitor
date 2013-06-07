@@ -35,11 +35,11 @@ NSString *const kARISServerServicePackage = @"v1";
 #pragma mark Communication with Server
 - (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict
 {
-	NSArray *arguments = [NSArray arrayWithObjects:username, password, nil];
+	NSArray *arguments = [NSArray arrayWithObjects:username, password, @"read_write", nil];
 
 	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-                                                             andServiceName:@"players"
-                                                              andMethodName:@"getLoginPlayerObject"
+                                                             andServiceName:@"editors"
+                                                              andMethodName:@"getToken"
                                                                andArguments:arguments
                                                                 andUserInfo:dict];
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLoginResponseFromJSON:)];
@@ -48,7 +48,9 @@ NSString *const kARISServerServicePackage = @"v1";
 -(void)parseLoginResponseFromJSON:(ServiceResult *)result
 {
     NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] initWithCapacity:2];
-    [responseDict setObject:result forKey:@"result"];
+    if(result != nil){
+        [responseDict setObject:result forKey:@"result"];
+    }
     NSLog(@"NSNotification: LoginResponseReady");
 	[[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"LoginResponseReady" object:nil userInfo:responseDict]];
 }

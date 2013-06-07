@@ -51,6 +51,7 @@
 }
 
 - (void) gamesListReady:(NSNotification *)n{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"GamesListReady" object:nil];
     [selectGameTableView reloadData];
     NSLog(@"gamesListReady");
 }
