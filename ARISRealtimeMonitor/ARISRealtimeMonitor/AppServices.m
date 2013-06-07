@@ -13,6 +13,7 @@
 #import "Game.h"
 #import "NSDictionary+ValidParsers.h"
 #import "Location.h"
+#import "Player.h"
 
 @implementation AppServices
 
@@ -226,6 +227,33 @@ NSString *const kARISServerServicePackage = @"v1";
 //    NSLog(@"NSNotification: LatestPlayerLocationsReceived");
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"CreateAnnotations" object:nil userInfo:nil]];
 }
+
+-(void)getLocationsOfGamePlayers:(NSString *)gameId{
+    NSArray *arguments = [NSArray arrayWithObjects:gameId, nil];
+    
+	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
+                                                             andServiceName:@"locations"
+                                                              andMethodName:@"getLocationsOfGamePlayers"
+                                                               andArguments:arguments
+                                                                andUserInfo:nil];
+	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseLocationsOfGamePlayersFromJSON:)];
+}
+
+-(void)parseLocationsOfGamePlayersFromJSON:(ServiceResult *)jsonResult{
+    NSArray *playersArray = (NSArray *)jsonResult.data;
+    NSMutableArray *tempPlayersList = [[NSMutableArray alloc] init];
+    NSEnumerator *playersEnumerator = [playersArray objectEnumerator];
+    NSDictionary *playersDictionary;
+    while((playersDictionary = [playersEnumerator nextObject])){
+        //this isnt going to construct a complete Player object because only the id and location are returned from the server. we can grab the rest later
+        [tempPlayersList addObject:[[Player alloc] initWithDictionary:playersDictionary]];
+    }
+    
+    [AppModel sharedAppModel].playersInGame = tempPlayersList;
+    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"CreatePlayerLocations" object:nil userInfo:nil]];
+}
+
 
 
 

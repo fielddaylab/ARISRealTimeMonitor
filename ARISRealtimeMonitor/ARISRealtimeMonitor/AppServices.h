@@ -26,4 +26,6 @@ extern NSString *const kARISServerServicePackage;
 
 - (void)getLocationsForGame:(NSString *)gameId;
 
+-(void)getLocationsOfGamePlayers:(NSString *)gameId;
+
 @end

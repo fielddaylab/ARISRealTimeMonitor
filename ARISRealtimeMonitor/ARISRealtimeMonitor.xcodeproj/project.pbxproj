@@ -21,6 +21,7 @@
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B99A583174D501600950E08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A581174D501600950E08 /* LoginViewController.m */; };
 		5B99A584174D501600950E08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B99A582174D501600950E08 /* LoginViewController.xib */; };
+		5B9BAC7A1762455B0087EB07 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BAC791762455B0087EB07 /* Player.m */; };
 		5BAFEB4F175FA22200FB90E1 /* JSONConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */; };
 		5BAFEB52175FA29100FB90E1 /* ServiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB51175FA29100FB90E1 /* ServiceResult.m */; };
 		5BAFEB64175FA34700FB90E1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB57175FA34700FB90E1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -103,6 +104,8 @@
 		5B99A580174D501600950E08 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5B99A581174D501600950E08 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5B99A582174D501600950E08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5B9BAC781762455B0087EB07 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		5B9BAC791762455B0087EB07 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
 		5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
 		5BAFEB50175FA29100FB90E1 /* ServiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				5B35AC13175E8BC000B0D9D2 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
+				5B9BAC781762455B0087EB07 /* Player.h */,
+				5B9BAC791762455B0087EB07 /* Player.m */,
 				719F9B02175506D7004C6DF4 /* AnnotationViews.h */,
 				719F9B03175506D7004C6DF4 /* AnnotationViews.m */,
 				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
@@ -491,6 +496,7 @@
 				5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */,
 				5BBDCF74176133AE004CDA15 /* Location.m in Sources */,
 				5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */,
+				5B9BAC7A1762455B0087EB07 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
