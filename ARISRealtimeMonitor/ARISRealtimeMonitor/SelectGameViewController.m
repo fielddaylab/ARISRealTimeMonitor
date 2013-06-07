@@ -107,11 +107,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
  
-    NSString *game = [NSString stringWithFormat:@"Game %i", indexPath.row];
+    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
+    NSString *gameName = game.name;//[NSString stringWithFormat:@"Game %i", indexPath.row];
     
     
     self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
-    self.gameViewController.game = game;
+    self.gameViewController.game = gameName;
     
     
     //Set the 'GAMES' back button for Map/TableViews here.

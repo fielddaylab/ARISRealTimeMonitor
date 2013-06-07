@@ -127,12 +127,6 @@
     [self.view addSubview:self.mapView];
     
     
-    //Will have to do something like:
-    //find highest/lowest lats, find the middle.
-    //find rightmost/leftmost longs, find the middle.
-    //have the center be those longs/lats.
-    //have the span be deltas of those? ->will have to look this up. //can have huge one to debug.
-    
     /*//Used if we want to have a predefined region.
     MKCoordinateRegion region;
     CLLocationCoordinate2D center;
@@ -176,6 +170,89 @@
     }
     
     return fullScreenRect;
+}
+
+
+//Hey look, somebody coded the algorithm I spent an hour or so developing...
+//-(void)zoomToFitMapAnnotations:(MKMapView*)mapView
+//{
+//    if([mapView.annotations count] == 0)
+//        return;
+//    
+//    CLLocationCoordinate2D topLeftCoord;
+//    topLeftCoord.latitude = -90;
+//    topLeftCoord.longitude = 180;
+//    
+//    CLLocationCoordinate2D bottomRightCoord;
+//    bottomRightCoord.latitude = 90;
+//    bottomRightCoord.longitude = -180;
+//    
+//    for(MapAnnotation* annotation in mapView.annotations)
+//    {
+//        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
+//        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
+//        
+//        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
+//        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
+//    }
+//    
+//    MKCoordinateRegion region;
+//    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+//    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+//    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
+//    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
+//    
+//    region = [mapView regionThatFits:region];
+//    [mapView setRegion:region animated:YES];
+//}
+
+
+
+
+
+
+- (void) centerPlayer{
+    
+
+    //Will have to find the largest difference between two points, because long/lat go pos&neg.
+    //so doubleloop through all points.
+    //once the that highest difference and the original point is known, divide by 2 and add that to NEWLAT
+    //repeat for LONG
+    //then plug those coords into below method.
+    
+    //May want to do region.spans too... but don't know yet.
+    
+    float latitudeDifference = 0;
+    float longitudeDifference = 0;
+
+    
+    //Loop through
+        //find difference of points A & B, then take abs of that.
+        //save those differences in lat/long
+        //save those points
+
+    latitudeDifference *= 0.5f;
+    longitudeDifference *= 0.5;
+    
+    
+    //      MAY HAVE TO DOUBLE CHECK THIS FOR SIGNS.
+    //    point1.latitude += latitudeDifference;
+    //    point1.longitude += longitudeDifference
+
+    
+    //CLLocationCoordinate2D center = CLLocationCoordinate2DMake(point1.latitude, point1.longitude);
+    
+    //Make sure delete didUpdateUser when this is all done.
+
+    //This coords will have to be the average lat and long from farthest points.
+
+    
+    //This region will have loc, and the last two params will be figured out from alg. above.
+    //MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, latitudeDifference, longitudeDifference);
+    //[self.mapView setRegion:region animated:NO];
+    
+    
+    
 }
 
 
