@@ -60,12 +60,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "392236446.838128"
+         timestampString = "392246739.016222"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "-parseResetAndEmailNewPassword:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ARISRealtimeMonitor/SelectGameViewController.m"
+         timestampString = "392237316.04783"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ARISRealtimeMonitor/GameMapViewController.m"
+         timestampString = "392311613.441678"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "-createAnnotations:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

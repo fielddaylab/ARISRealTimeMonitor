@@ -24,4 +24,6 @@ extern NSString *const kARISServerServicePackage;
 
 - (void)getGamesForEditor:(NSString *)editorId editorToken:(NSString *)editorToken;
 
+- (void)getLocationsForGame:(NSString *)gameId;
+
 @end
