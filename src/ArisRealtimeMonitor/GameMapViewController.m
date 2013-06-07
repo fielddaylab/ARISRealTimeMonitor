@@ -41,6 +41,8 @@
 @synthesize mapView = _mapView;
 @synthesize game;
 
+@synthesize didIFlip;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -155,6 +157,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    
+    self.didIFlip = NO;
+    
     //Make the Map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
     
@@ -187,11 +192,14 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    
     [self setUpButtonsInMap];
+    
+    self.didIFlip = YES;
 }
 
 - (CGRect)getScreenFrameForCurrentOrientation {
@@ -256,6 +264,7 @@
 
 - (void) setUpButtonsInMap{
     
+    if (self.didIFlip == NO){
     CGRect rec = [self getScreenFrameForCurrentOrientation];
     
     //Set up the centerizer using a custom image.
@@ -266,7 +275,7 @@
      forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-    
+    }
     //Don't zoom on rotate, because that could cause confusion to the user.
     //[self zoomToFitAnnotations];
 

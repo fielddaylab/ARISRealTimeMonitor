@@ -20,4 +20,6 @@
 @property (retain, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) Game *game;
 
+@property BOOL didIFlip;
+
 @end
