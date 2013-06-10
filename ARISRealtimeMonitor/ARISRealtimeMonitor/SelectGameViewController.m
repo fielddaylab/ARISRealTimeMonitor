@@ -101,7 +101,8 @@
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
     cell.gameLabel.text = game.name;
     //the number of players in the game will always be 0 because the server isn't currently returning the number of players
-    cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
+    //commented out because its not working, will put back in later
+    //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
 }
 
