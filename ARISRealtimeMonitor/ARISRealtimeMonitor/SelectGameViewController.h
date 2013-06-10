@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "GameViewController.h"
 
-#import "LoginViewController.h"
+#import "ArisRealtimeLoginViewController.h"
 
 @interface SelectGameViewController : UIViewController
 
 @property (nonatomic, strong) GameViewController *gameViewController;
 
 @property (weak, nonatomic) IBOutlet UITableView *selectGameTableView;
+
+@property (strong, nonatomic) NSString *editorId;
+
+@property (strong, nonatomic) NSString *editorToken;
 
 @end

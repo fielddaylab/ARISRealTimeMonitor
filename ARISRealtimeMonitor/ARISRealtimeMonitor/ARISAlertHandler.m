@@ -75,7 +75,7 @@
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:NSLocalizedString(@"Ok", @"") otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:NSLocalizedString(@"OkKey", @"") otherButtonTitles:nil];
     [alert show];
 }
 
@@ -100,7 +100,7 @@
 		[self.mailComposeViewController setToRecipients:[NSMutableArray arrayWithObjects:@"arisgames-dev@googlegroups.com",nil]];
 		[self.mailComposeViewController setSubject:@"ARIS Error Report"];
 		[self.mailComposeViewController setMessageBody:[NSString stringWithFormat:@"%@\n\nDetails:\n%@", errorMessage, errorDetail] isHTML:NO];
-        //[[RootViewController sharedRootViewController] presentViewController:self.mailComposeViewController animated:NO completion:nil];
+//        [[RootViewController sharedRootViewController] presentViewController:self.mailComposeViewController animated:NO completion:nil];
 	}
 }
 

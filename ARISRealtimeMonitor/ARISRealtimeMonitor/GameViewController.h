@@ -8,20 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ARISContainerViewController.h"
+#import "Game.h"
 
-#import "GameMapViewController.h"
+@interface GameViewController : UIViewController
 
-#import "GameTableViewController.h"
+@property (strong, nonatomic) UIViewController* currentChildViewController;
 
-@interface GameViewController : ARISContainerViewController
+//@property (strong, nonatomic) NSString *game;
 
-
-@property (strong, nonatomic) NSString  *game;
-@property (nonatomic) NSInteger gameAccessNum;
+@property (strong, nonatomic) Game *game;
 
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) UIBarButtonItem *barButton;
+
+- (void) displayContentController:(UIViewController*)content;
 
 
 @end

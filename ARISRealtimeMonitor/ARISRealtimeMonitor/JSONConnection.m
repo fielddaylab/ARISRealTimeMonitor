@@ -7,6 +7,8 @@
 //
 
 #import "JSONConnection.h"
+#import "AppModel.h"
+#import "ARISRealtimeMonitorAppDelegate.h"
 #import "AppServices.h"
 #import "ServiceResult.h"
 #import "ARISAlertHandler.h"

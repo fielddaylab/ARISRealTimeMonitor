@@ -10,16 +10,21 @@
 
 #import "AppModel.h"
 #import "AppServices.h"
+#import "Event.h"
+
+static const int TIME_INTERVAL = 3;
 
 @interface GameTableViewController ()
 
-@property (nonatomic, strong) UITableView *table;
+@property (nonatomic, strong) NSTimer *myTimer;
 
 @end
 
 @implementation GameTableViewController
 
-@synthesize gameAccessNum, table;
+@synthesize game;
+@synthesize table;
+@synthesize myTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,13 +35,45 @@
     return self;
 }
 
+- (void) eventsReady:(NSNotification *)n{
+    //NSLog(@"Events Ready");
+    NSLog(@"Size of events: %i", [[[AppModel sharedAppModel] events] count]);
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"EventsReady" object:nil];
+    [self.table reloadData];
+}
+
+-(void)updateEvents{
+    NSLog(@"Update events");
+//    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
+   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] minutes:[NSString stringWithFormat:@"%i", 3]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [myTimer invalidate];
+    myTimer = nil;
+    [AppModel sharedAppModel].events = [[NSMutableArray alloc] init];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    self.table.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    
+    //get the events for the past 5 minutes
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
+    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", game.gameId] minutes:[NSString stringWithFormat:@"%i", 5]];
+    
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
+                                               target:self
+                                             selector:@selector(updateEvents)
+                                             userInfo:nil
+                                              repeats:YES];
+}
+
 - (void)viewDidLoad
 {
 
     [super viewDidLoad];
-    
-    self.table.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-   
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -56,7 +93,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[AppModel sharedAppModel] gameEvents] count];
+    return [[[AppModel sharedAppModel] events] count];
+    //return 32;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,7 +105,6 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.table = tableView;
     [self.table setScrollsToTop:NO];
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -75,42 +112,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[[AppModel sharedAppModel] gameEvents] objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @"Arsenal Player";
+    Event *tempEvent = [[[AppModel sharedAppModel] events] objectAtIndex:indexPath.row];
+    cell.textLabel.text = tempEvent.eventType;
+    //cell.detailTextLabel.text = @"Arsenal Player";
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //    if (editingStyle == UITableViewCellEditingStyleDelete) {
-    //        [_objects removeObjectAtIndex:indexPath.row];
-    //        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-    //        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    //    }
-}
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,10 +126,9 @@
 }
 
 
-
+//this can be deleted
 - (IBAction)addEntry:(id)sender {
     
-    [[[[AppModel sharedAppModel] gameEvents] objectAtIndex:self.gameAccessNum] insertObject:@"Thierry Henry" atIndex:0];
-    [self.table reloadData];
+    //[self.table reloadData];
 }
 @end

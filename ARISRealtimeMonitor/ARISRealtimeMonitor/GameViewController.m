@@ -7,11 +7,17 @@
 //
 
 #import "GameViewController.h"
+#import "GameMapViewController.h"
+#import "GameTableViewController.h"
+#import "JSON.h"
+#import "AppServices.h"
 
 
 @implementation GameViewController
 
-@synthesize game, gameAccessNum;
+@synthesize game;
+
+@synthesize currentChildViewController;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,19 +36,24 @@
     //figure out which view to flip to
     [self.barButton setEnabled:NO];
     UIViewController *fromVC = [self currentChildViewController];
+    GameMapViewController *toVCMap;
+    GameTableViewController *toVCTable;
     UIViewController *toVC;
     NSUInteger animation;
     if([fromVC isKindOfClass:[GameMapViewController class]]){
-        
-        toVC = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        toVCTable = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
+        toVCTable.game = self.game;
         animation = UIViewAnimationOptionTransitionFlipFromRight;
         [self.button setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
+        toVC = toVCTable;
     }
     else{
         
-        toVC = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        toVCMap = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+        toVCMap.game = self.game;
         animation = UIViewAnimationOptionTransitionFlipFromLeft;
         [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
+        toVC = toVCMap;
     }
     
     CGRect rect = fromVC.view.bounds;
@@ -72,7 +83,8 @@
 {
     [super viewDidLoad];
     
-    self.title = self.game;
+    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
+    self.title = self.game.name;
 
     //Set up the right navbar buttons without a border.
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
@@ -82,9 +94,40 @@
     self.navigationItem.rightBarButtonItem = self.barButton;
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
+    gameMapViewController.game = self.game;
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];
+}
+
+//stolen and will need to be made more general again
+- (void) displayContentController:(UIViewController*)content
+{
+    if(currentChildViewController) [self hideContentController:currentChildViewController];
+    
+    [self addChildViewController:content];
+    
+    //Make a new rectangle with 88 as offset so that the Map is formated in the correct spot
+    //content.view.frame = CGRectMake(0, 88, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88);
+    
+    content.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)+88);
+    
+    //Used to use this, but doesn't work well with nav/status bars and maps.
+    //[self screenRect];
+    
+    [self.view addSubview:content.view];
+    [content didMoveToParentViewController:self];
+    
+    currentChildViewController = content;
+}
+
+- (void) hideContentController:(UIViewController*)content
+{
+    [content willMoveToParentViewController:nil];
+    [content.view removeFromSuperview];
+    [content removeFromParentViewController];
+    
+    currentChildViewController = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,8 +135,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 @end

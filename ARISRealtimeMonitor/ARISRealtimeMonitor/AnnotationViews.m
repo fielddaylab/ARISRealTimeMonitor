@@ -22,7 +22,7 @@
     
     NSString *stringToTest = [newAnnotation description];
     if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) {
-        NSLog(@"is not User");
+        //NSLog(@"is not User");
 
     
     
@@ -48,13 +48,13 @@
         }
         else{
             self.image = [UIImage imageNamed:@"196-radiation.png"];
-            NSLog(@"Not a player or gameLocation :'[");
+            //NSLog(@"Not a player or gameLocation :'[");
         }
     
         //used to test
         newAnnotation.title = @"hello";
     }else {
-        NSLog(@"is User");
+        //NSLog(@"is User");
         self.image = [UIImage imageNamed:@"sun.png"];
     }
     

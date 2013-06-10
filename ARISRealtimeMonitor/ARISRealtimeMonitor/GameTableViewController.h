@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "GameViewController.h"
+#import "Game.h"
 
 @interface GameTableViewController : UIViewController//GameViewController
 
-@property (nonatomic) NSInteger gameAccessNum;
+@property (nonatomic, strong) Game *game;
 
 - (IBAction)addEntry:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

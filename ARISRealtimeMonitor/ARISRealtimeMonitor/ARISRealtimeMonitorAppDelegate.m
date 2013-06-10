@@ -8,7 +8,7 @@
 
 #import "ARISRealtimeMonitorAppDelegate.h"
 
-#import "LoginViewController.h"
+#import "ArisRealtimeLoginViewController.h"
 
 #import "AppModel.h"
 
@@ -19,7 +19,7 @@
     [[AppModel sharedAppModel] loadUserDefaults];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    ArisRealtimeLoginViewController *loginController = [[ArisRealtimeLoginViewController alloc] initWithNibName:@"ArisRealtimeLoginViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

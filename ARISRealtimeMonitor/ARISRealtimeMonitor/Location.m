@@ -49,7 +49,6 @@
                                                             longitude:[dict validDoubleForKey:@"longitude"]];
         self.coordinate = self.latlon.coordinate;
         
-        //this code creates other objects using location data, omit for right now
         NSString *otype = [dict validObjectForKey:@"type"];
         int oid         = [dict validIntForKey:@"type_id"];
 //        if([otype isEqualToString:@"Node"])

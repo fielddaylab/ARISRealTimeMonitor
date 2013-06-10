@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface ARISAlertHandler : NSObject
 
 + (ARISAlertHandler *) sharedAlertHandler;

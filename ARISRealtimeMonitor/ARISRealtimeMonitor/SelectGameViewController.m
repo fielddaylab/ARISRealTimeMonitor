@@ -11,6 +11,7 @@
 #import "AppModel.h"
 #import "AppServices.h"
 #import "Game.h"
+#import "JSON.h"
 
 @interface SelectGameViewController ()
 
@@ -18,7 +19,7 @@
 
 @implementation SelectGameViewController
 
-@synthesize gameViewController, selectGameTableView;
+@synthesize gameViewController, selectGameTableView, editorId, editorToken;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,8 +38,6 @@
     [super viewDidLoad];
     
 //    //attempt to get games list
-    NSString *editorId = @"2140";
-    NSString *editorToken = @"qGcc01sKSIcFrrkXoy09T5pDU7QWgrGwXJyOARojprOHIYuXmlW6gcz19fNgxjCk";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
     [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
     
@@ -110,17 +109,13 @@
 {
  
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
-    NSString *gameName = game.name;//[NSString stringWithFormat:@"Game %i", indexPath.row];
-    
     
     self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
-    self.gameViewController.game = gameName;
+    self.gameViewController.game = game;
     
     
     //Set the 'GAMES' back button for Map/TableViews here.
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    
-    //Get the game events here
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     
