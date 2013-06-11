@@ -42,17 +42,23 @@
     
         if ([newAnnotation.icon isEqualToString:@"player"]) {
             self.image = [UIImage imageNamed:@"145-persondot.png"];
+            newAnnotation.title = @"Player";
         }
         else if ([newAnnotation.icon isEqualToString:@"gameLocation"]){
             self.image = [UIImage imageNamed:@"74-location.png"];
+           // newAnnotation.title = @"Quest";
         }
         else{
             self.image = [UIImage imageNamed:@"196-radiation.png"];
+            //Will have to be changed after demo
+            newAnnotation.title = @"Quest";
             //NSLog(@"Not a player or gameLocation :'[");
         }
     
         //used to test
-        newAnnotation.title = @"hello";
+        //newAnnotation.title = @"hello";
+        
+        
     }else {
         //NSLog(@"is User");
         self.image = [UIImage imageNamed:@"sun.png"];
