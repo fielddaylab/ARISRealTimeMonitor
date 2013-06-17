@@ -154,7 +154,8 @@
     
     ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
     if(!r.data || r.data == [NSNull null])
-        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful" message:@"Username/Password not found"];
+        //make these localized strings
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful (make localized)" message:@"Username/Password not found (make localized)"];
     else
     {
         [self loginSucceed:r];

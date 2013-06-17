@@ -90,7 +90,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //    if([indexPath section] == 0){
     static NSString *CellIdentifier = @"SimpleTableItem";
     SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -98,12 +97,19 @@
         cell = [nib objectAtIndex:0];
         
     }
+    
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
     cell.gameLabel.text = game.name;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //the number of players in the game will always be 0 because the server isn't currently returning the number of players
     //commented out because its not working, will put back in later
     //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = (indexPath.row%2)?[UIColor lightGrayColor]:[UIColor clearColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
