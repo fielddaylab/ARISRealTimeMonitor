@@ -130,31 +130,40 @@
         return [NSString stringWithFormat:@"Viewed the map"];
     }
     else if([event.eventType isEqualToString:@"PICKUP_ITEM"]){
-        return [NSString stringWithFormat:@"Picked up an item"];
+        NSString *itemName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Picked up the item \"%@\"", itemName];
     }
     else if([event.eventType isEqualToString:@"DROP_ITEM"]){
-        return [NSString stringWithFormat:@"Dropped an item"];
+        NSString *itemName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Dropped the item \"%@\"", itemName];
     }
     else if([event.eventType isEqualToString:@"DROP_NOTE"]){
-        return [NSString stringWithFormat:@"Dropped a note"];
+        NSString *noteName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Dropped the note \"%@\"", noteName];
     }
     else if([event.eventType isEqualToString:@"DESTROY_ITEM"]){
-        return [NSString stringWithFormat:@"Destroyed an item"];
+        NSString *itemName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Destroyed the item \"%@\"", itemName];
     }
     else if([event.eventType isEqualToString:@"VIEW_ITEM"]){
-        return [NSString stringWithFormat:@"Viewed an item"];
+        NSString *itemName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Viewed the item \"%@\"", itemName];
     }
     else if([event.eventType isEqualToString:@"VIEW_NODE"]){
-        return [NSString stringWithFormat:@"Viewed a node"];
+        NSString *nodeTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Viewed a node \"%@\"", nodeTitle];
     }
     else if([event.eventType isEqualToString:@"VIEW_NPC"]){
-        return [NSString stringWithFormat:@"Viewed a character"];
+        NSString *characterName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Viewed the character \"%@\"", characterName];
     }
     else if([event.eventType isEqualToString:@"VIEW_WEBPAGE"]){
-        return [NSString stringWithFormat:@"Viewed a webpage"];
+        NSString *webPageName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Viewed the webpage \"%@\"", webPageName];
     }
     else if([event.eventType isEqualToString:@"VIEW_AUGBUBBLE"]){
-        return [NSString stringWithFormat:@"Viewed an augbubble"];
+        NSString *augBubbleName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Viewed the augbubble \"%@\"", augBubbleName];
     }
     else if([event.eventType isEqualToString:@"VIEW_QUESTS"]){
         return [NSString stringWithFormat:@"Viewed their quests"];
@@ -184,22 +193,28 @@
         return [NSString stringWithFormat:@"Sent a webhook"];
     }
     else if([event.eventType isEqualToString:@"COMPLETE_QUEST"]){
-        return [NSString stringWithFormat:@"Completed a quest"];
+        NSString *questName = event.eventDetail1;
+        return [NSString stringWithFormat:@"Completed the quest \"%@\"", questName];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE"]){
-        return [NSString stringWithFormat:@"Got a note"];
+        NSString *noteTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Received the note \"%@\"", noteTitle];
     }
     else if([event.eventType isEqualToString:@"GIVE_NOTE_LIKE"]){
-        return [NSString stringWithFormat:@"Liked a note"];
+        NSString *noteTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Liked the note \"%@\"", noteTitle];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE_LIKE"]){
-        return [NSString stringWithFormat:@"Received a like on their note"];
+        NSString *noteTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Received a like on the note \"%@\"", noteTitle];
     }
     else if([event.eventType isEqualToString:@"GIVE_NOTE_COMMENT"]){
-        return [NSString stringWithFormat:@"Commented on a note"];
+        NSString *commentTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Commented on the note \"%@\"", commentTitle];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE_COMMENT"]){
-        return [NSString stringWithFormat:@"Received a comment on their note"];
+        NSString *commentTitle = event.eventDetail1;
+        return [NSString stringWithFormat:@"Received a comment on the note \"%@\"", commentTitle];
     }
     else{
         return event.eventType;
