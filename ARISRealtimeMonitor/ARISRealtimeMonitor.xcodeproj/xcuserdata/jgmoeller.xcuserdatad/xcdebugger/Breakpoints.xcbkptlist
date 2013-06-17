@@ -169,7 +169,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "304"
          endingLineNumber = "304"
-         landmarkName = "-parseLocationsOfGamePlayersFromJSON:"
+         landmarkName = "-getLocationsOfGamePlayers:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -182,7 +182,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "293"
          endingLineNumber = "293"
-         landmarkName = "-getLocationsOfGamePlayers:"
+         landmarkName = "-parseLocationListEditorFromJSON:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
