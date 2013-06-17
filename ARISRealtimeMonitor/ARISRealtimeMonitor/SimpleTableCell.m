@@ -10,7 +10,7 @@
 
 @implementation SimpleTableCell
 
-@synthesize gameLabel, playersLabel;
+@synthesize gameLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -65,7 +65,14 @@ NSString *const kARISServerServicePackage = @"v1";
 }
 
 
-
+-(void)parseResetAndEmailNewPassword:(ServiceResult *)jsonResult
+{
+    //make these localized
+    if(jsonResult == nil)
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"FailureForgotPasswordTitleKey", nil) message:NSLocalizedString(@"ForgotPasswordMessageKey", nil)];
+    else
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"SuccessForgotEmailSentTitleKey", @"") message:NSLocalizedString(@"ForgotMessageKey", @"")];
+}
 
 
 - (Game *)parseGame:(NSDictionary *)gameSource
@@ -198,6 +205,7 @@ NSString *const kARISServerServicePackage = @"v1";
                                                                 andUserInfo:nil];
 	[jsonConnection performAsynchronousRequestWithHandler:@selector(parseGetGamesForEditor:)];
 }
+
 
 -(void)parseGetGamesForEditor:(ServiceResult *)jsonResult
 {

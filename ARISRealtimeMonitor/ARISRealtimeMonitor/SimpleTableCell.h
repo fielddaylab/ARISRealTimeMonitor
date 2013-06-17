@@ -12,6 +12,5 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *gameLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel *playersLabel;
 
 @end
