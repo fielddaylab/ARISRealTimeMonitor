@@ -68,6 +68,7 @@
 		719F9B081755098C004C6DF4 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B051755098C004C6DF4 /* cactus.png */; };
 		719F9B091755098C004C6DF4 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B061755098C004C6DF4 /* palmTree.png */; };
 		719F9B0A1755098C004C6DF4 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 719F9B071755098C004C6DF4 /* sun.png */; };
+		71AA1D2D176F7BB100FEE34E /* logo_dk_vertical_lock_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AA1D2C176F7BB000FEE34E /* logo_dk_vertical_lock_up.png */; };
 		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
 		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
@@ -170,6 +171,7 @@
 		719F9B051755098C004C6DF4 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
 		719F9B061755098C004C6DF4 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
 		719F9B071755098C004C6DF4 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		71AA1D2C176F7BB000FEE34E /* logo_dk_vertical_lock_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dk_vertical_lock_up.png; sourceTree = "<group>"; };
 		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
 		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
 		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				719941D3174D3F9200B7E42D /* InfoPlist.strings */,
 				719941D6174D3F9200B7E42D /* main.m */,
 				719941D8174D3F9200B7E42D /* ARISRealtimeMonitor-Prefix.pch */,
+				71AA1D2C176F7BB000FEE34E /* logo_dk_vertical_lock_up.png */,
 				719941DC174D3F9200B7E42D /* Default.png */,
 				719941DE174D3F9200B7E42D /* Default@2x.png */,
 				719941E0174D3F9200B7E42D /* Default-568h@2x.png */,
@@ -427,6 +430,7 @@
 				5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */,
 				718A5D101761428B009DA4F1 /* 246-route.png in Resources */,
 				5BA58339176653FF0047B8CD /* ArisRealtimeLoginViewController.xib in Resources */,
+				71AA1D2D176F7BB100FEE34E /* logo_dk_vertical_lock_up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

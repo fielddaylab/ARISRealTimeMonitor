@@ -13,5 +13,5 @@
 - (IBAction)goToGameSelect:(id)sender;
 - (IBAction)goToLostPassword:(id)sender;
 
-
 @end
+

@@ -28,7 +28,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        //[loginController setTitle:@"Aris Realtime Monitor"];
     }
     return self;
 }
@@ -48,7 +47,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    
     self.title = @"Aris Realtime Monitor";
     
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];

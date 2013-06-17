@@ -29,6 +29,11 @@
     if (self) {
         // Custom initialization
         //[loginController setTitle:@"Aris Realtime Monitor"];
+        
+//        //If we want to make the logo programatically.
+//        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 300, 400)];
+//        imgView.image = [UIImage imageNamed:@"logo_dk_vertical_lock_up.jpg"];
+//        [self.view addSubview: imgView];
     }
     return self;
 }
