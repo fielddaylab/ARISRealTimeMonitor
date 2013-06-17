@@ -74,6 +74,12 @@
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
 		71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */; };
 		71CFF3C8174E6F0F008C0C14 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C6174E6F0E008C0C14 /* GameViewController.m */; };
+		71F827B4176FB41D007156A2 /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827AF176FB41D007156A2 /* 08-chat.png */; };
+		71F827B5176FB41D007156A2 /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827B0176FB41D007156A2 /* 55-network.png */; };
+		71F827B6176FB41D007156A2 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827B1176FB41D007156A2 /* 111-user.png */; };
+		71F827B7176FB41D007156A2 /* 174-imac.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827B2176FB41D007156A2 /* 174-imac.png */; };
+		71F827B8176FB41D007156A2 /* 257-box3.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827B3176FB41D007156A2 /* 257-box3.png */; };
+		71F827BA176FB5EE007156A2 /* notebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 71F827B9176FB5EE007156A2 /* notebook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +186,12 @@
 		71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewController.xib; sourceTree = "<group>"; };
 		71CFF3C5174E6F0E008C0C14 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		71CFF3C6174E6F0E008C0C14 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		71F827AF176FB41D007156A2 /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat.png"; sourceTree = "<group>"; };
+		71F827B0176FB41D007156A2 /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
+		71F827B1176FB41D007156A2 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		71F827B2176FB41D007156A2 /* 174-imac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "174-imac.png"; sourceTree = "<group>"; };
+		71F827B3176FB41D007156A2 /* 257-box3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "257-box3.png"; sourceTree = "<group>"; };
+		71F827B9176FB5EE007156A2 /* notebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notebook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +333,12 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71F827B9176FB5EE007156A2 /* notebook.png */,
+				71F827AF176FB41D007156A2 /* 08-chat.png */,
+				71F827B0176FB41D007156A2 /* 55-network.png */,
+				71F827B1176FB41D007156A2 /* 111-user.png */,
+				71F827B2176FB41D007156A2 /* 174-imac.png */,
+				71F827B3176FB41D007156A2 /* 257-box3.png */,
 				718A5D0F1761428B009DA4F1 /* 246-route.png */,
 				5BE41110175D135E00A09986 /* 74-location.png */,
 				5BE41111175D135E00A09986 /* 145-persondot.png */,
@@ -431,6 +449,12 @@
 				718A5D101761428B009DA4F1 /* 246-route.png in Resources */,
 				5BA58339176653FF0047B8CD /* ArisRealtimeLoginViewController.xib in Resources */,
 				71AA1D2D176F7BB100FEE34E /* logo_dk_vertical_lock_up.png in Resources */,
+				71F827B4176FB41D007156A2 /* 08-chat.png in Resources */,
+				71F827B5176FB41D007156A2 /* 55-network.png in Resources */,
+				71F827B6176FB41D007156A2 /* 111-user.png in Resources */,
+				71F827B7176FB41D007156A2 /* 174-imac.png in Resources */,
+				71F827B8176FB41D007156A2 /* 257-box3.png in Resources */,
+				71F827BA176FB5EE007156A2 /* notebook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

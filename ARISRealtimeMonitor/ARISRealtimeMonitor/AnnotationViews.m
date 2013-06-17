@@ -21,7 +21,7 @@
     
     
     NSString *stringToTest = [newAnnotation description];
-    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) {
+    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
         //NSLog(@"is not User");
 
     
@@ -40,24 +40,38 @@
         self.leftCalloutAccessoryView = imageView;
 
     
-        if ([newAnnotation.icon isEqualToString:@"player"]) {
+        if ([newAnnotation.icon isEqualToString:@"Player"]) {
             self.image = [UIImage imageNamed:@"145-persondot.png"];
             newAnnotation.title = @"Player";
         }
-        else if ([newAnnotation.icon isEqualToString:@"gameLocation"]){
-            self.image = [UIImage imageNamed:@"74-location.png"];
-           // newAnnotation.title = @"Quest";
+        else if ([newAnnotation.icon isEqualToString:@"Item"]){
+            self.image = [UIImage imageNamed:@"257-box3.png"];
+            //newAnnotation.title = @"Item";
+        }
+        else if ([newAnnotation.icon isEqualToString:@"Node"]){
+            self.image = [UIImage imageNamed:@"55-network.png"];
+            //newAnnotation.title = @"Node";
+        }
+        else if ([newAnnotation.icon isEqualToString:@"Npc"]){
+            self.image = [UIImage imageNamed:@"111-user.png"];
+            //newAnnotation.title = @"Npc";
+        }
+        else if ([newAnnotation.icon isEqualToString:@"WebPage"]){
+            self.image = [UIImage imageNamed:@"174-imac.png"];
+            //newAnnotation.title = @"WebPage";
+        }
+        else if ([newAnnotation.icon isEqualToString:@"AugBubble"]){
+            self.image = [UIImage imageNamed:@"08-chat.png"];
+            //newAnnotation.title = @"AugBubble";
+        }
+        else if ([newAnnotation.icon isEqualToString:@"PlayerNote"]){
+            self.image = [UIImage imageNamed:@"notebook.png"];
+            //newAnnotation.title = @"PlayerNote";
         }
         else{
             self.image = [UIImage imageNamed:@"196-radiation.png"];
-            //Will have to be changed after demo
-            newAnnotation.title = @"Quest";
-            //NSLog(@"Not a player or gameLocation :'[");
+            newAnnotation.title = @"Error :'[";
         }
-    
-        //used to test
-        //newAnnotation.title = @"hello";
-        
         
     }else {
         //NSLog(@"is User");

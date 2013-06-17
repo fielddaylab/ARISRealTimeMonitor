@@ -13,6 +13,8 @@
 
 @interface Location : NSObject <MKAnnotation>
 {
+    NSString *type;
+    
     int locationId;
 	NSString *name;
 	CLLocation *latlon;
@@ -31,6 +33,8 @@
 	NSString *title;
 	NSString *subtitle;
 }
+
+@property (nonatomic, strong) NSString *type;
 
 @property (nonatomic, assign) int locationId;
 @property (nonatomic, strong) NSString *name;

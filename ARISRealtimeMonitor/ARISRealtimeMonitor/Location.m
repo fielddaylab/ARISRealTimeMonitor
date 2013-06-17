@@ -12,6 +12,8 @@
 
 @implementation Location
 
+@synthesize type;
+
 @synthesize locationId;
 @synthesize name;
 @synthesize latlon;
@@ -43,6 +45,9 @@
 {
     if(self = [super init])
     {
+        
+        self.type       = [dict validStringForKey:@"type"];
+        
         self.locationId = [dict validIntForKey:@"location_id"];
         self.name       = [dict validObjectForKey:@"name"];
         self.latlon     = [[CLLocation alloc] initWithLatitude:[dict validDoubleForKey:@"latitude"]
