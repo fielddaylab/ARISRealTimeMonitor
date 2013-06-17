@@ -12,7 +12,8 @@
 #import "AppServices.h"
 #import "Event.h"
 
-static const int TIME_INTERVAL = 3;
+#define REFRESH_INTERVAL ((int) 3) //in seconds
+#define FIVE_MINUTES ((int) 300) //in seconds
 
 @interface GameTableViewController ()
 
@@ -46,7 +47,7 @@ static const int TIME_INTERVAL = 3;
     NSLog(@"Update events");
 //    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
-   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] minutes:[NSString stringWithFormat:@"%i", 3]];
+   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] minutes:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -59,11 +60,11 @@ static const int TIME_INTERVAL = 3;
     [super viewWillAppear:NO];
     self.table.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
-    //get the events for the past 5 minutes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
-    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", game.gameId] minutes:[NSString stringWithFormat:@"%i", 5]];
+    //get the events for the past 5 minutes
+    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", game.gameId] minutes:[NSString stringWithFormat:@"%i", FIVE_MINUTES]];
     
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_INTERVAL
                                                target:self
                                              selector:@selector(updateEvents)
                                              userInfo:nil

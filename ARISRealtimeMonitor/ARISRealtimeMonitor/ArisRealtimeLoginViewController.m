@@ -53,7 +53,14 @@
     
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
+    
+    
     [self.view addGestureRecognizer:dismissKB];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [usernameField setText:@""];
+    [passwordField setText:@""];
 }
 
 #pragma mark - Table View
