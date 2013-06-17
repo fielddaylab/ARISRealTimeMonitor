@@ -82,31 +82,61 @@
     return 44;
 }
 
+
+
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    static NSString *CellIdentifier = @"SimpleTableItem";
-    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        
+    [self.selectGameTableView setScrollsToTop:NO];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+//    Event *tempEvent = [[[AppModel sharedAppModel] events] objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [self displayPlayer:tempEvent];
+//    cell.detailTextLabel.text = [self displayEvent:tempEvent];
+//    return cell;
+    
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
-    cell.gameLabel.text = game.name;
+    cell.textLabel.text = game.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //the number of players in the game will always be 0 because the server isn't currently returning the number of players
     //commented out because its not working, will put back in later
-    cell.playersLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
+    cell.detailTextLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
     //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
 }
 
+
+
+//// Customize the appearance of table view cells.
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    static NSString *CellIdentifier = @"SimpleTableItem";
+//    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+//        
+//    }
+//    
+//    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
+//    cell.gameLabel.text = game.name;
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    //the number of players in the game will always be 0 because the server isn't currently returning the number of players
+//    //commented out because its not working, will put back in later
+//    cell.playersLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
+//    //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
+//    return cell;
+//}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = (indexPath.row%2)?[UIColor lightGrayColor]:[UIColor clearColor];
+    cell.backgroundColor = (indexPath.row%2)?[UIColor colorWithRed:.9 green:.9 blue:.9 alpha:1.0]:[UIColor clearColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
