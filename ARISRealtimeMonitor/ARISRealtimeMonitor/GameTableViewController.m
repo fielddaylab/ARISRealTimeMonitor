@@ -114,88 +114,92 @@
     }
     
     Event *tempEvent = [[[AppModel sharedAppModel] events] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [self displayEvent:tempEvent];
-    //cell.detailTextLabel.text = @"Arsenal Player";
+    cell.textLabel.text = [self displayPlayer:tempEvent];
+    cell.detailTextLabel.text = [self displayEvent:tempEvent];
     return cell;
+}
+
+-(NSString *)displayPlayer:(Event *)event{
+        return [NSString stringWithFormat:@"%@", event.username];
 }
 
 -(NSString *)displayEvent:(Event *)event{
     
     //change these to localized strings
     if([event.eventType isEqualToString:@"VIEW_MAP"]){
-        return [NSString stringWithFormat:@"%@ viewed the map", event.username];
+        return [NSString stringWithFormat:@"Viewed the map"];
     }
     else if([event.eventType isEqualToString:@"PICKUP_ITEM"]){
-        return [NSString stringWithFormat:@"%@ picked up an item", event.username];
+        return [NSString stringWithFormat:@"Picked up an item"];
     }
     else if([event.eventType isEqualToString:@"DROP_ITEM"]){
-        return [NSString stringWithFormat:@"%@ dropped an item", event.username];
+        return [NSString stringWithFormat:@"Dropped an item"];
     }
     else if([event.eventType isEqualToString:@"DROP_NOTE"]){
-        return [NSString stringWithFormat:@"%@ dropped a note", event.username];
+        return [NSString stringWithFormat:@"Dropped a note"];
     }
     else if([event.eventType isEqualToString:@"DESTROY_ITEM"]){
-        return [NSString stringWithFormat:@"%@ destroyed an item", event.username];
+        return [NSString stringWithFormat:@"Destroyed an item"];
     }
     else if([event.eventType isEqualToString:@"VIEW_ITEM"]){
-        return [NSString stringWithFormat:@"%@ viewed an item", event.username];
+        return [NSString stringWithFormat:@"Viewed an item"];
     }
     else if([event.eventType isEqualToString:@"VIEW_NODE"]){
-        return [NSString stringWithFormat:@"%@ viewed a node", event.username];
+        return [NSString stringWithFormat:@"Viewed a node"];
     }
     else if([event.eventType isEqualToString:@"VIEW_NPC"]){
-        return [NSString stringWithFormat:@"%@ viewed a character", event.username];
+        return [NSString stringWithFormat:@"Viewed a character"];
     }
     else if([event.eventType isEqualToString:@"VIEW_WEBPAGE"]){
-        return [NSString stringWithFormat:@"%@ viewed a webpage", event.username];
+        return [NSString stringWithFormat:@"Viewed a webpage"];
     }
     else if([event.eventType isEqualToString:@"VIEW_AUGBUBBLE"]){
-        return [NSString stringWithFormat:@"%@ viewed an augbubble", event.username];
+        return [NSString stringWithFormat:@"Viewed an augbubble"];
     }
     else if([event.eventType isEqualToString:@"VIEW_QUESTS"]){
-        return [NSString stringWithFormat:@"%@ viewed their quests", event.username];
+        return [NSString stringWithFormat:@"Viewed their quests"];
     }
     else if([event.eventType isEqualToString:@"VIEW_INVENTORY"]){
-        return [NSString stringWithFormat:@"%@ viewed their inventory", event.username];
+        return [NSString stringWithFormat:@"Viewed their inventory"];
     }
     else if([event.eventType isEqualToString:@"ENTER_QRCODE"]){
-        return [NSString stringWithFormat:@"%@ entered a qrcode", event.username];
+        return [NSString stringWithFormat:@"Entered a qrcode"];
     }
     else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM"]){
-        return [NSString stringWithFormat:@"%@ uploaded media", event.username];
+        return [NSString stringWithFormat:@"Uploaded media"];
     }
     else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_IMAGE"]){
-        return [NSString stringWithFormat:@"%@ uploaded an image", event.username];
+        return [NSString stringWithFormat:@"Uploaded an image"];
     }
     else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_AUDIO"]){
-        return [NSString stringWithFormat:@"%@ uploaded an audio clip", event.username];
+        return [NSString stringWithFormat:@"Uploaded an audio clip"];
     }
     else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_VIDEO"]){
-        return [NSString stringWithFormat:@"%@ uploaded an video clip", event.username];
+        return [NSString stringWithFormat:@"Uploaded an video clip"];
     }
     else if([event.eventType isEqualToString:@"RECEIVE_WEBHOOK"]){
-        return [NSString stringWithFormat:@"%@ received a webhook", event.username];
+        return [NSString stringWithFormat:@"Received a webhook"];
     }
     else if([event.eventType isEqualToString:@"SEND_WEBHOOK"]){
-        return [NSString stringWithFormat:@"%@ sent a webhook", event.username];
+        return [NSString stringWithFormat:@"Sent a webhook"];
     }
     else if([event.eventType isEqualToString:@"COMPLETE_QUEST"]){
-        return [NSString stringWithFormat:@"%@ completed a quest", event.username];
+        return [NSString stringWithFormat:@"Completed a quest"];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE"]){
-        return [NSString stringWithFormat:@"%@ got a note", event.username];
+        return [NSString stringWithFormat:@"Got a note"];
     }
     else if([event.eventType isEqualToString:@"GIVE_NOTE_LIKE"]){
-        return [NSString stringWithFormat:@"%@ liked a note", event.username];
+        return [NSString stringWithFormat:@"Liked a note"];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE_LIKE"]){
-        return [NSString stringWithFormat:@"%@ received a like on their note", event.username];
+        return [NSString stringWithFormat:@"Received a like on their note"];
     }
     else if([event.eventType isEqualToString:@"GIVE_NOTE_COMMENT"]){
-        return [NSString stringWithFormat:@"%@ commented on a note", event.username];
+        return [NSString stringWithFormat:@"Commented on a note"];
     }
     else if([event.eventType isEqualToString:@"GET_NOTE_COMMENT"]){
-        return [NSString stringWithFormat:@"%@ received a comment on their note", event.username];
+        return [NSString stringWithFormat:@"Received a comment on their note"];
     }
     else{
         return event.eventType;
