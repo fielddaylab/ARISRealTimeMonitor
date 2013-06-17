@@ -47,7 +47,7 @@
     NSLog(@"Update events");
 //    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
-   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] minutes:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
+   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] seconds:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -62,7 +62,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
     //get the events for the past 5 minutes
-    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", game.gameId] minutes:[NSString stringWithFormat:@"%i", FIVE_MINUTES]];
+    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", game.gameId] seconds:[NSString stringWithFormat:@"%i", FIVE_MINUTES]];
     
     myTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_INTERVAL
                                                target:self

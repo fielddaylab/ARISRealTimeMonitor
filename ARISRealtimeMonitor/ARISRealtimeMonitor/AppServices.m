@@ -275,7 +275,7 @@ NSString *const kARISServerServicePackage = @"v1";
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"CreatePlayerLocations" object:nil userInfo:nil]];
 }
 
--(void)getLogsForGame:(NSString *)gameId minutes:(NSString *)seconds{
+-(void)getLogsForGame:(NSString *)gameId seconds:(NSString *)seconds{
     NSArray *arguments = [NSArray arrayWithObjects:gameId, seconds, nil];
     
 	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
