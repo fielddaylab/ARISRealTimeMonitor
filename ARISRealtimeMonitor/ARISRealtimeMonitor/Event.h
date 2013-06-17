@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *timestamp;
 @property(nonatomic, strong) CLLocation *location;
 @property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *eventDetail1;
 
 
 - (id) initWithDictionary:(NSDictionary *)dict;
