@@ -22,6 +22,9 @@
 //ARIS Realtime Monitor additions
 @property (nonatomic, strong) NSMutableArray *listOfPlayersGames;
 @property (nonatomic, strong) NSMutableDictionary *locations;
+
+@property (nonatomic, strong) NSMutableDictionary *types;
+
 @property (nonatomic, strong) NSMutableDictionary *playersInGame;
 //this is a placeholder for the game events
 @property (nonatomic, strong) NSMutableArray *gameEvents;

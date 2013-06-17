@@ -75,7 +75,32 @@
         //add left icon later
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
-        annotation.icon = @"Icon Here";
+        
+        //item, node, npc, webPage, augBubble, playerNote
+
+        if ([tempLocation.type isEqualToString:@"Item"]){
+            annotation.icon = @"Item";
+        }
+        else if ([tempLocation.type isEqualToString:@"Node"]){
+            annotation.icon = @"Node";
+        }
+        else if ([tempLocation.type isEqualToString:@"Npc"]){
+            annotation.icon = @"Npc";
+        }
+        else if ([tempLocation.type isEqualToString:@"WebPage"]){
+            annotation.icon = @"WebPage";
+        }
+        else if ([tempLocation.type isEqualToString:@"AugBubble"]){
+            annotation.icon = @"AugBubble";
+        }
+        else if ([tempLocation.type isEqualToString:@"PlayerNote"]){
+            annotation.icon = @"PlayerNote";
+        }
+        else {
+            //Else isn't recognized, throw an ERRRRRRRRORRRRRRR
+            annotation.icon = @"ERROR";
+        }
+        
         [annotations addObject:annotation];
     }
     
@@ -151,7 +176,7 @@
         //add left icon later
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
-        annotation.icon = @"player";
+        annotation.icon = @"Player";
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];

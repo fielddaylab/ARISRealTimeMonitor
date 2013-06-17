@@ -276,6 +276,9 @@ NSString *const kARISServerServicePackage = @"v1";
     
 	//Build the location list
 	NSMutableDictionary *tempLocationsList = [[NSMutableDictionary alloc] init];
+
+    
+    
 	NSEnumerator *locationsEnumerator = [locationsArray objectEnumerator];
 	NSDictionary *locationDictionary;
 	while ((locationDictionary = [locationsEnumerator nextObject])){
@@ -285,7 +288,7 @@ NSString *const kARISServerServicePackage = @"v1";
     }
     
     [AppModel sharedAppModel].locations = tempLocationsList;
-    
+        
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"CreateAnnotations" object:nil userInfo:nil]];
 }
 
