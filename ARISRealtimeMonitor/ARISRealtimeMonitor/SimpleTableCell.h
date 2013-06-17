@@ -11,6 +11,7 @@
 @interface SimpleTableCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *gameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playersLabel;
 
 
 @end

@@ -36,17 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    //attempt to get games list
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    //attempt to get games list
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamesListReady:) name:@"GamesListReady" object:nil];
     [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
-    
-    //this will need to be moved
-    [[AppModel sharedAppModel] setGameEvents:[[AppServices sharedAppServices] getGameEvents]];
-    
-    
 }
 
 - (void) gamesListReady:(NSNotification *)n{
@@ -103,6 +99,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //the number of players in the game will always be 0 because the server isn't currently returning the number of players
     //commented out because its not working, will put back in later
+    cell.playersLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
     //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
 }

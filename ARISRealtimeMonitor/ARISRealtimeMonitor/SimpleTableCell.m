@@ -11,6 +11,7 @@
 @implementation SimpleTableCell
 
 @synthesize gameLabel;
+@synthesize playersLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
