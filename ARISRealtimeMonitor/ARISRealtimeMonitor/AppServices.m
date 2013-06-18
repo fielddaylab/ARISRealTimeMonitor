@@ -157,7 +157,7 @@ NSString *const kARISServerServicePackage = @"v1";
     
     NSMutableArray *tempGameList = [[NSMutableArray alloc] init];
     
-    if([gameListArray count] != 0){
+    if(gameListArray != nil && [gameListArray count] != 0){
         NSEnumerator *gameListEnumerator = [gameListArray objectEnumerator];
         NSDictionary *gameDictionary;
         while ((gameDictionary = [gameListEnumerator nextObject])) {

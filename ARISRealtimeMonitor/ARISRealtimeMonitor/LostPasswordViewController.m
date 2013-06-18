@@ -43,8 +43,6 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    NSLog(@"%@", [textField text]);
-    
     [textField resignFirstResponder];
     [[AppServices sharedAppServices] resetAndEmailNewPassword:textField.text];
     return YES;
@@ -53,19 +51,6 @@
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning
 {
