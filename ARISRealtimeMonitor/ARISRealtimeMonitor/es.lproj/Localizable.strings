@@ -6,70 +6,66 @@
   Copyright (c) 2013 Nick Heindl. All rights reserved.
 */
 
-//[testLabel setText:NSLocalizedString(@"TEST", nil)];
-
-//Some may seem a bit redundant, but I am trying to keep all languages in mind.
-
 "TEST" = "Spanish";
 
 //Nav Bar Titles    - "NavBarVC"
-"NavBarLostPassword"            = "SLost Password";
-"NavBarARTM"                    = "SAris Realtime Monitor";
-"NavBarGameSelect"              = "SSelect a Game";
+"NavBarLostPassword"            = "Lost Password";   //TBD
+"NavBarARTM"                    = "Aris Realtime Monitor";   //TBD
+"NavBarGameSelect"              = "Select a Game";   //TBD
 
 //Nav Bar Buttons   - "NavBarToVC"
-"NavBarToLogin"                 = "SLogin";
-"NavBarToGameSelect"            = "SGames";
-"NavBarToLoginFromGameSelect"   = "SLogout";
+"NavBarToLogin"                 = "Salir";
+"NavBarToGameSelect"            = "Juegos";
+"NavBarToLoginFromGameSelect"   = "Salir";
 
 //Buttons           - "ButtonToVC"
-"ButtonToLostPassword"          = "SLose your password?";
-"ButtonToGameSelect"            = "SLogin!";
+"ButtonToLostPassword"          = "Lose your password?";   //TBD
+"ButtonToGameSelect"            = "Conectar";
 
 //Text Fields       - "TextFieldNAMEOFVIEWCONTROLLERLabel"
-"TextFieldARTMUsername"         = "SUsername";
-"TextFieldARTMPassword"         = "SPassword";
-"TextFieldLostPasswordEmail"    = "SEmail";
+"TextFieldARTMUsername"         = "Usuario";
+"TextFieldARTMPassword"         = "Clave";
+"TextFieldLostPasswordEmail"    = "Email";
 
 //Server Messages   - "ServerVCMessage"
-"ServerARTMLoginUnsuccessful"   = "SLogin Unsuccessful";
-"ServerARTMBadUsernameAndPass"  = "SUsername/Password not found";
+"ServerARTMLoginUnsuccessful"   = "Error de identificación";
+"ServerARTMBadUsernameAndPass"  = "Usuario/Clave desconocidos";
 
 //Labels            - "LabelVCMessage"
-"LabelGameSelectPlayer"         = "SPlayer";
-"LabelGameSelectPlayers"        = "SPlayers";
+"LabelGameSelectPlayer"         = "Jugador";
+"LabelGameSelectPlayers"        = "Jugadores";
 
 //Table             - "TableMessage"
-"TableViewedMap"                = "SViewed Map";
-"TablePickupItem"               = "SPicked up Item";
-"TableDroppedItem"              = "SDropped Item";
-"TableDroppedNote"              = "SDropped Note";
-"TableDestroyedItem"            = "SDestroyed Item";
-"TableViewedItem"               = "SViewed Item";
-"TableViewedNode"               = "SViewed Node";
-"TableViewedNPC"                = "SViewed NPC";
-"TableViewedWebpage"            = "SViewed Webpage";
-"TableViewedAugbubble"          = "SViewed Augbubble";
-"TableViewedQuests"             = "SViewed Quests";
-"TableViewedInventory"          = "SViewed Inventory";
-"TableEnteredQRCode"            = "SEntered QR Code";
-"TableUploadMediaItem"          = "SUploaded Media Item";
-"TableUploadMediaImage"         = "SUploaded Media Image";
-"TableUploadMediaAudio"         = "SUploaded Media Audio";
-"TableUploadMediaVideo"         = "SUploaded Media Video";
-"TableReceivedWebhook"          = "SReceived Webhook";
-"TableSentWebhook"              = "SSent Webhook";
-"TableQuestCompleted"           = "SCompleted Quest";
-"TableReceivedNote"             = "SReceived Note";
-"TableGaveNoteLike"             = "SLiked the Note";
-"TableReceivedNoteLike"         = "SReceived a like on Note";
-"TableGaveNoteComment"          = "SCommented on the Note";
-"TableReceivedNoteComment"      = "SReceived a comment on the Note";
+"TableViewedMap"                = "Viewed Map";   //TBD
+"TablePickupItem"               = "Picked up Item";   //TBD
+"TableDroppedItem"              = "Dropped Item";   //TBD
+"TableDroppedNote"              = "Dropped Note";  //TBD
+"TableDestroyedItem"            = "Destroyed Item";  //TBD
+"TableViewedItem"               = "Viewed Item";  //TBD
+"TableViewedNode"               = "Viewed Node";  //TBD
+"TableViewedNPC"                = "Viewed NPC";  //TBD
+"TableViewedWebpage"            = "Viewed Webpage";  //TBD
+"TableViewedAugbubble"          = "Viewed Augbubble";  //TBD
+"TableViewedQuests"             = "Viewed Quests";  //TBD
+"TableViewedInventory"          = "Viewed Inventory";  //TBD
+"TableEnteredQRCode"            = "Entered QR Code";  //TBD
+"TableUploadMediaItem"          = "Uploaded Media Item";  //TBD
+"TableUploadMediaImage"         = "Uploaded Media Image";  //TBD
+"TableUploadMediaAudio"         = "Uploaded Media Audio";  //TBD
+"TableUploadMediaVideo"         = "Uploaded Media Video";  //TBD
+"TableReceivedWebhook"          = "Received Webhook";  //TBD
+"TableSentWebhook"              = "Sent Webhook";  //TBD
+"TableQuestCompleted"           = "Completed Quest";  //TBD
+"TableReceivedNote"             = "Received Note";  //TBD
+"TableGaveNoteLike"             = "Liked the Note";  //TBD
+"TableReceivedNoteLike"         = "Received a like on Note";  //TBD
+"TableGaveNoteComment"          = "Commented on the Note";  //TBD
+"TableReceivedNoteComment"      = "Received a comment on the Note";  //TBD
 
 //ARISAlertHandler  - "Whatever it was in ARIS..."
-"PoorConnectionTitleKey"                = "Network Warning";
-"PoorConnectionMessageKey"              = "ARIS cannot communicate with the server.";
-"IgnoreKey"                             = "Ignore";
-"ReportKey"                             = "Report";
+"PoorConnectionTitleKey"                = "Aviso de red";
+"PoorConnectionMessageKey"              = "Conexión a Internet lenta o desactivada";
+"IgnoreKey"                             = "Ignorar";
+"ReportKey"                             = "Informar";
 "OkKey"                                 = "Ok";
-"ARISAppDelegateWIFIErrorMessageKey"    = "You may need to login to your Wifi connection from Safari. \nYou also may need to verify ARIS server settings in system preferences. \nIf the problem persists, please send us some debugging information.";
+"ARISAppDelegateWIFIErrorMessageKey"    = "Posiblemente necesitas identificarte en la conexión wifi desde Safari. \nVerifica también los ajustes del servidor ARIS en las preferencias del sistema. \nSi el problema continúa, por favor envíanos información para subsanar el problema.";
