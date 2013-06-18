@@ -3,6 +3,7 @@
   ARISRealtimeMonitor
 
   Created by Nick Heindl on 6/18/13.
+  Adapted from Fred UBIK2 fred.ubik2@gmail.com
   Copyright (c) 2013 Nick Heindl. All rights reserved.
 */
 
@@ -69,3 +70,9 @@
 "ReportKey"                             = "Compte Rendu";
 "OkKey"                                 = "Ok";
 "ARISAppDelegateWIFIErrorMessageKey"    = "Tu a probablement besoin de faire le login à ta Wifi depuis Safari. \nTu devrais aussi verifier les préférences du serveur de ARIS dans les préférences du système. \nSi le problème persiste, envoie-nous l'info pour le débuggage svp.";
+
+//App Services
+"FailureForgotPasswordTitleKey"         = "Svp, entre ton adresse email associée avec ton compte de joueur pour récupérer ton mot de passe..";
+"ForgotPasswordMessageKey"              = ""; //Tbd
+"SuccessForgotEmailSentTitleKey"        = ""; //Tbd
+"ForgotMessageKey"                      = "Un email t'a été envoyé avec les instructions pour changer ton mot de passe";
