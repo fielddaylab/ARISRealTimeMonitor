@@ -12,12 +12,12 @@
 		5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */; };
 		5B35AC15175E8BC000B0D9D2 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B35AC13175E8BC000B0D9D2 /* AppModel.m */; };
 		5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */; };
-		5B45209E174FC4EE0038599C /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209D174FC4EE0038599C /* 73-radar.png */; };
-		5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B45209F174FC4FF0038599C /* 179-notepad.png */; };
 		5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */; };
 		5B67E1D2174E693B00DDBC2A /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */; };
 		5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */; };
 		5B67E1D7174E7CE200DDBC2A /* LoginTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */; };
+		5B70D09B1770F08500B099CE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B70D09A1770F08500B099CE /* 73-radar.png */; };
+		5B70D09D1770F14000B099CE /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B70D09C1770F14000B099CE /* 179-notepad.png */; };
 		5B99A57F174D4F1000950E08 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A57E174D4F1000950E08 /* AppServices.m */; };
 		5B9BAC7A1762455B0087EB07 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BAC791762455B0087EB07 /* Player.m */; };
 		5BA58338176653FF0047B8CD /* ArisRealtimeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA58334176653FE0047B8CD /* ArisRealtimeLoginViewController.m */; };
@@ -81,14 +81,14 @@
 		5B35AC12175E8BC000B0D9D2 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		5B35AC13175E8BC000B0D9D2 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
-		5B45209D174FC4EE0038599C /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
-		5B45209F174FC4FF0038599C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D0174E693B00DDBC2A /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
 		5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
 		5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableCell.h; sourceTree = "<group>"; };
 		5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableCell.m; sourceTree = "<group>"; };
+		5B70D09A1770F08500B099CE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		5B70D09C1770F14000B099CE /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		5B99A57D174D4F1000950E08 /* AppServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServices.h; sourceTree = "<group>"; };
 		5B99A57E174D4F1000950E08 /* AppServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServices.m; sourceTree = "<group>"; };
 		5B9BAC781762455B0087EB07 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -286,7 +286,6 @@
 				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
 				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
 				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
-				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
 				5B35AC12175E8BC000B0D9D2 /* AppModel.h */,
 				5B35AC13175E8BC000B0D9D2 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
@@ -294,6 +293,7 @@
 				5B9BAC781762455B0087EB07 /* Player.h */,
 				5B9BAC791762455B0087EB07 /* Player.m */,
 				719F9B02175506D7004C6DF4 /* AnnotationViews.h */,
+				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
 				719F9B03175506D7004C6DF4 /* AnnotationViews.m */,
 				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
 				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
@@ -314,6 +314,8 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B70D09C1770F14000B099CE /* 179-notepad.png */,
+				5B70D09A1770F08500B099CE /* 73-radar.png */,
 				71F827B9176FB5EE007156A2 /* notebook.png */,
 				71F827AF176FB41D007156A2 /* 08-chat.png */,
 				71F827B0176FB41D007156A2 /* 55-network.png */,
@@ -333,8 +335,6 @@
 				719F9B051755098C004C6DF4 /* cactus.png */,
 				719F9B061755098C004C6DF4 /* palmTree.png */,
 				719F9B071755098C004C6DF4 /* sun.png */,
-				5B45209F174FC4FF0038599C /* 179-notepad.png */,
-				5B45209D174FC4EE0038599C /* 73-radar.png */,
 				719941D2174D3F9200B7E42D /* ARISRealtimeMonitor-Info.plist */,
 				719941D3174D3F9200B7E42D /* InfoPlist.strings */,
 				719941D6174D3F9200B7E42D /* main.m */,
@@ -409,8 +409,6 @@
 				5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */,
 				71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */,
 				71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */,
-				5B45209E174FC4EE0038599C /* 73-radar.png in Resources */,
-				5B4520A0174FC4FF0038599C /* 179-notepad.png in Resources */,
 				71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */,
 				5BE41116175D135E00A09986 /* 74-location.png in Resources */,
 				5BE41118175D135E00A09986 /* 196-radiation.png in Resources */,
@@ -429,6 +427,8 @@
 				71F827B7176FB41D007156A2 /* 174-imac.png in Resources */,
 				71F827B8176FB41D007156A2 /* 257-box3.png in Resources */,
 				71F827BA176FB5EE007156A2 /* notebook.png in Resources */,
+				5B70D09B1770F08500B099CE /* 73-radar.png in Resources */,
+				5B70D09D1770F14000B099CE /* 179-notepad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
