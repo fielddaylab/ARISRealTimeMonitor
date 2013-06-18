@@ -146,8 +146,13 @@
 	//Get the JSONResult here
 	ServiceResult *jsonResult = [[ServiceResult alloc] initWithJSONString:jsonString andUserData:[self userInfo]];
     
-	if (self.handler != nil)
-		[[AppServices sharedAppServices] performSelector:self.handler withObject:jsonResult];
+	if (self.handler != nil){
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [[AppServices sharedAppServices] performSelector:self.handler withObject:jsonResult];
+        #pragma clang diagnostic pop
+    }
+
 }
 
 
