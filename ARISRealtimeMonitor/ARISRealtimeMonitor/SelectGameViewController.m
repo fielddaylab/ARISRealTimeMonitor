@@ -103,6 +103,7 @@
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
     cell.textLabel.text = game.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     
     NSString *stringPlayer = NSLocalizedString(@"LabelGameSelectPlayer", nil);
