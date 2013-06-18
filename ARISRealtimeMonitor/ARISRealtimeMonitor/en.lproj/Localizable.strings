@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   ARISRealtimeMonitor
 
@@ -65,3 +65,11 @@
 "TableReceivedNoteLike"         = "Received a like on Note";
 "TableGaveNoteComment"          = "Commented on the Note";
 "TableReceivedNoteComment"      = "Received a comment on the Note";
+
+//ARISAlertHandler  - "Whatever it was in ARIS..."
+"PoorConnectionTitleKey"                = "Network Warning";
+"PoorConnectionMessageKey"              = "ARIS cannot communicate with the server.";
+"IgnoreKey"                             = "Ignore";
+"ReportKey"                             = "Report";
+"OkKey"                                 = "Ok";
+"ARISAppDelegateWIFIErrorMessageKey"    = "You may need to login to your Wifi connection from Safari. \nYou also may need to verify ARIS server settings in system preferences. \nIf the problem persists, please send us some debugging information.";

@@ -46,6 +46,10 @@
 		5BE4111B175D135E00A09986 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41115175D135E00A09986 /* sun.png */; };
 		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
 		71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71242BFF17555678006CF0F3 /* LostPasswordViewController.m */; };
+		7132895C1770F4C40058AFE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 713289521770F4C40058AFE3 /* InfoPlist.strings */; };
+		7132895D1770F4C40058AFE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 713289541770F4C40058AFE3 /* Localizable.strings */; };
+		7132895E1770F4C40058AFE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 713289571770F4C40058AFE3 /* Localizable.strings */; };
+		7132895F1770F4C40058AFE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7132895A1770F4C40058AFE3 /* Localizable.strings */; };
 		718A5D101761428B009DA4F1 /* 246-route.png in Resources */ = {isa = PBXBuildFile; fileRef = 718A5D0F1761428B009DA4F1 /* 246-route.png */; };
 		719941CB174D3F9200B7E42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CA174D3F9200B7E42D /* UIKit.framework */; };
 		719941CD174D3F9200B7E42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719941CC174D3F9200B7E42D /* Foundation.framework */; };
@@ -141,6 +145,10 @@
 		71242B9617555074006CF0F3 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
 		71242BFE17555678006CF0F3 /* LostPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPasswordViewController.h; sourceTree = "<group>"; };
 		71242BFF17555678006CF0F3 /* LostPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPasswordViewController.m; sourceTree = "<group>"; };
+		713289531770F4C40058AFE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		713289551770F4C40058AFE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		713289581770F4C40058AFE3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
+		7132895B1770F4C40058AFE3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		718A5D0F1761428B009DA4F1 /* 246-route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "246-route.png"; sourceTree = "<group>"; };
 		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -314,6 +322,9 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				713289511770F4C40058AFE3 /* en.lproj */,
+				713289561770F4C40058AFE3 /* es.lproj */,
+				713289591770F4C40058AFE3 /* fr.lproj */,
 				5B70D09C1770F14000B099CE /* 179-notepad.png */,
 				5B70D09A1770F08500B099CE /* 73-radar.png */,
 				71F827B9176FB5EE007156A2 /* notebook.png */,
@@ -429,6 +440,10 @@
 				71F827BA176FB5EE007156A2 /* notebook.png in Resources */,
 				5B70D09B1770F08500B099CE /* 73-radar.png in Resources */,
 				5B70D09D1770F14000B099CE /* 179-notepad.png in Resources */,
+				7132895C1770F4C40058AFE3 /* InfoPlist.strings in Resources */,
+				7132895D1770F4C40058AFE3 /* Localizable.strings in Resources */,
+				7132895E1770F4C40058AFE3 /* Localizable.strings in Resources */,
+				7132895F1770F4C40058AFE3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
