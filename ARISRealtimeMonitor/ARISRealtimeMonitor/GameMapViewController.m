@@ -41,6 +41,7 @@
 @implementation GameMapViewController
 @synthesize mapView = _mapView;
 @synthesize game;
+@synthesize shouldZoom;
 
 @synthesize didIFlip;
 
@@ -177,9 +178,11 @@
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
         annotation.icon = @"Player";
+        annotation.title = tempPlayer.username;
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];
+    [self setMapRegion];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -205,10 +208,8 @@
    
     //Grab the Annotations
     //go grab the location data from the server
-    //assume first game is click on always
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
     [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
-
 
     
     //Set up the Switch Button
@@ -220,6 +221,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    //save the current region before disappearing
+    [AppModel sharedAppModel].region = self.mapView.region;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
@@ -258,9 +265,6 @@
         NSLog(@"ZERO");
         return;
     }
-    
-    NSLog(@"NOT ZERO");
-    
     CLLocationCoordinate2D topLeftCoord;
     topLeftCoord.latitude = -90;
     topLeftCoord.longitude = 180;
@@ -286,6 +290,28 @@
     
     region = [self.mapView regionThatFits:region];
     [self.mapView setRegion:region animated:YES];
+}
+
+-(void)setMapRegion{
+    if([self.mapView.annotations count] == 0){
+        NSLog(@"ZERO");
+        return;
+    }
+    
+    NSLog(@"NOT ZERO");
+    
+    MKCoordinateRegion region;
+    
+    if(self.shouldZoom){
+        [self zoomToFitMapAnnotations];
+    }
+    else{
+        region = [AppModel sharedAppModel].region;
+        [self.mapView setRegion:region animated:NO];
+    }
+    
+    
+    
 }
 
 

@@ -29,6 +29,7 @@
 //this is a placeholder for the game events
 @property (nonatomic, strong) NSMutableArray *gameEvents;
 @property (nonatomic, strong) NSMutableArray *events;
+@property (nonatomic) MKCoordinateRegion region;
 
 + (AppModel *)sharedAppModel;
 -(void)loadUserDefaults;

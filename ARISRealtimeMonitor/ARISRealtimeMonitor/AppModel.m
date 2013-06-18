@@ -17,7 +17,7 @@
 
 
 //ARIS Realtime Monitor Additions
-@synthesize gameEvents, listOfPlayersGames, locations, playersInGame, events, types;
+@synthesize gameEvents, listOfPlayersGames, locations, playersInGame, events, types, region;
 
 + (id)sharedAppModel
 {
