@@ -13,6 +13,9 @@
 
 NSString *const kARISServerServicePackage = @"v1";
 
+@interface AppServices (){
+}
+@end
 
 
 @implementation AppServices
@@ -168,11 +171,6 @@ NSString *const kARISServerServicePackage = @"v1";
 }
 
 
-//placeholder. needs to change
-- (NSMutableArray *) getGameEvents{
-    return [[NSMutableArray alloc] initWithObjects:@"Jack Wilshere", @"Theo Walcott", @"Lucas Poldoski", nil];
-}
-
 - (void)loginEditorUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict
 {
 	NSArray *arguments = [NSArray arrayWithObjects:username, password, @"read_write", nil];
@@ -217,7 +215,6 @@ NSString *const kARISServerServicePackage = @"v1";
 }
 
 -(void)getNumPlayersForEachGame{
-    
     for(int i = 0; i < [AppModel sharedAppModel].listOfPlayersGames.count; i++){
         Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
         [self getNumOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId] AtIndex:i];
@@ -233,28 +230,17 @@ NSString *const kARISServerServicePackage = @"v1";
                                                               andMethodName:@"getOtherPlayersForGame"
                                                                andArguments:arguments
                                                                 andUserInfo:nil];
+    //[jsonConnection performAsynchronousRequestWithHandler:@selector(parseNumOfGamePlayersFromJSON:)];
     ServiceResult *jsonResult = [jsonConnection performSynchronousRequest];
     NSArray *playersArray = (NSArray *)jsonResult.data;
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
     game.numPlayers = [playersArray count];
     [[[AppModel sharedAppModel] listOfPlayersGames] setObject:game atIndexedSubscript:i];
-	//[jsonConnection performAsynchronousRequestWithHandler:@selector(parseNumOfGamePlayersFromJSON:)];
     
 }
 
 //-(void)parseNumOfGamePlayersFromJSON:(ServiceResult *)jsonResult{
 //    NSArray *playersArray = (NSArray *)jsonResult.data;
-//    NSMutableDictionary *tempPlayersList = [[NSMutableDictionary alloc] init];
-//    NSEnumerator *playersEnumerator = [playersArray objectEnumerator];
-//    NSDictionary *playersDictionary;
-//    while((playersDictionary = [playersEnumerator nextObject])){
-//        //this isnt going to construct a complete Player object because only the id and location are returned from the server. we can grab the rest later
-//        Player *tempPlayer = [[Player alloc] initWithDictionary:playersDictionary];
-//        NSString *key = [NSString stringWithFormat:@"%i", tempPlayer.playerId];
-//        [tempPlayersList setObject: tempPlayer forKey:key];
-//    }
-//    
-//    [AppModel sharedAppModel].playersInGame = tempPlayersList;
 //}
 
 
