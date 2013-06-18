@@ -32,8 +32,11 @@
 @synthesize launchNodeId;
 @synthesize completeNodeId;
 @synthesize numReviews, reviewedByUser;
-//@synthesize calculatedScore,isLocational, showPlayerLocation, iconMedia;
-//@synthesize allowsPlayerTags,splashMedia,allowNoteComments,allowNoteLikes,allowShareNoteToMap,allowShareNoteToList,allowTrading;
+@synthesize calculatedScore, showPlayerLocation;
+//@synthesize iconMedia;
+@synthesize isLocational;
+@synthesize allowsPlayerTags,allowNoteComments,allowNoteLikes,allowShareNoteToMap,allowShareNoteToList,allowTrading;
+//@synthesize splashMedia;
 
 - (id)init
 {

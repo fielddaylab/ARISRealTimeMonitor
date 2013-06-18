@@ -54,8 +54,8 @@
                                                             longitude:[dict validDoubleForKey:@"longitude"]];
         self.coordinate = self.latlon.coordinate;
         
-        NSString *otype = [dict validObjectForKey:@"type"];
-        int oid         = [dict validIntForKey:@"type_id"];
+//        NSString *otype = [dict validObjectForKey:@"type"];
+//        int oid         = [dict validIntForKey:@"type_id"];
 //        if([otype isEqualToString:@"Node"])
 //            self.gameObject = [[AppModel sharedAppModel] nodeForNodeId:oid];
 //        if([otype isEqualToString:@"Item"])       self.gameObject = [[AppModel sharedAppModel] itemForItemId:oid];
