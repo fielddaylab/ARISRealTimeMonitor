@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ARISRealtimeMonitor
+
+  Created by Nick Heindl on 6/18/13.
+  Copyright (c) 2013 Nick Heindl. All rights reserved.
+*/
+
+//[testLabel setText:NSLocalizedString(@"TEST", nil)];
+
+"TEST" = "French";
