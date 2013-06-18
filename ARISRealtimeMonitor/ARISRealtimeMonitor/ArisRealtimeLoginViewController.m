@@ -23,17 +23,14 @@
 
 @implementation ArisRealtimeLoginViewController
 
+@synthesize goToGameSelectOutlet, goToLostPasswordOutlet;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        //[loginController setTitle:@"Aris Realtime Monitor"];
-        
-//        //If we want to make the logo programatically.
-//        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 300, 400)];
-//        imgView.image = [UIImage imageNamed:@"logo_dk_vertical_lock_up.jpg"];
-//        [self.view addSubview: imgView];
+        self.title = NSLocalizedString(@"NavBarARTM", nil); 
     }
     return self;
 }
@@ -41,7 +38,7 @@
 - (IBAction)goToLostPassword:(id)sender {
     
     //Set up the back button for the LostPasswordVC
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Login" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"NavBarToLogin", nil) style: UIBarButtonItemStyleBordered target: nil action: nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
@@ -53,12 +50,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.title = @"Aris Realtime Monitor";
+    
+    [goToGameSelectOutlet setTitle:NSLocalizedString(@"ButtonToGameSelect", nil) forState:UIControlStateNormal];
+    [goToLostPasswordOutlet setTitle:NSLocalizedString(@"ButtonToLostPassword", nil) forState:UIControlStateNormal];
     
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
-    
     
     [self.view addGestureRecognizer:dismissKB];
 }
@@ -101,11 +97,11 @@
         
         if(indexPath.row == 0){
             usernameField = cell.textField;
-            cell.textField.placeholder = @"Username";
+            cell.textField.placeholder = NSLocalizedString(@"TextFieldARTMUsername", nil);
         }
         else{
             passwordField = cell.textField;
-            cell.textField.placeholder = @"Password";
+            cell.textField.placeholder = NSLocalizedString(@"TextFieldARTMPassword", nil);
             cell.textField.secureTextEntry = YES;
             [cell.textField setReturnKeyType:UIReturnKeyDone];
         }
@@ -160,7 +156,8 @@
     ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
     if(!r.data || r.data == [NSNull null])
         //make these localized strings
-        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:@"Login Unsuccessful (make localized)" message:@"Username/Password not found (make localized)"];
+        [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"ServerARTMLoginUnsuccessful", nil) message:NSLocalizedString(@"ServerARTMBadUsernameAndPass", nil)];
+
     else
     {
         [self loginSucceed:r];

@@ -8,4 +8,60 @@
 
 //[testLabel setText:NSLocalizedString(@"TEST", nil)];
 
+//Some may seem a bit redundant, but I am trying to keep all languages in mind.
+
 "TEST" = "Spanish";
+
+//Nav Bar Titles    - "NavBarVC"
+"NavBarLostPassword"            = "SLost Password";
+"NavBarARTM"                    = "SAris Realtime Monitor";
+"NavBarGameSelect"              = "SSelect a Game";
+
+//Nav Bar Buttons   - "NavBarToVC"
+"NavBarToLogin"                 = "SLogin";
+"NavBarToGameSelect"            = "SGames";
+"NavBarToLoginFromGameSelect"   = "SLogout";
+
+//Buttons           - "ButtonToVC"
+"ButtonToLostPassword"          = "SLose your password?";
+"ButtonToGameSelect"            = "SLogin!";
+
+//Text Fields       - "TextFieldNAMEOFVIEWCONTROLLERLabel"
+"TextFieldARTMUsername"         = "SUsername";
+"TextFieldARTMPassword"         = "SPassword";
+"TextFieldLostPasswordEmail"    = "SEmail";
+
+//Server Messages   - "ServerVCMessage"
+"ServerARTMLoginUnsuccessful"   = "SLogin Unsuccessful";
+"ServerARTMBadUsernameAndPass"  = "SUsername/Password not found";
+
+//Labels            - "LabelVCMessage"
+"LabelGameSelectPlayer"         = "SPlayer";
+"LabelGameSelectPlayers"        = "SPlayers";
+
+//Table             - "TableMessage"
+"TableViewedMap"                = "SViewed Map";
+"TablePickupItem"               = "SPicked up Item";
+"TableDroppedItem"              = "SDropped Item";
+"TableDroppedNote"              = "SDropped Note";
+"TableDestroyedItem"            = "SDestroyed Item";
+"TableViewedItem"               = "SViewed Item";
+"TableViewedNode"               = "SViewed Node";
+"TableViewedNPC"                = "SViewed NPC";
+"TableViewedWebpage"            = "SViewed Webpage";
+"TableViewedAugbubble"          = "SViewed Augbubble";
+"TableViewedQuests"             = "SViewed Quests";
+"TableViewedInventory"          = "SViewed Inventory";
+"TableEnteredQRCode"            = "SEntered QR Code";
+"TableUploadMediaItem"          = "SUploaded Media Item";
+"TableUploadMediaImage"         = "SUploaded Media Image";
+"TableUploadMediaAudio"         = "SUploaded Media Audio";
+"TableUploadMediaVideo"         = "SUploaded Media Video";
+"TableReceivedWebhook"          = "SReceived Webhook";
+"TableSentWebhook"              = "SSent Webhook";
+"TableQuestCompleted"           = "SCompleted Quest";
+"TableReceivedNote"             = "SReceived Note";
+"TableGaveNoteLike"             = "SLiked the Note";
+"TableReceivedNoteLike"         = "SReceived a like on Note";
+"TableGaveNoteComment"          = "SCommented on the Note";
+"TableReceivedNoteComment"      = "SReceived a comment on the Note";

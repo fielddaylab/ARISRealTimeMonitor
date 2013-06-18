@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Select a Game";
+        self.title = NSLocalizedString(@"NavBarGameSelect", nil);
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
         }
@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"NavBarToLoginFromGameSelect", nil) style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -103,10 +103,12 @@
     Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:indexPath.row];
     cell.textLabel.text = game.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    //the number of players in the game will always be 0 because the server isn't currently returning the number of players
-    //commented out because its not working, will put back in later
-    cell.detailTextLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
-    //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
+
+    
+    NSString *stringPlayer = NSLocalizedString(@"LabelGameSelectPlayer", nil);
+    NSString *stringPlayers = NSLocalizedString(@"LabelGameSelectPlayers", nil);
+    cell.detailTextLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%@: %i", stringPlayer, game.numPlayers]: [NSString stringWithFormat:@"%@: %i", stringPlayers, game.numPlayers];
+
     return cell;
 }
 
@@ -149,7 +151,7 @@
     
     
     //Set the 'GAMES' back button for Map/TableViews here.
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"NavBarToGameSelect", nil) style:UIBarButtonItemStyleBordered target:nil action:nil];
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     
