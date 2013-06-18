@@ -36,8 +36,6 @@ extern NSString *const kARISServerServicePackage;
 
 
 //ArisRealtimeMonitor
-//this is a placeholder for retrieving the events list from the server
-- (NSMutableArray *) getGameEvents;
 - (void)loginEditorUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict;
 - (void)getGamesForEditor:(NSString *)editorId editorToken:(NSString *)editorToken;
 - (void)getLocationsForGame:(NSString *)gameId;
