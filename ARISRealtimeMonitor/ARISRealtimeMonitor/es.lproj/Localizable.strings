@@ -73,6 +73,10 @@
 
 //App Services
 "FailureForgotPasswordTitleKey"         = "Por favor, teclea tu dirección de email asociada con tu cuenta de jugador para poder recuperar tu clave de acceso.";
-"ForgotPasswordMessageKey"              = ""; //Tbd
-"SuccessForgotEmailSentTitleKey"        = ""; //Tbd
+"ForgotPasswordMessageKey"              = ""; //TBD
+"SuccessForgotEmailSentTitleKey"        = ""; //TBD
 "ForgotMessageKey"                      = "Se te ha enviado un email con instrucciones para cambiar tu clave";
+
+//Service Result
+"BadServerResponseTitleKey"             = "Respuesta errónea del servidor";
+"BadServerResponseMessageKey"           = "Error con el servidor o url de servidor incorrecta ";

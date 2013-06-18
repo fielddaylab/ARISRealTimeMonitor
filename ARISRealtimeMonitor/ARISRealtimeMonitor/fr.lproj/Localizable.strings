@@ -73,6 +73,10 @@
 
 //App Services
 "FailureForgotPasswordTitleKey"         = "Svp, entre ton adresse email associée avec ton compte de joueur pour récupérer ton mot de passe..";
-"ForgotPasswordMessageKey"              = ""; //Tbd
-"SuccessForgotEmailSentTitleKey"        = ""; //Tbd
+"ForgotPasswordMessageKey"              = ""; //TBD
+"SuccessForgotEmailSentTitleKey"        = ""; //TBD
 "ForgotMessageKey"                      = "Un email t'a été envoyé avec les instructions pour changer ton mot de passe";
+
+//Service Result
+"BadServerResponseTitleKey"             = "Bad Response From Server";  //TBD
+"BadServerResponseMessageKey"           = "There was an error with the server or the server URL is not correct";  //TBD

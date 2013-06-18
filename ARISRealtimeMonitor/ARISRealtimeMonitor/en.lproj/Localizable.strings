@@ -76,6 +76,10 @@
 
 //App Services
 "FailureForgotPasswordTitleKey"         = "Please enter the email address associated with your game account in order to recover your password.";
-"ForgotPasswordMessageKey"              = ""; //Tbd
-"SuccessForgotEmailSentTitleKey"        = ""; //Tbd
+"ForgotPasswordMessageKey"              = ""; //TBD
+"SuccessForgotEmailSentTitleKey"        = ""; //TBD
 "ForgotMessageKey"                      = "An email has been sent to you with instructions for changing your password";
+
+//Service Result
+"BadServerResponseTitleKey"             = "Bad Response From Server";
+"BadServerResponseMessageKey"           = "There was an error with the server or the server URL is not correct";
