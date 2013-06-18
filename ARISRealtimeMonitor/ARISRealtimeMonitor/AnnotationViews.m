@@ -42,7 +42,7 @@
     
         if ([newAnnotation.icon isEqualToString:@"Player"]) {
             self.image = [UIImage imageNamed:@"145-persondot.png"];
-            newAnnotation.title = @"Player";
+            //newAnnotation.title = @"Player";
         }
         else if ([newAnnotation.icon isEqualToString:@"Item"]){
             self.image = [UIImage imageNamed:@"257-box3.png"];

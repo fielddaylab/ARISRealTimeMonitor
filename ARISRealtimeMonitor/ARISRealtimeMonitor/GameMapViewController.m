@@ -178,6 +178,7 @@
         annotation.leftIcon = @"Left Icon Here";
         //add icon later
         annotation.icon = @"Player";
+        annotation.title = tempPlayer.username;
         [annotations addObject:annotation];
     }
     [self.mapView addAnnotations:annotations];
