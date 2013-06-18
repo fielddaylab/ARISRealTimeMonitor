@@ -213,6 +213,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //do something when a cell is pressed
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 
