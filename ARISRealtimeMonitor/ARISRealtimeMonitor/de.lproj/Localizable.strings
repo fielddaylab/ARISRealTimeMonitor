@@ -1,0 +1,81 @@
+/*
+ Localizable.strings
+ ARISRealtimeMonitor
+ 
+ Created by Nick Heindl on 6/18/13.
+ Copyright (c) 2013 Nick Heindl. All rights reserved.
+ */
+
+"TEST" = "English";
+
+//Nav Bar Titles    - "NavBarVC"
+"NavBarLostPassword"            = "Passwort vergessen?";
+"NavBarARTM"                    = "Aris Realtime Monitor"; //TBD
+"NavBarGameSelect"              = "Wähl ein Spiel";
+
+//Nav Bar Buttons   - "NavBarToVC"
+"NavBarToLogin"                 = "Anmeldung";
+"NavBarToGameSelect"            = "Spiele";
+"NavBarToLoginFromGameSelect"   = "Abmeldung";
+
+//Buttons           - "ButtonToVC"
+"ButtonToLostPassword"          = "Passwort vergessen?";
+"ButtonToGameSelect"            = "Anmeldung";
+
+//Text Fields       - "TextFieldNAMEOFVIEWCONTROLLERLabel"
+"TextFieldARTMUsername"         = "Benutzername";
+"TextFieldARTMPassword"         = "Passwort";
+"TextFieldLostPasswordEmail"    = "Email";
+
+//Server Messages   - "ServerVCMessage"
+"ServerARTMLoginUnsuccessful"   = "Anmeldung gescheitert";
+"ServerARTMBadUsernameAndPass"  = "Username/Password nicht gefunden";
+
+//Labels            - "LabelVCMessage"
+"LabelGameSelectPlayer"         = "Spieler";
+"LabelGameSelectPlayers"        = "Spieler";
+
+//Table             - "TableMessage"
+"TableViewedMap"                = "Viewed Map";//TBD
+"TablePickupItem"               = "Picked up Item";//TBD
+"TableDroppedItem"              = "Dropped Item";//TBD
+"TableDroppedNote"              = "Dropped Note";//TBD
+"TableDestroyedItem"            = "Destroyed Item";//TBD
+"TableViewedItem"               = "Viewed Item";//TBD
+"TableViewedNode"               = "Viewed Node";//TBD
+"TableViewedNPC"                = "Viewed NPC";//TBD
+"TableViewedWebpage"            = "Viewed Webpage";//TBD
+"TableViewedAugbubble"          = "Viewed Augbubble";//TBD
+"TableViewedQuests"             = "Viewed Quests";//TBD
+"TableViewedInventory"          = "Viewed Inventory";//TBD
+"TableEnteredQRCode"            = "Entered QR Code";//TBD
+"TableUploadMediaItem"          = "Uploaded Media Item";//TBD
+"TableUploadMediaImage"         = "Uploaded Media Image";//TBD
+"TableUploadMediaAudio"         = "Uploaded Media Audio";//TBD
+"TableUploadMediaVideo"         = "Uploaded Media Video";//TBD
+"TableReceivedWebhook"          = "Received Webhook";//TBD
+"TableSentWebhook"              = "Sent Webhook";//TBD
+"TableQuestCompleted"           = "Completed Quest";//TBD
+"TableReceivedNote"             = "Received Note";//TBD
+"TableGaveNoteLike"             = "Liked the Note";//TBD
+"TableReceivedNoteLike"         = "Received a like on Note";//TBD
+"TableGaveNoteComment"          = "Commented on the Note";//TBD
+"TableReceivedNoteComment"      = "Received a comment on the Note";//TBD
+
+//ARISAlertHandler  - "Whatever it was in ARIS..."
+"PoorConnectionTitleKey"                = "Network Warnung";
+"PoorConnectionMessageKey"              = "ARIS kann nicht mit dem Server verbinden";
+"IgnoreKey"                             = "Ignorieren";
+"ReportKey"                             = "Berichten";
+"OkKey"                                 = "Ok";
+"ARISAppDelegateWIFIErrorMessageKey"    = "You may need to login to your Wifi connection from Safari. \nYou also may need to verify ARIS server settings in system preferences. \nIf the problem persists, please send us some debugging information."; //TBD
+
+//App Services
+"FailureForgotPasswordTitleKey"         = "Please enter the email address associated with your game account in order to recover your password."; //TBD
+"ForgotPasswordMessageKey"              = ""; //TBD
+"SuccessForgotEmailSentTitleKey"        = ""; //TBD
+"ForgotMessageKey"                      = "An email has been sent to you with instructions for changing your password"; //TBD
+
+//Service Result
+"BadServerResponseTitleKey"             = "Bad Response From Server"; //TBD
+"BadServerResponseMessageKey"           = "There was an error with the server or the server URL is not correct"; //TBD
