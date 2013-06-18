@@ -51,6 +51,7 @@
         
         toVCMap = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
         toVCMap.game = self.game;
+        toVCMap.shouldZoom = NO;
         animation = UIViewAnimationOptionTransitionFlipFromLeft;
         [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
         toVC = toVCMap;
@@ -95,6 +96,7 @@
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
     gameMapViewController.game = self.game;
+    gameMapViewController.shouldZoom = YES;
 
     [self addChildViewController:gameMapViewController];
     [self displayContentController:[[self childViewControllers] objectAtIndex:0]];

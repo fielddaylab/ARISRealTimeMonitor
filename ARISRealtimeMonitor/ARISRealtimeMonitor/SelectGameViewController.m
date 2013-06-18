@@ -106,7 +106,6 @@
     //the number of players in the game will always be 0 because the server isn't currently returning the number of players
     //commented out because its not working, will put back in later
     cell.detailTextLabel.text = (game.numPlayers == 1)? [NSString stringWithFormat:@"%i player", game.numPlayers]: [NSString stringWithFormat:@"%i players", game.numPlayers];
-    //cell.playersLabel.text = [NSString stringWithFormat:@"%i players", game.numPlayers];
     return cell;
 }
 
@@ -146,7 +145,6 @@
     
     self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
     self.gameViewController.game = game;
-    
     
     //Set the 'GAMES' back button for Map/TableViews here.
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Games" style:UIBarButtonItemStyleBordered target:nil action:nil];

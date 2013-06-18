@@ -89,7 +89,7 @@ NSString *const kARISServerServicePackage = @"v1";
     //game.inventoryModel.weightCap = [gameSource validIntForKey:@"inventory_weight_cap"];
     game.rating                   = [gameSource validIntForKey:@"rating"];
     game.pcMediaId                = [gameSource validIntForKey:@"pc_media_id"];
-    game.numPlayers               = [gameSource validIntForKey:@"numPlayers"];
+    game.numPlayers               = [gameSource validIntForKey:@"num_players"];
     game.playerCount              = [gameSource validIntForKey:@"count"];
     game.gdescription             = [gameSource validStringForKey:@"description"];
     game.name                     = [gameSource validStringForKey:@"name"];
@@ -157,10 +157,12 @@ NSString *const kARISServerServicePackage = @"v1";
     
     NSMutableArray *tempGameList = [[NSMutableArray alloc] init];
     
-    NSEnumerator *gameListEnumerator = [gameListArray objectEnumerator];
-    NSDictionary *gameDictionary;
-    while ((gameDictionary = [gameListEnumerator nextObject])) {
-        [tempGameList addObject:[self parseGame:(gameDictionary)]];
+    if([gameListArray count] != 0){
+        NSEnumerator *gameListEnumerator = [gameListArray objectEnumerator];
+        NSDictionary *gameDictionary;
+        while ((gameDictionary = [gameListEnumerator nextObject])) {
+            [tempGameList addObject:[self parseGame:(gameDictionary)]];
+        }
     }
     
 //    NSError *error;
@@ -209,35 +211,34 @@ NSString *const kARISServerServicePackage = @"v1";
     NSLog(@"parseGetGamesForEditor");
     
     [AppModel sharedAppModel].listOfPlayersGames = [self parseGameListFromJSON:jsonResult];
-    [self getNumPlayersForEachGame];
+    //[self getNumPlayersForEachGame];
     NSLog(@"NSNotification: GamesListReady");
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"GamesListReady" object:nil]];
 }
 
--(void)getNumPlayersForEachGame{
-    for(int i = 0; i < [AppModel sharedAppModel].listOfPlayersGames.count; i++){
-        Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
-        [self getNumOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId] AtIndex:i];
-    }
-    
-}
+//-(void)getNumPlayersForEachGame{
+//    for(int i = 0; i < [AppModel sharedAppModel].listOfPlayersGames.count; i++){
+//        Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
+//        [self getNumOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId] AtIndex:i];
+//    }
+//    
+//}
 
--(void)getNumOfGamePlayers:(NSString *)gameId AtIndex:(NSInteger)i{
-    NSArray *arguments = [NSArray arrayWithObjects:gameId, @"0", nil];
-    
-	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-                                                             andServiceName:@"players"
-                                                              andMethodName:@"getOtherPlayersForGame"
-                                                               andArguments:arguments
-                                                                andUserInfo:nil];
-    //[jsonConnection performAsynchronousRequestWithHandler:@selector(parseNumOfGamePlayersFromJSON:)];
-    ServiceResult *jsonResult = [jsonConnection performSynchronousRequest];
-    NSArray *playersArray = (NSArray *)jsonResult.data;
-    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
-    game.numPlayers = [playersArray count];
-    [[[AppModel sharedAppModel] listOfPlayersGames] setObject:game atIndexedSubscript:i];
-    
-}
+//-(void)getNumOfGamePlayers:(NSString *)gameId AtIndex:(NSInteger)i{
+//    NSArray *arguments = [NSArray arrayWithObjects:gameId, @"0", nil];
+//    
+//	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
+//                                                             andServiceName:@"players"
+//                                                              andMethodName:@"getOtherPlayersForGame"
+//                                                               andArguments:arguments
+//                                                                andUserInfo:nil];
+//    //[jsonConnection performAsynchronousRequestWithHandler:@selector(parseNumOfGamePlayersFromJSON:)];
+//    ServiceResult *jsonResult = [jsonConnection performSynchronousRequest];
+//    NSArray *playersArray = (NSArray *)jsonResult.data;
+//    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
+//    game.numPlayers = [playersArray count];
+//    [[[AppModel sharedAppModel] listOfPlayersGames] setObject:game atIndexedSubscript:i];
+//}
 
 //-(void)parseNumOfGamePlayersFromJSON:(ServiceResult *)jsonResult{
 //    NSArray *playersArray = (NSArray *)jsonResult.data;

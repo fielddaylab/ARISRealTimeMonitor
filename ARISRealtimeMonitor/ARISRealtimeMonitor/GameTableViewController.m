@@ -126,6 +126,9 @@
 -(NSString *)displayEvent:(Event *)event{
     
     //change these to localized strings
+    //return [NSString stringWithFormat:"%@ : %@", NSLocalizedString(event.eventType, nil), event.eventDetail1];
+    
+    //change these to localized strings
     if([event.eventType isEqualToString:@"VIEW_MAP"]){
         return [NSString stringWithFormat:@"Viewed the map"];
     }
