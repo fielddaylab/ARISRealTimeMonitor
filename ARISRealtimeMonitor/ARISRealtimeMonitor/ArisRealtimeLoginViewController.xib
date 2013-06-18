@@ -161,6 +161,22 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">goToGameSelectOutlet</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="220146916"/>
+					</object>
+					<int key="connectionID">188</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">goToLostPasswordOutlet</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="771688027"/>
+					</object>
+					<int key="connectionID">189</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="988679034"/>
 						<reference key="destination" ref="372490531"/>
@@ -230,14 +246,13 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">159</int>
-						<reference key="object" ref="220146916"/>
-						<array class="NSMutableArray" key="children"/>
+						<int key="objectID">183</int>
+						<reference key="object" ref="771688027"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">183</int>
-						<reference key="object" ref="771688027"/>
+						<int key="objectID">159</int>
+						<reference key="object" ref="220146916"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -257,7 +272,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">187</int>
+			<int key="maxID">189</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -276,6 +291,20 @@
 						<object class="IBActionInfo" key="goToLostPassword:">
 							<string key="name">goToLostPassword:</string>
 							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="goToGameSelectOutlet">UIButton</string>
+						<string key="goToLostPasswordOutlet">UIButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="goToGameSelectOutlet">
+							<string key="name">goToGameSelectOutlet</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="goToLostPasswordOutlet">
+							<string key="name">goToLostPasswordOutlet</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

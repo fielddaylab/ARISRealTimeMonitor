@@ -16,13 +16,14 @@
 
 @implementation LostPasswordViewController
 
+@synthesize emailOutlet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Lost Password";
+        self.title = NSLocalizedString(@"NavBarLostPassword", nil);
     }
     return self;
 }
@@ -32,6 +33,8 @@
 {
     [super viewDidLoad];
  
+    emailOutlet.placeholder = NSLocalizedString(@"TextFieldLostPasswordEmail", nil);
+
     // Do any additional setup after loading the view from its nib.
     
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -51,6 +54,7 @@
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

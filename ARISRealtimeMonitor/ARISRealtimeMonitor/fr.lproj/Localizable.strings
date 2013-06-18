@@ -1,0 +1,67 @@
+/* 
+  Localizable.strings
+  ARISRealtimeMonitor
+
+  Created by Nick Heindl on 6/18/13.
+  Copyright (c) 2013 Nick Heindl. All rights reserved.
+*/
+
+//[testLabel setText:NSLocalizedString(@"TEST", nil)];
+
+//Some may seem a bit redundant, but I am trying to keep all languages in mind.
+
+"TEST" = "French";
+
+//Nav Bar Titles    - "NavBarVC"
+"NavBarLostPassword"            = "FLost Password";
+"NavBarARTM"                    = "FAris Realtime Monitor";
+"NavBarGameSelect"              = "FSelect a Game";
+
+//Nav Bar Buttons   - "NavBarToVC"
+"NavBarToLogin"                 = "FLogin";
+"NavBarToGameSelect"            = "FGames";
+"NavBarToLoginFromGameSelect"   = "FLogout";
+
+//Buttons           - "ButtonToVC"
+"ButtonToLostPassword"          = "FLose your password?";
+"ButtonToGameSelect"            = "FLogin!";
+
+//Text Fields       - "TextFieldNAMEOFVIEWCONTROLLERLabel"
+"TextFieldARTMUsername"         = "FUsername";
+"TextFieldARTMPassword"         = "FPassword";
+"TextFieldLostPasswordEmail"    = "FEmail";
+
+//Server Messages   - "ServerVCMessage"
+"ServerARTMLoginUnsuccessful"   = "FLogin Unsuccessful";
+"ServerARTMBadUsernameAndPass"  = "FUsername/Password not found";
+
+//Labels            - "LabelVCMessage"
+"LabelGameSelectPlayer"         = "FPlayer";
+"LabelGameSelectPlayers"        = "FPlayers";
+
+//Table             - "TableMessage"
+"TableViewedMap"                = "FViewed Map";
+"TablePickupItem"               = "FPicked up Item";
+"TableDroppedItem"              = "FDropped Item";
+"TableDroppedNote"              = "FDropped Note";
+"TableDestroyedItem"            = "FDestroyed Item";
+"TableViewedItem"               = "FViewed Item";
+"TableViewedNode"               = "FViewed Node";
+"TableViewedNPC"                = "FViewed NPC";
+"TableViewedWebpage"            = "FViewed Webpage";
+"TableViewedAugbubble"          = "FViewed Augbubble";
+"TableViewedQuests"             = "FViewed Quests";
+"TableViewedInventory"          = "FViewed Inventory";
+"TableEnteredQRCode"            = "FEntered QR Code";
+"TableUploadMediaItem"          = "FUploaded Media Item";
+"TableUploadMediaImage"         = "FUploaded Media Image";
+"TableUploadMediaAudio"         = "FUploaded Media Audio";
+"TableUploadMediaVideo"         = "FUploaded Media Video";
+"TableReceivedWebhook"          = "FReceived Webhook";
+"TableSentWebhook"              = "FSent Webhook";
+"TableQuestCompleted"           = "FCompleted Quest";
+"TableReceivedNote"             = "FReceived Note";
+"TableGaveNoteLike"             = "FLiked the Note";
+"TableReceivedNoteLike"         = "FReceived a like on Note";
+"TableGaveNoteComment"          = "FCommented on the Note";
+"TableReceivedNoteComment"      = "FReceived a comment on the Note";

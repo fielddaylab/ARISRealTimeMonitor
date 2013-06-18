@@ -12,6 +12,7 @@
 
 - (IBAction)goToGameSelect:(id)sender;
 - (IBAction)goToLostPassword:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIButton *goToGameSelectOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *goToLostPasswordOutlet;
 
 @end
