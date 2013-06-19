@@ -21,7 +21,7 @@
 
 @end
 
-@implementation ArisRealtimeLoginViewController
+@implementation ArisRealtimeLoginViewController 
 
 @synthesize goToGameSelectOutlet, goToLostPasswordOutlet;
 
@@ -194,5 +194,9 @@
 //    [(ArisRealtimeLoginViewController *)[[self.loginNavigationController viewControllers] objectAtIndex:0] resetState];
     //[self.navigationController displayContentController:self];
     exit(0);
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

@@ -139,7 +139,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = (indexPath.row%2)?[UIColor colorWithRed:.9 green:.9 blue:.9 alpha:1.0]:[UIColor clearColor];
+    cell.backgroundColor = (indexPath.row%2)?[UIColor colorWithRed:210.0/255.0 green:214.0/255.0 blue:217.0/255.0 alpha:1.0]:[UIColor clearColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
