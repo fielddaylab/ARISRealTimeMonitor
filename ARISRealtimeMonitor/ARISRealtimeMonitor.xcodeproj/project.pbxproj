@@ -49,7 +49,8 @@
 		5BE41119175D135E00A09986 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41113175D135E00A09986 /* cactus.png */; };
 		5BE4111A175D135E00A09986 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41114175D135E00A09986 /* palmTree.png */; };
 		5BE4111B175D135E00A09986 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41115175D135E00A09986 /* sun.png */; };
-		710FF8AC1771125C00A3F195 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8AA1771125C00A3F195 /* Localizable.strings */; };
+		710FF8B31772395800A3F195 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8B21772395800A3F195 /* Logo.png */; };
+		710FF8B517723AE100A3F195 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8B417723AE100A3F195 /* Default.png */; };
 		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
 		71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71242BFF17555678006CF0F3 /* LostPasswordViewController.m */; };
 		7132895C1770F4C40058AFE3 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -63,7 +64,6 @@
 		719941D5174D3F9200B7E42D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 719941D3174D3F9200B7E42D /* InfoPlist.strings */; };
 		719941D7174D3F9200B7E42D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 719941D6174D3F9200B7E42D /* main.m */; };
 		719941DB174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */; };
-		719941DD174D3F9200B7E42D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 719941DC174D3F9200B7E42D /* Default.png */; };
 		719941DF174D3F9200B7E42D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 719941DE174D3F9200B7E42D /* Default@2x.png */; };
 		719941E1174D3F9200B7E42D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 719941E0174D3F9200B7E42D /* Default-568h@2x.png */; };
 		719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719F9AFD174FD412004C6DF4 /* MapKit.framework */; };
@@ -152,6 +152,8 @@
 		5BE41114175D135E00A09986 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
 		5BE41115175D135E00A09986 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		710FF8AB1771125C00A3F195 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizable.strings; sourceTree = "<group>"; };
+		710FF8B21772395800A3F195 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		710FF8B417723AE100A3F195 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		71242B9217554F38006CF0F3 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		71242B9317554F38006CF0F3 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		71242B9617555074006CF0F3 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -168,7 +170,6 @@
 		719941D8174D3F9200B7E42D /* ARISRealtimeMonitor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARISRealtimeMonitor-Prefix.pch"; sourceTree = "<group>"; };
 		719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARISRealtimeMonitorAppDelegate.h; sourceTree = "<group>"; };
 		719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARISRealtimeMonitorAppDelegate.m; sourceTree = "<group>"; };
-		719941DC174D3F9200B7E42D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		719941DE174D3F9200B7E42D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		719941E0174D3F9200B7E42D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		719F9AFD174FD412004C6DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -368,6 +369,8 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				710FF8B417723AE100A3F195 /* Default.png */,
+				710FF8B21772395800A3F195 /* Logo.png */,
 				5B70D09C1770F14000B099CE /* 179-notepad.png */,
 				5B70D09A1770F08500B099CE /* 73-radar.png */,
 				71F827B9176FB5EE007156A2 /* notebook.png */,
@@ -394,7 +397,6 @@
 				719941D6174D3F9200B7E42D /* main.m */,
 				719941D8174D3F9200B7E42D /* ARISRealtimeMonitor-Prefix.pch */,
 				71AA1D2C176F7BB000FEE34E /* logo_dk_vertical_lock_up.png */,
-				719941DC174D3F9200B7E42D /* Default.png */,
 				719941DE174D3F9200B7E42D /* Default@2x.png */,
 				719941E0174D3F9200B7E42D /* Default-568h@2x.png */,
 			);
@@ -457,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				719941D5174D3F9200B7E42D /* InfoPlist.strings in Resources */,
-				719941DD174D3F9200B7E42D /* Default.png in Resources */,
 				719941DF174D3F9200B7E42D /* Default@2x.png in Resources */,
 				719941E1174D3F9200B7E42D /* Default-568h@2x.png in Resources */,
 				5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */,
@@ -493,6 +494,8 @@
 				5B70D0BC17710B9800B099CE /* Localizable.strings in Resources */,
 				5B70D0BD17710B9800B099CE /* Localizable.strings in Resources */,
 				5BAB0C5C17721E92003B3CC1 /* Settings.bundle in Resources */,
+				710FF8B31772395800A3F195 /* Logo.png in Resources */,
+				710FF8B517723AE100A3F195 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
