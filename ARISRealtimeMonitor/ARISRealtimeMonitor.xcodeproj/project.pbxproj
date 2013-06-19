@@ -49,6 +49,7 @@
 		5BE41119175D135E00A09986 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41113175D135E00A09986 /* cactus.png */; };
 		5BE4111A175D135E00A09986 /* palmTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41114175D135E00A09986 /* palmTree.png */; };
 		5BE4111B175D135E00A09986 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41115175D135E00A09986 /* sun.png */; };
+		710FF8AC1771125C00A3F195 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8AA1771125C00A3F195 /* Localizable.strings */; };
 		71242B9517554F38006CF0F3 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 71242B9317554F38006CF0F3 /* 145-persondot.png */; };
 		71242C0017555678006CF0F3 /* LostPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71242BFF17555678006CF0F3 /* LostPasswordViewController.m */; };
 		7132895C1770F4C40058AFE3 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -150,6 +151,7 @@
 		5BE41113175D135E00A09986 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
 		5BE41114175D135E00A09986 /* palmTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palmTree.png; sourceTree = "<group>"; };
 		5BE41115175D135E00A09986 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		710FF8AB1771125C00A3F195 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizable.strings; sourceTree = "<group>"; };
 		71242B9217554F38006CF0F3 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		71242B9317554F38006CF0F3 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		71242B9617555074006CF0F3 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		710FF8A91771125C00A3F195 /* de.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				710FF8AA1771125C00A3F195 /* Localizable.strings */,
+			);
+			path = de.lproj;
+			sourceTree = "<group>";
+		};
 		719941BE174D3F9200B7E42D = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +340,7 @@
 				5B35AC13175E8BC000B0D9D2 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
+				710FF8A91771125C00A3F195 /* de.lproj */,
 				5B70D0AF17710B9800B099CE /* en.lproj */,
 				5B70D0B417710B9800B099CE /* es.lproj */,
 				5B70D0B717710B9800B099CE /* fr.lproj */,
@@ -428,6 +439,7 @@
 				en,
 				es,
 				fr,
+				de,
 			);
 			mainGroup = 719941BE174D3F9200B7E42D;
 			productRefGroup = 719941C8174D3F9200B7E42D /* Products */;
@@ -555,6 +567,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B70D0B917710B9800B099CE /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		710FF8AA1771125C00A3F195 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710FF8AB1771125C00A3F195 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
