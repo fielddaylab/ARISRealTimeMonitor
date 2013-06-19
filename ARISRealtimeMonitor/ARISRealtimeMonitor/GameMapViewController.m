@@ -42,6 +42,7 @@
 @synthesize mapView = _mapView;
 @synthesize game;
 @synthesize shouldZoom;
+@synthesize mapType;
 
 @synthesize didIFlip;
 
@@ -78,7 +79,7 @@
         //add icon later
         
         //item, node, npc, webPage, augBubble, playerNote
-
+        
         if ([tempLocation.type isEqualToString:@"Item"]){
             annotation.icon = @"Item";
         }
@@ -105,56 +106,6 @@
         [annotations addObject:annotation];
     }
     
-    //more efficient to add all at once
-//    location.latitude = MLI_LATITUDE;
-//    location.longitude = MLI_LONGITUDE;
-//    annotation = [[AnnotationGameLocation alloc] init];
-//    [annotation setCoordinate:location];
-//    annotation.title = @"QUEST1 MLI";
-//    annotation.subtitle = @"GOAL1 MLI";
-//    annotation.leftIcon = @"test1";
-//    annotation.icon = @"player";
-//    [annotations addObject:annotation];
-//    
-//    location.latitude = HOME_LATITUDE;
-//    location.longitude = HOME_LONGITUDE;
-//    annotation = [[AnnotationGameLocation alloc] init];
-//    [annotation setCoordinate:location];
-//    annotation.title = @"QUEST2 HOME";
-//    annotation.subtitle = @"GOAL2 HOME";
-//    annotation.leftIcon = @"test1";
-//    annotation.icon = @"gameLocation";
-//    [annotations addObject:annotation];
-//    
-//    location.latitude = CS_LATITUDE;
-//    location.longitude = CS_LONGITUDE;
-//    annotation = [[AnnotationGameLocation alloc] init];
-//    [annotation setCoordinate:location];
-//    annotation.title = @"QUEST3 CS";
-//    annotation.subtitle = @"GOAL3 CS";
-//    annotation.leftIcon = @"test1";
-//    annotation.icon = @"player";
-//    [annotations addObject:annotation];
-//    
-//    location.latitude = TERRACE_LATITUDE;
-//    location.longitude = TERRACE_LONGITUDE;
-//    annotation = [[AnnotationGameLocation alloc] init];
-//    [annotation setCoordinate:location];
-//    annotation.title = @"QUEST4 TERRACE";
-//    annotation.subtitle = @"GOAL4 TERRACE";
-//    annotation.leftIcon = @"test2";
-//    annotation.icon = @"player";
-//    [annotations addObject:annotation];
-//    
-//    location.latitude = USOUTH_LATITUDE;
-//    location.longitude = USOUTH_LONGITUDE;
-//    annotation = [[AnnotationGameLocation alloc] init];
-//    [annotation setCoordinate:location];
-//    annotation.title = @"QUEST5 USOUTH";
-//    annotation.subtitle = @"GOAL5 USOUTH";
-//    annotation.leftIcon = @"test2";
-//    annotation.icon = @"notplayer";
-//    [annotations addObject:annotation];
     
     [self.mapView addAnnotations:annotations];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
@@ -191,12 +142,13 @@
     
     self.didIFlip = NO;
     
+    [self.mapView setMapType:mapType];
+    
     //Make the Map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
     
     self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
-    [self.mapView setMapType:0];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
     [self.mapView setZoomEnabled:YES];
     [self.mapView setScrollEnabled:YES];
     
@@ -205,16 +157,16 @@
     //used to get the actual location
     self.mapView.delegate = self;
     
-   
+    
     //Grab the Annotations
     //go grab the location data from the server
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
     [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
-
+    
     
     //Set up the Switch Button
-     [self setUpButtonsInMap];
-
+    [self setUpButtonsInMap];
+    
 }
 
 
@@ -314,53 +266,75 @@
     
 }
 
+- (void) swapBetweenMapTypes{
+    
+    mapType += 1;
+    mapType %= 3;
+    
+    [self.mapView setMapType:mapType];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
+    
+    //[self.mapView setMapType:1];
+}
 
 - (void) setUpButtonsInMap{
     
     if (self.didIFlip == NO){
-    CGRect rec = [self getScreenFrameForCurrentOrientation];
-    
-    //Set up the centerizer using a custom image.
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -112, 44, 44)];
-    [button setImage:[UIImage imageNamed:@"246-route.png"] forState:UIControlStateNormal];
-    [button addTarget:self
-               action:@selector(zoomToFitMapAnnotations) 
-     forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:button];
+        CGRect rec = [self getScreenFrameForCurrentOrientation];
+        
+        //Set up the centerizer using a custom image.
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -112, 44, 44)];
+        [button setImage:[UIImage imageNamed:@"routeWithBorder.png"] forState:UIControlStateNormal];
+        [button addTarget:self
+                   action:@selector(zoomToFitMapAnnotations)
+         forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:button];
+        
+        //Set up the mapswapper using a custom image.
+        UIButton *buttonSwap = [[UIButton alloc] initWithFrame:CGRectMake(rec.size.width -50, rec.size.height -162, 44, 44)];
+        [buttonSwap setImage:[UIImage imageNamed:@"mapWithBorder.png"] forState:UIControlStateNormal];
+        [buttonSwap addTarget:self
+                       action:@selector(swapBetweenMapTypes)
+             forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:buttonSwap];
+        
+        
+        
+        
     }
     //Don't zoom on rotate, because that could cause confusion to the user.
     //[self zoomToFitAnnotations];
-
-//     If want to use a default button for the centerizer
-//     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//     [button addTarget:self
-//     action:nil//@selector(aMethod:)
-//     forControlEvents:UIControlEventTouchUpInside];
-//     [button setTitle:@"Swap" forState:UIControlStateNormal];
-//
-//     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
-//     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
-//    
-//     [self.view addSubview:button];
+    
+    //     If want to use a default button for the centerizer
+    //     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //     [button addTarget:self
+    //     action:nil//@selector(aMethod:)
+    //     forControlEvents:UIControlEventTouchUpInside];
+    //     [button setTitle:@"Swap" forState:UIControlStateNormal];
+    //
+    //     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
+    //     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
+    //
+    //     [self.view addSubview:button];
     
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
     /*Does not work with multiple pin icons, since it tries to replace them :'[
-    //Will have to give different identifiers for the different image styles zB 'pin'
-    //Used for efficiency. If we have a lot of pins, reuse them.
-    AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
-    if(view == nil){
-        view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-    }
-    */
+     //Will have to give different identifiers for the different image styles zB 'pin'
+     //Used for efficiency. If we have a lot of pins, reuse them.
+     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+     if(view == nil){
+     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+     }
+     */
     
     AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
     //This could be bad, having zoomToFitMapAnnotations called more than once. However, I'm not sure how
-        //to do it otherwise
+    //to do it otherwise
     //nice thing is is auto goes to it though.....
     //[self zoomToFitMapAnnotations];
     
@@ -369,14 +343,14 @@
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     //Lets us define a region based on the users location. If we want a defined location, use above code instead.
-
+    
     NSLog(@"didUpdateUserLocation was called");
-
+    
     
     //Used for centering on device, but this isn't useful yet because you're an editor.
-//    CLLocationCoordinate2D loc = [userLocation coordinate];
-//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
-//    [self.mapView setRegion:region animated:NO];
+    //    CLLocationCoordinate2D loc = [userLocation coordinate];
+    //    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
+    //    [self.mapView setRegion:region animated:NO];
     
     
 }
