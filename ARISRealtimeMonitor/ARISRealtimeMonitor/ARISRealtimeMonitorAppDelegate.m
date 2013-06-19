@@ -17,6 +17,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[AppModel sharedAppModel] loadUserDefaults];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.0/255.0 green:101.0/255.0 blue:149.0/255.0 alpha:1]];
+    //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     ArisRealtimeLoginViewController *loginController = [[ArisRealtimeLoginViewController alloc] initWithNibName:@"ArisRealtimeLoginViewController" bundle:nil];
@@ -52,6 +54,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    NSUInteger orientations = UIInterfaceOrientationMaskAllButUpsideDown;
+    
+    if(self.window.rootViewController){
+        UIViewController *presentedViewController = [[(UINavigationController *)self.window.rootViewController viewControllers] lastObject];
+        orientations = [presentedViewController supportedInterfaceOrientations];
+    }
+    
+    return orientations;
 }
 
 @end
