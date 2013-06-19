@@ -11,7 +11,7 @@
 
 //Nav Bar Titles    - "NavBarVC"
 "NavBarLostPassword"            = "Lost Password";   //TBD
-"NavBarARTM"                    = "Aris Monitor";   //TBD
+"NavBarARTM"                    = "Aris Realtime Monitor";   //TBD
 "NavBarGameSelect"              = "Select a Game";   //TBD
 
 //Nav Bar Buttons   - "NavBarToVC"
@@ -70,13 +70,3 @@
 "ReportKey"                             = "Informar";
 "OkKey"                                 = "Ok";
 "ARISAppDelegateWIFIErrorMessageKey"    = "Posiblemente necesitas identificarte en la conexión wifi desde Safari. \nVerifica también los ajustes del servidor ARIS en las preferencias del sistema. \nSi el problema continúa, por favor envíanos información para subsanar el problema.";
-
-//App Services
-"FailureForgotPasswordTitleKey"         = "Por favor, teclea tu dirección de email asociada con tu cuenta de jugador para poder recuperar tu clave de acceso.";
-"ForgotPasswordMessageKey"              = ""; //TBD
-"SuccessForgotEmailSentTitleKey"        = ""; //TBD
-"ForgotMessageKey"                      = "Se te ha enviado un email con instrucciones para cambiar tu clave";
-
-//Service Result
-"BadServerResponseTitleKey"             = "Respuesta errónea del servidor";
-"BadServerResponseMessageKey"           = "Error con el servidor o url de servidor incorrecta ";

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "719941C6174D3F9200B7E42D"
                BuildableName = "ARISRealtimeMonitor.app"
-               BlueprintName = "ARISRealtimeMonitor"
+               BlueprintName = "ARIS Monitor"
                ReferencedContainer = "container:ARISRealtimeMonitor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "719941C6174D3F9200B7E42D"
             BuildableName = "ARISRealtimeMonitor.app"
-            BlueprintName = "ARISRealtimeMonitor"
+            BlueprintName = "ARIS Monitor"
             ReferencedContainer = "container:ARISRealtimeMonitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,7 +53,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "719941C6174D3F9200B7E42D"
             BuildableName = "ARISRealtimeMonitor.app"
-            BlueprintName = "ARISRealtimeMonitor"
+            BlueprintName = "ARIS Monitor"
             ReferencedContainer = "container:ARISRealtimeMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,7 +71,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "719941C6174D3F9200B7E42D"
             BuildableName = "ARISRealtimeMonitor.app"
-            BlueprintName = "ARISRealtimeMonitor"
+            BlueprintName = "ARIS Monitor"
             ReferencedContainer = "container:ARISRealtimeMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

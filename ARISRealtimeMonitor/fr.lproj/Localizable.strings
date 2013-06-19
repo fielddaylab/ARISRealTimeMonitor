@@ -3,38 +3,38 @@
   ARISRealtimeMonitor
 
   Created by Nick Heindl on 6/18/13.
-  Adapted from Verónica Perales vperales@gmail.com
+  Adapted from Fred UBIK2 fred.ubik2@gmail.com
   Copyright (c) 2013 Nick Heindl. All rights reserved.
 */
 
-"TEST" = "Spanish";
+"TEST" = "French";
 
 //Nav Bar Titles    - "NavBarVC"
-"NavBarLostPassword"            = "Lost Password";   //TBD
-"NavBarARTM"                    = "Aris Monitor";   //TBD
+"NavBarLostPassword"            = "Lost Password";  //TBD
+"NavBarARTM"                    = "Aris Monitor";;   //TBD
 "NavBarGameSelect"              = "Select a Game";   //TBD
 
 //Nav Bar Buttons   - "NavBarToVC"
-"NavBarToLogin"                 = "Salir";
-"NavBarToGameSelect"            = "Juegos";
-"NavBarToLoginFromGameSelect"   = "Salir";
+"NavBarToLogin"                 = "Login";
+"NavBarToGameSelect"            = "Jeux";
+"NavBarToLoginFromGameSelect"   = "Logout";
 
 //Buttons           - "ButtonToVC"
 "ButtonToLostPassword"          = "Lose your password?";   //TBD
-"ButtonToGameSelect"            = "Conectar";
+"ButtonToGameSelect"            = "Login";
 
 //Text Fields       - "TextFieldNAMEOFVIEWCONTROLLERLabel"
-"TextFieldARTMUsername"         = "Usuario";
-"TextFieldARTMPassword"         = "Clave";
+"TextFieldARTMUsername"         = "Nom d'Utilisateur";
+"TextFieldARTMPassword"         = "Mot de Passe";
 "TextFieldLostPasswordEmail"    = "Email";
 
 //Server Messages   - "ServerVCMessage"
-"ServerARTMLoginUnsuccessful"   = "Error de identificación";
-"ServerARTMBadUsernameAndPass"  = "Usuario/Clave desconocidos";
+"ServerARTMLoginUnsuccessful"   = "Erreur de Login";
+"ServerARTMBadUsernameAndPass"  = "Nom d’utilisateur/mot de passe inconnu";
 
 //Labels            - "LabelVCMessage"
-"LabelGameSelectPlayer"         = "Jugador";
-"LabelGameSelectPlayers"        = "Jugadores";
+"LabelGameSelectPlayer"         = "Joueur";
+"LabelGameSelectPlayers"        = "Joueurs";
 
 //Table             - "TableMessage"
 "TableViewedMap"                = "Viewed Map";   //TBD
@@ -64,19 +64,19 @@
 "TableReceivedNoteComment"      = "Received a comment on the Note";  //TBD
 
 //ARISAlertHandler  - "Whatever it was in ARIS..."
-"PoorConnectionTitleKey"                = "Aviso de red";
-"PoorConnectionMessageKey"              = "Conexión a Internet lenta o desactivada";
-"IgnoreKey"                             = "Ignorar";
-"ReportKey"                             = "Informar";
+"PoorConnectionTitleKey"                = "Notification Réseau";
+"PoorConnectionMessageKey"              = "Ta connexion à internet est lente ou désactivée";
+"IgnoreKey"                             = "Ignorer";
+"ReportKey"                             = "Compte Rendu";
 "OkKey"                                 = "Ok";
-"ARISAppDelegateWIFIErrorMessageKey"    = "Posiblemente necesitas identificarte en la conexión wifi desde Safari. \nVerifica también los ajustes del servidor ARIS en las preferencias del sistema. \nSi el problema continúa, por favor envíanos información para subsanar el problema.";
+"ARISAppDelegateWIFIErrorMessageKey"    = "Tu a probablement besoin de faire le login à ta Wifi depuis Safari. \nTu devrais aussi verifier les préférences du serveur de ARIS dans les préférences du système. \nSi le problème persiste, envoie-nous l'info pour le débuggage svp.";
 
 //App Services
-"FailureForgotPasswordTitleKey"         = "Por favor, teclea tu dirección de email asociada con tu cuenta de jugador para poder recuperar tu clave de acceso.";
+"FailureForgotPasswordTitleKey"         = "Svp, entre ton adresse email associée avec ton compte de joueur pour récupérer ton mot de passe..";
 "ForgotPasswordMessageKey"              = ""; //TBD
 "SuccessForgotEmailSentTitleKey"        = ""; //TBD
-"ForgotMessageKey"                      = "Se te ha enviado un email con instrucciones para cambiar tu clave";
+"ForgotMessageKey"                      = "Un email t'a été envoyé avec les instructions pour changer ton mot de passe";
 
 //Service Result
-"BadServerResponseTitleKey"             = "Respuesta errónea del servidor";
-"BadServerResponseMessageKey"           = "Error con el servidor o url de servidor incorrecta ";
+"BadServerResponseTitleKey"             = "Bad Response From Server";  //TBD
+"BadServerResponseMessageKey"           = "There was an error with the server or the server URL is not correct";  //TBD

@@ -14,7 +14,7 @@
 
 //Nav Bar Titles    - "NavBarVC"
 "NavBarLostPassword"            = "Lost Password";
-"NavBarARTM"                    = "Aris Monitor";
+"NavBarARTM"                    = "Aris Realtime Monitor";
 "NavBarGameSelect"              = "Select a Game";
 
 //Nav Bar Buttons   - "NavBarToVC"
@@ -73,13 +73,3 @@
 "ReportKey"                             = "Report";
 "OkKey"                                 = "Ok";
 "ARISAppDelegateWIFIErrorMessageKey"    = "You may need to login to your Wifi connection from Safari. \nYou also may need to verify ARIS server settings in system preferences. \nIf the problem persists, please send us some debugging information.";
-
-//App Services
-"FailureForgotPasswordTitleKey"         = "Please enter the email address associated with your game account in order to recover your password.";
-"ForgotPasswordMessageKey"              = ""; //TBD
-"SuccessForgotEmailSentTitleKey"        = ""; //TBD
-"ForgotMessageKey"                      = "An email has been sent to you with instructions for changing your password";
-
-//Service Result
-"BadServerResponseTitleKey"             = "Bad Response From Server";
-"BadServerResponseMessageKey"           = "There was an error with the server or the server URL is not correct";

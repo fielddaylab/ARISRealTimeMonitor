@@ -11,7 +11,7 @@
 
 //Nav Bar Titles    - "NavBarVC"
 "NavBarLostPassword"            = "Lost Password";  //TBD
-"NavBarARTM"                    = "Aris Realtime Monitor";   //TBD
+"NavBarARTM"                    = "Aris Monitor";   //TBD
 "NavBarGameSelect"              = "Select a Game";   //TBD
 
 //Nav Bar Buttons   - "NavBarToVC"

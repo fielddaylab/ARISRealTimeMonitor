@@ -44,6 +44,7 @@
 		5BBDCF71176102A2004CDA15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBDCF70176102A2004CDA15 /* CoreLocation.framework */; };
 		5BBDCF74176133AE004CDA15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF73176133AD004CDA15 /* Location.m */; };
 		5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF771761343B004CDA15 /* GameObjectViewController.m */; };
+		5BD3A10B17726B3300E61863 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8AA1771125C00A3F195 /* Localizable.strings */; };
 		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
 		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
 		5BE41119175D135E00A09986 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41113175D135E00A09986 /* cactus.png */; };
@@ -406,9 +407,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		719941C6174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
+		719941C6174D3F9200B7E42D /* ARIS Monitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 719941F6174D3F9200B7E42D /* Build configuration list for PBXNativeTarget "ARISRealtimeMonitor" */;
+			buildConfigurationList = 719941F6174D3F9200B7E42D /* Build configuration list for PBXNativeTarget "ARIS Monitor" */;
 			buildPhases = (
 				719941C3174D3F9200B7E42D /* Sources */,
 				719941C4174D3F9200B7E42D /* Frameworks */,
@@ -418,7 +419,7 @@
 			);
 			dependencies = (
 			);
-			name = ARISRealtimeMonitor;
+			name = "ARIS Monitor";
 			productName = ARISRealtimeMonitor;
 			productReference = 719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */;
 			productType = "com.apple.product-type.application";
@@ -448,7 +449,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				719941C6174D3F9200B7E42D /* ARISRealtimeMonitor */,
+				719941C6174D3F9200B7E42D /* ARIS Monitor */,
 			);
 		};
 /* End PBXProject section */
@@ -496,6 +497,7 @@
 				5BAB0C5C17721E92003B3CC1 /* Settings.bundle in Resources */,
 				710FF8B31772395800A3F195 /* Logo.png in Resources */,
 				710FF8B517723AE100A3F195 /* Default.png in Resources */,
+				5BD3A10B17726B3300E61863 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		719941F6174D3F9200B7E42D /* Build configuration list for PBXNativeTarget "ARISRealtimeMonitor" */ = {
+		719941F6174D3F9200B7E42D /* Build configuration list for PBXNativeTarget "ARIS Monitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				719941F7174D3F9200B7E42D /* Debug */,
