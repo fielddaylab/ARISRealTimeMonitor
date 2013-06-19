@@ -34,6 +34,7 @@
 		5BA58385176658870047B8CD /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5837C176658870047B8CD /* SBJsonBase.m */; };
 		5BA58386176658870047B8CD /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5837E176658870047B8CD /* SBJsonParser.m */; };
 		5BA58387176658870047B8CD /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA58380176658870047B8CD /* SBJsonWriter.m */; };
+		5BAB0C5C17721E92003B3CC1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5BAB0C5B17721E92003B3CC1 /* Settings.bundle */; };
 		5BAFEB4F175FA22200FB90E1 /* JSONConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */; };
 		5BAFEB52175FA29100FB90E1 /* ServiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB51175FA29100FB90E1 /* ServiceResult.m */; };
 		5BAFEB70175FA6A500FB90E1 /* ARISAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */; };
@@ -125,6 +126,7 @@
 		5BA5837E176658870047B8CD /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		5BA5837F176658870047B8CD /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		5BA58380176658870047B8CD /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		5BAB0C5B17721E92003B3CC1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
 		5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
 		5BAFEB50175FA29100FB90E1 /* ServiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		719941BE174D3F9200B7E42D = {
 			isa = PBXGroup;
 			children = (
+				5BAB0C5B17721E92003B3CC1 /* Settings.bundle */,
 				719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */,
 				719941C9174D3F9200B7E42D /* Frameworks */,
 				719941C8174D3F9200B7E42D /* Products */,
@@ -477,6 +480,7 @@
 				5B70D0BB17710B9800B099CE /* Localizable.strings in Resources */,
 				5B70D0BC17710B9800B099CE /* Localizable.strings in Resources */,
 				5B70D0BD17710B9800B099CE /* Localizable.strings in Resources */,
+				5BAB0C5C17721E92003B3CC1 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,15 +37,17 @@
 -(void)loadUserDefaults
 {
 	NSLog(@"Model: Loading User Defaults");
-	//[defaults synchronize];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults synchronize];
     
-    NSURL *currServ = [NSURL URLWithString:@""];
+    NSString *stringURL =[defaults stringForKey:@"baseServerString"];
+    NSURL *currServ = [NSURL URLWithString:stringURL];
     
-    if([[currServ absoluteString] isEqual:@""])
+    if(currServ == nil)
     {
-        NSString *updatedURL = @"http://dev.arisgames.org/server";
-        //[defaults setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:updatedURL] forKey:@"baseServerString"];
-        //[defaults synchronize];
+        NSString *updatedURL = @"http://arisgames.org/server";
+        [defaults setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:updatedURL] forKey:@"baseServerString"];
+        [defaults synchronize];
         currServ = [NSURL URLWithString:updatedURL];
     }
     if(self.serverURL && ![currServ isEqual:self.serverURL])

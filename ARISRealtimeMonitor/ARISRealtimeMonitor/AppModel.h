@@ -14,7 +14,9 @@
 #import "Location.h"
 #import "Player.h"
 
-@interface AppModel : NSObject <UIAccelerometerDelegate>
+@interface AppModel : NSObject <UIAccelerometerDelegate>{
+
+}
 
 @property(nonatomic, strong) NSURL *serverURL;
 

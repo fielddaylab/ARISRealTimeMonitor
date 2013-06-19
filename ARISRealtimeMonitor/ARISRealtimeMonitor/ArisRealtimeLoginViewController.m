@@ -32,6 +32,7 @@
         // Custom initialization
         self.title = NSLocalizedString(@"NavBarARTM", nil); 
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutWasRequested) name:@"LogoutRequested" object:nil];
     return self;
 }
 
@@ -184,5 +185,14 @@
 }
 - (IBAction)goToGameSelect:(id)sender {
     [self attemptLogin];
+}
+
+- (void) logoutWasRequested
+{
+//    [AppModel sharedAppModel].player = nil;
+//    [[AppModel sharedAppModel] saveUserDefaults];
+//    [(ArisRealtimeLoginViewController *)[[self.loginNavigationController viewControllers] objectAtIndex:0] resetState];
+    //[self.navigationController displayContentController:self];
+    exit(0);
 }
 @end
