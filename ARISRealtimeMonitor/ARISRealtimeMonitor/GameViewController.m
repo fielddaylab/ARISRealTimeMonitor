@@ -11,12 +11,12 @@
 #import "GameTableViewController.h"
 #import "JSON.h"
 #import "AppServices.h"
+#import "AppModel.h"
 
 
 @implementation GameViewController
 
 @synthesize game;
-
 @synthesize currentChildViewController;
 
 

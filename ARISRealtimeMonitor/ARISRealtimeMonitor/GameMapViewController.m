@@ -17,23 +17,6 @@
 #import "Player.h"
 #import "JSON.h"
 
-#define MLI_LATITUDE 43.074789;
-#define MLI_LONGITUDE -89.408197;
-
-#define HOME_LATITUDE 43.068182;
-#define HOME_LONGITUDE -89.406033;
-
-#define CS_LATITUDE 43.071545;
-#define CS_LONGITUDE -89.406685;
-
-#define TERRACE_LATITUDE 43.076894;
-#define TERRACE_LONGITUDE -89.399711;
-
-#define USOUTH_LATITUDE 43.071976;
-#define USOUTH_LONGITUDE -89.408433;
-
-#define SPAN_VALUE .01f;//Lowest you can go seems to be 0.001f; in code.
-
 
 @interface GameMapViewController ()
 @end
@@ -43,7 +26,6 @@
 @synthesize game;
 @synthesize shouldZoom;
 @synthesize mapType;
-
 @synthesize didIFlip;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

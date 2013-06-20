@@ -7,7 +7,6 @@
 //
 
 #import "AnnotationViews.h"
-
 #import "AnnotationGameLocation.h"
 
 

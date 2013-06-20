@@ -14,8 +14,6 @@
 
 @property (strong, nonatomic) UIViewController* currentChildViewController;
 
-//@property (strong, nonatomic) NSString *game;
-
 @property (strong, nonatomic) Game *game;
 
 @property (strong, nonatomic) UIButton *button;

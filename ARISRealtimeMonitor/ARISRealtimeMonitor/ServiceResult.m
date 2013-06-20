@@ -8,7 +8,6 @@
 
 #import "ServiceResult.h"
 #import "JSON.h"
-#import "ARISRealtimeMonitorAppDelegate.h"
 #import "ARISAlertHandler.h"
 
 @implementation ServiceResult

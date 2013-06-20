@@ -7,7 +7,6 @@
 //
 
 #import "SelectGameViewController.h"
-#import "SimpleTableCell.h"
 #import "AppModel.h"
 #import "AppServices.h"
 #import "Game.h"

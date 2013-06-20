@@ -12,8 +12,6 @@
 		5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */; };
 		5B35AC15175E8BC000B0D9D2 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B35AC13175E8BC000B0D9D2 /* AppModel.m */; };
 		5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */; };
-		5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */; };
-		5B67E1D2174E693B00DDBC2A /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */; };
 		5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */; };
 		5B67E1D7174E7CE200DDBC2A /* LoginTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */; };
 		5B70D09B1770F08500B099CE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B70D09A1770F08500B099CE /* 73-radar.png */; };
@@ -43,8 +41,9 @@
 		5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */; };
 		5BBDCF71176102A2004CDA15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBDCF70176102A2004CDA15 /* CoreLocation.framework */; };
 		5BBDCF74176133AE004CDA15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF73176133AD004CDA15 /* Location.m */; };
-		5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDCF771761343B004CDA15 /* GameObjectViewController.m */; };
 		5BD3A10B17726B3300E61863 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 710FF8AA1771125C00A3F195 /* Localizable.strings */; };
+		5BD3A10E177270D100E61863 /* mapWithBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3A10C177270D100E61863 /* mapWithBorder.png */; };
+		5BD3A10F177270D100E61863 /* routeWithBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3A10D177270D100E61863 /* routeWithBorder.png */; };
 		5BE41116175D135E00A09986 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41110175D135E00A09986 /* 74-location.png */; };
 		5BE41118175D135E00A09986 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41112175D135E00A09986 /* 196-radiation.png */; };
 		5BE41119175D135E00A09986 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE41113175D135E00A09986 /* cactus.png */; };
@@ -92,9 +91,6 @@
 		5B35AC12175E8BC000B0D9D2 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		5B35AC13175E8BC000B0D9D2 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
-		5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
-		5B67E1D0174E693B00DDBC2A /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
-		5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
 		5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableCell.h; sourceTree = "<group>"; };
 		5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableCell.m; sourceTree = "<group>"; };
@@ -128,9 +124,9 @@
 		5BA5837E176658870047B8CD /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		5BA5837F176658870047B8CD /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		5BA58380176658870047B8CD /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		5BAB0C5B17721E92003B3CC1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConnection.h; sourceTree = "<group>"; };
-		5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConnection.m; sourceTree = "<group>"; };
+		5BAB0C5B17721E92003B3CC1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONConnection.h; path = ARISRealtimeMonitor/JSONConnection.h; sourceTree = SOURCE_ROOT; };
+		5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONConnection.m; path = ARISRealtimeMonitor/JSONConnection.m; sourceTree = SOURCE_ROOT; };
 		5BAFEB50175FA29100FB90E1 /* ServiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceResult.h; sourceTree = "<group>"; };
 		5BAFEB51175FA29100FB90E1 /* ServiceResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceResult.m; sourceTree = "<group>"; };
 		5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARISAlertHandler.h; sourceTree = "<group>"; };
@@ -143,9 +139,8 @@
 		5BBDCF70176102A2004CDA15 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5BBDCF72176133AD004CDA15 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		5BBDCF73176133AD004CDA15 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		5BBDCF751761343B004CDA15 /* GameObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectProtocol.h; sourceTree = "<group>"; };
-		5BBDCF761761343B004CDA15 /* GameObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectViewController.h; sourceTree = "<group>"; };
-		5BBDCF771761343B004CDA15 /* GameObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjectViewController.m; sourceTree = "<group>"; };
+		5BD3A10C177270D100E61863 /* mapWithBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapWithBorder.png; sourceTree = "<group>"; };
+		5BD3A10D177270D100E61863 /* routeWithBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = routeWithBorder.png; sourceTree = "<group>"; };
 		5BE41110175D135E00A09986 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		5BE41111175D135E00A09986 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		5BE41112175D135E00A09986 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
@@ -161,7 +156,7 @@
 		71242BFE17555678006CF0F3 /* LostPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPasswordViewController.h; sourceTree = "<group>"; };
 		71242BFF17555678006CF0F3 /* LostPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPasswordViewController.m; sourceTree = "<group>"; };
 		718A5D0F1761428B009DA4F1 /* 246-route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "246-route.png"; sourceTree = "<group>"; };
-		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARISRealtimeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		719941C7174D3F9200B7E42D /* ARIS Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARIS Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		719941CE174D3F9200B7E42D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,6 +210,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6800901773668C00F2FF5A /* ARIS Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B680091177366BC00F2FF5A /* data_objects */,
+				5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */,
+				5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */,
+				5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */,
+				5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */,
+				5BAFEB50175FA29100FB90E1 /* ServiceResult.h */,
+				5BAFEB51175FA29100FB90E1 /* ServiceResult.m */,
+			);
+			name = "ARIS Files";
+			sourceTree = "<group>";
+		};
+		5B680091177366BC00F2FF5A /* data_objects */ = {
+			isa = PBXGroup;
+			children = (
+				5BA58336176653FF0047B8CD /* Event.h */,
+				5BA58337176653FF0047B8CD /* Event.m */,
+				5BBDCF6A176100DD004CDA15 /* Game.h */,
+				5BBDCF6B176100DD004CDA15 /* Game.m */,
+				5BBDCF72176133AD004CDA15 /* Location.h */,
+				5BBDCF73176133AD004CDA15 /* Location.m */,
+				5B9BAC781762455B0087EB07 /* Player.h */,
+				5B9BAC791762455B0087EB07 /* Player.m */,
+			);
+			name = data_objects;
+			sourceTree = "<group>";
+		};
+		5B6800931773673000F2FF5A /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				710FF8A91771125C00A3F195 /* de.lproj */,
+				5B70D0AF17710B9800B099CE /* en.lproj */,
+				5B70D0B417710B9800B099CE /* es.lproj */,
+				5B70D0B717710B9800B099CE /* fr.lproj */,
+			);
+			name = Languages;
+			sourceTree = "<group>";
+		};
+		5B6800941773676500F2FF5A /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71242BFE17555678006CF0F3 /* LostPasswordViewController.h */,
+				71242BFF17555678006CF0F3 /* LostPasswordViewController.m */,
+				5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */,
+				5BA58333176653FE0047B8CD /* ArisRealtimeLoginViewController.h */,
+				5BA58334176653FE0047B8CD /* ArisRealtimeLoginViewController.m */,
+				5BA58335176653FE0047B8CD /* ArisRealtimeLoginViewController.xib */,
+				5B35AC09175E636800B0D9D2 /* SelectGameViewController.h */,
+				5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */,
+				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
+				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
+				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
+				5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */,
+				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
+				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
+				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
+				71CFF3C0174D62BF008C0C14 /* GameTableViewController.h */,
+				71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */,
+				71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		5B6800951773679600F2FF5A /* table cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
+				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
+				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
+			);
+			name = "table cells";
+			sourceTree = "<group>";
+		};
+		5B680096177367AB00F2FF5A /* map annotations */ = {
+			isa = PBXGroup;
+			children = (
+				719F9B02175506D7004C6DF4 /* AnnotationViews.h */,
+				719F9B03175506D7004C6DF4 /* AnnotationViews.m */,
+				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
+				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
+			);
+			name = "map annotations";
+			sourceTree = "<group>";
+		};
 		5B70D0AF17710B9800B099CE /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA58372176658870047B8CD /* JSON.h */,
+				5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */,
+				5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */,
 				5BA58373176658870047B8CD /* JSONKit.h */,
 				5BA58374176658870047B8CD /* JSONKit.m */,
 				5BA58375176658870047B8CD /* NSObject+SBJSON.h */,
@@ -273,7 +356,6 @@
 		719941BE174D3F9200B7E42D = {
 			isa = PBXGroup;
 			children = (
-				5BAB0C5B17721E92003B3CC1 /* Settings.bundle */,
 				719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */,
 				719941C9174D3F9200B7E42D /* Frameworks */,
 				719941C8174D3F9200B7E42D /* Products */,
@@ -283,7 +365,7 @@
 		719941C8174D3F9200B7E42D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */,
+				719941C7174D3F9200B7E42D /* ARIS Monitor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,64 +386,18 @@
 		719941D0174D3F9200B7E42D /* ARISRealtimeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				5B680096177367AB00F2FF5A /* map annotations */,
+				5B6800951773679600F2FF5A /* table cells */,
+				5B6800941773676500F2FF5A /* view controllers */,
+				5B6800931773673000F2FF5A /* Languages */,
+				5B6800901773668C00F2FF5A /* ARIS Files */,
 				5BA58371176658870047B8CD /* JSON */,
-				5BBDCF751761343B004CDA15 /* GameObjectProtocol.h */,
-				5BBDCF761761343B004CDA15 /* GameObjectViewController.h */,
-				5BBDCF771761343B004CDA15 /* GameObjectViewController.m */,
-				5BBDCF6D176101E4004CDA15 /* NSDictionary+ValidParsers.h */,
-				5BBDCF6E176101E4004CDA15 /* NSDictionary+ValidParsers.m */,
-				5BBDCF6A176100DD004CDA15 /* Game.h */,
-				5BBDCF6B176100DD004CDA15 /* Game.m */,
-				5BBDCF72176133AD004CDA15 /* Location.h */,
-				5BBDCF73176133AD004CDA15 /* Location.m */,
-				5BAFEB6E175FA6A500FB90E1 /* ARISAlertHandler.h */,
-				5BAFEB6F175FA6A500FB90E1 /* ARISAlertHandler.m */,
-				5BAFEB50175FA29100FB90E1 /* ServiceResult.h */,
-				5BAFEB51175FA29100FB90E1 /* ServiceResult.m */,
-				5BAFEB4D175FA22200FB90E1 /* JSONConnection.h */,
-				5BAFEB4E175FA22200FB90E1 /* JSONConnection.m */,
-				71242BFE17555678006CF0F3 /* LostPasswordViewController.h */,
-				71242BFF17555678006CF0F3 /* LostPasswordViewController.m */,
-				5B35AC06175E5B8400B0D9D2 /* LostPasswordViewController.xib */,
-				5B67E1CE174E681600DDBC2A /* SimpleTableCell.xib */,
-				5B67E1D0174E693B00DDBC2A /* SimpleTableCell.h */,
-				5B67E1D1174E693B00DDBC2A /* SimpleTableCell.m */,
 				719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */,
 				719941DA174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m */,
-				5BA58333176653FE0047B8CD /* ArisRealtimeLoginViewController.h */,
-				5BA58334176653FE0047B8CD /* ArisRealtimeLoginViewController.m */,
-				5BA58335176653FE0047B8CD /* ArisRealtimeLoginViewController.xib */,
-				5BA58336176653FF0047B8CD /* Event.h */,
-				5BA58337176653FF0047B8CD /* Event.m */,
-				5B35AC09175E636800B0D9D2 /* SelectGameViewController.h */,
-				5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */,
-				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
-				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
-				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
 				5B35AC12175E8BC000B0D9D2 /* AppModel.h */,
 				5B35AC13175E8BC000B0D9D2 /* AppModel.m */,
 				5B99A57D174D4F1000950E08 /* AppServices.h */,
 				5B99A57E174D4F1000950E08 /* AppServices.m */,
-				710FF8A91771125C00A3F195 /* de.lproj */,
-				5B70D0AF17710B9800B099CE /* en.lproj */,
-				5B70D0B417710B9800B099CE /* es.lproj */,
-				5B70D0B717710B9800B099CE /* fr.lproj */,
-				5B9BAC781762455B0087EB07 /* Player.h */,
-				5B9BAC791762455B0087EB07 /* Player.m */,
-				719F9B02175506D7004C6DF4 /* AnnotationViews.h */,
-				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
-				719F9B03175506D7004C6DF4 /* AnnotationViews.m */,
-				719F9AFF174FE424004C6DF4 /* AnnotationGameLocation.h */,
-				719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */,
-				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
-				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
-				5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */,
-				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
-				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
-				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
-				71CFF3C0174D62BF008C0C14 /* GameTableViewController.h */,
-				71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */,
-				71CFF3C2174D62C0008C0C14 /* GameTableViewController.xib */,
 				719941D1174D3F9200B7E42D /* Supporting Files */,
 			);
 			path = ARISRealtimeMonitor;
@@ -370,6 +406,8 @@
 		719941D1174D3F9200B7E42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5BD3A10C177270D100E61863 /* mapWithBorder.png */,
+				5BD3A10D177270D100E61863 /* routeWithBorder.png */,
 				710FF8B417723AE100A3F195 /* Default.png */,
 				710FF8B21772395800A3F195 /* Logo.png */,
 				5B70D09C1770F14000B099CE /* 179-notepad.png */,
@@ -396,6 +434,7 @@
 				719941D2174D3F9200B7E42D /* ARISRealtimeMonitor-Info.plist */,
 				719941D3174D3F9200B7E42D /* InfoPlist.strings */,
 				719941D6174D3F9200B7E42D /* main.m */,
+				5BAB0C5B17721E92003B3CC1 /* Settings.bundle */,
 				719941D8174D3F9200B7E42D /* ARISRealtimeMonitor-Prefix.pch */,
 				71AA1D2C176F7BB000FEE34E /* logo_dk_vertical_lock_up.png */,
 				719941DE174D3F9200B7E42D /* Default@2x.png */,
@@ -421,7 +460,7 @@
 			);
 			name = "ARIS Monitor";
 			productName = ARISRealtimeMonitor;
-			productReference = 719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */;
+			productReference = 719941C7174D3F9200B7E42D /* ARIS Monitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -462,7 +501,6 @@
 				719941D5174D3F9200B7E42D /* InfoPlist.strings in Resources */,
 				719941DF174D3F9200B7E42D /* Default@2x.png in Resources */,
 				719941E1174D3F9200B7E42D /* Default-568h@2x.png in Resources */,
-				5B67E1CF174E681600DDBC2A /* SimpleTableCell.xib in Resources */,
 				5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */,
 				71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */,
 				71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */,
@@ -498,6 +536,8 @@
 				710FF8B31772395800A3F195 /* Logo.png in Resources */,
 				710FF8B517723AE100A3F195 /* Default.png in Resources */,
 				5BD3A10B17726B3300E61863 /* Localizable.strings in Resources */,
+				5BD3A10E177270D100E61863 /* mapWithBorder.png in Resources */,
+				5BD3A10F177270D100E61863 /* routeWithBorder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +551,6 @@
 				719941D7174D3F9200B7E42D /* main.m in Sources */,
 				719941DB174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.m in Sources */,
 				5B99A57F174D4F1000950E08 /* AppServices.m in Sources */,
-				5B67E1D2174E693B00DDBC2A /* SimpleTableCell.m in Sources */,
 				5B67E1D7174E7CE200DDBC2A /* LoginTableCell.m in Sources */,
 				71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */,
 				71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */,
@@ -527,7 +566,6 @@
 				5BBDCF6C176100DD004CDA15 /* Game.m in Sources */,
 				5BBDCF6F176101E4004CDA15 /* NSDictionary+ValidParsers.m in Sources */,
 				5BBDCF74176133AE004CDA15 /* Location.m in Sources */,
-				5BBDCF781761343B004CDA15 /* GameObjectViewController.m in Sources */,
 				5B9BAC7A1762455B0087EB07 /* Player.m in Sources */,
 				5BA58338176653FF0047B8CD /* ArisRealtimeLoginViewController.m in Sources */,
 				5BA5833A176653FF0047B8CD /* Event.m in Sources */,
