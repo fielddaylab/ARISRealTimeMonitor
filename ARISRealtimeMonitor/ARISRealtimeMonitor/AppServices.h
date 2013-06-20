@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AppModel.h"
-#import "Location.h"
-#import "Game.h"
 #import "ServiceResult.h"
-#import "JSONConnection.h"
-#import "ServiceResult.h"
-#import "JSON.h"
+
 
 
 @interface AppServices : NSObject
@@ -25,11 +20,6 @@ extern NSString *const kARISServerServicePackage;
 //Player
 - (void)loginUserName:(NSString *)username password:(NSString *)password userInfo:(NSMutableDictionary *)dict;
 - (void)resetAndEmailNewPassword:(NSString *)email;
-
-
-
-
-
 
 //Parse server responses
 - (NSMutableArray *)parseGameListFromJSON:(ServiceResult *)result;

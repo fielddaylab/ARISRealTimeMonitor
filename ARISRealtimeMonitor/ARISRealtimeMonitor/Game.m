@@ -8,8 +8,6 @@
 
 
 #import "Game.h"
-#import "AppModel.h"
-#import "AppServices.h"
  
 @implementation Game
 

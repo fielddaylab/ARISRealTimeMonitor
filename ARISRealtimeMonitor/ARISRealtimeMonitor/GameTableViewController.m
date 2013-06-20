@@ -38,13 +38,13 @@
 
 - (void) eventsReady:(NSNotification *)n{
     //NSLog(@"Events Ready");
-    NSLog(@"Size of events: %i", [[[AppModel sharedAppModel] events] count]);
+    //NSLog(@"Size of events: %i", [[[AppModel sharedAppModel] events] count]);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"EventsReady" object:nil];
     [self.table reloadData];
 }
 
 -(void)updateEvents{
-    NSLog(@"Update events");
+    //NSLog(@"Update events");
 //    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] seconds:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
@@ -69,19 +69,6 @@
                                              selector:@selector(updateEvents)
                                              userInfo:nil
                                               repeats:YES];
-}
-
-- (void)viewDidLoad
-{
-
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -212,14 +199,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //do something when a cell is pressed
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-
-//this can be deleted
-- (IBAction)addEntry:(id)sender {
-    
-    //[self.table reloadData];
-}
 @end

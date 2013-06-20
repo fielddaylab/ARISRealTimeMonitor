@@ -7,9 +7,7 @@
 //
 
 #import "ARISRealtimeMonitorAppDelegate.h"
-
 #import "ArisRealtimeLoginViewController.h"
-
 #import "AppModel.h"
 
 @implementation ARISRealtimeMonitorAppDelegate

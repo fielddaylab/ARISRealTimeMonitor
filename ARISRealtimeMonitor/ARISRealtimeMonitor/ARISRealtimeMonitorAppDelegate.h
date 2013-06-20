@@ -14,6 +14,4 @@
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 
-@property (strong, nonatomic) UISplitViewController *splitViewController;
-
 @end

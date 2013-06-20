@@ -8,7 +8,6 @@
 
 #import "Location.h"
 #import "NSDictionary+ValidParsers.h"
-#import "AppModel.h"
 
 @implementation Location
 
@@ -17,7 +16,6 @@
 @synthesize locationId;
 @synthesize name;
 @synthesize latlon;
-@synthesize gameObject;
 @synthesize errorRange;
 @synthesize qty;
 @synthesize hidden;
@@ -91,7 +89,6 @@
     self.latlon.coordinate.latitude  == ob.latlon.coordinate.latitude &&
     self.latlon.coordinate.longitude == ob.latlon.coordinate.longitude &&
     self.locationId                  == ob.locationId &&
-    self.gameObject.type             == ob.gameObject.type &&
     self.errorRange                  == ob.errorRange &&
     self.qty                         == ob.qty &&
     self.hidden                      == ob.hidden &&
@@ -107,7 +104,6 @@
     Location *c = [[Location alloc] init];
     c.latlon            = self.latlon;
     c.locationId        = self.locationId;
-    c.gameObject        = self.gameObject;
     c.errorRange        = self.errorRange;
     c.qty               = self.qty;
     c.hidden            = self.hidden;
@@ -121,7 +117,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Location- Id:%d\tName:%@\tObjectName:%@",self.locationId,self.name,self.gameObject.name];
+    return [NSString stringWithFormat:@"Location- Id:%d\tName:%@\t",self.locationId,self.name];
 }
 
 @end

@@ -10,6 +10,10 @@
 #import "Player.h"
 #import "AppServices.h"
 #import "ARISAlertHandler.h"
+#import "Game.h"
+#import "Location.h"
+#import "Player.h"
+
 
 @implementation AppModel
 
@@ -17,7 +21,7 @@
 
 
 //ARIS Realtime Monitor Additions
-@synthesize gameEvents, listOfPlayersGames, locations, playersInGame, events, types, region;
+@synthesize listOfPlayersGames, locations, playersInGame, events, types, region;
 
 + (id)sharedAppModel
 {

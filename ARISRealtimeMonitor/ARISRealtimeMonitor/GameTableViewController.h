@@ -14,8 +14,6 @@
 @interface GameTableViewController : UIViewController//GameViewController
 
 @property (nonatomic, strong) Game *game;
-
-- (IBAction)addEntry:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

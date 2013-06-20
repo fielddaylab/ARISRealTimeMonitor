@@ -7,19 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ARISRealtimeMonitor/GameTableViewController.m"
-         timestampString = "393182961.958914"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
-         landmarkName = "@implementation GameTableViewController"
-         landmarkType = "3">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ARISRealtimeMonitorMasterViewController.m"
          timestampString = "392061549.865774"
          startingColumnNumber = "9223372036854775807"
@@ -60,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393264245.384791"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-parseGame:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/GameMapViewController.m"
-         timestampString = "393269809.714021"
+         timestampString = "393438901.158708"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "-createAnnotations:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/SelectGameViewController.m"
-         timestampString = "393196188.535305"
+         timestampString = "393437978.633223"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393262004.048696"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-parseResetAndEmailNewPassword:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393268838.731403"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "-parseGetGamesForEditor:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393268838.731403"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "291"
-         endingLineNumber = "291"
+         startingLineNumber = "297"
+         endingLineNumber = "297"
          landmarkName = "-getLocationsOfGamePlayers:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393268838.731403"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "280"
-         endingLineNumber = "280"
+         startingLineNumber = "286"
+         endingLineNumber = "286"
          landmarkName = "-parseLocationListEditorFromJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393268838.731403"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
+         startingLineNumber = "220"
+         endingLineNumber = "220"
          landmarkName = "-parseGetGamesForEditor:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/SelectGameViewController.m"
-         timestampString = "393268284.278438"
+         timestampString = "393437978.633223"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ARISRealtimeMonitorAppDelegate.m"
-         timestampString = "393361402.227736"
+         timestampString = "393438140.360234"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "19"
-         endingLineNumber = "19"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "-application:didFinishLaunchingWithOptions:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppServices.m"
-         timestampString = "393284157.908575"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "328"
-         endingLineNumber = "328"
+         startingLineNumber = "334"
+         endingLineNumber = "334"
          landmarkName = "-parseLogsFromGameFromJSON:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,24 +229,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/AppModel.m"
-         timestampString = "393352496.366577"
+         timestampString = "393438634.464394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-loadUserDefaults"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ArisRealtimeLoginViewController.m"
-         timestampString = "393356339.577229"
+         timestampString = "393438140.360234"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "196"
-         endingLineNumber = "196"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-logoutWasRequested"
          landmarkType = "5">
       </FileBreakpoint>

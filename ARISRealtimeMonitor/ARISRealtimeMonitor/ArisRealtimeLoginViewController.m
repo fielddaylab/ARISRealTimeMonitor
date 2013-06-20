@@ -110,29 +110,6 @@
         return cell;
 }
 
-
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    //This means it'll be the login button
-//    if([indexPath section] != 0){
-//        
-//        //grab the username and password from the textfields, verify that they are correct
-//        
-//        LoginTableCell *loginUsernameCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-//        LoginTableCell *loginPasswordCell = (LoginTableCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-//        
-//        NSString *username = [[loginUsernameCell textField] text];
-//        NSString *password = [[loginPasswordCell textField] text];
-//        
-//        //[self attemptLoginWithUsername:username andPassword:password];
-//        //comparison check between entered info and server check or whatever
-//        
-//        [self loginSucceed];
-//    }
-//}
-
-
 - (void)loginSucceed:(ServiceResult *)r
 {
     SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
@@ -162,9 +139,6 @@
     else
     {
         [self loginSucceed:r];
-//        Player *p = [[Player alloc] initWithDictionary:(NSMutableDictionary *)r.data];
-//        if(location) p.location = location;
-//        [delegate loginCredentialsApprovedForPlayer:p toGame:gameId newPlayer:newPlayer disableLeaveGame:disableLeaveGame];
     }
     
 }
@@ -189,10 +163,6 @@
 
 - (void) logoutWasRequested
 {
-//    [AppModel sharedAppModel].player = nil;
-//    [[AppModel sharedAppModel] saveUserDefaults];
-//    [(ArisRealtimeLoginViewController *)[[self.loginNavigationController viewControllers] objectAtIndex:0] resetState];
-    //[self.navigationController displayContentController:self];
     exit(0);
 }
 

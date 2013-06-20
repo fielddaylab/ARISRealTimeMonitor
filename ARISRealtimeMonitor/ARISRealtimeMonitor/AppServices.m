@@ -10,6 +10,12 @@
 #import "NSDictionary+ValidParsers.h"
 #import "ARISAlertHandler.h"
 #import "Event.h"
+#import "AppModel.h"
+#import "Location.h"
+#import "Game.h"
+#import "JSONConnection.h"
+#import "JSON.h"
+#import "Player.h"
 
 NSString *const kARISServerServicePackage = @"v1";
 

@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "GameViewController.h"
-
 #import <MapKit/MapKit.h>
-
 #import "Game.h"
 
 //Have MKMAPVIEWDLEEGATE so that we can get messages passed to us
