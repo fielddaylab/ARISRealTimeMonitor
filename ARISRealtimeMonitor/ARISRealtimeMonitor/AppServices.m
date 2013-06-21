@@ -309,6 +309,9 @@ NSString *const kARISServerServicePackage = @"v1";
             Event *prevEvent = [[[AppModel sharedAppModel] events] objectAtIndex:0];
             if(![prevEvent.eventType isEqualToString:tempEvent.eventType] || ![prevEvent.username isEqualToString:tempEvent.username]){
                 [[[AppModel sharedAppModel] events] insertObject:tempEvent atIndex:0];
+                if([[[AppModel sharedAppModel] events] count] > 100){
+                    [[[AppModel sharedAppModel] events] removeLastObject];
+                }
             }
         }
         
