@@ -73,6 +73,7 @@
 		719F9AFE174FD412004C6DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719F9AFD174FD412004C6DF4 /* MapKit.framework */; };
 		719F9B01174FE425004C6DF4 /* AnnotationGameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */; };
 		719F9B04175506D7004C6DF4 /* AnnotationViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 719F9B03175506D7004C6DF4 /* AnnotationViews.m */; };
+		71BBCB5A1774F1A90086BCEC /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BBCB591774F1A90086BCEC /* GameViewController.xib */; };
 		71CFF3BE174D6208008C0C14 /* GameMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3BC174D6208008C0C14 /* GameMapViewController.m */; };
 		71CFF3BF174D6208008C0C14 /* GameMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */; };
 		71CFF3C3174D62C0008C0C14 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CFF3C1174D62BF008C0C14 /* GameTableViewController.m */; };
@@ -171,6 +172,7 @@
 		719F9B00174FE425004C6DF4 /* AnnotationGameLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationGameLocation.m; sourceTree = "<group>"; };
 		719F9B02175506D7004C6DF4 /* AnnotationViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViews.h; sourceTree = "<group>"; };
 		719F9B03175506D7004C6DF4 /* AnnotationViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViews.m; sourceTree = "<group>"; };
+		71BBCB591774F1A90086BCEC /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		71CFF3BB174D6208008C0C14 /* GameMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMapViewController.h; sourceTree = "<group>"; };
 		71CFF3BC174D6208008C0C14 /* GameMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMapViewController.m; sourceTree = "<group>"; };
 		71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMapViewController.xib; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
 				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
 				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
+				71BBCB591774F1A90086BCEC /* GameViewController.xib */,
 				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
 				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
 				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
@@ -530,6 +533,7 @@
 				710FF9B517736BAE00A3F195 /* routeWithBorder.png in Resources */,
 				710FF9BB1773A75E00A3F195 /* icon.png in Resources */,
 				710FF9BC1773A75E00A3F195 /* icon@2x.png in Resources */,
+				71BBCB5A1774F1A90086BCEC /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

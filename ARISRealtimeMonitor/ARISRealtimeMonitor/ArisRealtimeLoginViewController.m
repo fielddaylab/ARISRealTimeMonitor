@@ -61,8 +61,10 @@
 {    
     [super viewWillAppear:animated];
     
-    [usernameField setText:@""];
+    [usernameField setText:@""];    
     [passwordField setText:@""];
+    
+    [usernameField setAutocorrectionType:UITextAutocorrectionTypeNo];
 }
 
 #pragma mark - Table View
@@ -93,14 +95,15 @@
         }
         
         if(indexPath.row == 0){
-            usernameField = cell.textField;
             cell.textField.placeholder = NSLocalizedString(@"TextFieldARTMUsername", nil);
+            usernameField = cell.textField;
+            [usernameField setAutocorrectionType:UITextAutocorrectionTypeNo];
         }
         else{
-            passwordField = cell.textField;
             cell.textField.placeholder = NSLocalizedString(@"TextFieldARTMPassword", nil);
-            cell.textField.secureTextEntry = YES;
-            [cell.textField setReturnKeyType:UIReturnKeyDone];
+            passwordField = cell.textField;
+            passwordField.secureTextEntry = YES;
+            [passwordField setReturnKeyType:UIReturnKeyDone];
         }
         
         return cell;
