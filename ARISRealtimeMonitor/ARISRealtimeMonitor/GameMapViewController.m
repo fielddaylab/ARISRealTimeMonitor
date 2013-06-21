@@ -34,6 +34,65 @@
     return self;
 }
 
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
+    self.didIFlip = NO;
+    
+    [self.mapView setMapType:mapType];
+    
+    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar and still keep 'legal'
+    
+    self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    
+    [self.mapView setZoomEnabled:YES];
+    [self.mapView setScrollEnabled:YES];
+    
+    [self.view addSubview:self.mapView];
+    
+    self.mapView.delegate = self;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
+    [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", self.game.gameId]];
+    
+    [self setUpButtonsInMap];
+    
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [AppModel sharedAppModel].region = self.mapView.region;
+}
+
+- (void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    
+    [self setUpButtonsInMap];
+    
+    self.didIFlip = YES;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 - (void) createAnnotations:(NSNotification *)n{
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
@@ -94,66 +153,6 @@
     [self setMapRegion];
 }
 
-- (void) dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];    
-}
-
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    
-    self.didIFlip = NO;
-    
-    [self.mapView setMapType:mapType];
-    
-    //Make the Map
-    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar and still keep 'legal'
-    
-    self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    
-    [self.mapView setZoomEnabled:YES];
-    [self.mapView setScrollEnabled:YES];
-    
-    [self.view addSubview:self.mapView];
-    
-    //used to get the actual location
-    self.mapView.delegate = self;
-    
-    
-    //Grab the Annotations
-    //go grab the location data from the server
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
-    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
-    [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", self.game.gameId]];
-    
-    //Set up the Switch Button
-    [self setUpButtonsInMap];
-    
-}
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    //save the current region before disappearing
-    [AppModel sharedAppModel].region = self.mapView.region;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-    
-    [self setUpButtonsInMap];
-    
-    self.didIFlip = YES;
-}
-
 - (CGRect)getScreenFrameForCurrentOrientation {
     return [self getScreenFrameForOrientation:[UIApplication sharedApplication].statusBarOrientation];
 }
@@ -173,6 +172,51 @@
     }
     
     return fullScreenRect;
+}
+
+#pragma map delegate functions
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
+     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+    if(view == nil){
+     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+     }
+    AnnotationGameLocation *castedAnnotation = ((AnnotationGameLocation *) annotation);
+    
+    NSString *stringToTest = [annotation description];
+    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
+        
+        if ([castedAnnotation.icon isEqualToString:@"Player"]) {
+            view.image = [UIImage imageNamed:@"145-persondot.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"Item"]){
+            view.image = [UIImage imageNamed:@"257-box3.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"Node"]){
+            view.image = [UIImage imageNamed:@"55-network.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"Npc"]){
+            view.image = [UIImage imageNamed:@"111-user.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"WebPage"]){
+            view.image = [UIImage imageNamed:@"174-imac.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"AugBubble"]){
+            view.image = [UIImage imageNamed:@"08-chat.png"];
+        }
+        else if ([castedAnnotation.icon isEqualToString:@"PlayerNote"]){
+            view.image = [UIImage imageNamed:@"notebook.png"];
+        }
+        else{
+            view.image = [UIImage imageNamed:@"196-radiation.png"];
+        }
+        
+    }else {
+        view.image = [UIImage imageNamed:@"sun.png"];
+    }
+    
+    return view;
 }
 
 -(void)zoomToFitMapAnnotations
@@ -259,52 +303,6 @@
     
 }
 
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
 
-     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
-    if(view == nil){
-     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-     }
-    AnnotationGameLocation *castedAnnotation = ((AnnotationGameLocation *) annotation);
-    
-    NSString *stringToTest = [annotation description];
-    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
-        
-        if ([castedAnnotation.icon isEqualToString:@"Player"]) {
-            view.image = [UIImage imageNamed:@"145-persondot.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Item"]){
-            view.image = [UIImage imageNamed:@"257-box3.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Node"]){
-            view.image = [UIImage imageNamed:@"55-network.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Npc"]){
-            view.image = [UIImage imageNamed:@"111-user.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"WebPage"]){
-            view.image = [UIImage imageNamed:@"174-imac.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"AugBubble"]){
-            view.image = [UIImage imageNamed:@"08-chat.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"PlayerNote"]){
-            view.image = [UIImage imageNamed:@"notebook.png"];
-        }
-        else{
-            view.image = [UIImage imageNamed:@"196-radiation.png"];
-        }
-        
-    }else {
-        view.image = [UIImage imageNamed:@"sun.png"];
-    }
-    
-    return view;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 @end
