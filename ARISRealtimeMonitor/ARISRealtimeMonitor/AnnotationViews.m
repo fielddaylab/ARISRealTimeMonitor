@@ -7,7 +7,6 @@
 //
 
 #import "AnnotationViews.h"
-#import "AnnotationGameLocation.h"
 
 @implementation AnnotationViews
 
@@ -20,6 +19,5 @@
 
     return self;
 }
-
 
 @end

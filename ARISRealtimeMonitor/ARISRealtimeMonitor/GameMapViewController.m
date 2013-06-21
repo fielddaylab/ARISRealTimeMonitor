@@ -271,9 +271,6 @@
      }
     AnnotationGameLocation *castedAnnotation = ((AnnotationGameLocation *) annotation);
     
-    NSString *stringToTest = [annotation description];
-    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
-        
         if ([castedAnnotation.icon isEqualToString:@"Player"]) {
             view.image = [UIImage imageNamed:@"145-persondot.png"];
         }
@@ -298,10 +295,6 @@
         else{
             view.image = [UIImage imageNamed:@"196-radiation.png"];
         }
-        
-    }else {
-        view.image = [UIImage imageNamed:@"sun.png"];
-    }
     
     return view;
 }

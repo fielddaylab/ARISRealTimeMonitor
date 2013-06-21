@@ -7,8 +7,6 @@
 //
 
 #import <CoreLocation/CLLocation.h>
-#import <CoreMotion/CoreMotion.h>
-#import <CoreData/CoreData.h>
 #import <MapKit/MapKit.h>
 
 
