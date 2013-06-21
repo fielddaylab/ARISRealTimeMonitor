@@ -42,8 +42,8 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
     
+    [super viewDidAppear:animated];
     
     self.didIFlip = NO;
     
@@ -183,10 +183,7 @@
      view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
      }
     AnnotationGameLocation *castedAnnotation = ((AnnotationGameLocation *) annotation);
-    
-    NSString *stringToTest = [annotation description];
-    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
-        
+
         if ([castedAnnotation.icon isEqualToString:@"Player"]) {
             view.image = [UIImage imageNamed:@"145-persondot.png"];
         }
@@ -211,10 +208,6 @@
         else{
             view.image = [UIImage imageNamed:@"196-radiation.png"];
         }
-        
-    }else {
-        view.image = [UIImage imageNamed:@"sun.png"];
-    }
     
     return view;
 }
@@ -302,42 +295,5 @@
     }
     
 }
-
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-
-     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
-    if(view == nil){
-     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-     }
-    AnnotationGameLocation *castedAnnotation = ((AnnotationGameLocation *) annotation);
-    
-        if ([castedAnnotation.icon isEqualToString:@"Player"]) {
-            view.image = [UIImage imageNamed:@"145-persondot.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Item"]){
-            view.image = [UIImage imageNamed:@"257-box3.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Node"]){
-            view.image = [UIImage imageNamed:@"55-network.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"Npc"]){
-            view.image = [UIImage imageNamed:@"111-user.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"WebPage"]){
-            view.image = [UIImage imageNamed:@"174-imac.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"AugBubble"]){
-            view.image = [UIImage imageNamed:@"08-chat.png"];
-        }
-        else if ([castedAnnotation.icon isEqualToString:@"PlayerNote"]){
-            view.image = [UIImage imageNamed:@"notebook.png"];
-        }
-        else{
-            view.image = [UIImage imageNamed:@"196-radiation.png"];
-        }
-    
-    return view;
-}
-
 
 @end
