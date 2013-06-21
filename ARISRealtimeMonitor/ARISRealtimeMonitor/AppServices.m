@@ -171,9 +171,6 @@ NSString *const kARISServerServicePackage = @"v1";
         }
     }
     
-//    NSError *error;
-//    if (![[AppModel sharedAppModel].mediaCache.context save:&error])
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
 
     return tempGameList;
 }

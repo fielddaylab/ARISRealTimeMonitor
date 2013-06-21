@@ -214,7 +214,6 @@
 -(void)zoomToFitMapAnnotations
 {
     if([self.mapView.annotations count] == 0){
-        NSLog(@"ZERO");
         return;
     }
     CLLocationCoordinate2D topLeftCoord;
@@ -246,11 +245,8 @@
 
 -(void)setMapRegion{
     if([self.mapView.annotations count] == 0){
-        NSLog(@"ZERO");
         return;
     }
-    
-    NSLog(@"NOT ZERO");
     
     MKCoordinateRegion region;
     
@@ -271,9 +267,7 @@
     mapType += 1;
     mapType %= 3;
     
-    [self.mapView setMapType:mapType];//create the 'street' type of map, called 'map'. Sat is 1, hybrid is 2.
-    
-    //[self.mapView setMapType:1];
+    [self.mapView setMapType:mapType];
 }
 
 - (void) setUpButtonsInMap{
