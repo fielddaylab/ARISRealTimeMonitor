@@ -7,7 +7,7 @@
 //
 
 #import "GameMapViewController.h"
-#import <MapKit/MapKit.h>
+#import "GameViewController.h"
 #import "AnnotationGameLocation.h"
 #import "AnnotationViews.h"
 #import "AppServices.h"
@@ -31,9 +31,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -43,11 +40,6 @@
     CLLocationCoordinate2D location;
     AnnotationGameLocation *annotation;
     
-    //create locations
-    //reads in locations correctly, the title and subtitle of the annotation need to be updated
-    
-    //location has type associated with it. Can be everything except player (maybe)
-    
     for(id key in [AppModel sharedAppModel].locations){
         Location *tempLocation = [[AppModel sharedAppModel].locations objectForKey:key];
         location.latitude = tempLocation.latlon.coordinate.latitude;
@@ -55,12 +47,6 @@
         annotation = [[AnnotationGameLocation alloc] init];
         [annotation setCoordinate:location];
         annotation.title = tempLocation.name;
-        annotation.subtitle = tempLocation.subtitle; //i dont think this does anything currently
-        //add left icon later
-        annotation.leftIcon = @"Left Icon Here";
-        //add icon later
-        
-        //item, node, npc, webPage, augBubble, playerNote
         
         if ([tempLocation.type isEqualToString:@"Item"]){
             annotation.icon = @"Item";
@@ -81,13 +67,11 @@
             annotation.icon = @"PlayerNote";
         }
         else {
-            //Else isn't recognized, throw an ERRRRRRRRORRRRRRR
             annotation.icon = @"ERROR";
         }
         
         [annotations addObject:annotation];
     }
-    
     
     [self.mapView addAnnotations:annotations];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createPlayerLocations:) name:@"CreatePlayerLocations" object:nil];
@@ -106,10 +90,6 @@
         annotation = [[AnnotationGameLocation alloc] init];
         [annotation setCoordinate:location];
         annotation.title = [NSString stringWithFormat:@"%i", tempPlayer.playerId];
-        //annotation.subtitle = tempLocation.subtitle;
-        //add left icon later
-        annotation.leftIcon = @"Left Icon Here";
-        //add icon later
         annotation.icon = @"Player";
         annotation.title = tempPlayer.username;
         [annotations addObject:annotation];
@@ -128,6 +108,7 @@
     
     //Make the Map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
+    //NOTE: 44+20? NOt guaranteed constant
     
     self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
@@ -285,20 +266,6 @@
         
         
     }
-    //Don't zoom on rotate, because that could cause confusion to the user.
-    //[self zoomToFitAnnotations];
-    
-    //     If want to use a default button for the centerizer
-    //     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //     [button addTarget:self
-    //     action:nil//@selector(aMethod:)
-    //     forControlEvents:UIControlEventTouchUpInside];
-    //     [button setTitle:@"Swap" forState:UIControlStateNormal];
-    //
-    //     //Try to have off by 6 from border. 44-6 for width; 44navbar, 44button, 18? status bar, 6 for offset.
-    //     button.frame = CGRectMake(rec.size.width - 50, rec.size.height - (44+44+24),44.0, 44.0);
-    //
-    //     [self.view addSubview:button];
     
 }
 
@@ -315,6 +282,8 @@
     
     AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
+    //NOTE: Makes resuseidentifier worthless
+    
     //This could be bad, having zoomToFitMapAnnotations called more than once. However, I'm not sure how
     //to do it otherwise
     //nice thing is is auto goes to it though.....
@@ -328,6 +297,7 @@
     
     NSLog(@"didUpdateUserLocation was called");
     
+    //NOTE: Get rid of unused code
     
     //Used for centering on device, but this isn't useful yet because you're an editor.
     //    CLLocationCoordinate2D loc = [userLocation coordinate];
@@ -340,7 +310,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -37,15 +37,11 @@
 }
 
 - (void) eventsReady:(NSNotification *)n{
-    //NSLog(@"Events Ready");
-    //NSLog(@"Size of events: %i", [[[AppModel sharedAppModel] events] count]);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"EventsReady" object:nil];
     [self.table reloadData];
 }
 
 -(void)updateEvents{
-    //NSLog(@"Update events");
-//    [[AppModel sharedAppModel] setEvents:[[NSMutableArray alloc] init]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] seconds:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
 }
@@ -58,6 +54,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:NO];
+
     self.table.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
@@ -82,7 +79,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[AppModel sharedAppModel] events] count];
-    //return 32;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,6 +107,9 @@
 }
 
 //ACTION : INFO
+
+//NOTE: EWWWWWWW...
+
 -(NSString *)displayEvent:(Event *)event{
     if([event.eventType isEqualToString:@"VIEW_MAP"]){
         return NSLocalizedString(@"TableViewedMap", nil);        

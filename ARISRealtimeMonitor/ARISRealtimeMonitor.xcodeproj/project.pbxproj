@@ -160,7 +160,7 @@
 		710FF9BA1773A75E00A3F195 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		71242BFE17555678006CF0F3 /* LostPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPasswordViewController.h; sourceTree = "<group>"; };
 		71242BFF17555678006CF0F3 /* LostPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPasswordViewController.m; sourceTree = "<group>"; };
-		719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ARISRealtimeMonitor.app; path = "ARIS Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		719941C7174D3F9200B7E42D /* ARIS Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARIS Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		719941CA174D3F9200B7E42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		719941CC174D3F9200B7E42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		719941CE174D3F9200B7E42D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -270,9 +270,9 @@
 		5B6800951773679600F2FF5A /* table cells */ = {
 			isa = PBXGroup;
 			children = (
-				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
 				5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */,
 				5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */,
+				5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */,
 			);
 			name = "table cells";
 			sourceTree = "<group>";
@@ -416,7 +416,6 @@
 				5B680096177367AB00F2FF5A /* map annotations */,
 				5B6800951773679600F2FF5A /* table cells */,
 				5B6800941773676500F2FF5A /* view controllers */,
-				5B6800931773673000F2FF5A /* Languages */,
 				5B6800901773668C00F2FF5A /* ARIS Files */,
 				5BA58371176658870047B8CD /* JSON */,
 				719941D9174D3F9200B7E42D /* ARISRealtimeMonitorAppDelegate.h */,
@@ -435,6 +434,7 @@
 			children = (
 				710FF98E17736BAE00A3F195 /* AppAssets */,
 				710FF99217736BAE00A3F195 /* Assets */,
+				5B6800931773673000F2FF5A /* Languages */,
 				719941D2174D3F9200B7E42D /* ARISRealtimeMonitor-Info.plist */,
 				719941D3174D3F9200B7E42D /* InfoPlist.strings */,
 				719941D6174D3F9200B7E42D /* main.m */,

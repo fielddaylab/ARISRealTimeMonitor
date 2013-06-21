@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Nick Heindl. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "GameViewController.h"
 
 @interface SelectGameViewController : UIViewController
+
+//NOTE: strong probably unnecessary, please be consistent
 
 @property (nonatomic, strong) GameViewController *gameViewController;
 

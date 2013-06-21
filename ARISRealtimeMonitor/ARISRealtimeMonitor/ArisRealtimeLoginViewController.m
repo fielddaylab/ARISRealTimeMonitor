@@ -29,7 +29,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         self.title = NSLocalizedString(@"NavBarARTM", nil); 
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutWasRequested) name:@"LogoutRequested" object:nil];
@@ -38,12 +37,10 @@
 
 - (IBAction)goToLostPassword:(id)sender {
     
-    //Set up the back button for the LostPasswordVC
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"NavBarToLogin", nil) style: UIBarButtonItemStyleBordered target: nil action: nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
-    
     
     [self.navigationController pushViewController:lostPasswordView animated:YES];
 }
@@ -60,7 +57,10 @@
     [self.view addGestureRecognizer:dismissKB];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated
+{    
+    [super viewWillAppear:animated];
+    
     [usernameField setText:@""];
     [passwordField setText:@""];
 }
@@ -69,14 +69,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        return 2;
-
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,11 +82,9 @@
     return 44;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
         tableView.scrollEnabled = NO;
-
         static NSString *CellIdentifier = @"TextFieldCell";
         LoginTableCell *cell = (LoginTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil){
@@ -129,24 +125,16 @@
 - (void) loginResponseReady:(NSNotification *)n
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginEditorResponseReady" object:nil];
-    NSLog(@"Login Response YES");
     
     ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
     if(!r.data || r.data == [NSNull null])
-        //make these localized strings
         [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"ServerARTMLoginUnsuccessful", nil) message:NSLocalizedString(@"ServerARTMBadUsernameAndPass", nil)];
 
     else
-    {
         [self loginSucceed:r];
-    }
-    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    //[textField resignFirstResponder];
-    
     //copied and hacked from ARIS
     if(textField == usernameField) { [passwordField becomeFirstResponder]; }
     if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
@@ -163,10 +151,15 @@
 
 - (void) logoutWasRequested
 {
+  //  [self.navigationController  popToRootViewControllerAnimated:YES];
+    
     exit(0);
 }
 
+
+//NOTE: not iOS5 Ready, may be overwritten by navcontroller anyway
 - (NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
 }
+
 @end

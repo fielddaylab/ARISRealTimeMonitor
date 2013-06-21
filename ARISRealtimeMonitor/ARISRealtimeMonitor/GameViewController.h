@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Nick Heindl. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "Game.h"
 
 @interface GameViewController : UIViewController

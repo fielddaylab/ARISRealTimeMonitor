@@ -19,6 +19,7 @@
 @synthesize game;
 @synthesize currentChildViewController;
 
+//Note:Could flip button
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +33,6 @@
 
 
 -(IBAction)flipView{
-    
     //figure out which view to flip to
     [self.barButton setEnabled:NO];
     UIViewController *fromVC = [self currentChildViewController];
@@ -135,7 +135,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

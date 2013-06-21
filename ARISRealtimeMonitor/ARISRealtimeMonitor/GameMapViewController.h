@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Nick Heindl. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "GameViewController.h"
+
 #import <MapKit/MapKit.h>
 #import "Game.h"
 

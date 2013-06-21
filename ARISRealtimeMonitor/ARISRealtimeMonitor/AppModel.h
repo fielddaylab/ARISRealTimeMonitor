@@ -6,7 +6,6 @@
 //  Copyright 2009 University of Wisconsin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
 #import <CoreMotion/CoreMotion.h>
 #import <CoreData/CoreData.h>

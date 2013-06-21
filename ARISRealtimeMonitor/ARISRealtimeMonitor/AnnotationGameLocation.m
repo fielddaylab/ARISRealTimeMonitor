@@ -8,7 +8,6 @@
 
 #import "AnnotationGameLocation.h"
 
-
 @implementation AnnotationGameLocation
 
 @synthesize coordinate;
@@ -17,14 +16,10 @@
 @synthesize icon;
 @synthesize leftIcon;
 
-
 -initWithPosition:(CLLocationCoordinate2D)coords{
-    if (self = [super init]){
+    if (self = [super init])
         self.coordinate = coords;
-    }
     return self;
 }
-
-
 
 @end

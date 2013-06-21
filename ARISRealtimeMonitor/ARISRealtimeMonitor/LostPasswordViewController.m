@@ -22,7 +22,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         self.title = NSLocalizedString(@"NavBarLostPassword", nil);
     }
     return self;
@@ -34,15 +33,12 @@
     [super viewDidLoad];
  
     emailOutlet.placeholder = NSLocalizedString(@"TextFieldLostPasswordEmail", nil);
-
-    // Do any additional setup after loading the view from its nib.
     
     UITapGestureRecognizer *dismissKB = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:dismissKB];
     
 }
-
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
@@ -59,7 +55,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

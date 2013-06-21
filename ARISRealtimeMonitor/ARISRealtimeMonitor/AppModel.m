@@ -33,9 +33,6 @@
     return _sharedObject;
 }
 
-
-
-
 #pragma mark User Defaults
 
 -(void)loadUserDefaults

@@ -7,7 +7,6 @@
 //
 //Help from Lynda tutorial on Mapkit
 
-#import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
 @interface AnnotationGameLocation : NSObject <MKAnnotation>
@@ -18,7 +17,6 @@
 
 @property (nonatomic, copy) NSString *leftIcon; //could potentially store user avatars.
 @property (nonatomic, copy) NSString *icon; // player or gameLocation
-
 
 -initWithPosition:(CLLocationCoordinate2D)coords;
 
