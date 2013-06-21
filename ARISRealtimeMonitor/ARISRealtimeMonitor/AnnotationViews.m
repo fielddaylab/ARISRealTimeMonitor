@@ -18,7 +18,7 @@
     AnnotationGameLocation *newAnnotation = (AnnotationGameLocation *)annotation;
     
     NSString *stringToTest = [newAnnotation description];
-    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) { //may not need
+    if ([stringToTest rangeOfString:@"MKUserLocation"].location == NSNotFound) {
     
         if ([newAnnotation.icon isEqualToString:@"Player"]) {
             self.image = [UIImage imageNamed:@"145-persondot.png"];

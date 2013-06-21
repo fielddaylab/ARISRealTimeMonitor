@@ -43,8 +43,8 @@
     [[AppServices sharedAppServices] getGamesForEditor:editorId editorToken:editorToken];
 }
 
-- (void) gamesListReady:(NSNotification *)n{
-    //NOTE: why remove? better not to have single letters
+- (void) gamesListReady:(NSNotification *)notif{
+    //NOTE: why remove?
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"GamesListReady" object:nil];
     [selectGameTableView reloadData];
 }
@@ -97,11 +97,6 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    cell.backgroundColor = (indexPath.row%2)?[UIColor colorWithRed:210.0/255.0 green:214.0/255.0 blue:217.0/255.0 alpha:1.0]:[UIColor clearColor];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
  
@@ -110,12 +105,16 @@
     self.gameViewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
     self.gameViewController.game = game;
     
-    //Set the 'GAMES' back button for Map/TableViews here.
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"NavBarToGameSelect", nil) style:UIBarButtonItemStyleBordered target:nil action:nil];
     
     [self.navigationController pushViewController:self.gameViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = (indexPath.row%2)?[UIColor colorWithRed:210.0/255.0 green:214.0/255.0 blue:217.0/255.0 alpha:1.0]:[UIColor clearColor];
 }
 
 @end

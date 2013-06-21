@@ -10,14 +10,9 @@
 
 @interface SelectGameViewController : UIViewController
 
-//NOTE: strong probably unnecessary, please be consistent
-
-@property (nonatomic, strong) GameViewController *gameViewController;
-
+@property (strong, nonatomic) GameViewController *gameViewController;
 @property (weak, nonatomic) IBOutlet UITableView *selectGameTableView;
-
 @property (strong, nonatomic) NSString *editorId;
-
 @property (strong, nonatomic) NSString *editorToken;
 
 @end

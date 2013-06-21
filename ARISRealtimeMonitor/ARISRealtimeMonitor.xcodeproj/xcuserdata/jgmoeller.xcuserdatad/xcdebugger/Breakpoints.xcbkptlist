@@ -73,25 +73,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ArisRealtimeLoginViewController.m"
-         timestampString = "393356170.962248"
+         timestampString = "393524286.071242"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "63"
          endingLineNumber = "63"
          landmarkName = "-viewWillAppear:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ARISRealtimeMonitor/SelectGameViewController.m"
-         timestampString = "393437978.633223"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -104,7 +91,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "44"
          endingLineNumber = "44"
-         landmarkName = "-viewDidLoad"
+         landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -242,20 +229,18 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ArisRealtimeLoginViewController.m"
-         timestampString = "393438140.360234"
+         timestampString = "393524286.071242"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "166"
-         endingLineNumber = "166"
-         landmarkName = "-logoutWasRequested"
-         landmarkType = "5">
+         endingLineNumber = "166">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ARISRealtimeMonitor/ArisRealtimeLoginViewController.m"
-         timestampString = "393356373.182977"
+         timestampString = "393524286.071242"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "35"
