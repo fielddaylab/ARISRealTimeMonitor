@@ -15,8 +15,6 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    textField.secureTextEntry = YES;
-    textField.text = @"To Prove a Point";
     return self;
 }
 

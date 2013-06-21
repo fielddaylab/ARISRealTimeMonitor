@@ -135,7 +135,6 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    //copied and hacked from ARIS
     if(textField == usernameField) { [passwordField becomeFirstResponder]; }
     if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
 
@@ -151,9 +150,7 @@
 
 - (void) logoutWasRequested
 {
-  //  [self.navigationController  popToRootViewControllerAnimated:YES];
-    
-    exit(0);
+    [self.navigationController  popToRootViewControllerAnimated:YES];
 }
 
 

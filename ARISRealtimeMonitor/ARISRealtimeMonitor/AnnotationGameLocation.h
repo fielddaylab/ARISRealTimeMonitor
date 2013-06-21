@@ -5,7 +5,6 @@
 //  Created by Nick Heindl on 5/24/13.
 //  Copyright (c) 2013 Nick Heindl. All rights reserved.
 //
-//Help from Lynda tutorial on Mapkit
 
 #import <MapKit/MapKit.h>
 
@@ -15,8 +14,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
-@property (nonatomic, copy) NSString *leftIcon; //could potentially store user avatars.
-@property (nonatomic, copy) NSString *icon; // player or gameLocation
+@property (nonatomic, copy) NSString *leftIcon;
+@property (nonatomic, copy) NSString *icon;
 
 -initWithPosition:(CLLocationCoordinate2D)coords;
 

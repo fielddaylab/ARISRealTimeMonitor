@@ -14,8 +14,8 @@
 
 @property (strong, nonatomic) Game *game;
 
-@property (strong, nonatomic) UIButton *button;
-@property (strong, nonatomic) UIBarButtonItem *barButton;
+@property (strong, nonatomic) UIButton *withoutBorderButton;
+@property (strong, nonatomic) UIBarButtonItem *rightNavBarButton;
 
 - (void) displayContentController:(UIViewController*)content;
 

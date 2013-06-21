@@ -9,7 +9,7 @@
 #import "GameViewController.h"
 #import "Game.h"
 
-@interface GameTableViewController : UIViewController//GameViewController
+@interface GameTableViewController : UIViewController
 
 @property (nonatomic, strong) Game *game;
 @property (weak, nonatomic) IBOutlet UITableView *table;

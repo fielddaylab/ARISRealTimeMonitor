@@ -217,39 +217,9 @@ NSString *const kARISServerServicePackage = @"v1";
     NSLog(@"parseGetGamesForEditor");
     
     [AppModel sharedAppModel].listOfPlayersGames = [self parseGameListFromJSON:jsonResult];
-    //[self getNumPlayersForEachGame];
     NSLog(@"NSNotification: GamesListReady");
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"GamesListReady" object:nil]];
 }
-
-//-(void)getNumPlayersForEachGame{
-//    for(int i = 0; i < [AppModel sharedAppModel].listOfPlayersGames.count; i++){
-//        Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
-//        [self getNumOfGamePlayers:[NSString stringWithFormat:@"%i", game.gameId] AtIndex:i];
-//    }
-//    
-//}
-
-//-(void)getNumOfGamePlayers:(NSString *)gameId AtIndex:(NSInteger)i{
-//    NSArray *arguments = [NSArray arrayWithObjects:gameId, @"0", nil];
-//    
-//	JSONConnection *jsonConnection = [[JSONConnection alloc] initWithServer:[AppModel sharedAppModel].serverURL
-//                                                             andServiceName:@"players"
-//                                                              andMethodName:@"getOtherPlayersForGame"
-//                                                               andArguments:arguments
-//                                                                andUserInfo:nil];
-//    //[jsonConnection performAsynchronousRequestWithHandler:@selector(parseNumOfGamePlayersFromJSON:)];
-//    ServiceResult *jsonResult = [jsonConnection performSynchronousRequest];
-//    NSArray *playersArray = (NSArray *)jsonResult.data;
-//    Game *game = [[[AppModel sharedAppModel] listOfPlayersGames] objectAtIndex:i];
-//    game.numPlayers = [playersArray count];
-//    [[[AppModel sharedAppModel] listOfPlayersGames] setObject:game atIndexedSubscript:i];
-//}
-
-//-(void)parseNumOfGamePlayersFromJSON:(ServiceResult *)jsonResult{
-//    NSArray *playersArray = (NSArray *)jsonResult.data;
-//}
-
 
 - (void)getLocationsForGame:(NSString *)gameId{
     NSArray *arguments = [NSArray arrayWithObjects:gameId, nil];
@@ -339,6 +309,9 @@ NSString *const kARISServerServicePackage = @"v1";
             Event *prevEvent = [[[AppModel sharedAppModel] events] objectAtIndex:0];
             if(![prevEvent.eventType isEqualToString:tempEvent.eventType] || ![prevEvent.username isEqualToString:tempEvent.username]){
                 [[[AppModel sharedAppModel] events] insertObject:tempEvent atIndex:0];
+                if([[[AppModel sharedAppModel] events] count] > 100){
+                    [[[AppModel sharedAppModel] events] removeLastObject];
+                }
             }
         }
         
