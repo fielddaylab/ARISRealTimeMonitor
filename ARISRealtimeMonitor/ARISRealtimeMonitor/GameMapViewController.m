@@ -34,7 +34,59 @@
     return self;
 }
 
-- (void) createAnnotations:(NSNotification *)n{
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
+    self.didIFlip = NO;
+    
+    [self.mapView setMapType:mapType];
+    
+    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
+    //NOTE: 44+20? NOt guaranteed constant
+    
+    self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    
+    [self.mapView setZoomEnabled:YES];
+    [self.mapView setScrollEnabled:YES];
+    
+    [self.view addSubview:self.mapView];
+    
+    self.mapView.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
+    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
+    
+    [self setUpButtonsInMap];
+    
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    //save the current region before disappearing
+    [AppModel sharedAppModel].region = self.mapView.region;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    
+    [self setUpButtonsInMap];
+    
+    self.didIFlip = YES;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void) createAnnotations:(NSNotification *)notif{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
@@ -78,7 +130,7 @@
     [[AppServices sharedAppServices] getLocationsOfGamePlayers:[NSString stringWithFormat:@"%i", self.game.gameId]];
 }
 
-- (void) createPlayerLocations:(NSNotification *)n{
+- (void) createPlayerLocations:(NSNotification *)notif{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     CLLocationCoordinate2D location;
@@ -96,59 +148,6 @@
     }
     [self.mapView addAnnotations:annotations];
     [self setMapRegion];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    
-    self.didIFlip = NO;
-    
-    [self.mapView setMapType:mapType];
-    
-    //Make the Map
-    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];//-88 to compensate for the navbar and status bar
-    //NOTE: 44+20? NOt guaranteed constant
-    
-    self.mapView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    
-    [self.mapView setZoomEnabled:YES];
-    [self.mapView setScrollEnabled:YES];
-    
-    [self.view addSubview:self.mapView];
-    
-    //used to get the actual location
-    self.mapView.delegate = self;
-    
-    
-    //Grab the Annotations
-    //go grab the location data from the server
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotations:) name:@"CreateAnnotations" object:nil];
-    [[AppServices sharedAppServices] getLocationsForGame:[NSString stringWithFormat:@"%i", self.game.gameId]];
-    
-    
-    //Set up the Switch Button
-    [self setUpButtonsInMap];
-    
-}
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    //save the current region before disappearing
-    [AppModel sharedAppModel].region = self.mapView.region;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-    
-    [self setUpButtonsInMap];
-    
-    self.didIFlip = YES;
 }
 
 - (CGRect)getScreenFrameForCurrentOrientation {
@@ -172,8 +171,46 @@
     return fullScreenRect;
 }
 
+#pragma map delegate functions
 
-//Hey look, somebody coded the algorithm I spent an hour or so developing...
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    /*Does not work with multiple pin icons, since it tries to replace them :'[
+     //Will have to give different identifiers for the different image styles zB 'pin'
+     //Used for efficiency. If we have a lot of pins, reuse them.
+     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+     if(view == nil){
+     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+     }
+     */
+    
+    AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+    
+    //NOTE: Makes resuseidentifier worthless
+    
+    //This could be bad, having zoomToFitMapAnnotations called more than once. However, I'm not sure how
+    //to do it otherwise
+    //nice thing is is auto goes to it though.....
+    //[self zoomToFitMapAnnotations];
+    
+    return view;
+}
+
+- (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    //Lets us define a region based on the users location. If we want a defined location, use above code instead.
+    
+    NSLog(@"didUpdateUserLocation was called");
+    
+    //NOTE: Get rid of unused code
+    
+    //Used for centering on device, but this isn't useful yet because you're an editor.
+    //    CLLocationCoordinate2D loc = [userLocation coordinate];
+    //    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
+    //    [self.mapView setRegion:region animated:NO];
+    
+    
+}
+
 -(void)zoomToFitMapAnnotations
 {
     if([self.mapView.annotations count] == 0){
@@ -269,47 +306,6 @@
     
 }
 
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    
-    /*Does not work with multiple pin icons, since it tries to replace them :'[
-     //Will have to give different identifiers for the different image styles zB 'pin'
-     //Used for efficiency. If we have a lot of pins, reuse them.
-     AnnotationViews *view = (AnnotationViews *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
-     if(view == nil){
-     view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-     }
-     */
-    
-    AnnotationViews *view = [[AnnotationViews alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-    
-    //NOTE: Makes resuseidentifier worthless
-    
-    //This could be bad, having zoomToFitMapAnnotations called more than once. However, I'm not sure how
-    //to do it otherwise
-    //nice thing is is auto goes to it though.....
-    //[self zoomToFitMapAnnotations];
-    
-    return view;
-}
 
-- (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    //Lets us define a region based on the users location. If we want a defined location, use above code instead.
-    
-    NSLog(@"didUpdateUserLocation was called");
-    
-    //NOTE: Get rid of unused code
-    
-    //Used for centering on device, but this isn't useful yet because you're an editor.
-    //    CLLocationCoordinate2D loc = [userLocation coordinate];
-    //    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
-    //    [self.mapView setRegion:region animated:NO];
-    
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 @end

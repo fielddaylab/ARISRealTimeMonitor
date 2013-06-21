@@ -16,7 +16,6 @@
 {
     [[AppModel sharedAppModel] loadUserDefaults];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.0/255.0 green:101.0/255.0 blue:149.0/255.0 alpha:1]];
-    //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     ArisRealtimeLoginViewController *loginController = [[ArisRealtimeLoginViewController alloc] initWithNibName:@"ArisRealtimeLoginViewController" bundle:nil];

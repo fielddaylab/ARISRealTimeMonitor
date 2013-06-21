@@ -12,8 +12,8 @@
 #import "AppServices.h"
 #import "Event.h"
 
-#define REFRESH_INTERVAL ((int) 3) //in seconds
-#define FIVE_MINUTES ((int) 300) //in seconds
+#define REFRESH_INTERVAL 3 //in seconds
+#define FIVE_MINUTES 300 //in seconds
 
 @interface GameTableViewController ()
 
@@ -36,15 +36,7 @@
     return self;
 }
 
-- (void) eventsReady:(NSNotification *)n{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"EventsReady" object:nil];
-    [self.table reloadData];
-}
 
--(void)updateEvents{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
-   [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] seconds:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
-}
 
 - (void)viewWillDisappear:(BOOL)animated{
     [myTimer invalidate];
@@ -66,6 +58,16 @@
                                              selector:@selector(updateEvents)
                                              userInfo:nil
                                               repeats:YES];
+}
+
+- (void) eventsReady:(NSNotification *)n{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"EventsReady" object:nil];
+    [self.table reloadData];
+}
+
+-(void)updateEvents{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReady:) name:@"EventsReady" object:nil];
+    [[AppServices sharedAppServices] getLogsForGame:[NSString stringWithFormat:@"%i", self.game.gameId] seconds:[NSString stringWithFormat:@"%i", REFRESH_INTERVAL]];
 }
 
 
@@ -102,103 +104,123 @@
     return cell;
 }
 
--(NSString *)displayPlayer:(Event *)event{
-        return [NSString stringWithFormat:@"%@", event.username];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-//ACTION : INFO
-
-//NOTE: EWWWWWWW...
+-(NSString *)displayPlayer:(Event *)event{
+    return [NSString stringWithFormat:@"%@", event.username];
+}
 
 -(NSString *)displayEvent:(Event *)event{
     if([event.eventType isEqualToString:@"VIEW_MAP"]){
-        return NSLocalizedString(@"TableViewedMap", nil);        
-    }else if([event.eventType isEqualToString:@"PICKUP_ITEM"]){
+        return NSLocalizedString(@"TableViewedMap", nil);
+    }
+    else if([event.eventType isEqualToString:@"PICKUP_ITEM"]){
         NSString *itemName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TablePickupItem", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, itemName];
-    }else if([event.eventType isEqualToString:@"DROP_ITEM"]){
+    }
+    else if([event.eventType isEqualToString:@"DROP_ITEM"]){
         NSString *itemName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableDroppedItem", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, itemName];
-    }else if([event.eventType isEqualToString:@"DROP_NOTE"]){
+    }
+    else if([event.eventType isEqualToString:@"DROP_NOTE"]){
         NSString *noteName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableDroppedNote", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, noteName];
-    }else if([event.eventType isEqualToString:@"DESTROY_ITEM"]){
+    }
+    else if([event.eventType isEqualToString:@"DESTROY_ITEM"]){
         NSString *itemName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableDestroyedItem", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, itemName];
-    }else if([event.eventType isEqualToString:@"VIEW_ITEM"]){
+    }
+    else if([event.eventType isEqualToString:@"VIEW_ITEM"]){
         NSString *itemName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableViewedItem", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, itemName];
-    }else if([event.eventType isEqualToString:@"VIEW_NODE"]){
+    }
+    else if([event.eventType isEqualToString:@"VIEW_NODE"]){
         NSString *nodeName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableViewedNode", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, nodeName];
     }else if([event.eventType isEqualToString:@"VIEW_NPC"]){
         NSString *characterName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableViewedNPC", nil);
-        return [NSString stringWithFormat:@"%@ : \"%@\"", s, characterName];        
-    }else if([event.eventType isEqualToString:@"VIEW_WEBPAGE"]){
+        return [NSString stringWithFormat:@"%@ : \"%@\"", s, characterName];
+    }
+    else if([event.eventType isEqualToString:@"VIEW_WEBPAGE"]){
         NSString *webpageName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableViewedWebpage", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, webpageName];
-    }else if([event.eventType isEqualToString:@"VIEW_AUGBUBBLE"]){
+    }
+    else if([event.eventType isEqualToString:@"VIEW_AUGBUBBLE"]){
         NSString *augbubbleName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableViewedNode", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, augbubbleName];
-    }else if([event.eventType isEqualToString:@"VIEW_QUESTS"]){
+    }
+    else if([event.eventType isEqualToString:@"VIEW_QUESTS"]){
         return NSLocalizedString(@"TableViewedQuests", nil);
-    }else if([event.eventType isEqualToString:@"VIEW_INVENTORY"]){
+    }
+    else if([event.eventType isEqualToString:@"VIEW_INVENTORY"]){
         return NSLocalizedString(@"TableViewedInventory", nil);
-    }else if([event.eventType isEqualToString:@"ENTER_QRCODE"]){
+    }
+    else if([event.eventType isEqualToString:@"ENTER_QRCODE"]){
         return NSLocalizedString(@"TableEnteredQRCode", nil);
-    }else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM"]){
+    }
+    else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM"]){
         return NSLocalizedString(@"TableUploadMediaItem", nil);
-    }else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_IMAGE"]){
+    }
+    else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_IMAGE"]){
         return NSLocalizedString(@"TableUploadMediaImage", nil);
-    }else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_AUDIO"]){
+    }
+    else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_AUDIO"]){
         return NSLocalizedString(@"TableUploadMediaAudio", nil);
-    }else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_VIDEO"]){
+    }
+    else if([event.eventType isEqualToString:@"UPLOAD_MEDIA_ITEM_VIDEO"]){
         return NSLocalizedString(@"TableUploadMediaVideo", nil);
-    }else if([event.eventType isEqualToString:@"RECEIVE_WEBHOOK"]){
+    }
+    else if([event.eventType isEqualToString:@"RECEIVE_WEBHOOK"]){
         return NSLocalizedString(@"TableReceivedWebhook", nil);
-    }else if([event.eventType isEqualToString:@"SEND_WEBHOOK"]){
+    }
+    else if([event.eventType isEqualToString:@"SEND_WEBHOOK"]){
         return NSLocalizedString(@"TableSentWebhook", nil);
-    }else if([event.eventType isEqualToString:@"COMPLETE_QUEST"]){
+    }
+    else if([event.eventType isEqualToString:@"COMPLETE_QUEST"]){
         NSString *questName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableQuestCompleted", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, questName];
-    }else if([event.eventType isEqualToString:@"GET_NOTE"]){
+    }
+    else if([event.eventType isEqualToString:@"GET_NOTE"]){
         NSString *noteName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableReceivedNote", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, noteName];
-    }else if([event.eventType isEqualToString:@"GIVE_NOTE_LIKE"]){
+    }
+    else if([event.eventType isEqualToString:@"GIVE_NOTE_LIKE"]){
         NSString *noteName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableGaveNoteLike", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, noteName];
-    }else if([event.eventType isEqualToString:@"GET_NOTE_LIKE"]){
+    }
+    else if([event.eventType isEqualToString:@"GET_NOTE_LIKE"]){
         NSString *noteName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableReceivedNoteLike", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, noteName];
-    }else if([event.eventType isEqualToString:@"GIVE_NOTE_COMMENT"]){
+    }
+    else if([event.eventType isEqualToString:@"GIVE_NOTE_COMMENT"]){
         NSString *commentName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableGaveNoteComment", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, commentName];
-    }else if([event.eventType isEqualToString:@"GET_NOTE_COMMENT"]){
+    }
+    else if([event.eventType isEqualToString:@"GET_NOTE_COMMENT"]){
         NSString *commentName = event.eventDetail1;
         NSString *s = NSLocalizedString(@"TableReceivedNoteComment", nil);
         return [NSString stringWithFormat:@"%@ : \"%@\"", s, commentName];
-    }else{
+    }
+    else{
         return event.eventType;
     }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end
