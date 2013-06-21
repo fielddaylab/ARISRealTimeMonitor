@@ -42,11 +42,11 @@
     self.title = self.game.name;
 
     //Set up the right navbar buttons without a border.
-    self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-    [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(flipView) forControlEvents:UIControlEventTouchUpInside];
-    self.barButton = [[UIBarButtonItem alloc] initWithCustomView:self.button];
-    self.navigationItem.rightBarButtonItem = self.barButton;
+    self.withoutBorderButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [self.withoutBorderButton setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
+    [self.withoutBorderButton addTarget:self action:@selector(flipView) forControlEvents:UIControlEventTouchUpInside];
+    self.rightNavBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.withoutBorderButton];
+    self.navigationItem.rightBarButtonItem = self.rightNavBarButton;
     
     GameMapViewController *gameMapViewController = [[GameMapViewController alloc] initWithNibName:@"GameMapViewController" bundle:nil];
     gameMapViewController.game = self.game;
@@ -82,7 +82,7 @@
 
 -(IBAction)flipView{
     //figure out which view to flip to
-    [self.barButton setEnabled:NO];
+    [self.rightNavBarButton setEnabled:NO];
     UIViewController *fromVC = [self currentChildViewController];
     GameMapViewController *toVCMap;
     GameTableViewController *toVCTable;
@@ -92,7 +92,7 @@
         toVCTable = [[GameTableViewController alloc] initWithNibName:@"GameTableViewController" bundle:nil];
         toVCTable.game = self.game;
         animation = UIViewAnimationOptionTransitionFlipFromRight;
-        [self.button setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
+        [self.withoutBorderButton setImage:[UIImage imageNamed:@"73-radar.png"] forState:UIControlStateNormal];
         toVC = toVCTable;
     }
     else{
@@ -101,7 +101,7 @@
         toVCMap.game = self.game;
         toVCMap.shouldZoom = NO;
         animation = UIViewAnimationOptionTransitionFlipFromLeft;
-        [self.button setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
+        [self.withoutBorderButton setImage:[UIImage imageNamed:@"179-notepad.png"] forState:UIControlStateNormal];
         toVC = toVCMap;
     }
     
@@ -121,7 +121,7 @@
         [toVC didMoveToParentViewController:self];
         
         currentChildViewController = toVC;
-        [self.barButton setEnabled:YES];
+        [self.rightNavBarButton setEnabled:YES];
     }];
     
     

@@ -11,7 +11,6 @@
 		5B35AC0C175E636800B0D9D2 /* SelectGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B35AC0A175E636800B0D9D2 /* SelectGameViewController.m */; };
 		5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */; };
 		5B35AC15175E8BC000B0D9D2 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B35AC13175E8BC000B0D9D2 /* AppModel.m */; };
-		5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */; };
 		5B67E1D4174E7C9E00DDBC2A /* LoginTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */; };
 		5B67E1D7174E7CE200DDBC2A /* LoginTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */; };
 		5B70D0BA17710B9800B099CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B70D0B017710B9800B099CE /* InfoPlist.strings */; };
@@ -89,7 +88,6 @@
 		5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectGameViewController.xib; sourceTree = "<group>"; };
 		5B35AC12175E8BC000B0D9D2 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		5B35AC13175E8BC000B0D9D2 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
-		5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		5B67E1D3174E7C9E00DDBC2A /* LoginTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableCell.xib; sourceTree = "<group>"; };
 		5B67E1D5174E7CE200DDBC2A /* LoginTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableCell.h; sourceTree = "<group>"; };
 		5B67E1D6174E7CE200DDBC2A /* LoginTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableCell.m; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				5B35AC0B175E636800B0D9D2 /* SelectGameViewController.xib */,
 				71CFF3C5174E6F0E008C0C14 /* GameViewController.h */,
 				71CFF3C6174E6F0E008C0C14 /* GameViewController.m */,
-				5B35AC14175E8BC000B0D9D2 /* GameViewController.xib */,
 				71CFF3BB174D6208008C0C14 /* GameMapViewController.h */,
 				71CFF3BC174D6208008C0C14 /* GameMapViewController.m */,
 				71CFF3BD174D6208008C0C14 /* GameMapViewController.xib */,
@@ -392,7 +389,7 @@
 		719941C8174D3F9200B7E42D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */,
+				719941C7174D3F9200B7E42D /* ARIS Monitor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,7 +458,7 @@
 			);
 			name = "ARIS Monitor";
 			productName = ARISRealtimeMonitor;
-			productReference = 719941C7174D3F9200B7E42D /* ARISRealtimeMonitor.app */;
+			productReference = 719941C7174D3F9200B7E42D /* ARIS Monitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -505,7 +502,6 @@
 				71CFF3C4174D62C0008C0C14 /* GameTableViewController.xib in Resources */,
 				5B35AC07175E5B8400B0D9D2 /* LostPasswordViewController.xib in Resources */,
 				5B35AC0D175E636800B0D9D2 /* SelectGameViewController.xib in Resources */,
-				5B35AC16175E8BC000B0D9D2 /* GameViewController.xib in Resources */,
 				5BA58339176653FF0047B8CD /* ArisRealtimeLoginViewController.xib in Resources */,
 				7132895C1770F4C40058AFE3 /* (null) in Resources */,
 				7132895D1770F4C40058AFE3 /* (null) in Resources */,
