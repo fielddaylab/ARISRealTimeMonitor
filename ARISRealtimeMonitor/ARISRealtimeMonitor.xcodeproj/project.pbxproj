@@ -43,7 +43,6 @@
 		710FF9A417736BAE00A3F195 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99017736BAE00A3F195 /* Default.png */; };
 		710FF9A517736BAE00A3F195 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99117736BAE00A3F195 /* Default@2x.png */; };
 		710FF9A617736BAE00A3F195 /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99317736BAE00A3F195 /* 08-chat.png */; };
-		710FF9A717736BAE00A3F195 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99417736BAE00A3F195 /* 103-map.png */; };
 		710FF9A817736BAE00A3F195 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99517736BAE00A3F195 /* 111-user.png */; };
 		710FF9A917736BAE00A3F195 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99617736BAE00A3F195 /* 145-persondot.png */; };
 		710FF9AA17736BAE00A3F195 /* 174-imac.png in Resources */ = {isa = PBXBuildFile; fileRef = 710FF99717736BAE00A3F195 /* 174-imac.png */; };
@@ -139,7 +138,6 @@
 		710FF99017736BAE00A3F195 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		710FF99117736BAE00A3F195 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		710FF99317736BAE00A3F195 /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat.png"; sourceTree = "<group>"; };
-		710FF99417736BAE00A3F195 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
 		710FF99517736BAE00A3F195 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		710FF99617736BAE00A3F195 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		710FF99717736BAE00A3F195 /* 174-imac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "174-imac.png"; sourceTree = "<group>"; };
@@ -358,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				710FF99317736BAE00A3F195 /* 08-chat.png */,
-				710FF99417736BAE00A3F195 /* 103-map.png */,
 				710FF99517736BAE00A3F195 /* 111-user.png */,
 				710FF99617736BAE00A3F195 /* 145-persondot.png */,
 				710FF99717736BAE00A3F195 /* 174-imac.png */,
@@ -517,7 +514,6 @@
 				710FF9A417736BAE00A3F195 /* Default.png in Resources */,
 				710FF9A517736BAE00A3F195 /* Default@2x.png in Resources */,
 				710FF9A617736BAE00A3F195 /* 08-chat.png in Resources */,
-				710FF9A717736BAE00A3F195 /* 103-map.png in Resources */,
 				710FF9A817736BAE00A3F195 /* 111-user.png in Resources */,
 				710FF9A917736BAE00A3F195 /* 145-persondot.png in Resources */,
 				710FF9AA17736BAE00A3F195 /* 174-imac.png in Resources */,
