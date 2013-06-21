@@ -18,9 +18,6 @@
 @implementation AppModel
 
 @synthesize serverURL;
-
-
-//ARIS Realtime Monitor Additions
 @synthesize listOfPlayersGames, locations, playersInGame, events, types, region;
 
 + (id)sharedAppModel
