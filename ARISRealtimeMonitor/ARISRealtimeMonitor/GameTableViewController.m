@@ -36,8 +36,6 @@
     return self;
 }
 
-
-
 - (void)viewWillDisappear:(BOOL)animated{
     [myTimer invalidate];
     myTimer = nil;

@@ -35,16 +35,6 @@
     return self;
 }
 
-- (IBAction)goToLostPassword:(id)sender {
-    
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"NavBarToLogin", nil) style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [[self navigationItem] setBackBarButtonItem: newBackButton];
-    
-    LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
-    
-    [self.navigationController pushViewController:lostPasswordView animated:YES];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -109,12 +99,17 @@
         return cell;
 }
 
-- (void)loginSucceed:(ServiceResult *)r
-{
-    SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
-    selectGameViewController.editorId = [r.data valueForKey:@"editor_id"];
-    selectGameViewController.editorToken = [r.data valueForKey:@"read_write_token"];
-    [self.navigationController pushViewController:selectGameViewController animated:YES];
+#pragma mark - App Navigation
+
+- (IBAction)goToGameSelect:(id)sender {
+    [self attemptLogin];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == usernameField) { [passwordField becomeFirstResponder]; }
+    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
+    
+    return YES;
 }
 
 - (void) attemptLogin
@@ -122,7 +117,7 @@
     [self dismissKeyboard];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginResponseReady:) name:@"LoginEditorResponseReady" object:nil];
     [[AppServices sharedAppServices] loginEditorUserName:usernameField.text password:passwordField.text userInfo:nil];
-
+    
 }
 
 - (void) loginResponseReady:(NSNotification *)n
@@ -132,23 +127,27 @@
     ServiceResult *r = (ServiceResult *)[n.userInfo objectForKey:@"result"];
     if(!r.data || r.data == [NSNull null])
         [[ARISAlertHandler sharedAlertHandler] showAlertWithTitle:NSLocalizedString(@"ServerARTMLoginUnsuccessful", nil) message:NSLocalizedString(@"ServerARTMBadUsernameAndPass", nil)];
-
+    
     else
         [self loginSucceed:r];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if(textField == usernameField) { [passwordField becomeFirstResponder]; }
-    if(textField == passwordField) { [self resignFirstResponder]; [self attemptLogin]; }
-
-    return YES;
-
+- (void)loginSucceed:(ServiceResult *)r
+{
+    SelectGameViewController *selectGameViewController = [[SelectGameViewController alloc] initWithNibName:@"SelectGameViewController" bundle:nil];
+    selectGameViewController.editorId = [r.data valueForKey:@"editor_id"];
+    selectGameViewController.editorToken = [r.data valueForKey:@"read_write_token"];
+    [self.navigationController pushViewController:selectGameViewController animated:YES];
 }
--(void)dismissKeyboard {
-    [self.view endEditing:YES];
-}
-- (IBAction)goToGameSelect:(id)sender {
-    [self attemptLogin];
+
+- (IBAction)goToLostPassword:(id)sender {
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"NavBarToLogin", nil) style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+    
+    LostPasswordViewController *lostPasswordView = [[LostPasswordViewController alloc] initWithNibName:@"LostPasswordViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:lostPasswordView animated:YES];
 }
 
 - (void) logoutWasRequested
@@ -156,6 +155,9 @@
     [self.navigationController  popToRootViewControllerAnimated:YES];
 }
 
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
+}
 
 //NOTE: not iOS5 Ready, may be overwritten by navcontroller anyway
 - (NSUInteger)supportedInterfaceOrientations{
