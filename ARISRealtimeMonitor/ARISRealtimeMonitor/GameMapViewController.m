@@ -78,7 +78,7 @@
 
 - (void) dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreateAnnotations" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CreatePlayerLocations" object:nil];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
